@@ -3,8 +3,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCounters();
-  initTestimonialSlider();
   initDownloadSpecs();
+  initResourceFilter();
 });
 
 function initMobileNav() {
@@ -42,30 +42,10 @@ function initCounters() {
   counters.forEach((c) => observer.observe(c));
 }
 
-function initTestimonialSlider() {
-  const track = document.querySelector('.testimonial-slides');
-  const dots = document.querySelectorAll('.testimonial-dot');
-  if (!track || !dots.length) return;
-
-  let current = 0;
-  const total = dots.length;
-
-  function goTo(index) {
-    current = index;
-    track.style.transform = `translateX(-${current * 100}%)`;
-    dots.forEach((d, i) => d.classList.toggle('active', i === current));
-  }
-
-  dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-
-  setInterval(() => goTo((current + 1) % total), 6000);
-}
-
 function initDownloadSpecs() {
   document.querySelectorAll('.download-specs').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const name = btn.closest('.product-card')?.querySelector('h4')?.textContent || 'Product';
       btn.textContent = 'Specs — Coming Soon';
       btn.style.opacity = '0.7';
       btn.style.pointerEvents = 'none';
@@ -76,4 +56,49 @@ function initDownloadSpecs() {
       }, 2000);
     });
   });
+
+  document.querySelectorAll('.btn-download-doc').forEach((btn) => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const original = btn.innerHTML;
+      btn.textContent = 'Coming Soon';
+      btn.disabled = true;
+      setTimeout(() => {
+        btn.innerHTML = original;
+        btn.disabled = false;
+      }, 2000);
+    });
+  });
+}
+
+function initResourceFilter() {
+  const tabs = document.querySelectorAll('.filter-tab');
+  const cards = document.querySelectorAll('.doc-card');
+  const searchInput = document.querySelector('#resource-search');
+  if (!tabs.length || !cards.length) return;
+
+  let activeFilter = 'all';
+
+  function filterDocs() {
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    cards.forEach((card) => {
+      const category = card.dataset.category;
+      const title = card.querySelector('h4')?.textContent.toLowerCase() || '';
+      const matchFilter = activeFilter === 'all' || category === activeFilter;
+      const matchSearch = !query || title.includes(query);
+      card.classList.toggle('hidden', !(matchFilter && matchSearch));
+    });
+  }
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      activeFilter = tab.dataset.filter;
+      tabs.forEach((t) => t.classList.toggle('active', t === tab));
+      filterDocs();
+    });
+  });
+
+  if (searchInput) {
+    searchInput.addEventListener('input', filterDocs);
+  }
 }

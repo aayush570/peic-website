@@ -21,105 +21,256 @@
         </div>
       </a>
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="products.html">Products</a>
-        <a href="service.html">Service</a>
-        <a href="about.html">About</a>
-        <a href="resources.html" class="active">Resources</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <a href="tel:+912200000000" class="header-hotline">
+          <span class="hotline-label">24/7 Technical Hotline</span>
+          <span class="hotline-number">+91 22 0000 0000</span>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="products.html">Products</a>
+          <a href="service.html">Service</a>
+          <a href="about.html">About</a>
+          <a href="resources.html" class="active">Resources</a>
+          <a href="careers.html">Careers</a>
+          <a href="tel:+912200000000" class="header-hotline header-hotline-mobile">
+            <span class="hotline-label">24/7 Technical Hotline</span>
+            <span class="hotline-number">+91 22 0000 0000</span>
+          </a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
   <div class="page-hero-sm">
     <div class="container">
-      <span class="section-label" style="color: var(--green-muted);">Phase 2 — UI Shell</span>
       <h1>Resources &amp; Case Studies</h1>
       <p>Downloadable product brochures, compliance certificates, user manuals, and detailed hospital installation success stories.</p>
     </div>
   </div>
 
-  <section>
+  <section class="bg-white">
     <div class="container">
-      <div class="search-bar-placeholder">
-        <input type="text" placeholder="Search resources — brochures, certificates, manuals, case studies..." disabled>
-        <button class="btn btn-primary btn-sm" disabled>Search</button>
+      <div class="search-bar">
+        <input type="text" id="resource-search" placeholder="Search resources — brochures, certificates, manuals, case studies...">
       </div>
 
-      <div class="filter-tags">
-        <span class="filter-tag active">All</span>
-        <span class="filter-tag">Product Brochures</span>
-        <span class="filter-tag">BIS / ISO Certificates</span>
-        <span class="filter-tag">User Manuals</span>
-        <span class="filter-tag">Case Studies</span>
+      <div class="filter-tabs">
+        <button class="filter-tab active" data-filter="all">All <span class="tab-count">(24)</span></button>
+        <button class="filter-tab" data-filter="brochure">Brochures <span class="tab-count">(8)</span></button>
+        <button class="filter-tab" data-filter="certificate">Certificates <span class="tab-count">(6)</span></button>
+        <button class="filter-tab" data-filter="manual">User Manuals <span class="tab-count">(7)</span></button>
+        <button class="filter-tab" data-filter="case-study">Case Studies <span class="tab-count">(3)</span></button>
       </div>
 
-      <div class="placeholder-grid">
-        <div class="placeholder-card">
-          <div class="placeholder-icon">📄</div>
-          <h3>Product Brochures</h3>
-          <p>Technical brochures for PEIC-manufactured sterilization systems and partner equipment lines.</p>
-          <span class="coming-soon">12 documents — coming soon</span>
-        </div>
+      <div class="doc-grid">
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>Horizontal Sterilizer Brochure</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 2.4 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>Flash Sterilizer Brochure</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 1.8 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>Vertical Autoclave Brochure</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 1.2 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>CSSD Furniture &amp; Trolleys Catalog</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 3.1 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>Bio Medical Waste Sanitizer Brochure</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 1.5 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>Tabletop Sterilizer Brochure</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.9 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>PEIC Corporate Overview</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 4.2 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="brochure">
+          <span class="doc-card-type">Brochure</span>
+          <h4>Partner Technologies Catalog</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 6.8 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
 
-        <div class="placeholder-card">
-          <div class="placeholder-icon">🏅</div>
-          <h3>BIS / ISO Certificates</h3>
-          <p>Downloadable compliance certificates — BIS, CE, ISO 13485, ISO 9001, GMP, and environmental management.</p>
-          <span class="coming-soon">8 certificates — coming soon</span>
-        </div>
+        <article class="doc-card" data-category="certificate">
+          <span class="doc-card-type">Certificate</span>
+          <h4>BIS IS 3829 Part 1 License</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.4 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="certificate">
+          <span class="doc-card-type">Certificate</span>
+          <h4>BIS IS 3829 Part 2 License</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.4 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="certificate">
+          <span class="doc-card-type">Certificate</span>
+          <h4>ISO 13485:2016 Certificate</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.3 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="certificate">
+          <span class="doc-card-type">Certificate</span>
+          <h4>ISO 9001:2015 Certificate</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.3 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="certificate">
+          <span class="doc-card-type">Certificate</span>
+          <h4>CE Marking — MDD 93/42/EEC</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.5 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="certificate">
+          <span class="doc-card-type">Certificate</span>
+          <h4>GMP Certificate — Optimum Certifications</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 0.3 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
 
-        <div class="placeholder-card">
-          <div class="placeholder-icon">📖</div>
-          <h3>User Manuals</h3>
-          <p>Installation, operation, and maintenance manuals for all PEIC product lines.</p>
-          <span class="coming-soon">24 manuals — coming soon</span>
-        </div>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Horizontal Sterilizer User Manual</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 5.6 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Flash Sterilizer User Manual</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 4.2 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Vertical Autoclave User Manual</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 3.8 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Bedpan Sterilizer User Manual</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 2.1 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Tabletop Sterilizer User Manual</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 1.9 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Bio Waste Sanitizer User Manual</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 2.4 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="manual">
+          <span class="doc-card-type">User Manual</span>
+          <h4>Installation &amp; Commissioning Guide</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 3.3 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
 
-        <div class="placeholder-card">
-          <div class="placeholder-icon">🏥</div>
-          <h3>Hospital Installation Case Studies</h3>
-          <p>Detailed success stories from government hospitals, research institutions, and private healthcare chains.</p>
-          <span class="coming-soon">6 case studies — coming soon</span>
-        </div>
+        <article class="doc-card" data-category="case-study">
+          <span class="doc-card-type">Case Study</span>
+          <h4>CSSD Modernization — Government Tertiary Hospital</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 1.6 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="case-study">
+          <span class="doc-card-type">Case Study</span>
+          <h4>Multi-Campus OT Integration — Private Chain</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 2.0 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
+        <article class="doc-card" data-category="case-study">
+          <span class="doc-card-type">Case Study</span>
+          <h4>Research Lab Sterilization — B.A.R.C.</h4>
+          <div class="doc-card-meta">
+            <span>PDF · 1.4 MB</span>
+            <button class="btn-download-doc">↓ Download</button>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="bg-subtle">
     <div class="container">
-      <div class="section-header">
-        <span class="section-label">Featured</span>
-        <h2 class="section-title">Case Study Previews — Placeholder</h2>
-      </div>
-      <div class="placeholder-grid">
-        <article class="visual-card">
-          <div class="visual-card-img" style="background-image: url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=600&q=80');"></div>
-          <div class="visual-card-body">
-            <h3>CSSD Modernization — Government Tertiary Hospital</h3>
-            <p>Complete CSSD overhaul with 4 horizontal autoclaves, flash sterilizers, and furniture — delivered on tender timeline.</p>
-            <span class="coming-soon">Read case study →</span>
-          </div>
-        </article>
-        <article class="visual-card">
-          <div class="visual-card-img" style="background-image: url('https://images.unsplash.com/photo-1538108149393-fbbd81893e52?w=600&q=80');"></div>
-          <div class="visual-card-body">
-            <h3>Multi-Campus OT Integration — Private Chain</h3>
-            <p>Integrated surgical tables, lighting, and ESU systems across three hospital campuses with unified AMC.</p>
-            <span class="coming-soon">Read case study →</span>
-          </div>
-        </article>
-        <article class="visual-card">
-          <div class="visual-card-img" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&q=80');"></div>
-          <div class="visual-card-body">
-            <h3>Research Lab Sterilization — B.A.R.C.</h3>
-            <p>Specialized high-pressure sterilizers for research laboratory compliance and bio-waste sanitization.</p>
-            <span class="coming-soon">Read case study →</span>
-          </div>
-        </article>
+      <div class="missing-doc-cta">
+        <h3>Can't find what you're looking for?</h3>
+        <p>Contact us and we'll provide the documentation you need — technical specs, custom manuals, or compliance certificates.</p>
+        <a href="contact.html" class="btn btn-primary">Contact Us for Documentation</a>
       </div>
     </div>
   </section>
@@ -136,6 +287,9 @@
             </div>
           </a>
           <p>Premier medical equipment manufacturer and elite technical distributor since 1968.</p>
+          <div class="footer-hotline">
+            <a href="tel:+912200000000">24/7 Hotline: +91 22 0000 0000</a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Solutions</h4>
@@ -151,7 +305,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="tel:+912212345678">+91 22 1234 5678</a>
+          <a href="tel:+912200000000">+91 22 0000 0000</a>
           <a href="mailto:sales@peic.in">sales@peic.in</a>
         </div>
       </div>

@@ -21,16 +21,26 @@
         </div>
       </a>
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="products.html">Products</a>
-        <a href="service.html">Service</a>
-        <a href="about.html" class="active">About</a>
-        <a href="resources.html">Resources</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <a href="tel:+912200000000" class="header-hotline">
+          <span class="hotline-label">24/7 Technical Hotline</span>
+          <span class="hotline-number">+91 22 0000 0000</span>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html">Home</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="products.html">Products</a>
+          <a href="service.html">Service</a>
+          <a href="about.html" class="active">About</a>
+          <a href="resources.html">Resources</a>
+          <a href="careers.html">Careers</a>
+          <a href="tel:+912200000000" class="header-hotline header-hotline-mobile">
+            <span class="hotline-label">24/7 Technical Hotline</span>
+            <span class="hotline-number">+91 22 0000 0000</span>
+          </a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -42,18 +52,20 @@
     </div>
   </div>
 
-  <section>
+  <section class="bg-white">
     <div class="container">
-      <div class="two-col-split">
-        <div>
-          <span class="section-label">Our Legacy</span>
-          <h2 class="section-title">Over Five Decades of Precision Engineering</h2>
-          <p style="color: var(--slate-light); margin-bottom: 1rem;">Founded in 1968, Precision Electronics Instruments &amp; Components began with a singular mission: to engineer medical sterilization systems that hospitals could depend on for decades. What started as a focused manufacturing operation has grown into a comprehensive technical solutions provider serving both massive government healthcare networks and elite private hospital chains across India.</p>
-          <p style="color: var(--slate-light); margin-bottom: 1rem;">Our evolution reflects the changing landscape of Indian healthcare — from the early days of BIS-certified autoclave manufacturing to today's role as authorized integration partner for global medical technology leaders. Through every transition, our commitment to precision, safety, and reliability has remained unchanged.</p>
-          <p style="color: var(--slate-light);">Today, PEIC stands at the intersection of indigenous manufacturing excellence and world-class distribution — a unique position that allows us to offer procurement heads and biomedical engineers a single, accountable partner for their entire equipment lifecycle.</p>
-        </div>
-        <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
-          <img src="https://images.unsplash.com/photo-1538108149393-fbbd81893e52?w=800&q=80" alt="Modern healthcare facility" style="width: 100%; height: 400px; object-fit: cover;">
+      <div class="legacy-container">
+        <div class="two-col-split">
+          <div>
+            <span class="section-label">Our Legacy</span>
+            <h2 class="section-title">Over Five Decades of Precision Engineering</h2>
+            <p style="color: var(--slate-light); margin-bottom: 1rem;">Founded in 1968, Precision Electronics Instruments &amp; Components began with a singular mission: to engineer medical sterilization systems that hospitals could depend on for decades. What started as a focused manufacturing operation has grown into a comprehensive technical solutions provider serving both massive government healthcare networks and elite private hospital chains across India.</p>
+            <p style="color: var(--slate-light); margin-bottom: 1rem;">Our evolution reflects the changing landscape of Indian healthcare — from the early days of BIS-certified autoclave manufacturing to today's role as authorized integration partner for global medical technology leaders. Through every transition, our commitment to precision, safety, and reliability has remained unchanged.</p>
+            <p style="color: var(--slate-light);">Today, PEIC stands at the intersection of indigenous manufacturing excellence and world-class distribution — a unique position that allows us to offer procurement heads and biomedical engineers a single, accountable partner for their entire equipment lifecycle.</p>
+          </div>
+          <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
+            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81893e52?w=800&q=80" alt="Modern healthcare facility" style="width: 100%; height: 400px; object-fit: cover;">
+          </div>
         </div>
       </div>
     </div>
@@ -68,29 +80,34 @@
       <div class="stats-row">
         <div class="stat-item">
           <div class="stat-number" data-count="50" data-suffix="+">0</div>
+          <div class="stat-tagline">Established 1968</div>
           <div class="stat-label">Years in Business</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-count="15000" data-suffix="+">0</div>
+          <div class="stat-tagline">Across India</div>
           <div class="stat-label">Total Installations</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-count="12000" data-suffix="+">0</div>
+          <div class="stat-tagline">Operational today</div>
           <div class="stat-label">Active Running Installations</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-count="15" data-suffix="+">0</div>
+          <div class="stat-tagline">Industry-leading durability</div>
           <div class="stat-label">Years Average Machine Lifespan</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-prefix="<" data-count="24" data-suffix="hr">0</div>
+          <div class="stat-tagline">Guaranteed response</div>
           <div class="stat-label">Service Response in Mumbai</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="bg-white">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Infrastructure</span>
@@ -121,61 +138,128 @@
         <p class="section-subtitle">Serving public institutions, research organizations, and top-tier private healthcare networks nationwide.</p>
       </div>
       <div class="logo-grid">
-        <div class="logo-placeholder">BMC<br><small>Major &amp; Peripheral Hospitals</small></div>
-        <div class="logo-placeholder">B.A.R.C.</div>
-        <div class="logo-placeholder">C.C.M.B.</div>
-        <div class="logo-placeholder">NEERI</div>
-        <div class="logo-placeholder">Imtech</div>
-        <div class="logo-placeholder">Indian Railways<br><small>All Zones</small></div>
-        <div class="logo-placeholder">Tata Hospital Trust<br><small>ACTREC</small></div>
-        <div class="logo-placeholder">State Health Depts.<br><small>DMER, DHS, ESIC</small></div>
-        <div class="logo-placeholder">Top-Tier Private<br>Hospital Chains</div>
+        <div class="client-card">
+          <div class="client-logo">BMC</div>
+          <div class="client-name">BMC Hospitals</div>
+          <div class="client-tagline">since &gt;20 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">BARC</div>
+          <div class="client-name">B.A.R.C.</div>
+          <div class="client-tagline">since &gt;15 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">CCMB</div>
+          <div class="client-name">C.C.M.B.</div>
+          <div class="client-tagline">since &gt;10 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">NEERI</div>
+          <div class="client-name">NEERI</div>
+          <div class="client-tagline">since &gt;12 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">IMT</div>
+          <div class="client-name">Imtech</div>
+          <div class="client-tagline">since &gt;8 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">IR</div>
+          <div class="client-name">Indian Railways</div>
+          <div class="client-tagline">since &gt;18 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">ACTREC</div>
+          <div class="client-name">Tata Memorial Hospital</div>
+          <div class="client-tagline">since &gt;15 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">SHD</div>
+          <div class="client-name">State Health Depts.</div>
+          <div class="client-tagline">since &gt;25 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">PHC</div>
+          <div class="client-name">Top-Tier Private Chains</div>
+          <div class="client-tagline">since &gt;10 years</div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="bg-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Testimonials</span>
-        <h2 class="section-title">What Healthcare Leaders Say</h2>
+        <span class="section-label" style="color: var(--green-muted);">Testimonials</span>
+        <h2 class="section-title" style="color: white;">What Healthcare Leaders Say</h2>
       </div>
-      <div class="testimonial-slider">
-        <div class="testimonial-track">
-          <div class="testimonial-slides">
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <p class="testimonial-quote">PEIC's sterilization systems have been the backbone of our CSSD department for over a decade. Their machines simply do not fail — and when they need attention, the service team is on-site within hours. That level of reliability is non-negotiable in a tertiary care hospital.</p>
-                <div class="testimonial-author">Dr. Rajesh Mehta</div>
-                <div class="testimonial-role">Chief Surgeon, Multi-Specialty Government Hospital, Mumbai</div>
-              </div>
-            </div>
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <p class="testimonial-quote">As Head of Procurement, I've managed tenders across dozens of vendors. PEIC stands apart because they are the actual manufacturer — not a middleman. Their MSME benefits, zero EMD requirements, and single-point AMC contracts have saved our institution significant time and cost.</p>
-                <div class="testimonial-author">Smt. Priya Deshmukh</div>
-                <div class="testimonial-role">Head of Procurement, State Health Department</div>
-              </div>
-            </div>
-            <div class="testimonial-slide">
-              <div class="testimonial-card">
-                <p class="testimonial-quote">We integrated PEIC-distributed diagnostic imaging and OT equipment across three of our hospital campuses. Their biomedical engineering team handled installation, calibration, and staff training seamlessly. Machine uptime has exceeded 99% in the first two years.</p>
-                <div class="testimonial-author">Dr. Arun Krishnan</div>
-                <div class="testimonial-role">Director of Biomedical Engineering, Private Healthcare Chain</div>
-              </div>
-            </div>
-          </div>
+
+      <div class="testimonial-static-row">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">PEIC's sterilization systems have been the backbone of our CSSD department for over a decade. Their machines simply do not fail — and when they need attention, the service team is on-site within hours.</p>
+          <div class="testimonial-author">Dr. Rajesh Mehta</div>
+          <div class="testimonial-role">Chief Surgeon, Multi-Specialty Government Hospital, Mumbai</div>
         </div>
-        <div class="testimonial-nav">
-          <button class="testimonial-dot active" aria-label="Testimonial 1"></button>
-          <button class="testimonial-dot" aria-label="Testimonial 2"></button>
-          <button class="testimonial-dot" aria-label="Testimonial 3"></button>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">PEIC stands apart because they are the actual manufacturer — not a middleman. Their MSME benefits, zero EMD requirements, and single-point AMC contracts have saved our institution significant time and cost.</p>
+          <div class="testimonial-author">Smt. Priya Deshmukh</div>
+          <div class="testimonial-role">Head of Procurement, State Health Department</div>
+        </div>
+        <div class="testimonial-card">
+          <p class="testimonial-quote">Their biomedical engineering team handled installation, calibration, and staff training seamlessly. Machine uptime has exceeded 99% in the first two years across three campuses.</p>
+          <div class="testimonial-author">Dr. Arun Krishnan</div>
+          <div class="testimonial-role">Director of Biomedical Engineering, Private Healthcare Chain</div>
+        </div>
+      </div>
+
+      <div class="testimonial-marquee-wrap">
+        <div class="testimonial-marquee-track">
+          <div class="testimonial-card">
+            <p class="testimonial-quote">PEIC's sterilization systems have been the backbone of our CSSD department for over a decade. Their machines simply do not fail.</p>
+            <div class="testimonial-author">Dr. Rajesh Mehta</div>
+            <div class="testimonial-role">Chief Surgeon, Mumbai</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">As Head of Procurement, PEIC's MSME benefits and single-point AMC contracts have saved our institution significant time and cost.</p>
+            <div class="testimonial-author">Smt. Priya Deshmukh</div>
+            <div class="testimonial-role">Head of Procurement, State Health Dept.</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">Machine uptime exceeded 99% in the first two years. Their team handled installation and training seamlessly.</p>
+            <div class="testimonial-author">Dr. Arun Krishnan</div>
+            <div class="testimonial-role">Director, Biomedical Engineering</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">We've relied on PEIC autoclaves for 15 years. The engineering support is unmatched in the industry.</p>
+            <div class="testimonial-author">Dr. Suresh Patil</div>
+            <div class="testimonial-role">CSSD Head, Tertiary Care Hospital</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">PEIC's sterilization systems have been the backbone of our CSSD department for over a decade. Their machines simply do not fail.</p>
+            <div class="testimonial-author">Dr. Rajesh Mehta</div>
+            <div class="testimonial-role">Chief Surgeon, Mumbai</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">As Head of Procurement, PEIC's MSME benefits and single-point AMC contracts have saved our institution significant time and cost.</p>
+            <div class="testimonial-author">Smt. Priya Deshmukh</div>
+            <div class="testimonial-role">Head of Procurement, State Health Dept.</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">Machine uptime exceeded 99% in the first two years. Their team handled installation and training seamlessly.</p>
+            <div class="testimonial-author">Dr. Arun Krishnan</div>
+            <div class="testimonial-role">Director, Biomedical Engineering</div>
+          </div>
+          <div class="testimonial-card">
+            <p class="testimonial-quote">We've relied on PEIC autoclaves for 15 years. The engineering support is unmatched in the industry.</p>
+            <div class="testimonial-author">Dr. Suresh Patil</div>
+            <div class="testimonial-role">CSSD Head, Tertiary Care Hospital</div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-subtle">
+  <section class="bg-white">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Compliance</span>
@@ -255,6 +339,9 @@
             </div>
           </a>
           <p>Premier medical equipment manufacturer and elite technical distributor since 1968.</p>
+          <div class="footer-hotline">
+            <a href="tel:+912200000000">24/7 Hotline: +91 22 0000 0000</a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Solutions</h4>
@@ -270,7 +357,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="tel:+912212345678">+91 22 1234 5678</a>
+          <a href="tel:+912200000000">+91 22 0000 0000</a>
           <a href="mailto:sales@peic.in">sales@peic.in</a>
         </div>
       </div>

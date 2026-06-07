@@ -22,16 +22,26 @@
         </div>
       </a>
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
-      <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
-        <a href="solutions.html">Solutions</a>
-        <a href="products.html">Products</a>
-        <a href="service.html">Service</a>
-        <a href="about.html">About</a>
-        <a href="resources.html">Resources</a>
-        <a href="careers.html">Careers</a>
-        <a href="contact.html" class="nav-cta">Contact</a>
-      </nav>
+      <div class="header-actions">
+        <a href="tel:+912200000000" class="header-hotline">
+          <span class="hotline-label">24/7 Technical Hotline</span>
+          <span class="hotline-number">+91 22 0000 0000</span>
+        </a>
+        <nav class="main-nav">
+          <a href="index.html" class="active">Home</a>
+          <a href="solutions.html">Solutions</a>
+          <a href="products.html">Products</a>
+          <a href="service.html">Service</a>
+          <a href="about.html">About</a>
+          <a href="resources.html">Resources</a>
+          <a href="careers.html">Careers</a>
+          <a href="tel:+912200000000" class="header-hotline header-hotline-mobile">
+            <span class="hotline-label">24/7 Technical Hotline</span>
+            <span class="hotline-number">+91 22 0000 0000</span>
+          </a>
+          <a href="contact.html" class="nav-cta">Contact</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -62,7 +72,7 @@
     </div>
   </div>
 
-  <section>
+  <section class="bg-white">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Core Capabilities</span>
@@ -75,7 +85,13 @@
           <div class="cap-card-body">
             <div class="cap-card-icon">⚙</div>
             <h3>Indigenous Manufacturing</h3>
-            <p>Engineering world-class Sterilization Systems and CSSD infrastructure. Our in-house manufacturing program adheres to stringent BIS, CE, and ISO 13485 quality standards — built for maximum uptime and decades-long service life.</p>
+            <p>Engineering world-class Sterilization Systems and CSSD infrastructure — built in India, certified to global standards.</p>
+            <ul class="cap-advantages">
+              <li><strong>BIS Certified</strong> — IS 3829 Part 1 &amp; 2 since 1976</li>
+              <li><strong>15+ year lifespan</strong> — engineered for decades of uptime</li>
+              <li><strong>OEM engineering DNA</strong> — we design what we service</li>
+              <li><strong>MSME tender benefits</strong> — up to 15% price preference</li>
+            </ul>
             <a href="products.html#manufacturing" class="btn btn-outline-green btn-sm">View Manufactured Products →</a>
           </div>
         </article>
@@ -84,7 +100,13 @@
           <div class="cap-card-body">
             <div class="cap-card-icon">🌐</div>
             <h3>Global &amp; Domestic Distribution</h3>
-            <p>Acting as the technical integration partner for the world's leading medical technology brands. From oncology ablation systems to diagnostic imaging and dental suites — we deliver, install, and support with localized expertise.</p>
+            <p>Authorized technical integration partner for 16+ world-leading medical technology brands across oncology, imaging, OT, and dental.</p>
+            <ul class="cap-advantages">
+              <li><strong>Single-point vendor</strong> — one contract, one support team</li>
+              <li><strong>Localized integration</strong> — install, calibrate, train on-site</li>
+              <li><strong>&lt;24hr service response</strong> — Mumbai metro coverage</li>
+              <li><strong>Unified AMC/CMC</strong> — lifecycle management across brands</li>
+            </ul>
             <a href="products.html#partners" class="btn btn-outline-green btn-sm">Explore Partner Technologies →</a>
           </div>
         </article>
@@ -102,43 +124,80 @@
       <div class="stats-row">
         <div class="stat-item">
           <div class="stat-number" data-count="50" data-suffix="+">0</div>
+          <div class="stat-tagline">Since 1968</div>
           <div class="stat-label">Years in Business</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-count="15000" data-suffix="+">0</div>
+          <div class="stat-tagline">Nationwide reach</div>
           <div class="stat-label">Total Installations</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-count="12000" data-suffix="+">0</div>
+          <div class="stat-tagline">Still running today</div>
           <div class="stat-label">Active Running Installations</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-count="15" data-suffix="+">0</div>
+          <div class="stat-tagline">Built to last</div>
           <div class="stat-label">Years Avg. Machine Lifespan</div>
         </div>
         <div class="stat-item">
           <div class="stat-number" data-prefix="<" data-count="24" data-suffix="hr">0</div>
+          <div class="stat-tagline">Mumbai metro</div>
           <div class="stat-label">Service Response in Mumbai</div>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section class="bg-dark">
     <div class="container">
       <div class="section-header">
-        <span class="section-label">Institutional Trust</span>
-        <h2 class="section-title">Trusted Across Public &amp; Private Healthcare</h2>
+        <span class="section-label" style="color: var(--green-muted);">Institutional Trust</span>
+        <h2 class="section-title" style="color: white;">Trusted Across Public &amp; Private Healthcare</h2>
       </div>
       <div class="logo-grid">
-        <div class="logo-placeholder">BMC Hospitals</div>
-        <div class="logo-placeholder">B.A.R.C.</div>
-        <div class="logo-placeholder">C.C.M.B.</div>
-        <div class="logo-placeholder">NEERI</div>
-        <div class="logo-placeholder">Indian Railways</div>
-        <div class="logo-placeholder">Tata Hospital Trust</div>
-        <div class="logo-placeholder">State Health Depts.</div>
-        <div class="logo-placeholder">Private Hospital Chains</div>
+        <div class="client-card">
+          <div class="client-logo">BMC</div>
+          <div class="client-name">BMC Hospitals</div>
+          <div class="client-tagline">since &gt;20 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">BARC</div>
+          <div class="client-name">B.A.R.C.</div>
+          <div class="client-tagline">since &gt;15 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">CCMB</div>
+          <div class="client-name">C.C.M.B.</div>
+          <div class="client-tagline">since &gt;10 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">NEERI</div>
+          <div class="client-name">NEERI</div>
+          <div class="client-tagline">since &gt;12 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">IR</div>
+          <div class="client-name">Indian Railways</div>
+          <div class="client-tagline">since &gt;18 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">TMH</div>
+          <div class="client-name">Tata Memorial Hospital</div>
+          <div class="client-tagline">since &gt;15 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">SHD</div>
+          <div class="client-name">State Health Depts.</div>
+          <div class="client-tagline">since &gt;25 years</div>
+        </div>
+        <div class="client-card">
+          <div class="client-logo">PHC</div>
+          <div class="client-name">Private Hospital Chains</div>
+          <div class="client-tagline">since &gt;10 years</div>
+        </div>
       </div>
     </div>
   </section>
@@ -163,6 +222,9 @@
             </div>
           </a>
           <p>Premier medical equipment manufacturer and elite technical distributor. Delivering precision, safety, and reliability to healthcare institutions since 1968.</p>
+          <div class="footer-hotline">
+            <a href="tel:+912200000000">24/7 Hotline: +91 22 0000 0000</a>
+          </div>
         </div>
         <div class="footer-col">
           <h4>Solutions</h4>
@@ -179,7 +241,7 @@
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
-          <a href="tel:+912212345678">+91 22 1234 5678</a>
+          <a href="tel:+912200000000">+91 22 0000 0000</a>
           <a href="mailto:sales@peic.in">sales@peic.in</a>
           <a href="mailto:support@peic.in">support@peic.in</a>
         </div>
