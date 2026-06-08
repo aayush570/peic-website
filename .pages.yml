@@ -1,0 +1,88 @@
+media:
+  input: .
+  output: /
+
+settings:
+  content:
+    merge: true
+
+content:
+  - name: homepage
+    label: Homepage (index.html)
+    type: file
+    path: index.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: about
+    label: About Page (about.html)
+    type: file
+    path: about.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: careers
+    label: Careers Page (careers.html)
+    type: file
+    path: careers.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: contact
+    label: Contact Page (contact.html)
+    type: file
+    path: contact.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: products
+    label: Products (products.html)
+    type: file
+    path: products.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: resources
+    label: Resources (resources.html)
+    type: file
+    path: resources.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: service
+    label: Service (service.html)
+    type: file
+    path: service.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
+
+  - name: solutions
+    label: Solutions (solutions.html)
+    type: file
+    path: solutions.html
+    format: raw
+    fields:
+      - name: body
+        label: Page HTML Code
+        type: rich-text
