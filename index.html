@@ -7,7 +7,7 @@
   <meta name="description" content="Over 50 years of precision engineering. Premier medical equipment manufacturer and elite technical distributor since 1968.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,700;1,400&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -25,12 +25,14 @@
       <div class="header-actions">
         <nav class="main-nav">
           <a href="index.html" class="active">Home</a>
-          <a href="solutions.html">Solutions</a>
           <a href="products.html">Products</a>
-          <a href="service.html">Service</a>
+          <a href="solutions.html">Solutions</a>
           <a href="about.html">About</a>
+          
+          <a href="service.html">Service</a>
           <a href="resources.html">Resources</a>
           <a href="careers.html">Careers</a>
+          
           <a href="tel:+912200000000" class="header-hotline header-hotline-mobile">
             <span class="hotline-label">24/7 Technical Hotline</span>
             <span class="hotline-number">+91 22 0000 0000</span>
@@ -45,7 +47,7 @@
     <div class="hero-bg"></div>
     <div class="container hero-content">
       <span class="hero-eyebrow">Premier Medical Technology Partner</span>
-      <h1>6 Decades of </br>Precision Engineering</h1>
+      <h1>6 Decades of Precision Engineering</h1>
       <p class="hero-desc">Since 1968, PEIC has been the trusted technical partner for elite government and private healthcare institutions across India, delivering everything from indigenous sterilization systems to world-class diagnostic and surgical technologies.</p>
       <div class="hero-actions">
         <a href="products.html" class="btn btn-primary">Explore Solutions &amp; Equipment</a>
@@ -72,40 +74,57 @@
     <div class="container">
       <div class="section-header">
         <span class="section-label">Core Capabilities</span>
-        <h2 class="section-title">Two Pillars of Healthcare Technology Excellence</h2>
-        <p class="section-subtitle">Indigenous manufacturing expertise combined with global distribution partnerships — delivering end-to-end solutions for modern healthcare infrastructure.</p>
+        <h1 class="section-title">Two Pillars of Healthcare Technology Excellence</h1>
       </div>
+      
       <div class="dual-cards">
-        <article class="cap-card">
-          <div class="cap-card-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80');"></div>
-          <div class="cap-card-body">
-            <div class="cap-card-icon">⚙</div>
-            <h3>Indigenous Manufacturing</h3>
-            <p>Engineering world-class Sterilization Systems and CSSD infrastructure — built in India, certified to global standards.</p>
-            <ul class="cap-advantages">
-              <li><strong>BIS Certified</strong> — IS 3829 Part 1 &amp; 2 since 1976</li>
-              <li><strong>15+ year lifespan</strong> — engineered for decades of uptime</li>
-              <li><strong>OEM engineering DNA</strong> — we design what we service</li>
-              <li><strong>MSME tender benefits</strong> — up to 15% price preference</li>
-            </ul>
-            <a href="products.html#manufacturing" class="btn btn-outline-green btn-sm">View Manufactured Products →</a>
+        
+        <!-- CLICKABLE PILLAR 1 CARD -->
+        <a href="products.html#manufacturing" class="cap-card-link">
+          <div class="cap-card">
+            <div class="cap-card-img" style="background-image: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=800&q=80');"></div>
+            <div class="cap-card-body">
+              <h3>Indigenous Manufacturing</h3>
+              <p>Engineering world-class Sterilization Systems and CSSD infrastructure built to global standards.</p>
+              
+              <!-- 2x2 Grid for Advantages -->
+              <ul class="cap-advantages">
+                <li><span class="tick">✓</span> <strong>BIS Certified</strong></li>
+                <li><span class="tick">✓</span> <strong>15+ Year Lifespan</strong></li>
+                <li><span class="tick">✓</span> <strong>OEM Engineering DNA</strong></li>
+                <li><span class="tick">✓</span> <strong>MSME Tender Benefits</strong></li>
+              </ul>
+              
+              <div class="cap-card-footer">
+                <span>View Manufactured Products</span> <span class="arrow">→</span>
+              </div>
+            </div>
           </div>
-        </article>
-        <article class="cap-card">
-          <div class="cap-card-img" style="background-image: url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&q=80');"></div>
-          <div class="cap-card-body">
-            <div class="cap-card-icon">🌐</div>
-            <h3>Global &amp; Domestic Distribution</h3>
-            <p>Authorized technical integration partner for 16+ world-leading medical technology brands across oncology, imaging, OT, and dental.</p>
-            <ul class="cap-advantages">
-              <li><strong>Single-point vendor</strong> — one contract, one support team</li>
-              <li><strong>Localized integration</strong> — install, calibrate, train on-site</li>
-              <li><strong>&lt;24hr service response</strong> — Mumbai metro coverage</li>
-              <li><strong>Unified AMC/CMC</strong> — lifecycle management across brands</li>
-            </ul>
-            <a href="products.html#partners" class="btn btn-outline-green btn-sm">Explore Partner Technologies →</a>
+        </a>
+
+        <!-- CLICKABLE PILLAR 2 CARD -->
+        <a href="products.html#partners" class="cap-card-link">
+          <div class="cap-card">
+            <div class="cap-card-img" style="background-image: url('https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=800&q=80');"></div>
+            <div class="cap-card-body">
+              <h3>Global &amp; Domestic Distribution</h3>
+              <p>Authorized technical integration partner for 16+ world-leading medical brands across India.</p>
+              
+              <!-- 2x2 Grid for Advantages -->
+              <ul class="cap-advantages">
+                <li><span class="tick">✓</span> <strong>Single-Point Vendor</strong></li>
+                <li><span class="tick">✓</span> <strong>Localized Integration</strong></li>
+                <li><span class="tick">✓</span> <strong>&lt;24hr Service Response</strong></li>
+                <li><span class="tick">✓</span> <strong>Unified AMC &amp; CMC</strong></li>
+              </ul>
+              
+              <div class="cap-card-footer">
+                <span>Explore Partner Technologies</span> <span class="arrow">→</span>
+              </div>
+            </div>
           </div>
-        </article>
+        </a>
+
       </div>
     </div>
   </section>

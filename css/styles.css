@@ -61,8 +61,8 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-  font-size: clamp(1.75rem, 4vw, 2.5rem);
-  margin-bottom: 1rem;
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
@@ -248,9 +248,13 @@ h1, h2, h3, h4 {
 /* ─── Hero ─── */
 .hero {
   position: relative;
-  min-height: 30vh;
+  height: 58vh !important; 
+  min-height: 425px;
   display: flex;
-  align-items: center;
+  /* CHANGE THIS from center to flex-start to pull everything up */
+  align-items: flex-start; 
+  /* Add this to control exactly how close to the top header the text block starts */
+  padding-top: 2rem !important; 
   margin-top: var(--header-h);
   overflow: hidden;
 }
@@ -266,8 +270,10 @@ h1, h2, h3, h4 {
 .hero-content {
   position: relative;
   z-index: 1;
-  padding: 0rem 0;
-  max-width: 780px;
+  /* Reduce top padding and strip bottom padding down to 0 */
+  padding: 0 0 0 0 !important; 
+  max-width: 1000px !important; 
+  margin-left: 3rem !important;
 }
 
 .hero-eyebrow {
@@ -288,8 +294,8 @@ h1, h2, h3, h4 {
 
 .hero h1 {
   color: white;
-  font-size: clamp(2rem, 5vw, 3.25rem);
-  margin-bottom: 1.5rem;
+  font-size: clamp(2rem, 4.2vw, 3.25rem);
+  margin-bottom: 1.25rem;
   font-weight: 700;
   letter-spacing: -0.02em;
 }
@@ -395,7 +401,7 @@ h1, h2, h3, h4 {
 
 /* ─── Sections ─── */
 section {
-  padding: 5rem 0;
+  padding: 2.5rem 0;
   position: relative;
 }
 
@@ -427,7 +433,7 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 
 .section-header {
   text-align: center;
-  margin-bottom: 3.5rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-header .section-subtitle { margin-inline: auto; }
@@ -439,104 +445,131 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   gap: 2rem;
 }
 
+/* Removes default underline styling from the new wrapper link */
+.cap-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .cap-card {
   background: white;
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow);
   border: 1px solid var(--border);
-  transition: transform var(--transition), box-shadow var(--transition);
+  /* Smoothes out the pop-up look when a user hovers over it */
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+  cursor: pointer;
 }
 
-.cap-card:hover {
-  transform: translateY(-4px);
+/* Elegant effect: Card lifts up and gets a green outline on hover */
+.cap-card-link:hover .cap-card {
+  transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
+  border-color: var(--green);
 }
 
 .cap-card-img {
-  height: 260px;
+  height: 140px !important; 
   background-size: cover;
   background-position: center;
-  position: relative;
 }
 
-.cap-card-img::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(15,23,42,0.6), transparent);
-}
-
-.cap-card-body { padding: 2rem; }
-
-.cap-card-icon {
-  width: 48px;
-  height: 48px;
-  background: var(--green-light);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  color: var(--green);
-  font-size: 1.25rem;
+.cap-card-body { 
+  padding: 1.5rem !important; 
 }
 
 .cap-card h3 {
-  font-size: 1.35rem;
-  margin-bottom: 0.75rem;
-}
-
-.cap-card p {
-  color: var(--slate-light);
-  margin-bottom: 1.25rem;
-}
-
-.cap-advantages {
-  list-style: none;
-  margin-bottom: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.cap-advantages li {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.6rem;
-  font-size: 0.88rem;
-  color: var(--slate-mid);
-  padding: 0.55rem 0.75rem;
-  background: var(--bg-subtle);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--green);
-}
-
-.cap-advantages li::before {
-  content: '✓';
-  color: var(--green);
-  font-weight: 700;
-  flex-shrink: 0;
-}
-
-.cap-advantages strong {
+  font-size: 1.3rem !important;
+  margin-bottom: 0.5rem;
   color: var(--charcoal);
 }
 
+.cap-card p {
+  font-size: 0.88rem !important;
+  color: var(--slate-light);
+  margin-bottom: 1.25rem !important;
+  line-height: 1.5;
+}
+
+/* Clean vertical stacking layout for lists */
+.cap-advantages {
+  list-style: none;
+  margin-bottom: 1.5rem !important;
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important; /* Splitting into 2 equal columns */
+  gap: 0.65rem !important; /* Gap between the grid cells */
+  padding: 0;
+}
+
+.cap-advantages li {
+  font-size: 0.85rem !important;
+  color: var(--slate-mid);
+  background: var(--bg-subtle);
+  padding: 0.55rem 0.75rem !important;
+  border-radius: var(--radius);
+  border-left: 3px solid var(--green);
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.5rem;
+}
+
+.cap-advantages li strong {
+  color: var(--charcoal);
+  font-weight: 700;
+}
+
+.cap-advantages .tick {
+  color: var(--green) !important;
+  font-weight: 900 !important;
+  font-size: 1rem;
+}
+
+/* Style for the new modern arrow indicator text at the bottom */
+.cap-card-footer {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--green);
+  margin-top: 0.5rem;
+}
+
+/* Turns the action text dark green when hovering anywhere over the card */
+.cap-card-link:hover .cap-card-footer {
+  color: var(--green-dark);
+}
+
+/* Slides the little arrow dynamically to the right on hover */
+.cap-card-link:hover .cap-card-footer .arrow {
+  transform: translateX(4px);
+  transition: transform 0.2s ease;
+}
 /* ─── Stats Row ─── */
+/* --- Fluid Stats Configuration --- */
 .stats-row {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 1.5rem;
+  /* Auto-fit tells columns to wrap onto a new line if they drop below 200px wide */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)) !important;
+  gap: 1.25rem !important;
   text-align: center;
 }
 
 .stat-item {
-  padding: 2rem 1rem;
+  padding: 1.5rem 1rem !important; /* Made slightly tighter vertically */
   background: white;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--slate-light);
+  font-weight: 500;
+  white-space: nowrap; /* Prevents awkward single-word drops */
 }
 
 .stat-item:hover {
@@ -546,12 +579,13 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 
 .stat-number {
   font-family: var(--font-display);
-  font-size: clamp(2.75rem, 5vw, 3.75rem);
+  /* Reduced size: Scales cleanly between 2rem on mobile and 2.5rem on desktop */
+  font-size: clamp(2rem, 3.5vw, 2.5rem) !important; 
   font-weight: 800;
   color: var(--green);
   line-height: 1;
   margin-bottom: 0.35rem;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.02em;
 }
 
 .stat-tagline {
@@ -561,12 +595,6 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   text-transform: uppercase;
   letter-spacing: 0.06em;
   margin-bottom: 0.35rem;
-}
-
-.stat-label {
-  font-size: 0.85rem;
-  color: var(--slate-light);
-  font-weight: 500;
 }
 
 /* ─── Product Tiers ─── */
@@ -1608,20 +1636,15 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 }
 
 @media (max-width: 768px) {
-  .header-hotline { display: none; }
-  .main-nav { display: none; }
-  .main-nav.open {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: var(--header-h);
-    left: 0;
-    right: 0;
-    background: white;
-    padding: 1.5rem;
-    border-bottom: 1px solid var(--border);
-    gap: 1rem;
+  /* Change or verify that this block doesn't override display rules */
+  .header-hotline { display: none !important; }
+  .main-nav.open .header-hotline-mobile {
+    display: flex !important;
+    width: 100%;
+    align-items: center;
+    padding: 0.75rem;
   }
+}
   .main-nav.open .header-hotline-mobile {
     display: flex;
     width: 100%;
@@ -1965,3 +1988,68 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 }
 
 .header-hotline-mobile { display: none; }
+
+/* --- Progressive Navigation Adaptation for High Zooms / Smaller Laptops --- */
+@media (max-width: 1400px) {
+  /* Tighten spacing across the header structure */
+  .header-inner {
+    gap: 1rem !important;
+  }
+  .main-nav {
+    gap: 0.85rem !important;
+  }
+  .main-nav a {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* --- Desktop High Zoom / Smaller Laptop Breakpoint SOP --- */
+@media (max-width: 1280px) {
+  /* Hide the crowded horizontal inline desktop navbar completely */
+  .main-nav {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: var(--header-h);
+    left: 0;
+    right: 0;
+    background: white;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+    gap: 1.25rem !important;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  }
+
+  /* When JS appends the .open class, show the links cleanly stacked layout style */
+  .main-nav.open {
+    display: flex !important;
+    z-index: 999;
+  }
+
+  /* Force all links to show inside the drawer menu container */
+  .main-nav a {
+    display: block !important;
+    width: 100%;
+    font-size: 1rem !important;
+    padding: 0.25rem 0;
+  }
+
+  /* Stop the contact CTA button from taking up the entire screen width inside the drawer */
+  .main-nav a.nav-cta {
+    display: inline-block !important;
+    text-align: center;
+    margin-top: 0.5rem;
+  }
+
+  /* Force the 3-line hamburger button to show on desktop zoom layers */
+  .mobile-toggle {
+    display: block !important;
+    order: 2;
+  }
+
+  /* Ensure your main CTA conversion targets stay in place */
+  .header-hotline {
+    display: flex !important;
+    margin-right: 1rem;
+  }
+}
