@@ -1573,14 +1573,25 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 /* ─── Responsive ─── */
 
 @media (max-width: 1340px) {
-  /* Hides the secondary hotline box on tight laptop widths to preserve the main nav space */
+  /* Keep the hotline block visible! */
   .header-actions .header-hotline {
-    display: none;
+    display: flex; 
+    padding: 0.25rem 0.5rem; /* Make the inner padding slightly tighter */
   }
   
-  /* Slightly tightens the nav font sizing to keep everything elegant and aligned */
+  /* Shrink the hotline text size just a tiny bit */
+  .hotline-number {
+    font-size: 0.8rem;
+  }
+
+  /* Force the navigation menu links to sit closer together */
+  .main-nav {
+    gap: 0.75rem; /* Tightens the gap from 2rem down to a sleek 12px */
+  }
+
+  /* Drop the font size of the menu links slightly so they take up less room */
   .main-nav a {
-    font-size: 0.85rem;
+    font-size: 0.82rem;
   }
 }
 
