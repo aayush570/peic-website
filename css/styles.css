@@ -89,7 +89,8 @@ h1, h2, h3, h4 {
   align-items: center;
   justify-content: space-between;
   height: var(--header-h);
-  gap: 1rem;
+  /* A safe structural buffer zone between the logo, phone widget, and menu */
+  gap: 1.5rem; 
 }
 
 .header-actions {
@@ -136,6 +137,8 @@ h1, h2, h3, h4 {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  /* Absolute priority: It will never compress or distort its contents */
+  flex-shrink: 0; 
 }
 
 .logo-mark {
@@ -155,6 +158,8 @@ h1, h2, h3, h4 {
 .logo-text {
   display: flex;
   flex-direction: column;
+  /* Forces the container to expand to the width of your company text */
+  min-width: max-content; 
 }
 
 .logo-name {
@@ -163,6 +168,8 @@ h1, h2, h3, h4 {
   font-size: 1rem;
   color: var(--charcoal);
   letter-spacing: -0.02em;
+  /* Stops "Precision Electronics..." from dropping onto line two */
+  white-space: nowrap; 
 }
 
 .logo-tagline {
@@ -170,12 +177,17 @@ h1, h2, h3, h4 {
   color: var(--slate-light);
   letter-spacing: 0.04em;
   text-transform: uppercase;
+  /* Stops "MANUFACTURER & SUPPLIER" from dropping onto line two */
+  white-space: nowrap; 
 }
 
 .main-nav {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  /* Scales the gap fluidly between a minimum of 12px and a maximum of 32px based on screen space */
+  gap: clamp(0.75rem, 1.8vw, 2rem); 
+  /* Allows the menu block to yield space to your expanded branding text */
+  flex-shrink: 1; 
 }
 
 .main-nav a {
@@ -184,6 +196,8 @@ h1, h2, h3, h4 {
   color: var(--slate-mid);
   transition: color var(--transition);
   position: relative;
+  /* Ensures individual link names never break into awkward layout pieces */
+  white-space: nowrap; 
 }
 
 .main-nav a:hover,
@@ -1557,6 +1571,19 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 .page-hero p { color: var(--slate-light); font-size: 1.05rem; max-width: 640px; }
 
 /* ─── Responsive ─── */
+
+@media (max-width: 1340px) {
+  /* Hides the secondary hotline box on tight laptop widths to preserve the main nav space */
+  .header-actions .header-hotline {
+    display: none;
+  }
+  
+  /* Slightly tightens the nav font sizing to keep everything elegant and aligned */
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .dual-cards,
   .procurement-grid,
