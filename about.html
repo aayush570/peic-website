@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About Us — PEIC</title>
+  <meta name="description" content="Learn about PEIC's medical equipment manufacturing heritage, institutional reach, facilities, quality systems, and service commitment since 1968.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +18,8 @@
       <a href="index.html" class="logo">
         <div class="logo-mark">PEIC</div>
         <div class="logo-text">
-          <span class="logo-name">Precision Electronics</span>
-          <span class="logo-tagline">Est. 1968 · Medical Technology</span>
+          <span class="logo-name">Precision Electronics Instruments &amp; Components</span>
+          <span class="logo-tagline">Since 1968 · Medical Equipment Manufacturer &amp; Supplier</span>
         </div>
       </a>
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -44,15 +46,19 @@
     </div>
   </header>
 
-  <div class="page-hero">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
-      <h1>Heritage, Trust &amp; Institutional Excellence</h1>
-      <p>Established in 1968, PEIC has evolved from a precision engineering workshop into India's premier medical equipment manufacturer and elite technical distributor.</p>
+  <div class="page-hero compact">
+    <div class="container page-hero-grid">
+      <div>
+        <div class="breadcrumb"><a href="index.html">Home</a> / About Us</div>
+        <h1>Heritage, Trust &amp; Institutional Excellence</h1>
+        <p>Established in 1968, PEIC has evolved from a precision engineering workshop into a medical equipment manufacturer and technical distributor serving institutions across India.</p>
+      </div>
+      <div class="hero-image-placeholder" role="img" aria-label="Facility or team image placeholder">Facility / team image — add later</div>
     </div>
   </div>
 
-  <section class="bg-white">
+  <main class="about-content">
+  <section class="bg-white legacy-section">
     <div class="container">
       <div class="legacy-container">
         <div class="two-col-split">
@@ -64,14 +70,14 @@
             <p style="color: var(--slate-light);">Today, PEIC stands at the intersection of indigenous manufacturing excellence and world-class distribution — a unique position that allows us to offer procurement heads and biomedical engineers a single, accountable partner for their entire equipment lifecycle.</p>
           </div>
           <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
-            <img src="https://images.unsplash.com/photo-1538108149393-fbbd81893e52?w=800&q=80" alt="Modern healthcare facility" style="width: 100%; height: 400px; object-fit: cover;">
+            <img class="legacy-image" src="https://images.unsplash.com/photo-1538108149393-fbbd81893e52?w=800&q=80" alt="Modern healthcare facility" loading="lazy">
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-subtle">
+  <section class="bg-subtle metrics-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">By the Numbers</span>
@@ -107,7 +113,7 @@
     </div>
   </section>
 
-  <section class="bg-white">
+  <section class="bg-white facilities-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Infrastructure</span>
@@ -115,22 +121,22 @@
       </div>
       <div class="masonry-grid">
         <div class="masonry-item large">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Mumbai Corporate Headquarters">
+          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Mumbai Corporate Headquarters" loading="lazy">
           <div class="masonry-overlay"><span>Mumbai Corporate Headquarters</span></div>
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Vadodara Manufacturing Facility">
+          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Vadodara Manufacturing Facility" loading="lazy">
           <div class="masonry-overlay"><span>Vadodara Manufacturing Facility</span></div>
         </div>
         <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1532187863486-abf9db3851d0?w=600&q=80" alt="In-House Quality Control and R&D Lab">
+          <img src="https://images.unsplash.com/photo-1532187863486-abf9db3851d0?w=600&q=80" alt="In-House Quality Control and R&D Lab" loading="lazy">
           <div class="masonry-overlay"><span>In-House Quality Control &amp; R&amp;D Lab</span></div>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="bg-subtle">
+  <section class="bg-subtle clients-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Key Clients</span>
@@ -187,7 +193,7 @@
     </div>
   </section>
 
-  <section class="bg-dark">
+  <section class="bg-dark testimonials-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label" style="color: var(--green-muted);">Testimonials</span>
@@ -259,7 +265,7 @@
     </div>
   </section>
 
-  <section class="bg-white">
+  <section class="bg-white certifications-section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">Compliance</span>
@@ -326,6 +332,7 @@
       </div>
     </div>
   </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -334,8 +341,8 @@
           <a href="index.html" class="logo">
             <div class="logo-mark">PEIC</div>
             <div class="logo-text">
-              <span class="logo-name" style="color: white;">Precision Electronics</span>
-              <span class="logo-tagline">Instruments &amp; Components</span>
+              <span class="logo-name" style="color: white;">Precision Electronics Instruments &amp; Components</span>
+              <span class="logo-tagline">Since 1968 · Medical Equipment Manufacturer &amp; Supplier</span>
             </div>
           </a>
           <p>Premier medical equipment manufacturer and elite technical distributor since 1968.</p>
@@ -348,12 +355,14 @@
           <a href="products.html">Products &amp; Equipment</a>
           <a href="solutions.html">By Medical Specialty</a>
           <a href="service.html">Service &amp; Lifecycle</a>
+          <a href="resources.html">Resources</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <a href="about.html">About Us</a>
           <a href="careers.html">Careers</a>
           <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>

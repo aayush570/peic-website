@@ -1,10 +1,14 @@
-/* PEIC — Shared interactions (design mockup) */
+/* PEIC — Shared interactions */
 
 document.addEventListener('DOMContentLoaded', () => {
   initMobileNav();
   initCounters();
   initDownloadSpecs();
   initResourceFilter();
+  initContactForm();
+  initQueryDefaults();
+  initPartnerCards();
+  initCertificationLinks();
 });
 
 function initMobileNav() {
@@ -94,27 +98,21 @@ function initDownloadSpecs() {
   document.querySelectorAll('.download-specs').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      btn.textContent = 'Specs — Coming Soon';
-      btn.style.opacity = '0.7';
-      btn.style.pointerEvents = 'none';
-      setTimeout(() => {
-        btn.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg> Download Technical Specifications`;
-        btn.style.opacity = '1';
-        btn.style.pointerEvents = 'auto';
-      }, 2000);
+      showToast('Technical specifications are being prepared. Contact sales@peic.in for immediate access.');
     });
   });
 
   document.querySelectorAll('.btn-download-doc').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      const original = btn.innerHTML;
-      btn.textContent = 'Coming Soon';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.innerHTML = original;
-        btn.disabled = false;
-      }, 2000);
+      showToast('This document is not online yet. Contact sales@peic.in and we will send it directly.');
+    });
+  });
+
+  document.querySelectorAll('a[href="#"][data-pending-link]').forEach((link) => {
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      showToast(link.dataset.pendingMessage || 'This link will be added shortly. Please contact us for access.');
     });
   });
 }
@@ -126,16 +124,34 @@ function initResourceFilter() {
   if (!tabs.length || !cards.length) return;
 
   let activeFilter = 'all';
+  const grid = document.querySelector('.doc-grid');
+  const emptyState = document.createElement('p');
+  emptyState.className = 'empty-state';
+  emptyState.innerHTML = 'No documents match your search. <a href="contact.html">Contact us</a> for the document you need.';
+  grid?.after(emptyState);
+
+  tabs.forEach((tab) => {
+    const filter = tab.dataset.filter;
+    const count = filter === 'all'
+      ? cards.length
+      : document.querySelectorAll(`.doc-card[data-category="${filter}"]`).length;
+    const countEl = tab.querySelector('.tab-count');
+    if (countEl) countEl.textContent = `(${count})`;
+  });
 
   function filterDocs() {
     const query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+    let visibleCount = 0;
     cards.forEach((card) => {
       const category = card.dataset.category;
       const title = card.querySelector('h4')?.textContent.toLowerCase() || '';
       const matchFilter = activeFilter === 'all' || category === activeFilter;
       const matchSearch = !query || title.includes(query);
-      card.classList.toggle('hidden', !(matchFilter && matchSearch));
+      const visible = matchFilter && matchSearch;
+      card.classList.toggle('hidden', !visible);
+      if (visible) visibleCount += 1;
     });
+    emptyState.classList.toggle('visible', visibleCount === 0);
   }
 
   tabs.forEach((tab) => {
@@ -149,4 +165,131 @@ function initResourceFilter() {
   if (searchInput) {
     searchInput.addEventListener('input', filterDocs);
   }
+}
+
+function initContactForm() {
+  const form = document.querySelector('.contact-form');
+  if (!form) return;
+
+  const status = form.querySelector('.form-status');
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('sent') === 'true' && status) {
+    status.textContent = 'Thank you. Your enquiry has been received and our team will respond shortly.';
+    status.className = 'form-status success visible';
+  }
+
+  form.addEventListener('submit', () => {
+    const submit = form.querySelector('[type="submit"]');
+    if (submit) {
+      submit.textContent = 'Sending enquiry...';
+      submit.disabled = true;
+    }
+  });
+}
+
+function initQueryDefaults() {
+  const inquiryType = document.querySelector('#inquiry-type');
+  if (!inquiryType) return;
+  const requestedType = new URLSearchParams(window.location.search).get('type');
+  if (requestedType && [...inquiryType.options].some((option) => option.value === requestedType)) {
+    inquiryType.value = requestedType;
+  }
+}
+
+function initPartnerCards() {
+  const partnerUrls = {
+    'AngioDynamics': 'https://www.angiodynamics.com/',
+    'Steris Corporation': 'https://www.steris.com/',
+    'Dentsply Sirona': 'https://www.dentsplysirona.com/',
+    'Samsung Electronics': 'https://www.samsunghealthcare.com/',
+    'Richard Wolf GmbH': 'https://www.richard-wolf.com/',
+    'Pentax Corporation': 'https://www.pentaxmedical.com/',
+    'BOWA Medical': 'https://www.bowa-medical.com/',
+    'ATMOS MedizinTechnik': 'https://www.atmos.de/',
+    'INTRASENSE': 'https://www.intrasense.fr/',
+    'Designs for Vision': 'https://www.designsforvision.com/',
+    'Confident Dental Equipment': 'https://www.confidentdental.com/',
+    'Neuro Equilibrium Diagnostics': 'https://neuroequilibrium.in/'
+  };
+
+  document.querySelectorAll('a.partner-card').forEach((original) => {
+    const card = document.createElement('article');
+    card.className = original.className;
+    card.dataset.solutionsUrl = original.getAttribute('href');
+    card.innerHTML = original.innerHTML;
+
+    const content = card.querySelector('.partner-flag')?.nextElementSibling;
+    if (content) content.classList.add('partner-card-content');
+
+    const logoSlot = document.createElement('div');
+    logoSlot.className = 'partner-logo-slot';
+    logoSlot.textContent = 'Logo';
+    logoSlot.setAttribute('aria-hidden', 'true');
+    card.appendChild(logoSlot);
+
+    const name = card.querySelector('h4')?.textContent.trim();
+    const oldLink = card.querySelector('.ext-link');
+    const websiteUrl = partnerUrls[name];
+    if (oldLink) {
+      const link = document.createElement('a');
+      link.className = 'ext-link';
+      link.textContent = websiteUrl ? 'Visit partner website ↗' : 'Website link pending';
+      link.href = websiteUrl || '#';
+      link.target = websiteUrl ? '_blank' : '';
+      link.rel = websiteUrl ? 'noopener noreferrer' : '';
+      if (!websiteUrl) {
+        link.dataset.pendingLink = '';
+        link.dataset.pendingMessage = `The website link for ${name} still needs confirmation.`;
+        link.addEventListener('click', (event) => {
+          event.preventDefault();
+          showToast(link.dataset.pendingMessage);
+        });
+      }
+      oldLink.replaceWith(link);
+    }
+
+    original.replaceWith(card);
+  });
+}
+
+function initCertificationLinks() {
+  document.querySelectorAll('.cert-badge').forEach((badge) => {
+    if (badge.closest('a')) return;
+    const name = badge.querySelector('h4')?.textContent.trim() || 'certificate';
+    const link = document.createElement('a');
+    link.className = 'cert-link';
+    link.href = '#';
+    link.target = '_blank';
+    link.rel = 'noopener';
+    link.dataset.cert = name;
+    link.dataset.pendingLink = '';
+    link.setAttribute('aria-label', `${name}: certificate link pending`);
+    badge.parentNode.insertBefore(link, badge);
+    link.appendChild(badge);
+
+    const indicator = document.createElement('span');
+    indicator.className = 'cert-download-indicator';
+    indicator.textContent = '↓';
+    indicator.setAttribute('aria-hidden', 'true');
+    link.appendChild(indicator);
+    link.addEventListener('click', (event) => {
+      event.preventDefault();
+      showToast(`The file for ${name} still needs to be uploaded.`);
+    });
+  });
+}
+
+function showToast(message) {
+  let toast = document.querySelector('.site-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.className = 'site-toast';
+    toast.setAttribute('role', 'status');
+    toast.setAttribute('aria-live', 'polite');
+    document.body.appendChild(toast);
+  }
+  toast.textContent = message;
+  toast.classList.add('visible');
+  clearTimeout(showToast.timeout);
+  showToast.timeout = setTimeout(() => toast.classList.remove('visible'), 4500);
 }

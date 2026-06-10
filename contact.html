@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — PEIC</title>
+  <meta name="description" content="Contact PEIC for medical equipment purchases, tender support, service contracts, spare parts, refurbishing, and technical consultations.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
@@ -16,8 +18,8 @@
       <a href="index.html" class="logo">
         <div class="logo-mark">PEIC</div>
         <div class="logo-text">
-          <span class="logo-name">Precision Electronics</span>
-          <span class="logo-tagline">Est. 1968 · Medical Technology</span>
+          <span class="logo-name">Precision Electronics Instruments &amp; Components</span>
+          <span class="logo-tagline">Since 1968 · Medical Equipment Manufacturer &amp; Supplier</span>
         </div>
       </a>
       <button class="mobile-toggle" aria-label="Menu"><span></span><span></span><span></span></button>
@@ -44,14 +46,7 @@
     </div>
   </header>
 
-  <div class="page-hero">
-    <div class="container">
-      <div class="breadcrumb"><a href="index.html">Home</a> / Contact</div>
-      <h1>B2B Inquiry Portal</h1>
-      <p>Connect with our procurement specialists, biomedical engineers, and service teams for bulk orders, tender support, AMC/CMC contracts, and technical consultations.</p>
-    </div>
-  </div>
-
+  <main class="contact-page-main">
   <section class="bg-white">
     <div class="container">
       <div class="contact-layout">
@@ -119,9 +114,15 @@
           </div>
         </div>
 
-        <form class="contact-form" onsubmit="event.preventDefault(); alert('Thank you for your enquiry. This is a design mockup — form submission will be enabled in the functional version.');">
+        <form class="contact-form" name="peic-enquiry" method="POST" action="/contact.html?sent=true" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="peic-enquiry">
+          <input type="hidden" name="subject" value="New PEIC website enquiry">
+          <p class="form-honeypot">
+            <label>Do not fill this out if you are human: <input name="bot-field"></label>
+          </p>
           <h3>Submit Your Enquiry</h3>
           <p class="form-desc">Complete the form below for equipment purchases, service contracts, distributorship inquiries, or general information. Our team typically responds within one business day.</p>
+          <div class="form-status" role="status" aria-live="polite"></div>
 
           <div class="form-row">
             <div class="form-group">
@@ -172,11 +173,17 @@
             <textarea id="message" name="message" placeholder="Describe your requirements — equipment models, quantities, tender references, AMC scope, etc."></textarea>
           </div>
 
+          <label class="form-consent">
+            <input type="checkbox" name="privacy-consent" value="accepted" required>
+            <span>I agree that PEIC may use these details to respond to my enquiry, as described in the <a href="privacy.html">Privacy Policy</a>.</span>
+          </label>
+
           <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Submit Enquiry</button>
         </form>
       </div>
     </div>
   </section>
+  </main>
 
   <footer class="site-footer">
     <div class="container">
@@ -185,8 +192,8 @@
           <a href="index.html" class="logo">
             <div class="logo-mark">PEIC</div>
             <div class="logo-text">
-              <span class="logo-name" style="color: white;">Precision Electronics</span>
-              <span class="logo-tagline">Instruments &amp; Components</span>
+              <span class="logo-name" style="color: white;">Precision Electronics Instruments &amp; Components</span>
+              <span class="logo-tagline">Since 1968 · Medical Equipment Manufacturer &amp; Supplier</span>
             </div>
           </a>
           <p>Premier medical equipment manufacturer and elite technical distributor since 1968.</p>
@@ -199,12 +206,14 @@
           <a href="products.html">Products &amp; Equipment</a>
           <a href="solutions.html">By Medical Specialty</a>
           <a href="service.html">Service &amp; Lifecycle</a>
+          <a href="resources.html">Resources</a>
         </div>
         <div class="footer-col">
           <h4>Company</h4>
           <a href="about.html">About Us</a>
           <a href="careers.html">Careers</a>
           <a href="contact.html">Contact</a>
+          <a href="privacy.html">Privacy</a>
         </div>
         <div class="footer-col">
           <h4>Contact</h4>
