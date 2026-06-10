@@ -11,7 +11,55 @@ function initMobileNav() {
   const toggle = document.querySelector('.mobile-toggle');
   const nav = document.querySelector('.main-nav');
   if (!toggle || !nav) return;
-  toggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+  nav.querySelector('.active')?.setAttribute('aria-current', 'page');
+
+  const drawer = document.createElement('nav');
+  drawer.id = 'navigation-drawer';
+  drawer.className = 'nav-drawer';
+  drawer.setAttribute('aria-label', 'Menu navigation');
+
+  nav.querySelectorAll('a:not(.header-hotline-mobile)').forEach((link) => {
+    drawer.appendChild(link.cloneNode(true));
+  });
+
+  const mobileHotline = nav.querySelector('.header-hotline-mobile');
+  if (mobileHotline) drawer.insertBefore(mobileHotline.cloneNode(true), drawer.lastElementChild);
+
+  document.querySelector('.site-header')?.appendChild(drawer);
+  toggle.setAttribute('aria-controls', drawer.id);
+
+  function setOpen(isOpen) {
+    drawer.classList.toggle('open', isOpen);
+    toggle.setAttribute('aria-expanded', String(isOpen));
+    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+  }
+
+  setOpen(false);
+
+  toggle.addEventListener('click', () => {
+    setOpen(!drawer.classList.contains('open'));
+  });
+
+  drawer.addEventListener('click', (event) => {
+    if (event.target.closest('a')) setOpen(false);
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!drawer.classList.contains('open')) return;
+    if (!drawer.contains(event.target) && !toggle.contains(event.target)) setOpen(false);
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && drawer.classList.contains('open')) {
+      setOpen(false);
+      toggle.focus();
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 1000) setOpen(false);
+  });
 }
 
 function initCounters() {
