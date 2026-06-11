@@ -2274,6 +2274,7 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 .form-consent input { margin-top: 0.25rem; }
 .form-consent a { color: var(--green-dark); text-decoration: underline; }
 .form-honeypot { position: absolute; left: -9999px; }
+.form-status a { font-weight: 600; text-decoration: underline; }
 
 .empty-state {
   display: none;

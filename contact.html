@@ -97,12 +97,11 @@
           </div>
         </div>
 
-        <form class="contact-form" name="peic-enquiry" method="POST" action="/contact.html?sent=true" data-netlify="true" netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="peic-enquiry">
-          <input type="hidden" name="subject" data-remove-prefix value="New PEIC website enquiry">
-          <p class="form-honeypot">
-            <label>Do not fill this out if you are human: <input name="bot-field"></label>
-          </p>
+        <form class="contact-form" name="peic-enquiry" method="POST" action="https://api.web3forms.com/submit">
+          <input type="hidden" name="access_key" value="e36c05ee-2b9e-4cb0-b517-f79441d69cb5">
+          <input type="hidden" name="subject" value="New PEIC website enquiry">
+          <input type="hidden" name="from_name" value="PEIC Website">
+          <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
           <h3>Submit Your Enquiry</h3>
           <p class="form-desc">Complete the form below for equipment purchases, service contracts, distributorship inquiries, or general information. Our team typically responds within one business day.</p>
           <div class="form-status" role="status" aria-live="polite"></div>

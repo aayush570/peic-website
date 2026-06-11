@@ -172,17 +172,49 @@ function initContactForm() {
   if (!form) return;
 
   const status = form.querySelector('.form-status');
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('sent') === 'true' && status) {
-    status.textContent = 'Thank you. Your enquiry has been received and our team will respond shortly.';
-    status.className = 'form-status success visible';
-  }
-
-  form.addEventListener('submit', () => {
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
     const submit = form.querySelector('[type="submit"]');
     if (submit) {
       submit.textContent = 'Sending enquiry...';
       submit.disabled = true;
+    }
+
+    if (status) {
+      status.textContent = 'Sending your enquiry securely...';
+      status.className = 'form-status visible';
+    }
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(Object.fromEntries(new FormData(form)))
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Submission failed');
+      }
+
+      if (status) {
+        status.textContent = 'Thank you. Your enquiry has been sent successfully. Our team will respond shortly.';
+        status.className = 'form-status success visible';
+      }
+      form.reset();
+    } catch (error) {
+      if (status) {
+        status.innerHTML = 'We could not send the enquiry. Please try again or email <a href="mailto:sital.shah@peic.in">sital.shah@peic.in</a>.';
+        status.className = 'form-status error visible';
+      }
+    } finally {
+      if (submit) {
+        submit.textContent = 'Submit Enquiry';
+        submit.disabled = false;
+      }
     }
   });
 }

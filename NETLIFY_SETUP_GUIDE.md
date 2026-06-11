@@ -79,23 +79,15 @@ Before connecting `peic.in`, test:
 8. Privacy page
 9. A fake missing URL to verify the 404 page
 
-## Step 6: Turn On Contact-Form Email Notifications
+## Step 6: Contact-Form Email Delivery
 
-1. In Netlify, open the PEIC site.
-2. Open **Forms** and confirm that `peic-enquiry` appears.
-3. Open **Project configuration**.
-4. Find **Notifications** or **Emails and notifications**.
-5. Add an **Email notification** for new form submissions.
-6. Enter the company email that should receive enquiries.
-7. Submit one test enquiry from the temporary website.
-8. Confirm that it appears in Netlify Forms and arrives by email.
+The website uses Web3Forms because Netlify email notifications require a paid plan.
 
-Recommended recipient:
+- Enquiries are delivered to `sital.shah@peic.in`.
+- The free Web3Forms plan currently allows up to 250 submissions per month.
+- No Netlify form-notification subscription is required.
 
-- Primary: `sital.shah@peic.in`
-- Service enquiries can initially reach the same inbox and be forwarded internally
-
-Netlify stores submissions in the Forms dashboard as a backup.
+After each deployment, submit one test enquiry and confirm that it reaches the inbox. Also check the spam folder during the first test.
 
 ## Step 7: Connect `peic.in`
 
