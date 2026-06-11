@@ -1,4 +1,13 @@
-# Netlify Setup Guide for PEIC
+# Hosting Note for PEIC
+
+The production website is hosted on Vercel and automatically deploys from the GitHub repository.
+
+- Production domain: `https://www.peic.in`
+- `https://peic.in` redirects to the `www` address.
+- Contact enquiries use Web3Forms and are delivered to `sital.shah@peic.in`.
+- The separate Netlify test project is not required for production.
+
+The original Netlify instructions below are retained only as historical setup notes.
 
 This is the simplest safe setup. You do not need to understand coding.
 
