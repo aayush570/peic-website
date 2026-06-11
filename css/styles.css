@@ -2085,6 +2085,68 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 
 .partner-card .ext-link:hover { color: var(--green-dark); text-decoration: underline; }
 
+@media (min-width: 1100px) {
+  #manufacturing .product-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  #manufacturing .product-card {
+    padding: 0.75rem;
+    border-radius: var(--radius);
+  }
+
+  #manufacturing .product-image-slot {
+    height: 48px;
+    margin-bottom: 0.45rem;
+  }
+
+  #manufacturing .product-card h4 {
+    font-size: 0.78rem;
+    line-height: 1.2;
+    margin-bottom: 0.3rem;
+  }
+
+  #manufacturing .product-card .cert {
+    font-size: 0.64rem;
+    line-height: 1.25;
+    margin-bottom: 0.35rem;
+  }
+
+  #manufacturing .product-card > p:not(.cert) {
+    font-size: 0.7rem;
+    line-height: 1.35;
+    margin-bottom: 0.5rem;
+  }
+
+  #manufacturing .download-specs,
+  #manufacturing .btn-enquire {
+    padding: 0.32rem 0.48rem;
+    font-size: 0.64rem;
+  }
+
+  #partners .partner-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.65rem;
+  }
+
+  #partners .partner-card {
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    gap: 0.5rem;
+    padding: 0.7rem;
+  }
+
+  #partners .partner-flag { font-size: 1rem; }
+  #partners .partner-logo-slot { width: 30px; height: 30px; font-size: 0.5rem; }
+  #partners .partner-card h4 { font-size: 0.78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  #partners .partner-card .origin { font-size: 0.62rem; margin-bottom: 0.15rem; }
+  #partners .partner-card p { font-size: 0.68rem; line-height: 1.3; }
+  #partners .partner-categories { gap: 0.2rem; margin-top: 0.3rem; }
+  #partners .partner-cat-tag { font-size: 0.55rem; padding: 0.12rem 0.3rem; }
+  #partners .partner-card .ext-link { font-size: 0.62rem; margin-top: 0.3rem; }
+
+  .procurement-advantages .advantage-item h4 { white-space: nowrap; }
+}
+
 .specialty-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;

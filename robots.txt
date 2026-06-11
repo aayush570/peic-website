@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.peic.in/sitemap.xml
+Sitemap: https://peic.in/sitemap.xml
