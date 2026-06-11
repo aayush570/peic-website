@@ -99,7 +99,7 @@
 
         <form class="contact-form" name="peic-enquiry" method="POST" action="/contact.html?sent=true" data-netlify="true" netlify-honeypot="bot-field">
           <input type="hidden" name="form-name" value="peic-enquiry">
-          <input type="hidden" name="subject" value="New PEIC website enquiry">
+          <input type="hidden" name="subject" data-remove-prefix value="New PEIC website enquiry">
           <p class="form-honeypot">
             <label>Do not fill this out if you are human: <input name="bot-field"></label>
           </p>

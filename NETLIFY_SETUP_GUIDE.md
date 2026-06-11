@@ -90,9 +90,9 @@ Before connecting `peic.in`, test:
 7. Submit one test enquiry from the temporary website.
 8. Confirm that it appears in Netlify Forms and arrives by email.
 
-Recommended recipients:
+Recommended recipient:
 
-- Primary: `sales@peic.in` or `contact@peic.in`
+- Primary: `sital.shah@peic.in`
 - Service enquiries can initially reach the same inbox and be forwarded internally
 
 Netlify stores submissions in the Forms dashboard as a backup.
