@@ -425,8 +425,8 @@ For every downloadable file record:
 
 **Person responsible:** Owner / administration / IT
 
-- Netlify account owner email:
-- Netlify team name:
+- Vercel account owner email:
+- Vercel team/project name:
 - People who require access:
 - Primary form-notification email:
 - Backup form-notification email:
