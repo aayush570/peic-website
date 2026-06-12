@@ -1,0 +1,36 @@
+{
+  "hero": {
+    "title": "Solutions by Medical Specialty",
+    "description": "Shop by clinical use-case rather than brand. Explore integrated equipment ecosystems tailored to your department's specific needs."
+  },
+  "specialties_heading": {
+    "label": "By Medical Specialty",
+    "title": "Integrated Clinical Solutions"
+  },
+  "specialties": [
+    {"id":"cssd","title":"CSSD & Sterilization","description":"Complete central sterile supply department solutions — autoclaves, flash sterilizers, CSSD furniture, and workflow integration.","image":"/uploads/images/cssd-equipment.jpg","link":"products.html#manufacturing"},
+    {"id":"ot","title":"Operating Theatre (OT) Integration","description":"Surgical tables, OT lighting, electrosurgical units, suction systems, and complete theatre fit-out solutions.","image":"/uploads/images/ot.jpeg","link":"products.html#partners"},
+    {"id":"oncology","title":"Oncology & Ablation","description":"RFA, microwave ablation, NanoKnife IRE systems, and AI-assisted imaging for targeted cancer treatment.","image":"/uploads/images/oncology.jpg","link":"products.html#partners"},
+    {"id":"diagnostic","title":"Diagnostic Imaging & Radiology","description":"Portable DR, endoscopic ultrasound, CBCT imaging, and advanced diagnostic modalities from global partners.","image":"/uploads/images/diagnostics.jpeg","link":"products.html#partners"},
+    {"id":"maternal","title":"Maternal / Neonatal Care","description":"Radiant heat warmers, LED phototherapy units, infusion pumps, NST machines, and NICU equipment.","image":"/uploads/images/maternal.jpeg","link":"products.html#partners"},
+    {"id":"dental","title":"Dental Suites","description":"Comprehensive operatory suites, CBCT imaging, and end-to-end dental practice infrastructure.","image":"/uploads/images/dental.jpeg","link":"products.html#partners"}
+  ],
+  "industries_heading": {
+    "label": "By Industry & Client",
+    "title": "Who We Serve",
+    "description": "Tailored solutions across healthcare, pharma, research, and medical device sectors."
+  },
+  "industries": [
+    {"title":"Healthcare","description":"From government tertiary hospitals to private chains, clinics, and specialty practices.","featured":true,"tags":["CSSD Departments","Operating Theatres","ICU / NICU","Radiology","Oncology Units","Dental Clinics","Maternity Wards"]},
+    {"title":"Pharma & Biopharma","description":"Sterilization and cleanroom infrastructure for pharmaceutical manufacturing and quality-control labs.","featured":false,"tags":["Cleanroom CSSD","QC Labs","Production Facilities"]},
+    {"title":"Medical Device Manufacturers","description":"Testing, validation, and sterilization equipment for device OEMs and component suppliers.","featured":false,"tags":["Validation Labs","Assembly Lines"]},
+    {"title":"Diagnostic Labs","description":"Imaging systems, lab sterilization, and diagnostic equipment for standalone and hospital-affiliated labs.","featured":false,"tags":["Pathology Labs","Imaging Centers"]},
+    {"title":"Research Institutes","description":"Specialized sterilization and laboratory equipment for research and university facilities.","featured":false,"tags":["Bio-safety Labs","Research CSSD","Waste Sanitization"]}
+  ],
+  "cta": {
+    "title": "Not sure which solution fits your facility?",
+    "description": "Our biomedical engineers can design an integrated solution combining equipment from multiple specialty areas.",
+    "button_label": "Discuss Your Requirements",
+    "button_link": "contact.html"
+  }
+}

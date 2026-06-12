@@ -16,15 +16,24 @@ async function initCMSContent() {
   try {
     const page = document.body;
     const requests = [fetchCMSData('site')];
+    const route = getCurrentRoute();
+    const pageFiles = {
+      home: 'home',
+      products: 'products-page',
+      solutions: 'solutions-page',
+      about: 'about',
+      service: 'service-page',
+      resources: 'resources-page',
+      careers: 'careers-page',
+      contact: 'contact-page'
+    };
+    if (pageFiles[route]) requests.push(fetchCMSData(pageFiles[route]));
 
     if (page.querySelector('.product-grid')) requests.push(fetchCMSData('products'));
     if (page.querySelector('#partners')) requests.push(fetchCMSData('partners'));
     if (page.querySelector('.doc-grid')) requests.push(fetchCMSData('resources'));
     if (page.querySelector('.job-list-placeholder')) requests.push(fetchCMSData('jobs'));
-    if (page.querySelector('.specialty-grid, .service-grid, .benefits-grid')) {
-      requests.push(fetchCMSData('pages'));
-    }
-    if (page.querySelector('.badge-grid, .testimonial-static-row, .logo-grid')) {
+    if (route !== 'about' && page.querySelector('.logo-grid')) {
       requests.push(fetchCMSData('about'));
     }
 
@@ -32,15 +41,20 @@ async function initCMSContent() {
     const data = Object.assign({}, ...results);
 
     if (data.site) renderSiteContent(data.site);
+    renderCurrentPage(route, data[pageFiles[route]]);
     if (data.products) renderProducts(data.products);
     if (data.partners) renderPartners(data.partners);
     if (data.resources) renderResources(data.resources);
     if (data.jobs) renderJobs(data.jobs);
-    if (data.pages) renderPageSections(data.pages);
     if (data.about) renderTrustContent(data.about);
   } catch (error) {
     console.warn('CMS content could not be loaded; using built-in page content.', error);
   }
+}
+
+function getCurrentRoute() {
+  const filename = window.location.pathname.split('/').pop() || 'index.html';
+  return filename === 'index.html' ? 'home' : filename.replace(/\.html$/, '');
 }
 
 async function fetchCMSData(name) {
@@ -85,25 +99,196 @@ function renderSiteContent(site) {
   if (address && Array.isArray(site.address_lines)) {
     address.innerHTML = `${escapeHTML(site.company_name)} Pvt. Ltd.<br>${site.address_lines.map(escapeHTML).join('<br>')}`;
   }
+  document.querySelectorAll('.footer-brand > p').forEach((el) => {
+    if (site.footer_description) el.textContent = site.footer_description;
+  });
+}
 
-  if (document.querySelector('.hero') && site.homepage) {
-    setText('.hero-eyebrow', site.homepage.eyebrow);
-    setText('.hero h1', site.homepage.title);
-    setText('.hero-desc', site.homepage.description);
-    setBackgroundImage('.hero-bg', site.homepage.hero_image);
+function renderCurrentPage(route, content) {
+  if (!content) return;
+  const renderers = {
+    home: renderHomePage,
+    products: renderProductsPage,
+    solutions: renderSolutionsPage,
+    about: renderAboutPage,
+    service: renderServicePage,
+    resources: renderResourcesPage,
+    careers: renderCareersPage,
+    contact: renderContactPage
+  };
+  if (renderers[route]) renderers[route](content);
+}
+
+function renderHomePage(home) {
+  setText('.hero-eyebrow', home.hero?.eyebrow);
+  setText('.hero h1', home.hero?.title);
+  setText('.hero-desc', home.hero?.description);
+  setBackgroundImage('.hero-bg', home.hero?.image);
+  setLink('.hero-actions .btn-primary', home.hero?.primary_button_label, home.hero?.primary_button_link);
+  setLink('.hero-actions .btn-outline', home.hero?.secondary_button_label, home.hero?.secondary_button_link);
+
+  const banner = document.querySelector('.trust-banner-inner');
+  if (banner && Array.isArray(home.trust_banner)) {
+    banner.innerHTML = home.trust_banner
+      .map((item, index) => `${index ? '<span class="sep">|</span>' : ''}<span>${escapeHTML(item)}</span>`)
+      .join('');
   }
 
-  if (document.querySelector('#manufacturing') && site.products_page) {
-    setText('.page-hero h1', site.products_page.title);
-    setText('.page-hero p', site.products_page.description);
-    renderHeroImage(site.products_page.hero_image, 'Product image');
+  setHeadingBlock('.dual-cards', home.capabilities);
+  const cards = document.querySelector('.dual-cards');
+  if (cards && Array.isArray(home.capabilities?.cards)) {
+    cards.innerHTML = home.capabilities.cards.map((card) => `<a href="${escapeAttribute(card.link || '#')}" class="cap-card-link">
+      <div class="cap-card">
+        <div class="cap-card-img"${card.image ? ` style="background-image:url('${escapeAttribute(card.image)}')"` : ''}></div>
+        <div class="cap-card-body">
+          <h3>${escapeHTML(card.title)}</h3>
+          <p>${escapeHTML(card.description || '')}</p>
+          <ul class="cap-advantages">${(card.advantages || []).map((item) => `<li><span class="tick">✓</span> <strong>${escapeHTML(item)}</strong></li>`).join('')}</ul>
+          <div class="cap-card-footer"><span>${escapeHTML(card.button_label || 'Learn more')}</span> <span class="arrow">→</span></div>
+        </div>
+      </div>
+    </a>`).join('');
   }
 
-  if (document.querySelector('.about-content') && site.about_page) {
-    setText('.page-hero h1', site.about_page.title);
-    setText('.page-hero p', site.about_page.description);
-    renderHeroImage(site.about_page.hero_image, 'Facility or team image');
+  const sections = document.querySelectorAll('body > section');
+  const advantageSection = [...sections].find((section) => section.querySelector('.stats-row'));
+  setHeading(advantageSection, home.advantage);
+  const clientsSection = [...sections].find((section) => section.querySelector('.logo-grid'));
+  setHeading(clientsSection, home.clients);
+  const ctaSection = [...sections].find((section) => section.classList.contains('bg-dark') && section.querySelector('.container > .btn'));
+  setCallout(ctaSection?.querySelector('.container'), home.cta);
+}
+
+function renderProductsPage(page) {
+  setText('.page-hero h1', page.hero?.title);
+  setText('.page-hero p', page.hero?.description);
+  renderHeroImage(page.hero?.image, 'Product catalog');
+  renderTier('#manufacturing', page.manufacturing);
+  renderTier('#partners', page.partners);
+  setText('#partners .container > h3', page.partners?.global_title);
+  const partnerHeadings = document.querySelectorAll('#partners .container > h3');
+  if (partnerHeadings[1] && page.partners?.domestic_title) partnerHeadings[1].textContent = page.partners.domestic_title;
+}
+
+function renderTier(selector, tier) {
+  const section = document.querySelector(selector);
+  if (!section || !tier) return;
+  setTextWithin(section, '.tier-header .section-title', tier.title);
+  setTextWithin(section, '.tier-header .tier-intro', tier.description);
+  const bar = section.querySelector('.advantage-bar');
+  if (!bar) return;
+  setTextWithin(bar, 'h3', tier.advantages_title);
+  setTextWithin(bar, '.bar-subtitle', tier.advantages_subtitle);
+  const items = bar.querySelectorAll('.advantage-item');
+  (tier.advantages || []).forEach((item, index) => {
+    if (!items[index]) return;
+    setTextWithin(items[index], 'h4', item.title);
+    setTextWithin(items[index], 'p', item.description);
+  });
+}
+
+function renderSolutionsPage(page) {
+  setPageHero(page.hero);
+  setHeading(document.querySelector('.specialty-section'), page.specialties_heading);
+  setHeading(document.querySelector('.audience-section'), page.industries_heading);
+  renderPageSections({ solutions: page });
+  setCallout(document.querySelector('main.solutions-content + section .container'), page.cta);
+}
+
+function renderAboutPage(about) {
+  const page = about.page;
+  if (!page) return;
+  setText('.page-hero h1', page.hero?.title);
+  setText('.page-hero p', page.hero?.description);
+  renderHeroImage(page.hero?.image, 'Facility or team');
+  setHeading(document.querySelector('.legacy-section'), page.legacy);
+  const legacyCopy = document.querySelector('.legacy-section .two-col-split > div');
+  if (legacyCopy && Array.isArray(page.legacy?.paragraphs)) {
+    legacyCopy.querySelectorAll('p').forEach((paragraph) => paragraph.remove());
+    legacyCopy.insertAdjacentHTML('beforeend', page.legacy.paragraphs.map((text) => `<p style="color:var(--slate-light);margin-bottom:1rem">${escapeHTML(text)}</p>`).join(''));
   }
+  setHeading(document.querySelector('.metrics-section'), page.metrics_heading);
+  setHeading(document.querySelector('.facilities-section'), page.facilities_heading);
+  setHeading(document.querySelector('.clients-section'), page.clients_heading);
+  setHeading(document.querySelector('.testimonials-section'), page.testimonials_heading);
+  setHeading(document.querySelector('.certifications-section'), page.certifications_heading);
+}
+
+function renderServicePage(page) {
+  setPageHero(page.hero);
+  setHeading(document.querySelector('.response-grid')?.closest('section'), page.process_heading);
+  renderPageSections({ service: page });
+  setCallout(document.querySelector('.custom-solution-box'), page.custom_cta);
+  setCallout(document.querySelector('.urgent-service-banner'), page.urgent_cta);
+}
+
+function renderResourcesPage(page) {
+  setPageHero(page.hero);
+  setCallout(document.querySelector('.missing-doc-cta'), page.help_cta);
+}
+
+function renderCareersPage(page) {
+  setPageHero(page.hero);
+  renderPageSections({ careers: {
+    benefits: page.benefits,
+    culture_title: page.culture?.title,
+    culture_subtitle: page.culture?.subtitle,
+    culture_values: page.culture?.values
+  } });
+  const jobsSection = document.querySelector('.job-list-placeholder')?.closest('section');
+  const heading = jobsSection?.querySelector('.job-list-placeholder')?.previousElementSibling;
+  if (heading) {
+    setTextWithin(heading, '.section-label', page.jobs_heading?.label);
+    setTextWithin(heading, '.section-title', page.jobs_heading?.title);
+  }
+  setCallout(document.querySelector('.general-app-cta'), page.open_application);
+}
+
+function renderContactPage(page) {
+  setText('.contact-info-block > h3', page.teams_title);
+  setText('.office-list > h3', page.office_title);
+  setText('.contact-form > h3', page.form_title);
+  setText('.contact-form .form-desc', page.form_description);
+}
+
+function setPageHero(hero) {
+  setText('.page-hero-sm h1', hero?.title);
+  setText('.page-hero-sm p', hero?.description);
+}
+
+function setHeading(section, heading) {
+  if (!section || !heading) return;
+  setTextWithin(section, '.section-label', heading.label);
+  setTextWithin(section, '.section-title', heading.title);
+  setTextWithin(section, '.section-subtitle', heading.description);
+}
+
+function setHeadingBlock(contentSelector, heading) {
+  const content = document.querySelector(contentSelector);
+  setHeading(content?.closest('section'), heading);
+}
+
+function setCallout(container, callout) {
+  if (!container || !callout) return;
+  setTextWithin(container, 'h2, h3', callout.title);
+  setTextWithin(container, 'p', callout.description);
+  const button = container.querySelector('.btn');
+  if (button) {
+    if (callout.button_label) button.textContent = callout.button_label;
+    if (callout.button_link) button.href = callout.button_link;
+  }
+}
+
+function setLink(selector, label, href) {
+  const link = document.querySelector(selector);
+  if (!link) return;
+  if (label) link.textContent = label;
+  if (href) link.href = href;
+}
+
+function setTextWithin(container, selector, value) {
+  const element = container?.querySelector(selector);
+  if (element && value !== undefined && value !== null) element.textContent = value;
 }
 
 function renderHeroImage(image, alt) {

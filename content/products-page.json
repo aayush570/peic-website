@@ -1,0 +1,33 @@
+{
+  "hero": {
+    "title": "Solutions & Equipment Catalog",
+    "description": "Indigenous manufacturing excellence and global partner technologies — engineered for clinical precision, regulatory compliance, and maximum machine uptime.",
+    "image": "/uploads/images/product-catalog-hero.jpg"
+  },
+  "manufacturing": {
+    "title": "PEIC Indigenous Manufacturing",
+    "description": "Our core manufacturing program adheres to stringent regulatory and quality standards.",
+    "advantages_title": "Advantages of PEIC Manufacturing",
+    "advantages_subtitle": "We are the OEM — not a reseller. Every advantage flows from deep engineering DNA.",
+    "advantages": [
+      {"title": "In-House Engineering", "description": "Design, test, and iterate in our Vadodara facility — not outsourced."},
+      {"title": "BIS-Certified Since 1976", "description": "Longest-running IS 3829 certification in the sterilization category."},
+      {"title": "Local Spare Parts", "description": "Localized spare parts inventory — no import delays for critical components."},
+      {"title": "Tender Advantages", "description": "MSME/NSIC registered — zero EMD, up to 15% price preference on govt. tenders."}
+    ]
+  },
+  "partners": {
+    "title": "Global & Domestic Partner Technologies",
+    "description": "Authorized technical integration partner for the world's leading medical technology brands.",
+    "advantages_title": "Advantages of Procurement Through PEIC",
+    "advantages_subtitle": "Integration, service, and procurement support through one accountable technical partner.",
+    "advantages": [
+      {"title": "Technical Integration", "description": "Installation, calibration, and training support instead of equipment-only delivery."},
+      {"title": "Unified Service", "description": "One service relationship for PEIC-manufactured and supported partner equipment."},
+      {"title": "Local Coordination", "description": "Local coordination for technical queries, service requests, and parts requirements."},
+      {"title": "Single-Point Procurement", "description": "A single point of contact for multi-brand institutional procurement."}
+    ],
+    "global_title": "Global Partners",
+    "domestic_title": "Domestic Partners"
+  }
+}

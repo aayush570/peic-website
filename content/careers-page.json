@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "title": "Why Work at PEIC",
+    "description": "A stable, engineering-driven organization where your work directly impacts healthcare outcomes across India."
+  },
+  "benefits": [
+    {"icon":"📈","title":"Career Growth","description":"Clear technical development pathways with training and certification support."},
+    {"icon":"🏥","title":"Healthcare Benefits","description":"Company healthcare benefits according to the applicable employment policy."},
+    {"icon":"🤝","title":"Collaborative Culture","description":"Cross-functional teams spanning manufacturing, biomedical engineering, service, and B2B sales."},
+    {"icon":"💼","title":"Competitive Compensation","description":"Market-aligned compensation and long-term organizational stability."}
+  ],
+  "culture": {
+    "title": "Our Culture",
+    "subtitle": "Engineering Excellence, Institutional Pride",
+    "values": "Precision · Institutional Pride · Collaboration"
+  },
+  "jobs_heading": {"label":"Open Positions","title":"Current Opportunities"},
+  "open_application": {
+    "title": "Don't see a role that fits?",
+    "description": "Send us a note — we're always open to outstanding engineers and biomedical talent.",
+    "button_label": "Send Your Resume"
+  }
+}

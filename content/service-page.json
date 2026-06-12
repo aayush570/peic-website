@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "title": "Service & Lifecycle Support",
+    "description": "Post-sale reliability is our commitment. From AMC/CMC contracts to spare parts and <24-hour technical response — we keep your equipment running."
+  },
+  "process_heading": {"label":"Service Workflow","title":"Response Process"},
+  "process": [
+    {"title":"Log Request","description":"Hotline, email, or enquiry form"},
+    {"title":"Triage & Dispatch","description":"Target acknowledgment within two hours"},
+    {"title":"On-Site Resolution","description":"Priority dispatch based on location and equipment criticality"},
+    {"title":"Follow-Up & Report","description":"Service completion record and recommended next actions"}
+  ],
+  "offerings": [
+    {"icon":"📋","title":"AMC / CMC Contract Tiers","description":"Flexible annual and comprehensive maintenance contracts covering preventive maintenance, emergency callouts, parts replacement, and calibration."},
+    {"icon":"🔩","title":"Spare Parts Inventory","description":"In-house spare parts stock for PEIC-manufactured equipment and authorized sourcing for supported partner-brand spares."},
+    {"icon":"⚡","title":"<24-Hour Technical Response","description":"Critical requests are triaged promptly, with response based on location, access, equipment criticality, and parts availability."},
+    {"icon":"↻","title":"Equipment Refurbishing & Upgrades","description":"Mechanical overhaul, electronic-control upgrades, refinishing, testing, and re-commissioning for suitable ageing equipment."}
+  ],
+  "custom_cta": {
+    "title": "Need a custom solution?",
+    "description": "Our technical team can design integrated solutions tailored to your facility's specific requirements, combining equipment from multiple solution areas.",
+    "button_label": "Explore Solutions",
+    "button_link": "solutions.html"
+  },
+  "urgent_cta": {
+    "title": "NEED URGENT SERVICE?",
+    "description": "Call our technical support line — or raise a ticket for immediate dispatch.",
+    "button_label": "Raise a Service Request",
+    "button_link": "contact.html?type=service"
+  }
+}

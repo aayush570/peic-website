@@ -1,0 +1,66 @@
+{
+  "hero": {
+    "eyebrow": "Premier Medical Technology Partner",
+    "title": "6 Decades of Precision Engineering",
+    "description": "Since 1968, PEIC has been the trusted technical partner for elite government and private healthcare institutions across India, delivering everything from indigenous sterilization systems to world-class diagnostic and surgical technologies.",
+    "image": "",
+    "primary_button_label": "Explore Solutions & Equipment",
+    "primary_button_link": "products.html",
+    "secondary_button_label": "Our Heritage & Credentials",
+    "secondary_button_link": "about.html"
+  },
+  "trust_banner": [
+    "Est. 1968",
+    "BIS Certified",
+    "CE & GMP Compliant",
+    "MSME & NSIC Registered",
+    "Trusted by Government Networks & Private Healthcare Leaders Nationwide"
+  ],
+  "capabilities": {
+    "label": "Core Capabilities",
+    "title": "Two Pillars of Healthcare Technology Excellence",
+    "cards": [
+      {
+        "title": "Indigenous Manufacturing",
+        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure built to global standards.",
+        "image": "/uploads/images/cssd-equipment.jpg",
+        "link": "products.html#manufacturing",
+        "advantages": [
+          "BIS Certified",
+          "15+ Year Lifespan",
+          "OEM Engineering DNA",
+          "MSME Tender Benefits"
+        ],
+        "button_label": "View Manufactured Products"
+      },
+      {
+        "title": "Global & Domestic Distribution",
+        "description": "Authorized technical integration partner for 16+ world-leading medical brands across India.",
+        "image": "/uploads/images/ot.jpeg",
+        "link": "products.html#partners",
+        "advantages": [
+          "Single-Point Vendor",
+          "Localized Integration",
+          "<24hr Service Response",
+          "Unified AMC & CMC"
+        ],
+        "button_label": "Explore Partner Technologies"
+      }
+    ]
+  },
+  "advantage": {
+    "label": "Why PEIC",
+    "title": "The Procurement Advantage",
+    "description": "Unlike standard distributors, PEIC brings deep manufacturing DNA and institutional-grade service to every engagement."
+  },
+  "clients": {
+    "label": "Institutional Trust",
+    "title": "Trusted Across Public & Private Healthcare"
+  },
+  "cta": {
+    "title": "Ready to Discuss Your Healthcare Infrastructure Needs?",
+    "description": "Our B2B procurement specialists and biomedical engineers are available for technical consultations, tender support, and lifecycle planning.",
+    "button_label": "Contact Our Team",
+    "button_link": "contact.html"
+  }
+}

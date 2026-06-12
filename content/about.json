@@ -1,4 +1,25 @@
 {
+  "page": {
+    "hero": {
+      "title": "Heritage, Trust & Institutional Excellence",
+      "description": "Established in 1968, PEIC has evolved from a precision engineering workshop into a medical equipment manufacturer and technical distributor serving institutions across India.",
+      "image": "/uploads/images/heritage-and-legacy-hero.jpg"
+    },
+    "legacy": {
+      "label": "Our Legacy",
+      "title": "Over Five Decades of Precision Engineering",
+      "paragraphs": [
+        "Founded in 1968, Precision Electronics Instruments & Components began with a singular mission: to engineer medical sterilization systems that hospitals could depend on for decades. What started as a focused manufacturing operation has grown into a comprehensive technical solutions provider serving both massive government healthcare networks and elite private hospital chains across India.",
+        "Our evolution reflects the changing landscape of Indian healthcare — from the early days of BIS-certified autoclave manufacturing to today's role as authorized integration partner for global medical technology leaders. Through every transition, our commitment to precision, safety, and reliability has remained unchanged.",
+        "Today, PEIC stands at the intersection of indigenous manufacturing excellence and world-class distribution — a unique position that allows us to offer procurement heads and biomedical engineers a single, accountable partner for their entire equipment lifecycle."
+      ]
+    },
+    "metrics_heading": {"label":"By the Numbers","title":"Institutional Metrics"},
+    "facilities_heading": {"label":"Infrastructure","title":"Facilities & Capabilities"},
+    "clients_heading": {"label":"Key Clients","title":"Institutional Reach Across Sectors","description":"Serving public institutions, research organizations, and top-tier private healthcare networks nationwide."},
+    "testimonials_heading": {"label":"Testimonials","title":"What Healthcare Leaders Say"},
+    "certifications_heading": {"label":"Compliance","title":"Certifications & Regulatory Compliance","description":"Every certification represents our unwavering commitment to quality, safety, and environmental responsibility."}
+  },
   "metrics": [
     {
       "value": 58,

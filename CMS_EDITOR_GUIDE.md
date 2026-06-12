@@ -9,18 +9,37 @@ The PEIC website uses Pages CMS for non-technical editing.
 3. Approve access when GitHub asks.
 4. Select the repository `aayush570/peic-website`.
 
-## What You Can Edit
+## How Content Is Organized
 
-### Company and page headings
+The Pages CMS sidebar follows the website's navigation:
+
+1. Home page
+2. Products page
+3. Solutions page
+4. About page
+5. Service page
+6. Resources page
+7. Careers page
+8. Contact page
+9. Site-wide company details
+
+Open the page you want to change. Its hero, section headings, introductions,
+cards, images, and calls to action are grouped together there.
+
+The Home page includes both Core Capabilities cards. Each card's image, title,
+description, tick-list items, link, and button text can be edited independently.
+
+Products, partners, downloads, and vacancies are shown directly below their
+respective page settings as separate repeatable lists.
+
+### Site-wide company details
 
 Use this for:
 
 - Company name and tagline
+- Footer description
 - Phone numbers and email addresses
 - Registered address
-- Homepage main heading and introduction
-- Products-page heading and hero image
-- About-page heading and facility/team image
 
 ### Manufactured products
 
@@ -85,7 +104,7 @@ Each job has:
 
 Turn the switch off to remove a vacancy from the website without deleting its details.
 
-### Customers, testimonials and certificates
+### About page: customers, testimonials and certificates
 
 This section manages:
 
