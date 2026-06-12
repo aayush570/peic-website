@@ -306,7 +306,7 @@ function renderProducts(products) {
   grid.innerHTML = products.map((product) => {
     const media = product.image
       ? `<div class="product-image-slot has-image"><img src="${escapeAttribute(product.image)}" alt="${escapeAttribute(product.name)}"></div>`
-      : '<div class="product-image-slot" role="img" aria-label="Product image placeholder">Product image</div>';
+      : '<div class="product-image-slot" role="img" aria-label="Product image placeholder"><span>Product photography coming soon</span></div>';
     const accessMode = ['enquiry_only', 'gated_download', 'public_download'].includes(product.access_mode)
       ? product.access_mode
       : 'enquiry_only';
@@ -329,14 +329,16 @@ function renderProducts(products) {
       ? ''
       : `<a href="${escapeAttribute(enquiryUrl)}" class="btn-enquire">Enquire</a>`;
 
-    return `<article class="product-card featured">
+    return `<article class="product-card featured${product.image ? ' has-product-image' : ''}">
       ${media}
-      <h4>${escapeHTML(product.name)}</h4>
-      <p class="cert">${escapeHTML(product.certification || '')}</p>
-      <p>${escapeHTML(product.description || '')}</p>
-      <div class="product-actions">
-        ${specs}
-        ${secondaryAction}
+      <div class="product-card-content">
+        <h4>${escapeHTML(product.name)}</h4>
+        <p class="cert">${escapeHTML(product.certification || '')}</p>
+        <p>${escapeHTML(product.description || '')}</p>
+        <div class="product-actions">
+          ${specs}
+          ${secondaryAction}
+        </div>
       </div>
     </article>`;
   }).join('');

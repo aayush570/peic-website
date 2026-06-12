@@ -2204,37 +2204,32 @@ body.modal-open {
   }
 
   #manufacturing .product-card {
-    padding: 0.75rem;
-    border-radius: var(--radius);
-  }
-
-  #manufacturing .product-image-slot {
-    height: 48px;
-    margin-bottom: 0.45rem;
+    min-height: 330px;
   }
 
   #manufacturing .product-card h4 {
-    font-size: 0.78rem;
-    line-height: 1.2;
-    margin-bottom: 0.3rem;
+    font-size: 0.9rem;
+    line-height: 1.25;
   }
 
   #manufacturing .product-card .cert {
-    font-size: 0.64rem;
+    font-size: 0.68rem;
     line-height: 1.25;
-    margin-bottom: 0.35rem;
   }
 
   #manufacturing .product-card > p:not(.cert) {
-    font-size: 0.7rem;
-    line-height: 1.35;
-    margin-bottom: 0.5rem;
+    font-size: 0.72rem;
+  }
+
+  #manufacturing .product-card-content > p:not(.cert) {
+    font-size: 0.72rem;
+    line-height: 1.4;
   }
 
   #manufacturing .download-specs,
   #manufacturing .btn-enquire {
-    padding: 0.32rem 0.48rem;
-    font-size: 0.64rem;
+    padding: 0.42rem 0.58rem;
+    font-size: 0.66rem;
   }
 
   #partners .partner-grid {
@@ -2258,6 +2253,130 @@ body.modal-open {
   #partners .partner-card .ext-link { font-size: 0.62rem; margin-top: 0.3rem; }
 
   .procurement-advantages .advantage-item h4 { white-space: nowrap; }
+}
+
+/* Image-led manufacturing cards */
+#manufacturing .product-card {
+  position: relative;
+  isolation: isolate;
+  min-height: 350px;
+  overflow: hidden;
+  justify-content: flex-end;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-lg);
+  background:
+    radial-gradient(circle at 78% 18%, rgba(133, 194, 143, 0.42), transparent 34%),
+    linear-gradient(145deg, #587466 0%, #203d32 54%, #10251e 100%);
+  box-shadow: 0 10px 28px rgba(27, 53, 43, 0.15);
+}
+
+#manufacturing .product-card.featured {
+  border-left: 0;
+}
+
+#manufacturing .product-card:hover {
+  border-color: transparent;
+  box-shadow: 0 16px 38px rgba(27, 53, 43, 0.24);
+  transform: translateY(-3px);
+}
+
+#manufacturing .product-card::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(8, 20, 16, 0.04) 0%,
+    rgba(8, 20, 16, 0.16) 28%,
+    rgba(8, 20, 16, 0.82) 58%,
+    rgba(8, 20, 16, 0.97) 100%
+  );
+  pointer-events: none;
+}
+
+#manufacturing .product-image-slot {
+  position: absolute;
+  z-index: -2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+#manufacturing .product-image-slot:not(.has-image) {
+  place-items: start end;
+  padding: 1rem;
+}
+
+#manufacturing .product-image-slot:not(.has-image) span {
+  max-width: 8rem;
+  font-size: 0.63rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: 0.06em;
+  text-align: right;
+  text-transform: uppercase;
+}
+
+#manufacturing .product-image-slot img {
+  transition: transform 500ms ease;
+}
+
+#manufacturing .product-card:hover .product-image-slot img {
+  transform: scale(1.035);
+}
+
+#manufacturing .product-card-content {
+  width: 100%;
+  padding: 4.5rem 1rem 1rem;
+}
+
+#manufacturing .product-card h4,
+#manufacturing .product-card p,
+#manufacturing .product-card .cert {
+  color: white;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
+}
+
+#manufacturing .product-card h4 {
+  margin-bottom: 0.4rem;
+}
+
+#manufacturing .product-card .cert {
+  color: #bde8c2;
+  margin-bottom: 0.5rem;
+}
+
+#manufacturing .product-card p {
+  margin-bottom: 0.8rem;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+#manufacturing .download-specs,
+#manufacturing .btn-enquire {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--green-dark);
+  backdrop-filter: blur(8px);
+}
+
+#manufacturing .download-specs:hover,
+#manufacturing .btn-enquire:hover {
+  border-color: white;
+  background: white;
+  color: var(--green-dark);
+}
+
+@media (max-width: 700px) {
+  #manufacturing .product-card {
+    min-height: 370px;
+  }
 }
 
 .specialty-grid {
