@@ -16,17 +16,16 @@
   "homepage": {
     "eyebrow": "Premier Medical Technology Partner",
     "title": "6 Decades of Precision Engineering",
-    "description": "Since 1968, PEIC has been a technical partner for government and private healthcare institutions across India, delivering indigenous sterilization systems and medical technologies.",
-    "hero_image": ""
+    "description": "Since 1968, PEIC has been a technical partner for government and private healthcare institutions across India, delivering indigenous sterilization systems and medical technologies."
   },
   "products_page": {
     "title": "Solutions & Equipment Catalog",
     "description": "Indigenous manufacturing excellence and global partner technologies — engineered for clinical precision, regulatory compliance, and maximum machine uptime.",
-    "hero_image": ""
+    "hero_image": "/uploads/images/product-catalog-hero.jpg"
   },
   "about_page": {
     "title": "Heritage, Trust & Institutional Excellence",
     "description": "Established in 1968, PEIC has evolved from a precision engineering workshop into a medical equipment manufacturer and technical distributor serving institutions across India.",
-    "hero_image": ""
+    "hero_image": "/uploads/images/heritage-and-legacy-hero.jpg"
   }
 }
