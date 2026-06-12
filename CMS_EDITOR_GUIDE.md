@@ -31,8 +31,22 @@ Each product has:
 - Description
 - Product image
 - Technical-specification PDF
+- Visitor action: enquiry only, form before download, or public download
+- Button wording
 
 Use **Add item** to add a product. Use the reorder control to change display order.
+
+Use **Enquiry only** for configurable, sensitive, tender-specific, or incomplete
+specifications. The visitor submits their details and PEIC contacts them; no PDF
+is released.
+
+Use **Form required — then download PDF** for standard brochures or datasheets
+where lead capture is useful. PEIC receives the visitor's details before the
+uploaded PDF opens.
+
+Use **Public PDF — no form required** only for documents intended for unrestricted
+distribution. If no PDF is uploaded, the website automatically falls back to
+**Enquiry only**.
 
 ### Partner companies
 

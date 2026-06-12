@@ -4,55 +4,71 @@
     "certification": "BIS IS: 3829 (Part 1) — Certified since 1976",
     "description": "Industrial-grade autoclaves for CSSD departments, designed for high-volume sterilization cycles with precision temperature and pressure control.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "High-Speed 'Flash' Steam Sterilizers",
     "certification": "BIS IS: 3829 (Part 2) — Certified since 1982",
     "description": "Specialized units for rapid sterilization of surgical instruments between procedures, minimizing OT downtime and ensuring instrument readiness.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "Vertical Autoclaves",
     "certification": "PEIC Manufactured · BIS Compliant",
     "description": "Space-efficient vertical sterilizers ideal for laboratories, clinics, and smaller CSSD units with full regulatory compliance.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "Bedpan / Bowl & Utensil Sterilizers",
     "certification": "PEIC Manufactured",
     "description": "Dedicated sterilization systems for patient-care utensils, supporting infection control in ward and ICU environments.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "Hot & Cold-Water Pressure Sterilizers",
     "certification": "PEIC Manufactured",
     "description": "Pressure sterilization systems using hot and cold-water cycles for specialized medical and laboratory applications.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "Bio Medical Waste Sanitizers",
     "certification": "PEIC Manufactured",
     "description": "Biomedical-waste treatment systems for safe sanitization in accordance with applicable healthcare waste-management requirements.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "Tabletop Sterilization Units",
     "certification": "PEIC Manufactured",
     "description": "Compact bench-top autoclaves for dental clinics, small operating theatres, and outpatient surgical centres.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   },
   {
     "name": "CSSD Furniture & Equipment Trolleys",
     "certification": "PEIC Manufactured",
     "description": "Stainless-steel CSSD workstations, instrument trolleys, and storage solutions designed for sterile-processing workflows.",
     "image": "",
-    "specification_file": ""
+    "specification_file": "",
+    "access_mode": "enquiry_only",
+    "action_label": "Request Specifications"
   }
 ]

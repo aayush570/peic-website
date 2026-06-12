@@ -113,6 +113,18 @@ content:
       - { name: description, label: Description, type: text, required: true }
       - { name: image, label: Product image, type: image, options: { media: images } }
       - { name: specification_file, label: Specification PDF, type: file, options: { media: documents } }
+      - name: access_mode
+        label: Visitor action
+        type: select
+        required: true
+        default: enquiry_only
+        description: "Choose whether the visitor must enquire, submit details before downloading, or can download publicly."
+        options:
+          values:
+            - { value: enquiry_only, label: Enquiry only — PEIC contacts them }
+            - { value: gated_download, label: Form required — then download PDF }
+            - { value: public_download, label: Public PDF — no form required }
+      - { name: action_label, label: Button wording, type: string, description: "Examples: Request Specifications, Get Brochure, Download Datasheet" }
 
   - name: partners
     label: Partner companies

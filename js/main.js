@@ -122,9 +122,27 @@ function renderProducts(products) {
     const media = product.image
       ? `<div class="product-image-slot has-image"><img src="${escapeAttribute(product.image)}" alt="${escapeAttribute(product.name)}"></div>`
       : '<div class="product-image-slot" role="img" aria-label="Product image placeholder">Product image</div>';
-    const specs = product.specification_file
-      ? `<a class="download-specs" href="${escapeAttribute(product.specification_file)}" target="_blank" rel="noopener">↓ Technical Specifications</a>`
-      : '<button class="download-specs" type="button">↓ Technical Specifications</button>';
+    const accessMode = ['enquiry_only', 'gated_download', 'public_download'].includes(product.access_mode)
+      ? product.access_mode
+      : 'enquiry_only';
+    const hasFile = Boolean(product.specification_file);
+    const effectiveMode = hasFile ? accessMode : 'enquiry_only';
+    const defaultLabel = effectiveMode === 'enquiry_only'
+      ? 'Request Specifications'
+      : effectiveMode === 'gated_download'
+        ? 'Get Technical Specifications'
+        : 'Download Technical Specifications';
+    const actionLabel = product.action_label || defaultLabel;
+    const specs = effectiveMode === 'public_download'
+      ? `<a class="download-specs" href="${escapeAttribute(product.specification_file)}" target="_blank" rel="noopener">↓ ${escapeHTML(actionLabel)}</a>`
+      : `<button class="download-specs" type="button"
+          data-product-action="${escapeAttribute(effectiveMode)}"
+          data-product-name="${escapeAttribute(product.name)}"
+          data-product-file="${escapeAttribute(product.specification_file || '')}">→ ${escapeHTML(actionLabel)}</button>`;
+    const enquiryUrl = `contact.html?type=equipment&product=${encodeURIComponent(product.name)}`;
+    const secondaryAction = effectiveMode === 'enquiry_only'
+      ? ''
+      : `<a href="${escapeAttribute(enquiryUrl)}" class="btn-enquire">Enquire</a>`;
 
     return `<article class="product-card featured">
       ${media}
@@ -133,7 +151,7 @@ function renderProducts(products) {
       <p>${escapeHTML(product.description || '')}</p>
       <div class="product-actions">
         ${specs}
-        <a href="contact.html?type=equipment" class="btn-enquire">Enquire</a>
+        ${secondaryAction}
       </div>
     </article>`;
   }).join('');
@@ -439,10 +457,13 @@ function initCounters() {
 }
 
 function initDownloadSpecs() {
-  document.querySelectorAll('.download-specs').forEach((btn) => {
-    btn.addEventListener('click', (e) => {
-      e.preventDefault();
-      showToast('Technical specifications are being prepared. Contact sales@peic.in for immediate access.');
+  document.querySelectorAll('[data-product-action]').forEach((button) => {
+    button.addEventListener('click', () => {
+      openProductLeadModal({
+        mode: button.dataset.productAction,
+        product: button.dataset.productName,
+        file: button.dataset.productFile
+      });
     });
   });
 
@@ -459,6 +480,149 @@ function initDownloadSpecs() {
       showToast(link.dataset.pendingMessage || 'This link will be added shortly. Please contact us for access.');
     });
   });
+}
+
+function openProductLeadModal({ mode, product, file }) {
+  const modal = getProductLeadModal();
+  const form = modal.querySelector('.product-lead-form');
+  const title = modal.querySelector('#product-lead-title');
+  const intro = modal.querySelector('.product-lead-intro');
+  const submit = form.querySelector('[type="submit"]');
+
+  form.reset();
+  form.dataset.mode = mode;
+  form.dataset.file = file || '';
+  form.querySelector('[name="product"]').value = product;
+  form.querySelector('[name="subject"]').value = mode === 'gated_download'
+    ? `PEIC specification download: ${product}`
+    : `PEIC product enquiry: ${product}`;
+  title.textContent = mode === 'gated_download' ? 'Get Technical Specifications' : 'Request Product Information';
+  intro.textContent = mode === 'gated_download'
+    ? `Tell us where to send follow-up information for ${product}. Your document will open after submission.`
+    : `Tell us about your interest in ${product}. PEIC will contact you with the appropriate specifications and configuration options.`;
+  submit.textContent = mode === 'gated_download' ? 'Submit & Download' : 'Send Request';
+  resetFormStatus(form);
+
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+  form.querySelector('[name="name"]').focus();
+}
+
+function getProductLeadModal() {
+  let modal = document.querySelector('.product-lead-modal');
+  if (modal) return modal;
+
+  modal = document.createElement('div');
+  modal.className = 'product-lead-modal';
+  modal.hidden = true;
+  modal.innerHTML = `<div class="product-lead-backdrop" data-close-product-modal></div>
+    <section class="product-lead-dialog" role="dialog" aria-modal="true" aria-labelledby="product-lead-title">
+      <button class="product-lead-close" type="button" aria-label="Close" data-close-product-modal>×</button>
+      <h2 id="product-lead-title">Request Product Information</h2>
+      <p class="product-lead-intro"></p>
+      <form class="product-lead-form">
+        <input type="hidden" name="access_key" value="e36c05ee-2b9e-4cb0-b517-f79441d69cb5">
+        <input type="hidden" name="subject" value="PEIC product enquiry">
+        <input type="hidden" name="from_name" value="PEIC Product Catalogue">
+        <input type="hidden" name="product" value="">
+        <input type="hidden" name="enquiry_type" value="Product information / specifications">
+        <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
+        <div class="form-status" role="status" aria-live="polite"></div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-lead-name">Full Name *</label>
+            <input id="product-lead-name" type="text" name="name" autocomplete="name" required>
+          </div>
+          <div class="form-group">
+            <label for="product-lead-company">Company / Institution *</label>
+            <input id="product-lead-company" type="text" name="company" autocomplete="organization" required>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-lead-email">Work Email *</label>
+            <input id="product-lead-email" type="email" name="email" autocomplete="email" required>
+          </div>
+          <div class="form-group">
+            <label for="product-lead-phone">Phone Number *</label>
+            <input id="product-lead-phone" type="tel" name="phone" autocomplete="tel" required>
+          </div>
+        </div>
+        <label class="form-consent">
+          <input type="checkbox" name="privacy-consent" value="accepted" required>
+          <span>I agree that PEIC may use these details to respond to my request, as described in the <a href="privacy.html">Privacy Policy</a>.</span>
+        </label>
+        <button type="submit" class="btn btn-primary product-lead-submit">Send Request</button>
+      </form>
+    </section>`;
+  document.body.appendChild(modal);
+
+  modal.querySelectorAll('[data-close-product-modal]').forEach((button) => {
+    button.addEventListener('click', closeProductLeadModal);
+  });
+  modal.querySelector('.product-lead-form').addEventListener('submit', submitProductLead);
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !modal.hidden) closeProductLeadModal();
+  });
+  return modal;
+}
+
+function closeProductLeadModal() {
+  const modal = document.querySelector('.product-lead-modal');
+  if (!modal) return;
+  modal.hidden = true;
+  document.body.classList.remove('modal-open');
+}
+
+async function submitProductLead(event) {
+  event.preventDefault();
+  const form = event.currentTarget;
+  const status = form.querySelector('.form-status');
+  const submit = form.querySelector('[type="submit"]');
+  const defaultLabel = form.dataset.mode === 'gated_download' ? 'Submit & Download' : 'Send Request';
+
+  submit.disabled = true;
+  submit.textContent = 'Sending...';
+  status.textContent = 'Sending your request securely...';
+  status.className = 'form-status visible';
+
+  try {
+    const response = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    });
+    const result = await response.json();
+    if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
+
+    if (form.dataset.mode === 'gated_download' && form.dataset.file) {
+      status.textContent = 'Thank you. Your request was sent and the document is opening now.';
+      status.className = 'form-status success visible';
+      window.setTimeout(() => {
+        window.location.assign(form.dataset.file);
+      }, 500);
+    } else {
+      status.textContent = 'Thank you. Your request has been sent. PEIC will contact you shortly.';
+      status.className = 'form-status success visible';
+      form.reset();
+    }
+  } catch (error) {
+    status.innerHTML = 'We could not send the request. Please try again or email <a href="mailto:sales@peic.in">sales@peic.in</a>.';
+    status.className = 'form-status error visible';
+  } finally {
+    submit.disabled = false;
+    submit.textContent = defaultLabel;
+  }
+}
+
+function resetFormStatus(form) {
+  const status = form.querySelector('.form-status');
+  if (!status) return;
+  status.textContent = '';
+  status.className = 'form-status';
 }
 
 function initResourceFilter() {
@@ -566,9 +730,15 @@ function initContactForm() {
 function initQueryDefaults() {
   const inquiryType = document.querySelector('#inquiry-type');
   if (!inquiryType) return;
-  const requestedType = new URLSearchParams(window.location.search).get('type');
+  const params = new URLSearchParams(window.location.search);
+  const requestedType = params.get('type');
   if (requestedType && [...inquiryType.options].some((option) => option.value === requestedType)) {
     inquiryType.value = requestedType;
+  }
+  const product = params.get('product');
+  const message = document.querySelector('#message');
+  if (product && message && !message.value) {
+    message.value = `I am interested in: ${product}`;
   }
 }
 
