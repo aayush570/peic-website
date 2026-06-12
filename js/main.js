@@ -1,8 +1,9 @@
 /* PEIC — Shared interactions */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initMobileNav();
   initCounters();
+  await initCMSContent();
   initDownloadSpecs();
   initResourceFilter();
   initContactForm();
@@ -10,6 +11,349 @@ document.addEventListener('DOMContentLoaded', () => {
   initPartnerCards();
   initCertificationLinks();
 });
+
+async function initCMSContent() {
+  try {
+    const page = document.body;
+    const requests = [fetchCMSData('site')];
+
+    if (page.querySelector('.product-grid')) requests.push(fetchCMSData('products'));
+    if (page.querySelector('#partners')) requests.push(fetchCMSData('partners'));
+    if (page.querySelector('.doc-grid')) requests.push(fetchCMSData('resources'));
+    if (page.querySelector('.job-list-placeholder')) requests.push(fetchCMSData('jobs'));
+    if (page.querySelector('.specialty-grid, .service-grid, .benefits-grid')) {
+      requests.push(fetchCMSData('pages'));
+    }
+    if (page.querySelector('.badge-grid, .testimonial-static-row, .logo-grid')) {
+      requests.push(fetchCMSData('about'));
+    }
+
+    const results = await Promise.all(requests);
+    const data = Object.assign({}, ...results);
+
+    if (data.site) renderSiteContent(data.site);
+    if (data.products) renderProducts(data.products);
+    if (data.partners) renderPartners(data.partners);
+    if (data.resources) renderResources(data.resources);
+    if (data.jobs) renderJobs(data.jobs);
+    if (data.pages) renderPageSections(data.pages);
+    if (data.about) renderTrustContent(data.about);
+  } catch (error) {
+    console.warn('CMS content could not be loaded; using built-in page content.', error);
+  }
+}
+
+async function fetchCMSData(name) {
+  const response = await fetch(`content/${name}.json`, { cache: 'no-cache' });
+  if (!response.ok) throw new Error(`Unable to load ${name} content`);
+  return { [name]: await response.json() };
+}
+
+function renderSiteContent(site) {
+  document.querySelectorAll('.logo-name').forEach((el) => {
+    el.textContent = site.company_name;
+  });
+  document.querySelectorAll('.logo-tagline').forEach((el) => {
+    el.textContent = site.tagline;
+  });
+  document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
+    link.href = `tel:${site.phone_link}`;
+    const number = link.querySelector('.hotline-number');
+    if (number) number.textContent = site.phone_display;
+    if (!number && link.textContent.trim().startsWith('Phone:')) {
+      link.textContent = `Phone: ${site.phone_display}`;
+    } else if (!number && /^\+[\d\s]+$/.test(link.textContent.trim())) {
+      link.textContent = site.phone_display;
+    }
+  });
+
+  const emailMap = {
+    'sales@peic.in': site.sales_email,
+    'support@peic.in': site.service_email,
+    'careers@peic.in': site.careers_email,
+    'contact@peic.in': site.general_email
+  };
+  document.querySelectorAll('a[href^="mailto:"]').forEach((link) => {
+    const current = link.href.replace('mailto:', '').split('?')[0];
+    if (!emailMap[current]) return;
+    const query = link.href.includes('?') ? `?${link.href.split('?')[1]}` : '';
+    link.href = `mailto:${emailMap[current]}${query}`;
+    if (link.textContent.trim() === current) link.textContent = emailMap[current];
+  });
+
+  const address = document.querySelector('.office-item p');
+  if (address && Array.isArray(site.address_lines)) {
+    address.innerHTML = `${escapeHTML(site.company_name)} Pvt. Ltd.<br>${site.address_lines.map(escapeHTML).join('<br>')}`;
+  }
+
+  if (document.querySelector('.hero') && site.homepage) {
+    setText('.hero-eyebrow', site.homepage.eyebrow);
+    setText('.hero h1', site.homepage.title);
+    setText('.hero-desc', site.homepage.description);
+    setBackgroundImage('.hero-bg', site.homepage.hero_image);
+  }
+
+  if (document.querySelector('#manufacturing') && site.products_page) {
+    setText('.page-hero h1', site.products_page.title);
+    setText('.page-hero p', site.products_page.description);
+    renderHeroImage(site.products_page.hero_image, 'Product image');
+  }
+
+  if (document.querySelector('.about-content') && site.about_page) {
+    setText('.page-hero h1', site.about_page.title);
+    setText('.page-hero p', site.about_page.description);
+    renderHeroImage(site.about_page.hero_image, 'Facility or team image');
+  }
+}
+
+function renderHeroImage(image, alt) {
+  if (!image) return;
+  const placeholder = document.querySelector('.hero-image-placeholder');
+  if (!placeholder) return;
+  placeholder.classList.add('has-image');
+  placeholder.innerHTML = `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(alt)}">`;
+}
+
+function renderProducts(products) {
+  const grid = document.querySelector('.product-grid');
+  if (!grid || !Array.isArray(products)) return;
+
+  grid.innerHTML = products.map((product) => {
+    const media = product.image
+      ? `<div class="product-image-slot has-image"><img src="${escapeAttribute(product.image)}" alt="${escapeAttribute(product.name)}"></div>`
+      : '<div class="product-image-slot" role="img" aria-label="Product image placeholder">Product image</div>';
+    const specs = product.specification_file
+      ? `<a class="download-specs" href="${escapeAttribute(product.specification_file)}" target="_blank" rel="noopener">↓ Technical Specifications</a>`
+      : '<button class="download-specs" type="button">↓ Technical Specifications</button>';
+
+    return `<article class="product-card featured">
+      ${media}
+      <h4>${escapeHTML(product.name)}</h4>
+      <p class="cert">${escapeHTML(product.certification || '')}</p>
+      <p>${escapeHTML(product.description || '')}</p>
+      <div class="product-actions">
+        ${specs}
+        <a href="contact.html?type=equipment" class="btn-enquire">Enquire</a>
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function renderPartners(partners) {
+  const grids = document.querySelectorAll('#partners .partner-grid');
+  if (grids.length < 2 || !Array.isArray(partners)) return;
+
+  grids[0].innerHTML = partners.filter((partner) => partner.group === 'global').map(partnerCardHTML).join('');
+  grids[1].innerHTML = partners.filter((partner) => partner.group === 'domestic').map(partnerCardHTML).join('');
+}
+
+function partnerCardHTML(partner) {
+  const tags = (partner.categories || [])
+    .map((category) => `<span class="partner-cat-tag">${escapeHTML(category)}</span>`)
+    .join('');
+  const logo = partner.logo
+    ? `<div class="partner-logo-slot has-image"><img src="${escapeAttribute(partner.logo)}" alt="${escapeAttribute(partner.name)} logo"></div>`
+    : '<div class="partner-logo-slot" aria-hidden="true">Logo</div>';
+  const website = partner.website_url
+    ? `<a class="ext-link" href="${escapeAttribute(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit partner website ↗</a>`
+    : `<a class="ext-link" href="#" data-pending-link data-pending-message="The website link for ${escapeAttribute(partner.name)} still needs confirmation.">Website link pending</a>`;
+
+  return `<article class="partner-card" data-solutions-url="${escapeAttribute(partner.solutions_url || '')}">
+    <span class="partner-flag">${escapeHTML(partner.flag || '')}</span>
+    <div class="partner-card-content">
+      <div class="origin">${escapeHTML(partner.country || '')}</div>
+      <h4>${escapeHTML(partner.name)}</h4>
+      <p>${escapeHTML(partner.description || '')}</p>
+      <div class="partner-categories">${tags}</div>
+      ${website}
+    </div>
+    ${logo}
+  </article>`;
+}
+
+function renderResources(resources) {
+  const grid = document.querySelector('.doc-grid');
+  if (!grid || !Array.isArray(resources)) return;
+
+  grid.innerHTML = resources.map((resource) => {
+    const action = resource.file
+      ? `<a class="btn-download-doc" href="${escapeAttribute(resource.file)}" target="_blank" rel="noopener">↓ Download</a>`
+      : '<button class="btn-download-doc" type="button">↓ Request</button>';
+    return `<article class="doc-card" data-category="${escapeAttribute(resource.category)}">
+      <span class="doc-card-type">${escapeHTML(resource.type_label)}</span>
+      <h4>${escapeHTML(resource.title)}</h4>
+      <div class="doc-card-meta">
+        <span>${escapeHTML(resource.file_meta || 'File available on request')}</span>
+        ${action}
+      </div>
+    </article>`;
+  }).join('');
+}
+
+function renderJobs(jobs) {
+  const list = document.querySelector('.job-list-placeholder');
+  if (!list || !Array.isArray(jobs)) return;
+
+  const openJobs = jobs.filter((job) => job.open);
+  const categories = [...new Set(openJobs.map((job) => job.category))];
+  list.innerHTML = categories.map((category) => {
+    const categoryJobs = openJobs.filter((job) => job.category === category);
+    return `<div class="job-category">
+      ${escapeHTML(category)}
+      <span class="open-count">${categoryJobs.length} open</span>
+    </div>
+    ${categoryJobs.map((job) => `<div class="job-item">
+      <div>
+        <h4>${escapeHTML(job.title)}</h4>
+        <span>${escapeHTML(job.location)} · ${escapeHTML(job.employment_type || 'Full-time')}</span>
+      </div>
+      <a href="mailto:careers@peic.in?subject=${encodeURIComponent(`Application: ${job.title}`)}" class="btn-apply">Apply →</a>
+    </div>`).join('')}`;
+  }).join('');
+}
+
+function renderPageSections(pages) {
+  const specialties = document.querySelector('.specialty-grid');
+  if (specialties && pages.solutions?.specialties) {
+    specialties.innerHTML = pages.solutions.specialties.map((item) => `<article class="visual-card" id="${escapeAttribute(item.id)}">
+      <div class="visual-card-img" style="background-image:url('${escapeAttribute(item.image || '')}')"></div>
+      <div class="visual-card-body">
+        <h3>${escapeHTML(item.title)}</h3>
+        <p>${escapeHTML(item.description || '')}</p>
+        <a href="${escapeAttribute(item.link || 'contact.html')}" class="explore-portfolio">Explore portfolio →</a>
+      </div>
+    </article>`).join('');
+  }
+
+  const industries = document.querySelector('.industry-grid');
+  if (industries && pages.solutions?.industries) {
+    industries.innerHTML = pages.solutions.industries.map((item) => `<div class="industry-card ${item.featured ? 'featured' : ''}">
+      <h3>${escapeHTML(item.title)}</h3>
+      <p>${escapeHTML(item.description || '')}</p>
+      <div class="industry-depts">${(item.tags || []).map((tag) => `<span class="industry-dept-tag">${escapeHTML(tag)}</span>`).join('')}</div>
+    </div>`).join('');
+  }
+
+  const responseGrid = document.querySelector('.response-grid');
+  if (responseGrid && pages.service?.process) {
+    responseGrid.innerHTML = pages.service.process.map((item, index) => `<div class="placeholder-card response-step">
+      <div class="placeholder-icon">${index + 1}</div>
+      <h3>${escapeHTML(item.title)}</h3>
+      <p>${escapeHTML(item.description || '')}</p>
+    </div>`).join('');
+  }
+
+  const serviceGrid = document.querySelector('.service-grid');
+  if (serviceGrid && pages.service?.offerings) {
+    serviceGrid.innerHTML = pages.service.offerings.map((item) => `<div class="placeholder-card">
+      <div class="placeholder-icon">${escapeHTML(item.icon || '')}</div>
+      <h3>${escapeHTML(item.title)}</h3>
+      <p>${escapeHTML(item.description || '')}</p>
+    </div>`).join('');
+  }
+
+  const benefits = document.querySelector('.benefits-grid');
+  if (benefits && pages.careers?.benefits) {
+    benefits.innerHTML = pages.careers.benefits.map((item) => `<div class="benefit-card">
+      <div class="benefit-card-icon">${escapeHTML(item.icon || '')}</div>
+      <h4>${escapeHTML(item.title)}</h4>
+      <p>${escapeHTML(item.description || '')}</p>
+    </div>`).join('');
+    setText('.culture-callout h3', pages.careers.culture_title);
+    setText('.culture-callout p', pages.careers.culture_subtitle);
+    setText('.culture-values', pages.careers.culture_values);
+  }
+}
+
+function renderTrustContent(about) {
+  if (Array.isArray(about.metrics)) {
+    document.querySelectorAll('.stats-row').forEach((grid) => {
+      grid.innerHTML = about.metrics.map((metric) => `<div class="stat-item">
+        <div class="stat-number cms-stat-number">${escapeHTML(metric.prefix || '')}${Number(metric.value).toLocaleString()}${escapeHTML(metric.suffix || '')}</div>
+        <div class="stat-tagline">${escapeHTML(metric.tagline || '')}</div>
+        <div class="stat-label">${escapeHTML(metric.label)}</div>
+      </div>`).join('');
+    });
+  }
+
+  const masonry = document.querySelector('.masonry-grid');
+  if (masonry && Array.isArray(about.facilities)) {
+    masonry.innerHTML = about.facilities.map((facility, index) => `<div class="masonry-item ${index === 0 ? 'large' : ''}">
+      <img src="${escapeAttribute(facility.image)}" alt="${escapeAttribute(facility.title)}" loading="lazy">
+      <div class="masonry-overlay"><span>${escapeHTML(facility.title)}</span></div>
+    </div>`).join('');
+  }
+
+  if (Array.isArray(about.clients)) {
+    const clientHTML = about.clients.map((client) => {
+      const logo = client.logo
+        ? `<img src="${escapeAttribute(client.logo)}" alt="${escapeAttribute(client.name)} logo">`
+        : escapeHTML(client.short_name);
+      return `<div class="client-card">
+        <div class="client-logo ${client.logo ? 'has-image' : ''}">${logo}</div>
+        <div class="client-name">${escapeHTML(client.name)}</div>
+        <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
+      </div>`;
+    }).join('');
+    document.querySelectorAll('.logo-grid').forEach((grid) => {
+      grid.innerHTML = clientHTML;
+    });
+  }
+
+  const testimonials = (about.testimonials || []).filter((item) => item.published);
+  const testimonialHTML = testimonials.map(testimonialCardHTML).join('');
+  const staticRow = document.querySelector('.testimonial-static-row');
+  if (staticRow && testimonialHTML) staticRow.innerHTML = testimonialHTML;
+  const marquee = document.querySelector('.testimonial-marquee-track');
+  if (marquee && testimonialHTML) marquee.innerHTML = testimonialHTML + testimonialHTML;
+
+  const badgeGrid = document.querySelector('.badge-grid');
+  if (badgeGrid && Array.isArray(about.certifications)) {
+    badgeGrid.innerHTML = about.certifications.map((cert) => {
+      const badge = `<div class="cert-badge">
+        <div class="cert-icon">${escapeHTML(cert.icon)}</div>
+        <div><h4>${escapeHTML(cert.name)}</h4><p class="cert-num">${escapeHTML(cert.details || '')}</p></div>
+      </div>`;
+      return cert.file
+        ? `<a class="cert-link" href="${escapeAttribute(cert.file)}" target="_blank" rel="noopener">${badge}<span class="cert-download-indicator">↓</span></a>`
+        : badge;
+    }).join('');
+  }
+}
+
+function testimonialCardHTML(testimonial) {
+  return `<div class="testimonial-card">
+    <p class="testimonial-quote">${escapeHTML(testimonial.quote)}</p>
+    <div class="testimonial-author">${escapeHTML(testimonial.author)}</div>
+    <div class="testimonial-role">${escapeHTML(testimonial.role || '')}</div>
+  </div>`;
+}
+
+function setText(selector, value) {
+  const element = document.querySelector(selector);
+  if (element && value) element.textContent = value;
+}
+
+function setBackgroundImage(selector, image) {
+  const element = document.querySelector(selector);
+  if (element && image) {
+    element.style.backgroundImage = `linear-gradient(105deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.3) 100%), url("${image.replace(/"/g, '%22')}")`;
+  }
+}
+
+function escapeHTML(value) {
+  return String(value ?? '').replace(/[&<>"']/g, (character) => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  })[character]);
+}
+
+function escapeAttribute(value) {
+  return escapeHTML(value);
+}
 
 function initMobileNav() {
   const toggle = document.querySelector('.mobile-toggle');

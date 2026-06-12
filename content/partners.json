@@ -1,0 +1,178 @@
+[
+  {
+    "name": "AngioDynamics",
+    "group": "global",
+    "country": "USA",
+    "flag": "🇺🇸",
+    "description": "Oncology systems for RFA and microwave ablation, including NanoKnife IRE.",
+    "categories": ["RFA Systems", "Microwave Ablation", "NanoKnife IRE"],
+    "solutions_url": "solutions.html#oncology",
+    "website_url": "https://www.angiodynamics.com/",
+    "logo": ""
+  },
+  {
+    "name": "Steris Corporation",
+    "group": "global",
+    "country": "USA",
+    "flag": "🇺🇸",
+    "description": "Integrated OT lighting, surgical tables, and CSSD infrastructure.",
+    "categories": ["OT Lighting", "Surgical Tables", "CSSD Systems"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "https://www.steris.com/",
+    "logo": ""
+  },
+  {
+    "name": "Dentsply Sirona",
+    "group": "global",
+    "country": "Germany",
+    "flag": "🇩🇪",
+    "description": "Comprehensive dental suites and CBCT imaging.",
+    "categories": ["Dental Suites", "CBCT Imaging", "Operatory Chairs"],
+    "solutions_url": "solutions.html#dental",
+    "website_url": "https://www.dentsplysirona.com/",
+    "logo": ""
+  },
+  {
+    "name": "Samsung Electronics",
+    "group": "global",
+    "country": "South Korea",
+    "flag": "🇰🇷",
+    "description": "Diagnostic imaging, endoscopic ultrasound, and portable DR.",
+    "categories": ["Portable DR", "Endoscopic US", "Diagnostic Imaging"],
+    "solutions_url": "solutions.html#diagnostic",
+    "website_url": "https://www.samsunghealthcare.com/",
+    "logo": ""
+  },
+  {
+    "name": "Richard Wolf GmbH",
+    "group": "global",
+    "country": "Germany",
+    "flag": "🇩🇪",
+    "description": "Medical endoscopic systems.",
+    "categories": ["Rigid Endoscopes", "Flexible Scopes", "Video Systems"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "https://www.richard-wolf.com/",
+    "logo": ""
+  },
+  {
+    "name": "Pentax Corporation",
+    "group": "global",
+    "country": "Japan",
+    "flag": "🇯🇵",
+    "description": "Ultrasound gastroscopes and duodenoscopes.",
+    "categories": ["Gastroscopes", "Duodenoscopes", "Ultrasound Scopes"],
+    "solutions_url": "solutions.html#diagnostic",
+    "website_url": "https://www.pentaxmedical.com/",
+    "logo": ""
+  },
+  {
+    "name": "BOWA Medical",
+    "group": "global",
+    "country": "Germany",
+    "flag": "🇩🇪",
+    "description": "Electrosurgical units and associated technologies.",
+    "categories": ["Electrosurgical Units", "Argon Plasma", "Vessel Sealing"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "https://www.bowa-medical.com/",
+    "logo": ""
+  },
+  {
+    "name": "ATMOS MedizinTechnik",
+    "group": "global",
+    "country": "Germany",
+    "flag": "🇩🇪",
+    "description": "Specialized surgical suction systems.",
+    "categories": ["Surgical Suction", "Smoke Evacuation", "ENT Systems"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "https://www.atmos.de/",
+    "logo": ""
+  },
+  {
+    "name": "INTRASENSE",
+    "group": "global",
+    "country": "France",
+    "flag": "🇫🇷",
+    "description": "MYRIAN medical-imaging software.",
+    "categories": ["AI Imaging", "Prostate Analysis", "Cardiovascular AI"],
+    "solutions_url": "solutions.html#oncology",
+    "website_url": "https://www.intrasense.fr/",
+    "logo": ""
+  },
+  {
+    "name": "Designs for Vision",
+    "group": "global",
+    "country": "USA",
+    "flag": "🇺🇸",
+    "description": "LED headlights and autofluorescence wound imaging.",
+    "categories": ["LED Headlights", "Wound Imaging", "Autofluorescence"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "https://www.designsforvision.com/",
+    "logo": ""
+  },
+  {
+    "name": "Confident Dental Equipment",
+    "group": "domestic",
+    "country": "India",
+    "flag": "🇮🇳",
+    "description": "Advanced dental operatory suites.",
+    "categories": ["Operatory Suites", "Dental Chairs", "Delivery Systems"],
+    "solutions_url": "solutions.html#dental",
+    "website_url": "https://www.confidentdental.com/",
+    "logo": ""
+  },
+  {
+    "name": "Neuro Equilibrium Diagnostics",
+    "group": "domestic",
+    "country": "India",
+    "flag": "🇮🇳",
+    "description": "VNG, vHIT, and VR vestibular rehabilitation.",
+    "categories": ["VNG Systems", "vHIT Testing", "VR Rehabilitation"],
+    "solutions_url": "solutions.html#diagnostic",
+    "website_url": "https://neuroequilibrium.in/",
+    "logo": ""
+  },
+  {
+    "name": "Simtek Medico Systems",
+    "group": "domestic",
+    "country": "India",
+    "flag": "🇮🇳",
+    "description": "Syringe pumps, infusion pumps, and NST machines.",
+    "categories": ["Syringe Pumps", "Infusion Pumps", "NST Machines"],
+    "solutions_url": "solutions.html#maternal",
+    "website_url": "",
+    "logo": ""
+  },
+  {
+    "name": "Bird Meditech",
+    "group": "domestic",
+    "country": "India",
+    "flag": "🇮🇳",
+    "description": "Radiant heat warmers and LED phototherapy units.",
+    "categories": ["Radiant Warmers", "Phototherapy", "Neonatal Care"],
+    "solutions_url": "solutions.html#maternal",
+    "website_url": "",
+    "logo": ""
+  },
+  {
+    "name": "Alan Electronic Systems",
+    "group": "domestic",
+    "country": "India",
+    "flag": "🇮🇳",
+    "description": "High-frequency electrosurgical units and OT lights.",
+    "categories": ["Electrosurgical Units", "OT Lights", "HF Generators"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "",
+    "logo": ""
+  },
+  {
+    "name": "Palakkad Surgical Industries & Technomed",
+    "group": "domestic",
+    "country": "India",
+    "flag": "🇮🇳",
+    "description": "Electrically operated and electro-hydraulic operating tables.",
+    "categories": ["Operating Tables", "Electro-hydraulic", "OT Furniture"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "",
+    "logo": ""
+  }
+]

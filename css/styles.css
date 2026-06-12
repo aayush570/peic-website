@@ -2021,6 +2021,29 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   text-align: center;
 }
 
+.product-image-slot.has-image,
+.partner-logo-slot.has-image,
+.client-logo.has-image,
+.hero-image-placeholder.has-image {
+  overflow: hidden;
+  padding: 0;
+  border-style: solid;
+}
+
+.product-image-slot img,
+.partner-logo-slot img,
+.client-logo img,
+.hero-image-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.partner-logo-slot img,
+.client-logo img {
+  object-fit: contain;
+}
+
 .hero-image-placeholder {
   min-height: 240px;
   padding: 2rem;

@@ -1,0 +1,32 @@
+{
+  "company_name": "Precision Electronics Instruments & Components",
+  "tagline": "Since 1968 · Medical Equipment Manufacturer & Supplier",
+  "phone_display": "+91 98200 33597",
+  "phone_link": "+919820033597",
+  "general_email": "contact@peic.in",
+  "sales_email": "sales@peic.in",
+  "service_email": "support@peic.in",
+  "careers_email": "careers@peic.in",
+  "enquiry_email": "sital.shah@peic.in",
+  "address_lines": [
+    "20, Shamroz Industrial Estate",
+    "Ram Mandir Road, Goregaon West",
+    "Mumbai 400104, Maharashtra, India"
+  ],
+  "homepage": {
+    "eyebrow": "Premier Medical Technology Partner",
+    "title": "6 Decades of Precision Engineering",
+    "description": "Since 1968, PEIC has been a technical partner for government and private healthcare institutions across India, delivering indigenous sterilization systems and medical technologies.",
+    "hero_image": ""
+  },
+  "products_page": {
+    "title": "Solutions & Equipment Catalog",
+    "description": "Indigenous manufacturing excellence and global partner technologies — engineered for clinical precision, regulatory compliance, and maximum machine uptime.",
+    "hero_image": ""
+  },
+  "about_page": {
+    "title": "Heritage, Trust & Institutional Excellence",
+    "description": "Established in 1968, PEIC has evolved from a precision engineering workshop into a medical equipment manufacturer and technical distributor serving institutions across India.",
+    "hero_image": ""
+  }
+}

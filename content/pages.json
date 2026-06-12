@@ -1,0 +1,44 @@
+{
+  "solutions": {
+    "specialties": [
+      {"id":"cssd","title":"CSSD & Sterilization","description":"Complete central sterile supply department solutions — autoclaves, flash sterilizers, CSSD furniture, and workflow integration.","image":"https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?w=600&q=80","link":"products.html#manufacturing"},
+      {"id":"ot","title":"Operating Theatre (OT) Integration","description":"Surgical tables, OT lighting, electrosurgical units, suction systems, and complete theatre fit-out solutions.","image":"https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=600&q=80","link":"products.html#partners"},
+      {"id":"oncology","title":"Oncology & Ablation","description":"RFA, microwave ablation, NanoKnife IRE systems, and AI-assisted imaging for targeted cancer treatment.","image":"https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=600&q=80","link":"products.html#partners"},
+      {"id":"diagnostic","title":"Diagnostic Imaging & Radiology","description":"Portable DR, endoscopic ultrasound, CBCT imaging, and advanced diagnostic modalities from global partners.","image":"https://images.unsplash.com/photo-1516549655169-df83a0774514?w=600&q=80","link":"products.html#partners"},
+      {"id":"maternal","title":"Maternal / Neonatal Care","description":"Radiant heat warmers, LED phototherapy units, infusion pumps, NST machines, and NICU equipment.","image":"https://images.unsplash.com/photo-1584515933487-779824d29309?w=600&q=80","link":"products.html#partners"},
+      {"id":"dental","title":"Dental Suites","description":"Comprehensive operatory suites, CBCT imaging, and end-to-end dental practice infrastructure.","image":"https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80","link":"products.html#partners"}
+    ],
+    "industries": [
+      {"title":"Healthcare","description":"From government tertiary hospitals to private chains, clinics, and specialty practices.","featured":true,"tags":["CSSD Departments","Operating Theatres","ICU / NICU","Radiology","Oncology Units","Dental Clinics","Maternity Wards"]},
+      {"title":"Pharma & Biopharma","description":"Sterilization and cleanroom infrastructure for pharmaceutical manufacturing and quality-control labs.","featured":false,"tags":["Cleanroom CSSD","QC Labs","Production Facilities"]},
+      {"title":"Medical Device Manufacturers","description":"Testing, validation, and sterilization equipment for device OEMs and component suppliers.","featured":false,"tags":["Validation Labs","Assembly Lines"]},
+      {"title":"Diagnostic Labs","description":"Imaging systems, lab sterilization, and diagnostic equipment for standalone and hospital-affiliated labs.","featured":false,"tags":["Pathology Labs","Imaging Centers"]},
+      {"title":"Research Institutes","description":"Specialized sterilization and laboratory equipment for research and university facilities.","featured":false,"tags":["Bio-safety Labs","Research CSSD","Waste Sanitization"]}
+    ]
+  },
+  "service": {
+    "process": [
+      {"title":"Log Request","description":"Hotline, email, or enquiry form"},
+      {"title":"Triage & Dispatch","description":"Target acknowledgment within two hours"},
+      {"title":"On-Site Resolution","description":"Priority dispatch based on location and equipment criticality"},
+      {"title":"Follow-Up & Report","description":"Service completion record and recommended next actions"}
+    ],
+    "offerings": [
+      {"icon":"📋","title":"AMC / CMC Contract Tiers","description":"Flexible annual and comprehensive maintenance contracts covering preventive maintenance, emergency callouts, parts replacement, and calibration."},
+      {"icon":"🔩","title":"Spare Parts Inventory","description":"In-house spare parts stock for PEIC-manufactured equipment and authorized sourcing for supported partner-brand spares."},
+      {"icon":"⚡","title":"<24-Hour Technical Response","description":"Critical requests are triaged promptly, with response based on location, access, equipment criticality, and parts availability."},
+      {"icon":"↻","title":"Equipment Refurbishing & Upgrades","description":"Mechanical overhaul, electronic-control upgrades, refinishing, testing, and re-commissioning for suitable ageing equipment."}
+    ]
+  },
+  "careers": {
+    "benefits": [
+      {"icon":"📈","title":"Career Growth","description":"Clear technical development pathways with training and certification support."},
+      {"icon":"🏥","title":"Healthcare Benefits","description":"Company healthcare benefits according to the applicable employment policy."},
+      {"icon":"🤝","title":"Collaborative Culture","description":"Cross-functional teams spanning manufacturing, biomedical engineering, service, and B2B sales."},
+      {"icon":"💼","title":"Competitive Compensation","description":"Market-aligned compensation and long-term organizational stability."}
+    ],
+    "culture_title":"Our Culture",
+    "culture_subtitle":"Engineering Excellence, Institutional Pride",
+    "culture_values":"Precision · Institutional Pride · Collaboration"
+  }
+}

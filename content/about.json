@@ -1,0 +1,40 @@
+{
+  "metrics": [
+    {"value":50,"prefix":"","suffix":"+","tagline":"Established 1968","label":"Years in Business"},
+    {"value":15000,"prefix":"","suffix":"+","tagline":"Across India","label":"Total Installations"},
+    {"value":12000,"prefix":"","suffix":"+","tagline":"Operational today","label":"Active Running Installations"},
+    {"value":15,"prefix":"","suffix":"+","tagline":"Industry-leading durability","label":"Years Average Machine Lifespan"},
+    {"value":24,"prefix":"<","suffix":"hr","tagline":"Response target","label":"Service Response in Mumbai"}
+  ],
+  "facilities": [
+    {"title":"Mumbai Corporate Headquarters","image":"https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80"},
+    {"title":"Manufacturing Facility","image":"https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80"},
+    {"title":"In-House Quality Control and R&D Lab","image":"https://images.unsplash.com/photo-1532187863486-abf9db3851d0?w=600&q=80"}
+  ],
+  "clients": [
+    {"short_name":"BMC","name":"BMC Hospitals","tagline":"since >20 years","logo":""},
+    {"short_name":"BARC","name":"B.A.R.C.","tagline":"since >15 years","logo":""},
+    {"short_name":"CCMB","name":"C.C.M.B.","tagline":"since >10 years","logo":""},
+    {"short_name":"NEERI","name":"NEERI","tagline":"since >12 years","logo":""},
+    {"short_name":"IMT","name":"Imtech","tagline":"since >8 years","logo":""},
+    {"short_name":"IR","name":"Indian Railways","tagline":"since >18 years","logo":""},
+    {"short_name":"ACTREC","name":"Tata Memorial Hospital","tagline":"since >15 years","logo":""},
+    {"short_name":"SHD","name":"State Health Depts.","tagline":"since >25 years","logo":""},
+    {"short_name":"PHC","name":"Top-Tier Private Chains","tagline":"since >10 years","logo":""}
+  ],
+  "testimonials": [
+    {"quote":"Approved customer testimonial to be added here.","author":"Testimonial placeholder","role":"Customer name, role, and institution pending approval","published":true},
+    {"quote":"Approved procurement or institutional testimonial to be added here.","author":"Testimonial placeholder","role":"Customer name, role, and institution pending approval","published":true},
+    {"quote":"Approved service or biomedical-engineering testimonial to be added here.","author":"Testimonial placeholder","role":"Customer name, role, and institution pending approval","published":true}
+  ],
+  "certifications": [
+    {"icon":"BIS","name":"BIS Licenses: IS 3829 Part 1 & Part 2","details":"Steam Sterilizer Standards — Certified since 1976 & 1982","file":""},
+    {"icon":"CE","name":"CE Marking Compliance","details":"MDD 93/42/EEC by Unitas — Cert: 9398","file":""},
+    {"icon":"GMP","name":"Good Manufacturing Practices","details":"Optimum Certifications — Cert: GMP/241622RS","file":""},
+    {"icon":"ISO","name":"ISO 14001:2015 — Environmental Management","details":"Cert: EMS/241623RS","file":""},
+    {"icon":"ISO","name":"ISO 13485:2016 — Medical Devices QMS","details":"Cert: MD/241624RS","file":""},
+    {"icon":"ISO","name":"ISO 9001:2015 — Quality Management System","details":"Cert: QMS/23N155","file":""},
+    {"icon":"UD","name":"Udyam Registration","details":"UDYAM-MH-18-0044773","file":""},
+    {"icon":"NS","name":"NSIC Registration","details":"NSIC/GPB/RS/P-314/MH","file":""}
+  ]
+}

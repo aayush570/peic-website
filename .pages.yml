@@ -1,88 +1,271 @@
 media:
-  input: .
-  output: /
+  - name: images
+    label: Images and logos
+    input: uploads/images
+    output: /uploads/images
+    rename: safe
+    categories: [image]
+  - name: documents
+    label: PDFs and downloadable files
+    input: uploads/documents
+    output: /uploads/documents
+    rename: safe
+    categories: [document]
 
 settings:
   content:
     merge: true
+  commit:
+    identity: user
+    templates:
+      create: "cms: add {path}"
+      update: "cms: update {path}"
+      delete: "cms: remove {path}"
+
+components:
+  client:
+    type: object
+    fields:
+      - { name: short_name, label: Short letters, type: string, required: true }
+      - { name: name, label: Customer name, type: string, required: true }
+      - { name: tagline, label: Relationship note, type: string }
+      - { name: logo, label: Customer logo, type: image, options: { media: images } }
+  testimonial:
+    type: object
+    fields:
+      - { name: quote, label: Approved quotation, type: text, required: true }
+      - { name: author, label: Person's name, type: string, required: true }
+      - { name: role, label: Role and institution, type: string }
+      - { name: published, label: Show on website, type: boolean }
+  certification:
+    type: object
+    fields:
+      - { name: icon, label: Short badge letters, type: string, required: true }
+      - { name: name, label: Certification name, type: string, required: true }
+      - { name: details, label: Certificate number/details, type: text }
+      - { name: file, label: Certificate PDF, type: file, options: { media: documents } }
+  metric:
+    type: object
+    fields:
+      - { name: value, label: Number, type: number, required: true }
+      - { name: prefix, label: Prefix, type: string, description: "Example: <" }
+      - { name: suffix, label: Suffix, type: string, description: "Example: + or hr" }
+      - { name: tagline, label: Small green line, type: string }
+      - { name: label, label: Description, type: string, required: true }
+  facility:
+    type: object
+    fields:
+      - { name: title, label: Facility caption, type: string, required: true }
+      - { name: image, label: Facility photograph, type: image, required: true, options: { media: images } }
 
 content:
-  - name: homepage
-    label: Homepage (index.html)
+  - name: company
+    label: Company and page headings
     type: file
-    path: index.html
-    format: raw
+    path: content/site.json
+    format: json
     fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
-
-  - name: about
-    label: About Page (about.html)
-    type: file
-    path: about.html
-    format: raw
-    fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
-
-  - name: careers
-    label: Careers Page (careers.html)
-    type: file
-    path: careers.html
-    format: raw
-    fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
-
-  - name: contact
-    label: Contact Page (contact.html)
-    type: file
-    path: contact.html
-    format: raw
-    fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
+      - { name: company_name, label: Company name, type: string, required: true }
+      - { name: tagline, label: Header tagline, type: string }
+      - { name: phone_display, label: Phone shown to visitors, type: string, required: true }
+      - { name: phone_link, label: Phone dialing format, type: string, description: "Digits with country code, for example +919820033597" }
+      - { name: general_email, label: General email, type: string }
+      - { name: sales_email, label: Sales email, type: string }
+      - { name: service_email, label: Service email, type: string }
+      - { name: careers_email, label: Careers email, type: string }
+      - { name: enquiry_email, label: Enquiry notification email, type: string, readonly: true }
+      - name: address_lines
+        label: Address lines
+        type: string
+        list: true
+      - name: homepage
+        label: Homepage hero
+        type: object
+        fields:
+          - { name: eyebrow, label: Small heading, type: string }
+          - { name: title, label: Main heading, type: string, required: true }
+          - { name: description, label: Introduction, type: text, required: true }
+          - { name: hero_image, label: Hero image, type: image, options: { media: images } }
+      - name: products_page
+        label: Products page hero
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string, required: true }
+          - { name: description, label: Introduction, type: text }
+          - { name: hero_image, label: Hero image, type: image, options: { media: images } }
+      - name: about_page
+        label: About page hero
+        type: object
+        fields:
+          - { name: title, label: Heading, type: string, required: true }
+          - { name: description, label: Introduction, type: text }
+          - { name: hero_image, label: Facility or team image, type: image, options: { media: images } }
 
   - name: products
-    label: Products (products.html)
+    label: Manufactured products
     type: file
-    path: products.html
-    format: raw
+    path: content/products.json
+    format: json
+    list: true
     fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
+      - { name: name, label: Product name, type: string, required: true }
+      - { name: certification, label: Certification/status line, type: string }
+      - { name: description, label: Description, type: text, required: true }
+      - { name: image, label: Product image, type: image, options: { media: images } }
+      - { name: specification_file, label: Specification PDF, type: file, options: { media: documents } }
+
+  - name: partners
+    label: Partner companies
+    type: file
+    path: content/partners.json
+    format: json
+    list: true
+    fields:
+      - { name: name, label: Partner name, type: string, required: true }
+      - name: group
+        label: Partner group
+        type: select
+        required: true
+        options:
+          values:
+            - { value: global, label: Global partner }
+            - { value: domestic, label: Domestic partner }
+      - { name: country, label: Country, type: string }
+      - { name: flag, label: Flag emoji, type: string }
+      - { name: description, label: Description, type: text }
+      - name: categories
+        label: Product categories
+        type: string
+        list: true
+      - { name: solutions_url, label: Internal solutions link, type: string }
+      - { name: website_url, label: Official website URL, type: string }
+      - { name: logo, label: Partner logo, type: image, options: { media: images } }
 
   - name: resources
-    label: Resources (resources.html)
+    label: Downloads and resources
     type: file
-    path: resources.html
-    format: raw
+    path: content/resources.json
+    format: json
+    list: true
     fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
+      - { name: title, label: Public title, type: string, required: true }
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - { value: brochure, label: Brochure }
+            - { value: certificate, label: Certificate }
+            - { value: manual, label: User manual }
+            - { value: case-study, label: Case study }
+      - { name: type_label, label: Label shown on card, type: string, required: true }
+      - { name: file, label: PDF/document, type: file, options: { media: documents } }
+      - { name: file_meta, label: File note, type: string, description: "Example: PDF · 2.4 MB" }
 
-  - name: service
-    label: Service (service.html)
+  - name: jobs
+    label: Job vacancies
     type: file
-    path: service.html
-    format: raw
+    path: content/jobs.json
+    format: json
+    list: true
     fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
+      - { name: title, label: Job title, type: string, required: true }
+      - { name: category, label: Department/category, type: string, required: true }
+      - { name: location, label: Location, type: string, required: true }
+      - { name: employment_type, label: Employment type, type: string }
+      - { name: open, label: Show as open vacancy, type: boolean }
 
-  - name: solutions
-    label: Solutions (solutions.html)
+  - name: page_sections
+    label: Solutions, service and careers copy
     type: file
-    path: solutions.html
-    format: raw
+    path: content/pages.json
+    format: json
     fields:
-      - name: body
-        label: Page HTML Code
-        type: rich-text
+      - name: solutions
+        label: Solutions page
+        type: object
+        fields:
+          - name: specialties
+            label: Medical specialties
+            type: object
+            list: true
+            fields:
+              - { name: id, label: Anchor ID, type: string, required: true, description: "Lowercase; do not change without technical help" }
+              - { name: title, label: Title, type: string, required: true }
+              - { name: description, label: Description, type: text }
+              - { name: image, label: Image, type: image, options: { media: images } }
+              - { name: link, label: Explore link, type: string }
+          - name: industries
+            label: Who we serve
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Industry title, type: string, required: true }
+              - { name: description, label: Description, type: text }
+              - { name: featured, label: Large featured card, type: boolean }
+              - name: tags
+                label: Departments/tags
+                type: string
+                list: true
+      - name: service
+        label: Service page
+        type: object
+        fields:
+          - name: process
+            label: Response-process steps
+            type: object
+            list: true
+            fields:
+              - { name: title, label: Step title, type: string, required: true }
+              - { name: description, label: Step description, type: text }
+          - name: offerings
+            label: Service offerings
+            type: object
+            list: true
+            fields:
+              - { name: icon, label: Icon/emoji, type: string }
+              - { name: title, label: Offering title, type: string, required: true }
+              - { name: description, label: Description, type: text }
+      - name: careers
+        label: Careers page
+        type: object
+        fields:
+          - name: benefits
+            label: Employment benefits
+            type: object
+            list: true
+            fields:
+              - { name: icon, label: Icon/emoji, type: string }
+              - { name: title, label: Benefit title, type: string, required: true }
+              - { name: description, label: Description, type: text }
+          - { name: culture_title, label: Culture heading, type: string }
+          - { name: culture_subtitle, label: Culture subtitle, type: string }
+          - { name: culture_values, label: Culture values, type: string }
+
+  - name: trust
+    label: Customers, testimonials and certificates
+    type: file
+    path: content/about.json
+    format: json
+    fields:
+      - name: metrics
+        label: Company statistics
+        component: metric
+        list: true
+      - name: facilities
+        label: Facilities and photographs
+        component: facility
+        list: true
+      - name: clients
+        label: Customers
+        component: client
+        list: true
+      - name: testimonials
+        label: Testimonials
+        component: testimonial
+        list: true
+      - name: certifications
+        label: Certifications
+        component: certification
+        list: true
