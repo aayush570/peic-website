@@ -114,26 +114,7 @@
       "tagline": "since >10 years"
     }
   ],
-  "testimonials": [
-    {
-      "quote": "Approved customer testimonial to be added here.",
-      "author": "Testimonial placeholder",
-      "role": "Customer name, role, and institution pending approval",
-      "published": true
-    },
-    {
-      "quote": "Approved procurement or institutional testimonial to be added here.",
-      "author": "Testimonial placeholder",
-      "role": "Customer name, role, and institution pending approval",
-      "published": true
-    },
-    {
-      "quote": "Approved service or biomedical-engineering testimonial to be added here.",
-      "author": "Testimonial placeholder",
-      "role": "Customer name, role, and institution pending approval",
-      "published": true
-    }
-  ],
+  "testimonials": [],
   "certifications": [
     {
       "icon": "BIS",

@@ -9,7 +9,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   initContactForm();
   initQueryDefaults();
   initPartnerCards();
-  initCertificationLinks();
 });
 
 async function initCMSContent() {
@@ -32,7 +31,7 @@ async function initCMSContent() {
     if (page.querySelector('.product-grid')) requests.push(fetchCMSData('products'));
     if (page.querySelector('#partners')) requests.push(fetchCMSData('partners'));
     if (page.querySelector('.doc-grid')) requests.push(fetchCMSData('resources'));
-    if (page.querySelector('.job-list-placeholder')) requests.push(fetchCMSData('jobs'));
+    if (page.querySelector('.job-list')) requests.push(fetchCMSData('jobs'));
     if (route !== 'about' && page.querySelector('.logo-grid')) {
       requests.push(fetchCMSData('about'));
     }
@@ -235,8 +234,8 @@ function renderCareersPage(page) {
     culture_subtitle: page.culture?.subtitle,
     culture_values: page.culture?.values
   } });
-  const jobsSection = document.querySelector('.job-list-placeholder')?.closest('section');
-  const heading = jobsSection?.querySelector('.job-list-placeholder')?.previousElementSibling;
+  const jobsSection = document.querySelector('.job-list')?.closest('section');
+  const heading = jobsSection?.querySelector('.job-list')?.previousElementSibling;
   if (heading) {
     setTextWithin(heading, '.section-label', page.jobs_heading?.label);
     setTextWithin(heading, '.section-title', page.jobs_heading?.title);
@@ -292,11 +291,17 @@ function setTextWithin(container, selector, value) {
 }
 
 function renderHeroImage(image, alt) {
-  if (!image) return;
-  const placeholder = document.querySelector('.hero-image-placeholder');
-  if (!placeholder) return;
-  placeholder.classList.add('has-image');
-  placeholder.innerHTML = `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(alt)}">`;
+  const container = document.querySelector('.hero-media');
+  if (!container) return;
+  if (!image) {
+    container.remove();
+    return;
+  }
+
+  container.hidden = false;
+  container.classList.add('has-image');
+  container.innerHTML = `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(alt)}">`;
+  container.querySelector('img')?.addEventListener('error', () => container.remove(), { once: true });
 }
 
 function renderProducts(products) {
@@ -305,8 +310,8 @@ function renderProducts(products) {
 
   grid.innerHTML = products.map((product) => {
     const media = product.image
-      ? `<div class="product-image-slot has-image"><img src="${escapeAttribute(product.image)}" alt="${escapeAttribute(product.name)}"></div>`
-      : '<div class="product-image-slot" role="img" aria-label="Product image placeholder"><span>Product photography coming soon</span></div>';
+      ? `<div class="product-image-slot has-image"><img src="${escapeAttribute(product.image)}" alt="${escapeAttribute(product.name)}" loading="lazy" onerror="this.parentElement.remove()"></div>`
+      : '';
     const accessMode = ['enquiry_only', 'gated_download', 'public_download'].includes(product.access_mode)
       ? product.access_mode
       : 'enquiry_only';
@@ -358,10 +363,10 @@ function partnerCardHTML(partner) {
     .join('');
   const logo = partner.logo
     ? `<div class="partner-logo-slot has-image"><img src="${escapeAttribute(partner.logo)}" alt="${escapeAttribute(partner.name)} logo"></div>`
-    : '<div class="partner-logo-slot" aria-hidden="true">Logo</div>';
+    : '';
   const website = partner.website_url
     ? `<a class="ext-link" href="${escapeAttribute(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit partner website ↗</a>`
-    : `<a class="ext-link" href="#" data-pending-link data-pending-message="The website link for ${escapeAttribute(partner.name)} still needs confirmation.">Website link pending</a>`;
+    : '';
 
   return `<article class="partner-card" data-solutions-url="${escapeAttribute(partner.solutions_url || '')}">
     <span class="partner-flag">${escapeHTML(partner.flag || '')}</span>
@@ -396,7 +401,7 @@ function renderResources(resources) {
 }
 
 function renderJobs(jobs) {
-  const list = document.querySelector('.job-list-placeholder');
+  const list = document.querySelector('.job-list');
   if (!list || !Array.isArray(jobs)) return;
 
   const openJobs = jobs.filter((job) => job.open);
@@ -441,8 +446,8 @@ function renderPageSections(pages) {
 
   const responseGrid = document.querySelector('.response-grid');
   if (responseGrid && pages.service?.process) {
-    responseGrid.innerHTML = pages.service.process.map((item, index) => `<div class="placeholder-card response-step">
-      <div class="placeholder-icon">${index + 1}</div>
+    responseGrid.innerHTML = pages.service.process.map((item, index) => `<div class="info-card response-step">
+      <div class="info-card-icon">${index + 1}</div>
       <h3>${escapeHTML(item.title)}</h3>
       <p>${escapeHTML(item.description || '')}</p>
     </div>`).join('');
@@ -450,8 +455,8 @@ function renderPageSections(pages) {
 
   const serviceGrid = document.querySelector('.service-grid');
   if (serviceGrid && pages.service?.offerings) {
-    serviceGrid.innerHTML = pages.service.offerings.map((item) => `<div class="placeholder-card">
-      <div class="placeholder-icon">${escapeHTML(item.icon || '')}</div>
+    serviceGrid.innerHTML = pages.service.offerings.map((item) => `<div class="info-card">
+      <div class="info-card-icon">${escapeHTML(item.icon || '')}</div>
       <h3>${escapeHTML(item.title)}</h3>
       <p>${escapeHTML(item.description || '')}</p>
     </div>`).join('');
@@ -505,8 +510,12 @@ function renderTrustContent(about) {
     });
   }
 
-  const testimonials = (about.testimonials || []).filter((item) => item.published);
+  const testimonials = (about.testimonials || []).filter((item) => (
+    item.published && item.quote && item.author
+  ));
   const testimonialHTML = testimonials.map(testimonialCardHTML).join('');
+  const testimonialsSection = document.querySelector('.testimonials-section');
+  if (testimonialsSection) testimonialsSection.hidden = !testimonialHTML;
   const staticRow = document.querySelector('.testimonial-static-row');
   if (staticRow && testimonialHTML) staticRow.innerHTML = testimonialHTML;
   const marquee = document.querySelector('.testimonial-marquee-track');
@@ -654,17 +663,10 @@ function initDownloadSpecs() {
     });
   });
 
-  document.querySelectorAll('.btn-download-doc').forEach((btn) => {
+  document.querySelectorAll('button.btn-download-doc').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      showToast('This document is not online yet. Contact sales@peic.in and we will send it directly.');
-    });
-  });
-
-  document.querySelectorAll('a[href="#"][data-pending-link]').forEach((link) => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      showToast(link.dataset.pendingMessage || 'This link will be added shortly. Please contact us for access.');
+      showToast('Contact sales@peic.in and we will send this document directly.');
     });
   });
 }
@@ -954,61 +956,25 @@ function initPartnerCards() {
     const content = card.querySelector('.partner-flag')?.nextElementSibling;
     if (content) content.classList.add('partner-card-content');
 
-    const logoSlot = document.createElement('div');
-    logoSlot.className = 'partner-logo-slot';
-    logoSlot.textContent = 'Logo';
-    logoSlot.setAttribute('aria-hidden', 'true');
-    card.appendChild(logoSlot);
-
     const name = card.querySelector('h4')?.textContent.trim();
     const oldLink = card.querySelector('.ext-link');
     const websiteUrl = partnerUrls[name];
     if (oldLink) {
+      if (!websiteUrl) {
+        oldLink.remove();
+        original.replaceWith(card);
+        return;
+      }
       const link = document.createElement('a');
       link.className = 'ext-link';
-      link.textContent = websiteUrl ? 'Visit partner website ↗' : 'Website link pending';
-      link.href = websiteUrl || '#';
-      link.target = websiteUrl ? '_blank' : '';
-      link.rel = websiteUrl ? 'noopener noreferrer' : '';
-      if (!websiteUrl) {
-        link.dataset.pendingLink = '';
-        link.dataset.pendingMessage = `The website link for ${name} still needs confirmation.`;
-        link.addEventListener('click', (event) => {
-          event.preventDefault();
-          showToast(link.dataset.pendingMessage);
-        });
-      }
+      link.textContent = 'Visit partner website ↗';
+      link.href = websiteUrl;
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
       oldLink.replaceWith(link);
     }
 
     original.replaceWith(card);
-  });
-}
-
-function initCertificationLinks() {
-  document.querySelectorAll('.cert-badge').forEach((badge) => {
-    if (badge.closest('a')) return;
-    const name = badge.querySelector('h4')?.textContent.trim() || 'certificate';
-    const link = document.createElement('a');
-    link.className = 'cert-link';
-    link.href = '#';
-    link.target = '_blank';
-    link.rel = 'noopener';
-    link.dataset.cert = name;
-    link.dataset.pendingLink = '';
-    link.setAttribute('aria-label', `${name}: certificate link pending`);
-    badge.parentNode.insertBefore(link, badge);
-    link.appendChild(badge);
-
-    const indicator = document.createElement('span');
-    indicator.className = 'cert-download-indicator';
-    indicator.textContent = '↓';
-    indicator.setAttribute('aria-hidden', 'true');
-    link.appendChild(indicator);
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      showToast(`The file for ${name} still needs to be uploaded.`);
-    });
   });
 }
 
