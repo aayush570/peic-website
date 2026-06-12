@@ -309,9 +309,6 @@ function renderProducts(products) {
   if (!grid || !Array.isArray(products)) return;
 
   grid.innerHTML = products.map((product) => {
-    const media = product.image
-      ? `<div class="product-image-slot has-image"><img src="${escapeAttribute(product.image)}" alt="${escapeAttribute(product.name)}" loading="lazy" onerror="this.parentElement.remove()"></div>`
-      : '';
     const accessMode = ['enquiry_only', 'gated_download', 'public_download'].includes(product.access_mode)
       ? product.access_mode
       : 'enquiry_only';
@@ -334,8 +331,7 @@ function renderProducts(products) {
       ? ''
       : `<a href="${escapeAttribute(enquiryUrl)}" class="btn-enquire">Enquire</a>`;
 
-    return `<article class="product-card featured${product.image ? ' has-product-image' : ''}">
-      ${media}
+    return `<article class="product-card featured">
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
         <p class="cert">${escapeHTML(product.certification || '')}</p>
@@ -425,8 +421,7 @@ function renderJobs(jobs) {
 function renderPageSections(pages) {
   const specialties = document.querySelector('.specialty-grid');
   if (specialties && pages.solutions?.specialties) {
-    specialties.innerHTML = pages.solutions.specialties.map((item) => `<article class="visual-card" id="${escapeAttribute(item.id)}">
-      <div class="visual-card-img" style="background-image:url('${escapeAttribute(item.image || '')}')"></div>
+    specialties.innerHTML = pages.solutions.specialties.map((item) => `<article class="visual-card" id="${escapeAttribute(item.id)}"${item.image ? ` style="--card-image:url('${escapeAttribute(item.image)}')"` : ''}>
       <div class="visual-card-body">
         <h3>${escapeHTML(item.title)}</h3>
         <p>${escapeHTML(item.description || '')}</p>
@@ -620,7 +615,7 @@ function initMobileNav() {
   });
 
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 1000) setOpen(false);
+    if (window.innerWidth > 1100) setOpen(false);
   });
 }
 

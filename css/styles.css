@@ -92,18 +92,17 @@ h1, h2, h3, h4 {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   height: var(--header-h);
   width: min(1400px, calc(100vw - 3rem));
-  gap: clamp(1.5rem, 3vw, 3rem);
+  gap: clamp(2rem, 3.5vw, 4rem);
 }
 
 .header-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 1.25rem;
-  margin-left: auto;
 }
 
 .header-hotline {
@@ -187,12 +186,12 @@ h1, h2, h3, h4 {
 .main-nav {
   display: flex;
   align-items: center;
-  gap: clamp(0.7rem, 1.25vw, 1.35rem);
-  flex-shrink: 1; 
+  gap: clamp(0.8rem, 1.15vw, 1.2rem);
+  flex-shrink: 0;
 }
 
 .main-nav a {
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--slate-mid);
   transition: color var(--transition);
@@ -624,7 +623,7 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 
 .product-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1.5rem;
 }
 
@@ -632,24 +631,27 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   background: white;
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: 1.75rem;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  transition: border-color var(--transition), box-shadow var(--transition);
+  overflow: hidden;
+  min-height: 100%;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
 }
 
 .product-card:hover {
   border-color: var(--green-muted);
   box-shadow: var(--shadow);
+  transform: translateY(-2px);
 }
 
 .product-card.featured {
-  border-left: 4px solid var(--green);
+  border-top: 4px solid var(--green);
 }
 
 .product-card h4 {
   font-size: 1.05rem;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.65rem;
 }
 
 .product-card .cert {
@@ -660,10 +662,17 @@ section.bg-green h2, section.bg-green h3 { color: white; }
 }
 
 .product-card p {
-  font-size: 0.9rem;
+  font-size: 0.92rem;
   color: var(--slate-light);
   flex: 1;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.product-card-content {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.5rem;
 }
 
 .product-actions {
@@ -1434,10 +1443,19 @@ body.modal-open {
 }
 
 .visual-card {
-  border: 1px solid var(--border);
+  position: relative;
+  min-height: 200px;
+  display: flex;
+  align-items: flex-end;
+  border: 1px solid rgba(15, 23, 42, 0.12);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: white;
+  background-color: var(--slate-mid);
+  background-image:
+    linear-gradient(to top, rgba(8, 20, 16, 0.96) 0%, rgba(8, 20, 16, 0.75) 48%, rgba(8, 20, 16, 0.08) 100%),
+    var(--card-image);
+  background-position: center;
+  background-size: cover;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -1446,18 +1464,31 @@ body.modal-open {
   box-shadow: var(--shadow-lg);
 }
 
-.visual-card-img {
-  height: 180px;
-  background-size: cover;
-  background-position: center;
-}
-
 .visual-card-body {
-  padding: 1.5rem;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 1.25rem;
 }
 
-.visual-card-body h3 { font-size: 1.05rem; margin-bottom: 0.5rem; }
-.visual-card-body p { font-size: 0.9rem; color: var(--slate-light); }
+.visual-card-body h3 {
+  color: white;
+  font-size: 1.05rem;
+  margin-bottom: 0.45rem;
+}
+
+.visual-card-body p {
+  color: rgba(255, 255, 255, 0.84);
+  font-size: 0.82rem;
+  line-height: 1.45;
+  margin-bottom: 0.8rem;
+}
+
+.visual-card .explore-portfolio {
+  color: #bde8c2;
+  margin-top: 0;
+  font-size: 0.82rem;
+}
 
 .filter-tags {
   display: flex;
@@ -1641,25 +1672,20 @@ body.modal-open {
 /* ─── Responsive ─── */
 
 @media (max-width: 1340px) {
-  /* Keep the hotline block visible! */
-  .header-actions .header-hotline {
-    display: flex; 
-    padding: 0.25rem 0.5rem; /* Make the inner padding slightly tighter */
-  }
-  
-  /* Shrink the hotline text size just a tiny bit */
-  .hotline-number {
-    font-size: 0.8rem;
+  .header-inner {
+    gap: 2rem;
   }
 
-  /* Force the navigation menu links to sit closer together */
+  .header-actions > .header-hotline {
+    display: none;
+  }
+
   .main-nav {
-    gap: 0.75rem; /* Tightens the gap from 2rem down to a sleek 12px */
+    gap: 0.9rem;
   }
 
-  /* Drop the font size of the menu links slightly so they take up less room */
   .main-nav a {
-    font-size: 0.82rem;
+    font-size: 1.05rem;
   }
 }
 
@@ -2078,11 +2104,12 @@ body.modal-open {
 }
 
 .product-image-slot {
-  height: 80px;
-  border-width: 1px;
-  border-radius: var(--radius);
-  margin-bottom: 0.75rem;
-  font-size: 0.72rem;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
 }
 
 .tier-header {
@@ -2105,17 +2132,16 @@ body.modal-open {
 }
 
 .product-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
 }
 
-.product-card { padding: 1rem; }
-.product-card h4 { font-size: 0.9rem; }
-.product-card p { font-size: 0.82rem; margin-bottom: 0.8rem; }
-.product-card .cert { font-size: 0.72rem; margin-bottom: 0.5rem; }
-.product-actions { gap: 0.4rem; }
+.product-card h4 { font-size: 1rem; }
+.product-card p { font-size: 0.88rem; margin-bottom: 1.25rem; }
+.product-card .cert { font-size: 0.78rem; margin-bottom: 0.65rem; }
+.product-actions { gap: 0.5rem; }
 .download-specs,
-.btn-enquire { padding: 0.4rem 0.65rem; font-size: 0.72rem; }
+.btn-enquire { padding: 0.55rem 0.8rem; font-size: 0.78rem; }
 
 .advantage-bar { padding: 1.5rem; margin-bottom: 1.5rem; gap: 1rem; }
 .advantage-bar.distribution { margin-top: 1.5rem; }
@@ -2143,36 +2169,28 @@ body.modal-open {
 
 @media (min-width: 1100px) {
   #manufacturing .product-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
-  #manufacturing .product-card {
-    min-height: 330px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   #manufacturing .product-card h4 {
-    font-size: 0.9rem;
-    line-height: 1.25;
+    font-size: 1.05rem;
+    line-height: 1.3;
   }
 
   #manufacturing .product-card .cert {
-    font-size: 0.68rem;
-    line-height: 1.25;
-  }
-
-  #manufacturing .product-card > p:not(.cert) {
-    font-size: 0.72rem;
+    font-size: 0.78rem;
+    line-height: 1.35;
   }
 
   #manufacturing .product-card-content > p:not(.cert) {
-    font-size: 0.72rem;
-    line-height: 1.4;
+    font-size: 0.9rem;
+    line-height: 1.55;
   }
 
   #manufacturing .download-specs,
   #manufacturing .btn-enquire {
-    padding: 0.42rem 0.58rem;
-    font-size: 0.66rem;
+    padding: 0.6rem 0.85rem;
+    font-size: 0.8rem;
   }
 
   #partners .partner-grid {
@@ -2198,133 +2216,9 @@ body.modal-open {
   .procurement-advantages .advantage-item h4 { white-space: nowrap; }
 }
 
-/* Image-led manufacturing cards */
-#manufacturing .product-card {
-  position: relative;
-  isolation: isolate;
-  min-height: 350px;
-  overflow: hidden;
-  justify-content: flex-end;
-  padding: 0;
-  border: 0;
-  border-radius: var(--radius-lg);
-  background:
-    radial-gradient(circle at 78% 18%, rgba(133, 194, 143, 0.42), transparent 34%),
-    linear-gradient(145deg, #587466 0%, #203d32 54%, #10251e 100%);
-  box-shadow: 0 10px 28px rgba(27, 53, 43, 0.15);
-}
-
-#manufacturing .product-card.featured {
-  border-left: 0;
-}
-
-#manufacturing .product-card:hover {
-  border-color: transparent;
-  box-shadow: 0 16px 38px rgba(27, 53, 43, 0.24);
-  transform: translateY(-3px);
-}
-
-#manufacturing .product-card::after {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(8, 20, 16, 0.04) 0%,
-    rgba(8, 20, 16, 0.16) 28%,
-    rgba(8, 20, 16, 0.82) 58%,
-    rgba(8, 20, 16, 0.97) 100%
-  );
-  pointer-events: none;
-}
-
-#manufacturing .product-image-slot {
-  position: absolute;
-  z-index: -2;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  border: 0;
-  border-radius: 0;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.62);
-}
-
-#manufacturing .product-image-slot:not(.has-image) {
-  place-items: start end;
-  padding: 1rem;
-}
-
-#manufacturing .product-image-slot:not(.has-image) span {
-  max-width: 8rem;
-  font-size: 0.63rem;
-  font-weight: 700;
-  line-height: 1.3;
-  letter-spacing: 0.06em;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-#manufacturing .product-image-slot img {
-  transition: transform 500ms ease;
-}
-
-#manufacturing .product-card:hover .product-image-slot img {
-  transform: scale(1.035);
-}
-
-#manufacturing .product-card-content {
-  width: 100%;
-  padding: 4.5rem 1rem 1rem;
-}
-
-#manufacturing .product-card h4,
-#manufacturing .product-card p,
-#manufacturing .product-card .cert {
-  color: white;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.28);
-}
-
-#manufacturing .product-card h4 {
-  margin-bottom: 0.4rem;
-}
-
-#manufacturing .product-card .cert {
-  color: #bde8c2;
-  margin-bottom: 0.5rem;
-}
-
-#manufacturing .product-card p {
-  margin-bottom: 0.8rem;
-  color: rgba(255, 255, 255, 0.84);
-}
-
-#manufacturing .download-specs,
-#manufacturing .btn-enquire {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(255, 255, 255, 0.92);
-  color: var(--green-dark);
-  backdrop-filter: blur(8px);
-}
-
-#manufacturing .download-specs:hover,
-#manufacturing .btn-enquire:hover {
-  border-color: white;
-  background: white;
-  color: var(--green-dark);
-}
-
-@media (max-width: 700px) {
-  #manufacturing .product-card {
-    min-height: 370px;
-  }
-}
-
 .specialty-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .solutions-content {
@@ -2332,13 +2226,30 @@ body.modal-open {
   flex-direction: column;
 }
 
-.solutions-content .audience-section { order: 1; }
-.solutions-content .specialty-section { order: 2; }
+.solutions-content .specialty-section { order: 1; }
+.solutions-content .audience-section { order: 2; }
 
-.visual-card-img { height: 120px; }
-.visual-card-body { padding: 1rem; }
-.visual-card-body h3 { font-size: 0.95rem; }
-.visual-card-body p { font-size: 0.82rem; }
+.solutions-page .page-hero-sm {
+  padding: 1.75rem 0;
+}
+
+.solutions-page .specialty-section {
+  padding: 1.75rem 0;
+}
+
+.solutions-page .specialty-section .section-header {
+  margin-bottom: 1rem;
+}
+
+.solutions-page .floating-cta {
+  display: none;
+}
+
+@media (min-width: 1450px) {
+  .specialty-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
 
 .service-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); }
 .service-grid .info-card {
@@ -2515,64 +2426,33 @@ body.modal-open {
   .culture-values { text-align: left; }
   .partner-card { grid-template-columns: auto minmax(0, 1fr); }
   .partner-logo-slot { display: none; }
+  .visual-card { min-height: 260px; }
 }
 
-/* --- Progressive header adaptation --- */
-@media (min-width: 1001px) and (max-width: 1360px) {
+@media (min-width: 1001px) and (max-width: 1180px) {
   .header-inner {
-    width: calc(100vw - 1.5rem);
-    gap: 0.5rem;
-  }
-
-  .logo {
-    gap: 0.5rem;
-  }
-
-  .logo-mark {
-    width: 38px;
-    height: 38px;
-    font-size: 0.75rem;
-  }
-
-  .logo-name {
-    font-size: 0.78rem;
-  }
-
-  .logo-tagline {
-    font-size: 0.48rem;
+    width: calc(100vw - 2rem);
+    gap: 1.25rem;
   }
 
   .header-actions {
-    gap: 0.5rem;
+    gap: 0.75rem;
   }
 
-  .header-hotline {
-    padding: 0.25rem 0.4rem;
-  }
-
-  .hotline-label {
-    font-size: 0.5rem;
-  }
-
-  .hotline-number {
-    font-size: 0.72rem;
-  }
-
-  .main-nav {
-    gap: clamp(0.45rem, 0.7vw, 0.7rem);
+  .header-actions > .header-hotline {
+    display: none;
   }
 
   .main-nav a {
-    font-size: clamp(0.76rem, 0.85vw, 0.84rem);
-    font-weight: 600;
+    font-size: 0.9rem;
   }
 
   .nav-cta {
-    padding: 0.48rem 0.65rem;
+    padding-inline: 0.85rem;
   }
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1100px) {
   .header-inner {
     gap: 0.9rem;
   }
