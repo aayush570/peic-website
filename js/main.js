@@ -159,9 +159,7 @@ function renderHomePage(home) {
 }
 
 function renderProductsPage(page) {
-  setText('.page-hero h1', page.hero?.title);
-  setText('.page-hero p', page.hero?.description);
-  renderHeroImage(page.hero?.image, 'Product catalog');
+  setPageHero(page.hero);
   renderTier('#manufacturing', page.manufacturing);
   renderTier('#partners', page.partners);
   setText('#partners .container > h3', page.partners?.global_title);
@@ -197,9 +195,7 @@ function renderSolutionsPage(page) {
 function renderAboutPage(about) {
   const page = about.page;
   if (!page) return;
-  setText('.page-hero h1', page.hero?.title);
-  setText('.page-hero p', page.hero?.description);
-  renderHeroImage(page.hero?.image, 'Facility or team');
+  setPageHero(page.hero);
   setHeading(document.querySelector('.legacy-section'), page.legacy);
   const legacyCopy = document.querySelector('.legacy-section .two-col-split > div');
   if (legacyCopy && Array.isArray(page.legacy?.paragraphs)) {
@@ -290,20 +286,6 @@ function setTextWithin(container, selector, value) {
   if (element && value !== undefined && value !== null) element.textContent = value;
 }
 
-function renderHeroImage(image, alt) {
-  const container = document.querySelector('.hero-media');
-  if (!container) return;
-  if (!image) {
-    container.remove();
-    return;
-  }
-
-  container.hidden = false;
-  container.classList.add('has-image');
-  container.innerHTML = `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(alt)}">`;
-  container.querySelector('img')?.addEventListener('error', () => container.remove(), { once: true });
-}
-
 function renderProducts(products) {
   const grid = document.querySelector('.product-grid');
   if (!grid || !Array.isArray(products)) return;
@@ -331,7 +313,7 @@ function renderProducts(products) {
       ? ''
       : `<a href="${escapeAttribute(enquiryUrl)}" class="btn-enquire">Enquire</a>`;
 
-    return `<article class="product-card featured">
+    return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(product.image)}')"` : ''}>
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
         <p class="cert">${escapeHTML(product.certification || '')}</p>
