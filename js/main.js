@@ -2,8 +2,10 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
   initMobileNav();
+  initHeaderState();
   initCounters();
   await initCMSContent();
+  initRevealAnimations();
   initDownloadSpecs();
   initResourceFilter();
   initContactForm();
@@ -313,7 +315,7 @@ function renderProducts(products) {
       ? ''
       : `<a href="${escapeAttribute(enquiryUrl)}" class="btn-enquire">Enquire</a>`;
 
-    return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(product.image)}')"` : ''}>
+    return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
         <p class="cert">${escapeHTML(product.certification || '')}</p>
@@ -403,7 +405,7 @@ function renderJobs(jobs) {
 function renderPageSections(pages) {
   const specialties = document.querySelector('.specialty-grid');
   if (specialties && pages.solutions?.specialties) {
-    specialties.innerHTML = pages.solutions.specialties.map((item) => `<article class="visual-card" id="${escapeAttribute(item.id)}"${item.image ? ` style="--card-image:url('${escapeAttribute(item.image)}')"` : ''}>
+    specialties.innerHTML = pages.solutions.specialties.map((item) => `<article class="visual-card" id="${escapeAttribute(item.id)}"${item.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(item.image))}')"` : ''}>
       <div class="visual-card-body">
         <h3>${escapeHTML(item.title)}</h3>
         <p>${escapeHTML(item.description || '')}</p>
@@ -546,6 +548,12 @@ function escapeAttribute(value) {
   return escapeHTML(value);
 }
 
+function normalizeAssetURL(url) {
+  if (!url) return '';
+  if (/^(https?:|data:|\/|#)/i.test(url)) return url;
+  return `/${url.replace(/^\.?\//, '')}`;
+}
+
 function initMobileNav() {
   const toggle = document.querySelector('.mobile-toggle');
   const nav = document.querySelector('.main-nav');
@@ -627,6 +635,66 @@ function initCounters() {
   }, { threshold: 0.3 });
 
   counters.forEach((c) => observer.observe(c));
+}
+
+function initHeaderState() {
+  const header = document.querySelector('.site-header');
+  if (!header) return;
+
+  function updateHeader() {
+    header.classList.toggle('scrolled', window.scrollY > 12);
+  }
+
+  updateHeader();
+  window.addEventListener('scroll', updateHeader, { passive: true });
+}
+
+function initRevealAnimations() {
+  const targets = document.querySelectorAll([
+    '.section-header',
+    '.cap-card',
+    '.stat-item',
+    '.client-card',
+    '.product-card',
+    '.partner-card',
+    '.advantage-item',
+    '.info-card',
+    '.visual-card',
+    '.industry-card',
+    '.benefit-card',
+    '.doc-card',
+    '.cert-badge',
+    '.testimonial-card',
+    '.masonry-item',
+    '.contact-info-block',
+    '.contact-form',
+    '.legacy-container',
+    '.custom-solution-box',
+    '.urgent-service-banner',
+    '.missing-doc-cta'
+  ].join(','));
+
+  if (!targets.length) return;
+
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    targets.forEach((target) => target.classList.add('is-visible'));
+    return;
+  }
+
+  targets.forEach((target, index) => {
+    target.classList.add('reveal-on-scroll');
+    target.style.setProperty('--reveal-delay', `${Math.min(index % 6, 5) * 55}ms`);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+  targets.forEach((target) => observer.observe(target));
 }
 
 function initDownloadSpecs() {
