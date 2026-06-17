@@ -339,7 +339,6 @@ function renderProducts(products) {
     return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
-        <p class="cert">${escapeHTML(product.certification || '')}</p>
         <p>${escapeHTML(product.description || '')}</p>
         <div class="product-actions">
           ${specs}
@@ -398,7 +397,6 @@ function renderResources(resources) {
       <span class="doc-card-type">${escapeHTML(resource.type_label)}</span>
       <h4>${escapeHTML(resource.title)}</h4>
       <div class="doc-card-meta">
-        <span>${escapeHTML(resource.file_meta || (isCertificate ? 'Compliance details' : 'Available on request'))}</span>
         ${action}
       </div>
     </article>`;
