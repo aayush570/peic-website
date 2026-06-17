@@ -138,10 +138,11 @@ function renderHomePage(home) {
   setHeadingBlock('.dual-cards', home.capabilities);
   const cards = document.querySelector('.dual-cards');
   if (cards && Array.isArray(home.capabilities?.cards)) {
-    cards.innerHTML = home.capabilities.cards.map((card) => `<a href="${escapeAttribute(card.link || '#')}" class="cap-card-link">
+    cards.innerHTML = home.capabilities.cards.map((card, index) => `<a href="${escapeAttribute(card.link || '#')}" class="cap-card-link">
       <div class="cap-card">
-        <div class="cap-card-img"${card.image ? ` style="background-image:url('${escapeAttribute(card.image)}')"` : ''}></div>
+        <div class="cap-card-img"${card.image ? ` style="background-image:url('${escapeAttribute(normalizeAssetURL(card.image))}')"` : ''}></div>
         <div class="cap-card-body">
+          <span class="cap-index">${String(index + 1).padStart(2, '0')}</span>
           <h3>${escapeHTML(card.title)}</h3>
           <p>${escapeHTML(card.description || '')}</p>
           <ul class="cap-advantages">${(card.advantages || []).map((item) => `<li><span class="tick">✓</span> <strong>${escapeHTML(item)}</strong></li>`).join('')}</ul>
@@ -530,7 +531,7 @@ function setText(selector, value) {
 function setBackgroundImage(selector, image) {
   const element = document.querySelector(selector);
   if (element && image) {
-    element.style.backgroundImage = `linear-gradient(105deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.3) 100%), url("${image.replace(/"/g, '%22')}")`;
+    element.style.backgroundImage = `linear-gradient(90deg, rgba(16, 20, 24, 0.95) 0%, rgba(16, 20, 24, 0.84) 43%, rgba(16, 20, 24, 0.2) 100%), url("${image.replace(/"/g, '%22')}")`;
   }
 }
 
