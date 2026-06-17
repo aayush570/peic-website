@@ -1,10 +1,10 @@
 {
   "hero": {
-    "eyebrow": "Premier Medical Technology Partner",
-    "title": "6 Decades of Precision Engineering",
-    "description": "Since 1968, PEIC has been the trusted technical partner for elite government and private healthcare institutions across India, delivering everything from indigenous sterilization systems to world-class diagnostic and surgical technologies.",
+    "eyebrow": "Indian Manufacturer · Authorized Med-Tech Integrator",
+    "title": "Credible Medical Equipment Partner Since 1968",
+    "description": "PEIC combines Indian sterilization-system manufacturing heritage with current authorized partnerships across global and domestic medical technologies, giving procurement, biomedical, project, and service teams one accountable institutional partner.",
     "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
-    "primary_button_label": "Explore Solutions & Equipment",
+    "primary_button_label": "Make an Enquiry",
     "primary_button_link": "products.html",
     "secondary_button_label": "Our Heritage & Credentials",
     "secondary_button_link": "about.html"
@@ -16,6 +16,18 @@
     "MSME & NSIC Registered",
     "Trusted by Government Networks & Private Healthcare Leaders Nationwide"
   ],
+  "hero_panel": {
+    "kicker": "PEIC Manufacturing System",
+    "metric": "1968",
+    "title": "Established engineering base for institutional healthcare",
+    "description": "Certified manufacturing, technical integration, and lifecycle support managed through one accountable partner.",
+    "specs": [
+      {"label": "Certification", "value": "BIS / CE / GMP"},
+      {"label": "Platform", "value": "CSSD + OT"},
+      {"label": "Support", "value": "Prompt triage"},
+      {"label": "Scope", "value": "OEM + Integration"}
+    ]
+  },
   "capabilities": {
     "label": "Core Capabilities",
     "title": "Two Pillars of Healthcare Technology Excellence",
@@ -41,7 +53,7 @@
         "advantages": [
           "Single-Point Vendor",
           "Localized Integration",
-          "<24hr Service Response",
+          "Response & Diagnosis Planning",
           "Unified AMC & CMC"
         ],
         "button_label": "Explore Partner Technologies"
@@ -51,7 +63,7 @@
   "advantage": {
     "label": "Why PEIC",
     "title": "The Procurement Advantage",
-    "description": "Unlike standard distributors, PEIC brings deep manufacturing DNA and institutional-grade service to every engagement."
+    "description": "For cold outreach, tenders, service planning, and multi-department purchases, PEIC provides the credibility of an established manufacturer with the reach of an authorized med-tech integration partner."
   },
   "clients": {
     "label": "Institutional Trust",
@@ -60,7 +72,7 @@
   "cta": {
     "title": "Ready to Discuss Your Healthcare Infrastructure Needs?",
     "description": "Our B2B procurement specialists and biomedical engineers are available for technical consultations, tender support, and lifecycle planning.",
-    "button_label": "Contact Our Team",
+    "button_label": "Make an Enquiry",
     "button_link": "contact.html"
   }
 }

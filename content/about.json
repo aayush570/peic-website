@@ -45,27 +45,57 @@
       "label": "Years Average Machine Lifespan"
     },
     {
-      "value": 24,
-      "prefix": "<",
-      "suffix": "hr",
-      "tagline": "Response target",
-      "label": "Service Response in Mumbai"
+      "value": 1,
+      "display_value": "Single",
+      "suffix": "",
+      "tagline": "Coordinated support",
+      "label": "Accountable Service Relationship"
     }
   ],
-  "facilities": [
-    {
-      "title": "Mumbai Corporate Headquarters",
-      "image": "/uploads/images/istockphoto-1980276924-612x612.jpg"
+  "facilities": {
+    "research": {
+      "type_label": "In-House Testing & R&D",
+      "title": "Testing, Validation & R&D Lab",
+      "description": "Internal testing and quality validation for sterilization systems, components, and institutional equipment configurations.",
+      "address_lines": [
+        "Plot no. X, Shamroz Industrial Estate",
+        "Ram Mandir Road, Goregaon West",
+        "Mumbai, Maharashtra 400104"
+      ]
     },
-    {
-      "title": "Manufacturing Facility",
-      "image": "/uploads/images/istockphoto-1980276924-612x612-1.jpg"
-    },
-    {
-      "title": "In-House Quality Control and R&D Lab",
-      "image": "/uploads/images/istockphoto-1980276924-612x612-2.jpg"
-    }
-  ],
+    "manufacturing": [
+      {
+        "type_label": "Manufacturing Facility",
+        "title": "Sterilization Systems Manufacturing",
+        "description": "Production and assembly facility for PEIC-manufactured CSSD and sterilization equipment.",
+        "address_lines": [
+          "Manufacturing Facility 1",
+          "Vadodara, Gujarat"
+        ]
+      },
+      {
+        "type_label": "Manufacturing Facility",
+        "title": "Fabrication & Final Assembly",
+        "description": "Fabrication, finishing, and final inspection support for institutional-grade medical equipment.",
+        "address_lines": [
+          "Manufacturing Facility 2",
+          "Vadodara, Gujarat"
+        ]
+      }
+    ],
+    "offices": [
+      {
+        "type_label": "Office",
+        "title": "Mumbai Corporate Office",
+        "description": "Commercial, procurement, service coordination, and technical support headquarters.",
+        "address_lines": [
+          "20, Shamroz Industrial Estate",
+          "Ram Mandir Road, Goregaon West",
+          "Mumbai, Maharashtra 400104"
+        ]
+      }
+    ]
+  },
   "clients": [
     {
       "short_name": "BMC",

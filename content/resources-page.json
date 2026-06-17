@@ -1,11 +1,11 @@
 {
   "hero": {
     "title": "Resources & Case Studies",
-    "description": "Downloadable product brochures, compliance certificates, user manuals, and detailed hospital installation success stories."
+    "description": "Request product brochures, manuals, specifications, and case studies. Public compliance certificates can be viewed directly when files are available."
   },
   "help_cta": {
     "title": "Can't find what you're looking for?",
-    "description": "Contact us and we'll provide the documentation you need — technical specs, custom manuals, or compliance certificates.",
+    "description": "Tell us what you need and our team will get back with the relevant product documentation, specifications, or support material.",
     "button_label": "Request Documentation",
     "button_link": "contact.html?type=general"
   }

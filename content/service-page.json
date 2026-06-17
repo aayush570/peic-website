@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Service & Lifecycle Support",
-    "description": "Post-sale reliability is our commitment. From AMC/CMC contracts to spare parts and <24-hour technical response — we keep your equipment running."
+    "description": "Post-sale reliability is our commitment. From AMC/CMC contracts to spare parts, diagnosis, and solution planning, PEIC helps institutions keep supported equipment running."
   },
   "process_heading": {"label":"Service Workflow","title":"Response Process"},
   "process": [
@@ -13,7 +13,7 @@
   "offerings": [
     {"icon":"📋","title":"AMC / CMC Contract Tiers","description":"Flexible annual and comprehensive maintenance contracts covering preventive maintenance, emergency callouts, parts replacement, and calibration."},
     {"icon":"🔩","title":"Spare Parts Inventory","description":"In-house spare parts stock for PEIC-manufactured equipment and authorized sourcing for supported partner-brand spares."},
-    {"icon":"⚡","title":"<24-Hour Technical Response","description":"Critical requests are triaged promptly, with response based on location, access, equipment criticality, and parts availability."},
+    {"icon":"⚡","title":"Response, Diagnosis & Solution Outline","description":"Requests are triaged promptly, with diagnosis and next-step planning based on location, access, equipment criticality, and parts availability."},
     {"icon":"↻","title":"Equipment Refurbishing & Upgrades","description":"Mechanical overhaul, electronic-control upgrades, refinishing, testing, and re-commissioning for suitable ageing equipment."}
   ],
   "custom_cta": {

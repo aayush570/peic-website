@@ -28,6 +28,8 @@ cards, images, and calls to action are grouped together there.
 
 The Home page includes both Core Capabilities cards. Each card's image, title,
 description, tick-list items, link, and button text can be edited independently.
+The hero proof panel is also editable from the Home page: kicker, large metric,
+headline, supporting copy, and the four small specification cells.
 
 Products, partners, downloads, and vacancies are shown directly below their
 respective page settings as separate repeatable lists.
@@ -79,6 +81,35 @@ Each partner has:
 - Internal solutions link
 - Official website URL
 - Logo
+
+The entire partner card links to the **Official website URL** when present. If
+that field is empty, the card falls back to the internal solutions link.
+
+### Solutions specialties
+
+Each Medical Specialty card has:
+
+- Card ID for anchor links
+- Title and description
+- Background image
+- Destination link
+- Button label
+
+The entire specialty card is clickable, so keep destination links current.
+
+### About page facilities and institutional reach
+
+Facilities are managed as structured address blocks:
+
+- One **In-House Testing & R&D** block
+- Two to three **Manufacturing Facility** blocks
+- Up to two **Office** blocks
+
+Each block supports a type label, title, description, and address lines.
+
+Institutional reach cards support customer names, relationship notes, short
+placeholder initials, and uploaded logos. Uploading a logo replaces the initials
+placeholder automatically.
 
 ### Downloads and resources
 

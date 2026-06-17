@@ -261,7 +261,7 @@ h1, h2, h3, h4 {
   inset: 0;
   background:
     linear-gradient(105deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.3) 100%),
-    url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=1920&q=80') center/cover no-repeat;
+    url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg') center/cover no-repeat;
 }
 
 .hero-content {
@@ -1532,7 +1532,7 @@ body.modal-open {
   height: 320px;
   background:
     linear-gradient(rgba(15,23,42,0.5), rgba(15,23,42,0.5)),
-    url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&q=80') center/cover;
+    url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg') center/cover;
   border-radius: var(--radius-lg);
   display: flex;
   align-items: flex-end;
@@ -5079,5 +5079,455 @@ body.is-cms-loading .logo-grid::before {
     padding: 0;
     border-radius: 50%;
     font-size: 0;
+  }
+}
+
+/* ─── Institutional redesign pass: CMS-backed home, products, partners, about ─── */
+.precision-panel {
+  border-radius: 18px;
+  padding: clamp(1.15rem, 2vw, 1.55rem);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.96), rgba(246,251,249,0.92));
+  border: 1px solid rgba(255,255,255,0.78);
+  box-shadow:
+    0 24px 70px rgba(4, 18, 26, 0.28),
+    0 1px 0 rgba(255,255,255,0.95) inset;
+  backdrop-filter: blur(18px);
+}
+
+.panel-kicker {
+  padding-bottom: 0.9rem;
+  color: var(--green-dark);
+  border-bottom-color: rgba(15, 23, 42, 0.08);
+}
+
+.panel-gauge {
+  min-height: 176px;
+  padding: 1.35rem 0;
+  align-content: center;
+  background:
+    radial-gradient(circle at 0 0, rgba(86,166,97,0.16), transparent 34%),
+    linear-gradient(90deg, rgba(86,166,97,0.08) 1px, transparent 1px),
+    linear-gradient(rgba(86,166,97,0.08) 1px, transparent 1px);
+  background-size: auto, 30px 30px, 30px 30px;
+}
+
+.panel-gauge strong {
+  max-width: 300px;
+  font-size: clamp(1.35rem, 2vw, 1.85rem);
+  line-height: 1.08;
+  letter-spacing: 0;
+}
+
+.panel-gauge p {
+  max-width: 310px;
+  margin-top: 0.7rem;
+  color: var(--slate-mid);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.panel-spec-grid {
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  background: rgba(15, 23, 42, 0.08);
+}
+
+.panel-spec-grid div {
+  border: 0;
+  background: rgba(255,255,255,0.72);
+}
+
+.operating-model .cap-card-image {
+  position: relative;
+  display: flex;
+  min-height: 430px;
+  overflow: hidden;
+  color: white;
+  background-image:
+    linear-gradient(180deg, rgba(7, 20, 33, 0.1) 0%, rgba(7, 20, 33, 0.74) 46%, rgba(7, 20, 33, 0.96) 100%),
+    var(--card-image);
+  background-position: center;
+  background-size: cover;
+}
+
+.operating-model .cap-card-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(19,163,111,0.2), transparent 45%);
+  pointer-events: none;
+}
+
+.operating-model .cap-card-image .cap-card-body {
+  position: relative;
+  z-index: 1;
+  justify-content: flex-end;
+  width: 100%;
+  padding: clamp(1.4rem, 2.4vw, 2rem) !important;
+}
+
+.operating-model .cap-card-image h3,
+.operating-model .cap-card-image p {
+  color: white;
+}
+
+.operating-model .cap-card-image > .cap-card-img {
+  display: none;
+}
+
+.operating-model .cap-card-image .cap-advantages {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem !important;
+  margin-top: 1.35rem;
+  border: 0;
+  background: transparent;
+}
+
+.operating-model .cap-card-image .cap-advantages li,
+.operating-model .cap-card-image .cap-advantages li:nth-child(even),
+.operating-model .cap-card-image .cap-advantages li:nth-last-child(-n + 2) {
+  min-height: 58px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 10px;
+  background: rgba(255,255,255,0.11);
+  color: white;
+  backdrop-filter: blur(8px);
+}
+
+.operating-model .cap-card-image .cap-advantages li strong,
+.operating-model .cap-card-image .tick,
+.operating-model .cap-card-image .cap-index,
+.operating-model .cap-card-image .cap-card-footer {
+  color: white !important;
+}
+
+.operating-model .cap-card-image .cap-card-footer {
+  margin-top: 1.2rem;
+  opacity: 0.92;
+}
+
+.product-grid,
+.doc-grid,
+.partner-grid,
+.logo-grid {
+  min-height: 0;
+}
+
+.product-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.product-card,
+.product-card.featured {
+  min-height: 230px;
+  aspect-ratio: 1.18 / 1;
+  background-image:
+    linear-gradient(180deg, rgba(7, 20, 33, 0.08) 0%, rgba(7, 20, 33, 0.62) 42%, rgba(7, 20, 33, 0.96) 100%),
+    radial-gradient(circle at 20% 0%, rgba(86,166,97,0.18), transparent 40%),
+    var(--card-image);
+}
+
+.product-card-content {
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.product-card h4 {
+  color: #fff;
+  font-size: 0.98rem;
+}
+
+.product-card p {
+  color: rgba(255,255,255,0.86);
+  font-size: 0.78rem;
+  line-height: 1.42;
+}
+
+.product-card .cert {
+  color: #bdf0d1;
+  font-size: 0.68rem;
+}
+
+.product-actions {
+  gap: 0.45rem;
+}
+
+.download-specs,
+.btn-enquire {
+  min-height: 36px;
+  padding: 0.48rem 0.62rem;
+  font-size: 0.68rem;
+}
+
+.partner-card {
+  color: inherit;
+  cursor: pointer;
+  border: 1px solid rgba(226,232,240,0.9);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.7) inset;
+  will-change: transform;
+}
+
+.partner-card:hover,
+.partner-card:focus-visible,
+.visual-card-link:hover,
+.visual-card-link:focus-visible {
+  transform: translateY(-4px);
+  border-color: rgba(86,166,97,0.42);
+  box-shadow: 0 18px 42px rgba(7, 20, 33, 0.14);
+}
+
+.partner-card .ext-link {
+  display: none !important;
+}
+
+.solutions-page .floating-cta {
+  display: inline-flex;
+}
+
+.visual-card-link {
+  display: flex;
+  color: inherit;
+}
+
+.visual-card {
+  background-image:
+    linear-gradient(180deg, rgba(7, 20, 33, 0.06) 0%, rgba(7, 20, 33, 0.68) 48%, rgba(7, 20, 33, 0.97) 100%),
+    var(--card-image);
+}
+
+.visual-card-body {
+  justify-content: flex-end;
+}
+
+.visual-card .explore-portfolio {
+  margin-top: 1rem;
+}
+
+.about-page .clients-section {
+  background:
+    linear-gradient(135deg, #071421 0%, #0d303b 100%) !important;
+  color: rgba(255,255,255,0.78);
+}
+
+.about-page .clients-section .section-title,
+.about-page .clients-section .client-name {
+  color: #fff;
+}
+
+.about-page .clients-section .section-subtitle {
+  color: rgba(255,255,255,0.72);
+}
+
+.about-page .clients-section .logo-grid {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.14);
+}
+
+.about-page .clients-section .client-card {
+  background: rgba(255,255,255,0.07);
+}
+
+.client-logo {
+  width: 64px;
+  min-width: 64px;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.18);
+}
+
+.about-page .clients-section .client-logo:not(.has-image) {
+  color: #fff;
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.16), rgba(255,255,255,0.06));
+}
+
+.facility-block-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  background: var(--border);
+}
+
+.facility-block {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  min-height: 260px;
+  padding: clamp(1.35rem, 2.4vw, 2rem);
+  background: #fff;
+}
+
+.facility-icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  color: var(--green-dark);
+  background: var(--green-light);
+  border: 1px solid rgba(86,166,97,0.22);
+  border-radius: 12px;
+}
+
+.facility-icon svg {
+  width: 25px;
+  height: 25px;
+}
+
+.facility-type {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--green-dark);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.facility-copy h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.12rem;
+}
+
+.facility-copy p {
+  margin-bottom: 1.2rem;
+  color: var(--slate-mid);
+}
+
+.facility-copy address {
+  margin-top: auto;
+  color: var(--slate-light);
+  font-style: normal;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.about-content .legacy-section,
+.about-content .metrics-section,
+.about-content .facilities-section,
+.about-content .clients-section,
+.about-content .testimonials-section,
+.about-content .certifications-section {
+  order: initial;
+}
+
+@media (min-width: 1100px) {
+  #manufacturing .product-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.75rem;
+  }
+
+  #manufacturing .product-card,
+  .product-card,
+  .product-card.featured {
+    min-height: 214px;
+    height: 214px;
+    aspect-ratio: auto;
+  }
+
+  #manufacturing .product-card h4,
+  .product-card h4 {
+    font-size: 0.88rem;
+    line-height: 1.2;
+  }
+
+  #manufacturing .product-card .cert,
+  .product-card .cert {
+    font-size: 0.64rem;
+    line-height: 1.25;
+  }
+
+  #manufacturing .product-card-content > p:not(.cert),
+  .product-card-content > p:not(.cert) {
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    font-size: 0.72rem;
+    line-height: 1.34;
+  }
+
+  #partners .partner-grid,
+  .partner-grid {
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 0.75rem;
+  }
+
+  #partners .partner-card,
+  .partner-card {
+    min-height: 214px;
+    padding: 0.95rem;
+    gap: 0.65rem;
+  }
+
+  #partners .partner-card h4 {
+    font-size: 0.88rem;
+    white-space: normal;
+  }
+
+  #partners .partner-card p {
+    font-size: 0.76rem;
+  }
+}
+
+@media (max-width: 820px) {
+  .operating-model .cap-card-image {
+    min-height: 410px;
+  }
+
+  .operating-model .cap-card-image .cap-advantages {
+    grid-template-columns: 1fr;
+  }
+
+  .facility-block {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+}
+
+/* --- Credibility pass fixes --- */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.contact-page-heading {
+  max-width: 780px;
+  margin: 0 0 2rem;
+}
+
+.contact-page-heading h1 {
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  line-height: 1.05;
+  margin-bottom: 0.75rem;
+  text-wrap: balance;
+}
+
+.contact-page-heading p {
+  color: var(--slate-light);
+  font-size: 1.05rem;
+  max-width: 680px;
+}
+
+.hero-bg,
+.home-precision-hero .hero-bg {
+  transform: none !important;
+}
+
+@media (max-width: 820px) {
+  .home-precision-hero,
+  .hero {
+    overflow: hidden;
   }
 }

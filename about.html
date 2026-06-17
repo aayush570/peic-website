@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700&family=Instrument+Sans:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css?v=20260617-ui-cleanup">
+  <link rel="stylesheet" href="css/styles.css?v=20260617-institutional-overhaul">
 </head>
 <body class="about-page">
 
@@ -66,7 +66,7 @@
             <p style="color: var(--slate-light);">Today, PEIC stands at the intersection of indigenous manufacturing excellence and world-class distribution — a unique position that allows us to offer procurement heads and biomedical engineers a single, accountable partner for their entire equipment lifecycle.</p>
           </div>
           <div style="border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);">
-            <img class="legacy-image" src="https://images.unsplash.com/photo-1538108149393-fbbd81893e52?w=800&q=80" alt="Modern healthcare facility" loading="lazy">
+            <img class="legacy-image" src="/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg" alt="PEIC sterilization equipment" loading="lazy">
           </div>
         </div>
       </div>
@@ -101,9 +101,9 @@
           <div class="stat-label">Years Average Machine Lifespan</div>
         </div>
         <div class="stat-item">
-          <div class="stat-number" data-prefix="<" data-count="24" data-suffix="hr">0</div>
-          <div class="stat-tagline">Guaranteed response</div>
-          <div class="stat-label">Service Response in Mumbai</div>
+          <div class="stat-number">Single</div>
+          <div class="stat-tagline">Coordinated support</div>
+          <div class="stat-label">Accountable Service Relationship</div>
         </div>
       </div>
     </div>
@@ -115,19 +115,40 @@
         <span class="section-label">Infrastructure</span>
         <h2 class="section-title">Facilities &amp; Capabilities</h2>
       </div>
-      <div class="masonry-grid">
-        <div class="masonry-item large">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80" alt="Mumbai Corporate Headquarters" loading="lazy">
-          <div class="masonry-overlay"><span>Mumbai Corporate Headquarters</span></div>
-        </div>
-        <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80" alt="Vadodara Manufacturing Facility" loading="lazy">
-          <div class="masonry-overlay"><span>Vadodara Manufacturing Facility</span></div>
-        </div>
-        <div class="masonry-item">
-          <img src="https://images.unsplash.com/photo-1532187863486-abf9db3851d0?w=600&q=80" alt="In-House Quality Control and R&D Lab" loading="lazy">
-          <div class="masonry-overlay"><span>In-House Quality Control &amp; R&amp;D Lab</span></div>
-        </div>
+      <div class="facility-block-grid">
+        <article class="facility-block facility-research">
+          <div class="facility-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.4L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.4V3"/><path d="M8 16h8"/></svg>
+          </div>
+          <div class="facility-copy">
+            <span class="facility-type">In-House Testing &amp; R&amp;D</span>
+            <h3>Testing, Validation &amp; R&amp;D Lab</h3>
+            <p>Internal testing and quality validation for sterilization systems, components, and institutional equipment configurations.</p>
+            <address>Plot no. X, Shamroz Industrial Estate<br>Ram Mandir Road, Goregaon West<br>Mumbai, Maharashtra 400104</address>
+          </div>
+        </article>
+        <article class="facility-block facility-manufacturing">
+          <div class="facility-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10l6 4V10l6 4V8h4v13"/><path d="M7 18h1"/><path d="M11 18h1"/><path d="M15 18h1"/></svg>
+          </div>
+          <div class="facility-copy">
+            <span class="facility-type">Manufacturing Facility</span>
+            <h3>Sterilization Systems Manufacturing</h3>
+            <p>Production and assembly facility for PEIC-manufactured CSSD and sterilization equipment.</p>
+            <address>Manufacturing Facility 1<br>Vadodara, Gujarat</address>
+          </div>
+        </article>
+        <article class="facility-block facility-office">
+          <div class="facility-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M17 9h1a2 2 0 0 1 2 2v10"/><path d="M8 7h5"/><path d="M8 11h5"/><path d="M8 15h5"/><path d="M9 21v-3h3v3"/></svg>
+          </div>
+          <div class="facility-copy">
+            <span class="facility-type">Office</span>
+            <h3>Mumbai Corporate Office</h3>
+            <p>Commercial, procurement, service coordination, and technical support headquarters.</p>
+            <address>20, Shamroz Industrial Estate<br>Ram Mandir Road, Goregaon West<br>Mumbai, Maharashtra 400104</address>
+          </div>
+        </article>
       </div>
     </div>
   </section>
@@ -303,9 +324,9 @@
 
   <a href="contact.html" class="floating-cta">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-    Request a Quote / Make an Enquiry
+    Make an Enquiry
   </a>
 
-  <script src="js/main.js?v=20260617-ui-cleanup"></script>
+  <script src="js/main.js?v=20260617-institutional-overhaul"></script>
 </body>
 </html>

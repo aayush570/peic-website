@@ -131,6 +131,7 @@ function renderHomePage(home) {
   setBackgroundImage('.hero-bg', home.hero?.image);
   setLink('.hero-actions .btn-primary', home.hero?.primary_button_label, home.hero?.primary_button_link);
   setLink('.hero-actions .btn-outline', home.hero?.secondary_button_label, home.hero?.secondary_button_link);
+  renderHeroPanel(home.hero_panel);
 
   const banner = document.querySelector('.trust-banner-inner');
   if (banner && Array.isArray(home.trust_banner)) {
@@ -143,8 +144,7 @@ function renderHomePage(home) {
   const cards = document.querySelector('.dual-cards');
   if (cards && Array.isArray(home.capabilities?.cards)) {
     cards.innerHTML = home.capabilities.cards.map((card, index) => `<a href="${escapeAttribute(card.link || '#')}" class="cap-card-link">
-      <div class="cap-card">
-        <div class="cap-card-img"${card.image ? ` style="background-image:url('${escapeAttribute(normalizeAssetURL(card.image))}')"` : ''}></div>
+      <div class="cap-card cap-card-image"${card.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(card.image))}')"` : ''}>
         <div class="cap-card-body">
           <span class="cap-index">${String(index + 1).padStart(2, '0')}</span>
           <h3>${escapeHTML(card.title)}</h3>
@@ -156,13 +156,29 @@ function renderHomePage(home) {
     </a>`).join('');
   }
 
-  const sections = document.querySelectorAll('body > section');
+  const sections = document.querySelectorAll('section');
   const advantageSection = [...sections].find((section) => section.querySelector('.stats-row'));
   setHeading(advantageSection, home.advantage);
   const clientsSection = [...sections].find((section) => section.querySelector('.logo-grid'));
   setHeading(clientsSection, home.clients);
-  const ctaSection = [...sections].find((section) => section.classList.contains('bg-dark') && section.querySelector('.container > .btn'));
-  setCallout(ctaSection?.querySelector('.container'), home.cta);
+  const ctaSection = document.querySelector('.home-cta .home-cta-inner')
+    || [...sections].find((section) => section.classList.contains('bg-dark') && section.querySelector('.container .btn'))?.querySelector('.container');
+  setCallout(ctaSection, home.cta);
+}
+
+function renderHeroPanel(panel) {
+  const element = document.querySelector('.precision-panel');
+  if (!element || !panel) return;
+  const specs = Array.isArray(panel.specs) ? panel.specs : [];
+  element.innerHTML = `<div class="panel-kicker">${escapeHTML(panel.kicker || '')}</div>
+    <div class="panel-gauge">
+      <span>${escapeHTML(panel.metric || '')}</span>
+      <strong>${escapeHTML(panel.title || '')}</strong>
+      ${panel.description ? `<p>${escapeHTML(panel.description)}</p>` : ''}
+    </div>
+    <div class="panel-spec-grid">
+      ${specs.map((item) => `<div><span>${escapeHTML(item.label || '')}</span><strong>${escapeHTML(item.value || '')}</strong></div>`).join('')}
+    </div>`;
 }
 
 function renderProductsPage(page) {
@@ -307,7 +323,7 @@ function renderProducts(products) {
       ? 'Request Specifications'
       : effectiveMode === 'gated_download'
         ? 'Get Technical Specifications'
-        : 'Download Technical Specifications';
+        : 'Request Specifications';
     const actionLabel = product.action_label || defaultLabel;
     const specs = effectiveMode === 'public_download'
       ? `<a class="download-specs" href="${escapeAttribute(product.specification_file)}" target="_blank" rel="noopener">↓ ${escapeHTML(actionLabel)}</a>`
@@ -349,21 +365,19 @@ function partnerCardHTML(partner) {
   const logo = partner.logo
     ? `<div class="partner-logo-slot has-image"><img src="${escapeAttribute(partner.logo)}" alt="${escapeAttribute(partner.name)} logo"></div>`
     : '';
-  const website = partner.website_url
-    ? `<a class="ext-link" href="${escapeAttribute(partner.website_url)}" target="_blank" rel="noopener noreferrer">Visit partner website ↗</a>`
-    : '';
+  const href = partner.website_url || partner.solutions_url || '#';
+  const target = partner.website_url ? ' target="_blank" rel="noopener noreferrer"' : '';
 
-  return `<article class="partner-card" data-solutions-url="${escapeAttribute(partner.solutions_url || '')}">
+  return `<a class="partner-card" href="${escapeAttribute(href)}"${target} data-solutions-url="${escapeAttribute(partner.solutions_url || '')}">
     <span class="partner-flag">${escapeHTML(partner.flag || '')}</span>
     <div class="partner-card-content">
       <div class="origin">${escapeHTML(partner.country || '')}</div>
       <h4>${escapeHTML(partner.name)}</h4>
       <p>${escapeHTML(partner.description || '')}</p>
       <div class="partner-categories">${tags}</div>
-      ${website}
     </div>
     ${logo}
-  </article>`;
+  </a>`;
 }
 
 function renderResources(resources) {
@@ -371,14 +385,20 @@ function renderResources(resources) {
   if (!grid || !Array.isArray(resources)) return;
 
   grid.innerHTML = resources.map((resource) => {
+    const isCertificate = resource.category === 'certificate';
     const action = resource.file
-      ? `<a class="btn-download-doc" href="${escapeAttribute(resource.file)}" target="_blank" rel="noopener">↓ Download</a>`
-      : '<button class="btn-download-doc" type="button">↓ Request</button>';
+      ? `<a class="btn-download-doc" href="${escapeAttribute(resource.file)}" target="_blank" rel="noopener">${isCertificate ? 'View Certificate' : 'Download'}</a>`
+      : isCertificate
+        ? '<a class="btn-download-doc" href="about.html#certifications">View Details</a>'
+        : `<button class="btn-download-doc" type="button"
+            data-resource-action="request"
+            data-resource-title="${escapeAttribute(resource.title)}"
+            data-resource-type="${escapeAttribute(resource.type_label || 'Document')}">Request Document</button>`;
     return `<article class="doc-card" data-category="${escapeAttribute(resource.category)}">
       <span class="doc-card-type">${escapeHTML(resource.type_label)}</span>
       <h4>${escapeHTML(resource.title)}</h4>
       <div class="doc-card-meta">
-        <span>${escapeHTML(resource.file_meta || 'File available on request')}</span>
+        <span>${escapeHTML(resource.file_meta || (isCertificate ? 'Compliance details' : 'Available on request'))}</span>
         ${action}
       </div>
     </article>`;
@@ -410,13 +430,13 @@ function renderJobs(jobs) {
 function renderPageSections(pages) {
   const specialties = document.querySelector('.specialty-grid');
   if (specialties && pages.solutions?.specialties) {
-    specialties.innerHTML = pages.solutions.specialties.map((item) => `<article class="visual-card" id="${escapeAttribute(item.id)}"${item.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(item.image))}')"` : ''}>
+    specialties.innerHTML = pages.solutions.specialties.map((item) => `<a class="visual-card visual-card-link" id="${escapeAttribute(item.id)}" href="${escapeAttribute(item.link || 'contact.html')}"${item.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(item.image))}')"` : ''}>
       <div class="visual-card-body">
         <h3>${escapeHTML(item.title)}</h3>
         <p>${escapeHTML(item.description || '')}</p>
-        <a href="${escapeAttribute(item.link || 'contact.html')}" class="explore-portfolio">Explore portfolio →</a>
+        <span class="explore-portfolio">${escapeHTML(item.button_label || 'Explore portfolio')} →</span>
       </div>
-    </article>`).join('');
+    </a>`).join('');
   }
 
   const industries = document.querySelector('.industry-grid');
@@ -463,20 +483,14 @@ function renderTrustContent(about) {
   if (Array.isArray(about.metrics)) {
     document.querySelectorAll('.stats-row').forEach((grid) => {
       grid.innerHTML = about.metrics.map((metric) => `<div class="stat-item">
-        <div class="stat-number cms-stat-number">${escapeHTML(metric.prefix || '')}${Number(metric.value).toLocaleString()}${escapeHTML(metric.suffix || '')}</div>
+        <div class="stat-number cms-stat-number">${metric.display_value ? escapeHTML(metric.display_value) : `${escapeHTML(metric.prefix || '')}${Number(metric.value).toLocaleString()}${escapeHTML(metric.suffix || '')}`}</div>
         <div class="stat-tagline">${escapeHTML(metric.tagline || '')}</div>
         <div class="stat-label">${escapeHTML(metric.label)}</div>
       </div>`).join('');
     });
   }
 
-  const masonry = document.querySelector('.masonry-grid');
-  if (masonry && Array.isArray(about.facilities)) {
-    masonry.innerHTML = about.facilities.map((facility, index) => `<div class="masonry-item ${index === 0 ? 'large' : ''}">
-      <img src="${escapeAttribute(facility.image)}" alt="${escapeAttribute(facility.title)}" loading="lazy">
-      <div class="masonry-overlay"><span>${escapeHTML(facility.title)}</span></div>
-    </div>`).join('');
-  }
+  renderFacilityBlocks(about.facilities);
 
   if (Array.isArray(about.clients)) {
     const clientHTML = about.clients.map((client) => {
@@ -519,12 +533,48 @@ function renderTrustContent(about) {
   }
 }
 
+function renderFacilityBlocks(facilities) {
+  const grid = document.querySelector('.facility-block-grid');
+  if (!grid || !facilities) return;
+
+  const blocks = [];
+  if (facilities.research) blocks.push({ type: 'research', icon: flaskIcon(), ...facilities.research });
+  if (Array.isArray(facilities.manufacturing)) {
+    blocks.push(...facilities.manufacturing.slice(0, 3).map((item) => ({ type: 'manufacturing', icon: factoryIcon(), ...item })));
+  }
+  if (Array.isArray(facilities.offices)) {
+    blocks.push(...facilities.offices.slice(0, 2).map((item) => ({ type: 'office', icon: buildingIcon(), ...item })));
+  }
+
+  grid.innerHTML = blocks.map((block) => `<article class="facility-block facility-${escapeAttribute(block.type || 'office')}">
+    <div class="facility-icon" aria-hidden="true">${block.icon || buildingIcon()}</div>
+    <div class="facility-copy">
+      <span class="facility-type">${escapeHTML(block.type_label || '')}</span>
+      <h3>${escapeHTML(block.title || '')}</h3>
+      <p>${escapeHTML(block.description || '')}</p>
+      <address>${(block.address_lines || []).map(escapeHTML).join('<br>')}</address>
+    </div>
+  </article>`).join('');
+}
+
 function testimonialCardHTML(testimonial) {
   return `<div class="testimonial-card">
     <p class="testimonial-quote">${escapeHTML(testimonial.quote)}</p>
     <div class="testimonial-author">${escapeHTML(testimonial.author)}</div>
     <div class="testimonial-role">${escapeHTML(testimonial.role || '')}</div>
   </div>`;
+}
+
+function flaskIcon() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3h6"/><path d="M10 3v6.4L5.5 18a2 2 0 0 0 1.8 3h9.4a2 2 0 0 0 1.8-3L14 9.4V3"/><path d="M8 16h8"/></svg>`;
+}
+
+function factoryIcon() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M4 21V10l6 4V10l6 4V8h4v13"/><path d="M7 18h1"/><path d="M11 18h1"/><path d="M15 18h1"/></svg>`;
+}
+
+function buildingIcon() {
+  return `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V5a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v16"/><path d="M17 9h1a2 2 0 0 1 2 2v10"/><path d="M8 7h5"/><path d="M8 11h5"/><path d="M8 15h5"/><path d="M9 21v-3h3v3"/></svg>`;
 }
 
 function setText(selector, value) {
@@ -713,10 +763,40 @@ function initDownloadSpecs() {
     });
   });
 
-  document.querySelectorAll('button.btn-download-doc').forEach((btn) => {
+  document.querySelectorAll('button.download-specs:not([data-product-action])').forEach((button) => {
+    button.setAttribute('type', 'button');
+    button.addEventListener('click', () => {
+      const card = button.closest('.product-card');
+      openProductLeadModal({
+        mode: 'enquiry_only',
+        product: card?.querySelector('h4')?.textContent.trim() || 'Product specifications',
+        file: ''
+      });
+    });
+  });
+
+  document.querySelectorAll('[data-resource-action="request"]').forEach((btn) => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      showToast('Contact sales@peic.in and we will send this document directly.');
+      openResourceLeadModal({
+        title: btn.dataset.resourceTitle,
+        type: btn.dataset.resourceType
+      });
+    });
+  });
+
+  document.querySelectorAll('button.btn-download-doc:not([data-resource-action])').forEach((btn) => {
+    btn.setAttribute('type', 'button');
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const card = btn.closest('.doc-card');
+      const title = card?.querySelector('h4')?.textContent.trim() || 'Document';
+      const type = card?.querySelector('.doc-card-type')?.textContent.trim() || 'Document';
+      if (card?.dataset.category === 'certificate') {
+        window.location.assign('about.html#certifications');
+        return;
+      }
+      openResourceLeadModal({ title, type });
     });
   });
 }
@@ -747,6 +827,31 @@ function openProductLeadModal({ mode, product, file }) {
   form.querySelector('[name="name"]').focus();
 }
 
+function openResourceLeadModal({ title: resourceTitle, type }) {
+  const modal = getProductLeadModal();
+  const form = modal.querySelector('.product-lead-form');
+  const title = modal.querySelector('#product-lead-title');
+  const intro = modal.querySelector('.product-lead-intro');
+  const submit = form.querySelector('[type="submit"]');
+
+  form.reset();
+  form.dataset.mode = 'resource_request';
+  form.dataset.file = '';
+  form.querySelector('[name="product"]').value = resourceTitle || '';
+  form.querySelector('[name="document"]').value = resourceTitle || '';
+  form.querySelector('[name="subject"]').value = `PEIC document request: ${resourceTitle || 'Resource'}`;
+  form.querySelector('[name="from_name"]').value = 'PEIC Documentation Request';
+  form.querySelector('[name="enquiry_type"]').value = `${type || 'Document'} request`;
+  title.textContent = 'Request Documentation';
+  intro.textContent = `Share your details and the PEIC team will get back to you with the requested ${String(type || 'document').toLowerCase()}: ${resourceTitle || 'resource'}.`;
+  submit.textContent = 'Submit Request';
+  resetFormStatus(form);
+
+  modal.hidden = false;
+  document.body.classList.add('modal-open');
+  form.querySelector('[name="name"]').focus();
+}
+
 function getProductLeadModal() {
   let modal = document.querySelector('.product-lead-modal');
   if (modal) return modal;
@@ -764,7 +869,9 @@ function getProductLeadModal() {
         <input type="hidden" name="subject" value="PEIC product enquiry">
         <input type="hidden" name="from_name" value="PEIC Product Catalogue">
         <input type="hidden" name="product" value="">
+        <input type="hidden" name="document" value="">
         <input type="hidden" name="enquiry_type" value="Product information / specifications">
+        <input type="hidden" name="destination_email" value="sital.shah@peic.in">
         <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
         <div class="form-status" role="status" aria-live="polite"></div>
         <div class="form-row">
@@ -818,7 +925,11 @@ async function submitProductLead(event) {
   const form = event.currentTarget;
   const status = form.querySelector('.form-status');
   const submit = form.querySelector('[type="submit"]');
-  const defaultLabel = form.dataset.mode === 'gated_download' ? 'Submit & Download' : 'Send Request';
+  const defaultLabel = form.dataset.mode === 'gated_download'
+    ? 'Submit & Download'
+    : form.dataset.mode === 'resource_request'
+      ? 'Submit Request'
+      : 'Send Request';
 
   submit.disabled = true;
   submit.textContent = 'Sending...';
@@ -844,12 +955,14 @@ async function submitProductLead(event) {
         window.location.assign(form.dataset.file);
       }, 500);
     } else {
-      status.textContent = 'Thank you. Your request has been sent. PEIC will contact you shortly.';
+      status.textContent = form.dataset.mode === 'resource_request'
+        ? 'Thank you. Your request has been sent. Our team will get back to you with the requested documentation.'
+        : 'Thank you. Your request has been sent. PEIC will contact you shortly.';
       status.className = 'form-status success visible';
       form.reset();
     }
   } catch (error) {
-    status.innerHTML = 'We could not send the request. Please try again or email <a href="mailto:sales@peic.in">sales@peic.in</a>.';
+    status.innerHTML = 'We could not send the request. Please try again or email <a href="mailto:sital.shah@peic.in">sital.shah@peic.in</a>.';
     status.className = 'form-status error visible';
   } finally {
     submit.disabled = false;
@@ -959,7 +1072,7 @@ function initContactForm() {
       }
     } finally {
       if (submit) {
-        submit.textContent = 'Submit Enquiry';
+        submit.textContent = 'Make an Enquiry';
         submit.disabled = false;
       }
     }
@@ -982,49 +1095,9 @@ function initQueryDefaults() {
 }
 
 function initPartnerCards() {
-  const partnerUrls = {
-    'AngioDynamics': 'https://www.angiodynamics.com/',
-    'Steris Corporation': 'https://www.steris.com/',
-    'Dentsply Sirona': 'https://www.dentsplysirona.com/',
-    'Samsung Electronics': 'https://www.samsunghealthcare.com/',
-    'Richard Wolf GmbH': 'https://www.richard-wolf.com/',
-    'Pentax Corporation': 'https://www.pentaxmedical.com/',
-    'BOWA Medical': 'https://www.bowa-medical.com/',
-    'ATMOS MedizinTechnik': 'https://www.atmos.de/',
-    'INTRASENSE': 'https://www.intrasense.fr/',
-    'Designs for Vision': 'https://www.designsforvision.com/',
-    'Confident Dental Equipment': 'https://www.confidentdental.com/',
-    'Neuro Equilibrium Diagnostics': 'https://neuroequilibrium.in/'
-  };
-
-  document.querySelectorAll('a.partner-card').forEach((original) => {
-    const card = document.createElement('article');
-    card.className = original.className;
-    card.dataset.solutionsUrl = original.getAttribute('href');
-    card.innerHTML = original.innerHTML;
-
+  document.querySelectorAll('.partner-card').forEach((card) => {
     const content = card.querySelector('.partner-flag')?.nextElementSibling;
     if (content) content.classList.add('partner-card-content');
-
-    const name = card.querySelector('h4')?.textContent.trim();
-    const oldLink = card.querySelector('.ext-link');
-    const websiteUrl = partnerUrls[name];
-    if (oldLink) {
-      if (!websiteUrl) {
-        oldLink.remove();
-        original.replaceWith(card);
-        return;
-      }
-      const link = document.createElement('a');
-      link.className = 'ext-link';
-      link.textContent = 'Visit partner website ↗';
-      link.href = websiteUrl;
-      link.target = '_blank';
-      link.rel = 'noopener noreferrer';
-      oldLink.replaceWith(link);
-    }
-
-    original.replaceWith(card);
   });
 }
 
