@@ -1,6 +1,7 @@
 /* PEIC — Shared interactions */
 
 document.addEventListener('DOMContentLoaded', async () => {
+  document.body.classList.add('is-cms-loading');
   initMobileNav();
   initHeaderState();
   initCounters();
@@ -50,6 +51,9 @@ async function initCMSContent() {
     if (data.about) renderTrustContent(data.about);
   } catch (error) {
     console.warn('CMS content could not be loaded; using built-in page content.', error);
+  } finally {
+    document.body.classList.remove('is-cms-loading');
+    document.body.classList.add('is-cms-ready');
   }
 }
 
