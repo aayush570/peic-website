@@ -5442,7 +5442,7 @@ body.is-cms-loading .logo-grid::before {
   .product-card,
   .product-card.featured {
     min-height: 214px;
-    height: 214px;
+    height: 100%;
     aspect-ratio: auto;
   }
 
