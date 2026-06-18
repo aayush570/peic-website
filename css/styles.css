@@ -3215,6 +3215,9 @@ section.bg-dark::before {
   position: relative;
   z-index: 1;
   padding: 1.45rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
 }
 
 .download-specs,
@@ -5592,6 +5595,10 @@ body.is-cms-loading .logo-grid::before {
 .product-card > p:not(.cert) {
   flex: 0;
   margin-bottom: 1rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-card > .product-actions {
@@ -6012,12 +6019,20 @@ body.is-cms-loading .logo-grid::before {
   box-shadow: 0 12px 32px rgba(7,20,33,0.12);
 }
 
+.product-card {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 24px;
+}
+
 .product-card h4 {
   font-size: clamp(0.92rem, 1vw, 1.02rem);
 }
 
 .product-card-content {
   width: 100%;
+  display: flex;
+  flex-direction: column;
   min-height: 100%;
 }
 
@@ -6028,7 +6043,7 @@ body.is-cms-loading .logo-grid::before {
 .download-specs {
   background: transparent;
   border: 0;
-  color: var(--green);
+  color: #fff;
   padding: 0;
   min-height: 0;
   box-shadow: none;
@@ -6044,7 +6059,7 @@ body.is-cms-loading .logo-grid::before {
 .download-specs:hover,
 .download-specs:focus-visible {
   background: transparent;
-  color: var(--green-dark);
+  color: #c9ffe0;
   gap: 0.55rem;
 }
 
