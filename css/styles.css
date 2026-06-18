@@ -6016,6 +6016,42 @@ body.is-cms-loading .logo-grid::before {
   font-size: clamp(0.92rem, 1vw, 1.02rem);
 }
 
+.product-card-content {
+  width: 100%;
+  min-height: 100%;
+}
+
+.product-actions {
+  margin-top: auto;
+}
+
+.download-specs {
+  background: transparent;
+  border: 0;
+  color: var(--green);
+  padding: 0;
+  min-height: 0;
+  box-shadow: none;
+  font: inherit;
+  font-weight: 600;
+  letter-spacing: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: gap var(--transition), color var(--transition);
+}
+
+.download-specs:hover,
+.download-specs:focus-visible {
+  background: transparent;
+  color: var(--green-dark);
+  gap: 0.55rem;
+}
+
+.download-specs svg {
+  display: none;
+}
+
 .doc-card {
   padding-bottom: 1.05rem;
 }

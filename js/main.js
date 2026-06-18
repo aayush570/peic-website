@@ -322,7 +322,7 @@ function renderProducts(products) {
     const specs = `<button class="download-specs" type="button"
         data-product-action="enquiry_only"
         data-product-name="${escapeAttribute(product.name)}"
-        data-product-file="${escapeAttribute(product.specification_file || '')}">→ ${escapeHTML(actionLabel)}</button>`;
+        data-product-file="${escapeAttribute(product.specification_file || '')}">${escapeHTML(actionLabel)} →</button>`;
 
     return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
       <div class="product-card-content">
