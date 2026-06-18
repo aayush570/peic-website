@@ -6027,29 +6027,46 @@ body.is-cms-loading .logo-grid::before {
   color: #fff;
 }
 
+#manufacturing .product-card,
 .product-card,
 .product-card.featured {
   border-radius: 10px;
   box-shadow: 0 12px 32px rgba(7,20,33,0.12);
-}
-
-.product-card {
   display: flex;
   flex-direction: column;
-  padding-bottom: 24px;
+  padding-bottom: 0;
 }
 
+#manufacturing .product-card h4,
 .product-card h4 {
   font-size: clamp(0.92rem, 1vw, 1.02rem);
 }
 
+#manufacturing .product-card-content > p:not(.cert),
+.product-card-content > p:not(.cert),
+#manufacturing .product-card p,
+.product-card p {
+  flex: none;
+  flex-grow: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+#manufacturing .product-card-content,
 .product-card-content {
   width: 100%;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  flex-grow: 1;
+  justify-content: flex-start;
+  padding: 3.5rem 1.25rem 24px;
+  margin-top: 0;
+  box-sizing: border-box;
 }
 
+#manufacturing .product-actions,
 .product-actions {
   margin-top: auto;
 }
