@@ -1,12 +1,12 @@
 {
   "hero": {
-    "eyebrow": "Indian Manufacturer · Authorized Med-Tech Integrator",
-    "title": "Credible Medical Equipment Partner Since 1968",
-    "description": "PEIC combines Indian sterilization-system manufacturing heritage with current authorized partnerships across global and domestic medical technologies, giving procurement, biomedical, project, and service teams one accountable institutional partner.",
+    "eyebrow": "Established Indian Manufacturer · Med-Tech Integration Partner",
+    "title": "Medical Equipment Credibility Built Since 1968",
+    "description": "PEIC helps hospital procurement and biomedical teams evaluate sterilization systems, partner technologies, service support, and tender-ready documentation through one accountable institutional partner.",
     "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
-    "primary_button_label": "Make an Enquiry",
-    "primary_button_link": "products.html",
-    "secondary_button_label": "Our Heritage & Credentials",
+    "primary_button_label": "Discuss Procurement Needs",
+    "primary_button_link": "contact.html?type=equipment",
+    "secondary_button_label": "Review Credentials",
     "secondary_button_link": "about.html"
   },
   "trust_banner": [
@@ -14,18 +14,18 @@
     "BIS Certified",
     "CE & GMP Compliant",
     "MSME & NSIC Registered",
-    "Trusted by Government Networks & Private Healthcare Leaders Nationwide"
+    "Serving Public, Research & Private Healthcare Institutions"
   ],
   "hero_panel": {
-    "kicker": "PEIC Manufacturing System",
+    "kicker": "PEIC Institutional Proof",
     "metric": "1968",
-    "title": "Established engineering base for institutional healthcare",
-    "description": "Certified manufacturing, technical integration, and lifecycle support managed through one accountable partner.",
+    "title": "Manufacturer-led equipment decisions for institutional buyers",
+    "description": "Manufacturing heritage, partner integration, documentation support, and lifecycle service coordination under one accountable relationship.",
     "specs": [
-      {"label": "Certification", "value": "BIS / CE / GMP"},
+      {"label": "Proof", "value": "BIS / ISO / GMP"},
       {"label": "Platform", "value": "CSSD + OT"},
-      {"label": "Support", "value": "Prompt triage"},
-      {"label": "Scope", "value": "OEM + Integration"}
+      {"label": "Buyer Fit", "value": "Tender + Direct"},
+      {"label": "Scope", "value": "OEM + Partners"}
     ]
   },
   "capabilities": {
@@ -41,7 +41,7 @@
           "BIS Certified",
           "15+ Year Lifespan",
           "OEM Engineering DNA",
-          "MSME Tender Benefits"
+          "Tender Documentation Support"
         ],
         "button_label": "View Manufactured Products"
       },
@@ -62,17 +62,18 @@
   },
   "advantage": {
     "label": "Why PEIC",
-    "title": "The Procurement Advantage",
-    "description": "For cold outreach, tenders, service planning, and multi-department purchases, PEIC provides the credibility of an established manufacturer with the reach of an authorized med-tech integration partner."
+    "title": "Built for procurement scrutiny",
+    "description": "For direct outreach, tenders, service planning, and multi-department purchases, PEIC presents the credibility of an established manufacturer with the reach of an authorized med-tech integration partner."
   },
   "clients": {
     "label": "Institutional Trust",
-    "title": "Trusted Across Public & Private Healthcare"
+    "title": "Institutional references and long-term relationships"
   },
   "cta": {
-    "title": "Ready to Discuss Your Healthcare Infrastructure Needs?",
-    "description": "Our B2B procurement specialists and biomedical engineers are available for technical consultations, tender support, and lifecycle planning.",
-    "button_label": "Make an Enquiry",
-    "button_link": "contact.html"
+    "label": "Procurement Conversation",
+    "title": "Need a credible equipment partner for an active purchase?",
+    "description": "Share the department, city, timeline, and tender context. PEIC will route the enquiry to the right commercial or technical team.",
+    "button_label": "Start an Enquiry",
+    "button_link": "contact.html?type=equipment"
   }
 }

@@ -1,7 +1,7 @@
 {
   "hero": {
-    "title": "Solutions & Equipment Catalog",
-    "description": "Indigenous manufacturing excellence and global partner technologies — engineered for clinical precision, regulatory compliance, and maximum machine uptime."
+    "title": "Equipment Catalog for Institutional Procurement",
+    "description": "PEIC-manufactured sterilization systems and supported partner technologies organized for hospital, project, biomedical, and tender evaluation."
   },
   "manufacturing": {
     "title": "PEIC Indigenous Manufacturing",
@@ -12,7 +12,7 @@
       {"title": "In-House Engineering", "description": "Design, test, and iterate in our Vadodara facility — not outsourced."},
       {"title": "BIS-Certified Since 1976", "description": "Longest-running IS 3829 certification in the sterilization category."},
       {"title": "Local Spare Parts", "description": "Localized spare parts inventory — no import delays for critical components."},
-      {"title": "Tender Advantages", "description": "MSME/NSIC registered — zero EMD, up to 15% price preference on govt. tenders."}
+      {"title": "Tender Support", "description": "MSME/NSIC documentation support where applicable, with final eligibility reviewed tender by tender."}
     ]
   },
   "partners": {
@@ -30,9 +30,10 @@
     "domestic_title": "Domestic Partners"
   },
   "cta": {
-    "title": "Explore our equipment catalog",
-    "description": "Review the right sterilization, clinical, and partner technologies for your facility, then connect with our team for specifications, pricing, and procurement guidance.",
-    "button_label": "Speak with our sales team",
+    "label": "Product Support",
+    "title": "Shortlist equipment with procurement-ready context",
+    "description": "Tell us the department, quantity, city, and tender stage. PEIC will help route specifications, pricing, and technical guidance.",
+    "button_label": "Request Procurement Support",
     "button_link": "contact.html?type=equipment"
   }
 }

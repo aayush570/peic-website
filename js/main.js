@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   document.body.classList.add('is-cms-loading');
   initMobileNav();
   initHeaderState();
+  initFloatingCTAVisibility();
   initCounters();
   await initCMSContent();
   initRevealAnimations();
@@ -290,6 +291,7 @@ function setHeadingBlock(contentSelector, heading) {
 
 function setCallout(container, callout) {
   if (!container || !callout) return;
+  setTextWithin(container, '.section-label', callout.label);
   setTextWithin(container, 'h2, h3', callout.title);
   setTextWithin(container, 'p', callout.description);
   const button = container.querySelector('.btn');
@@ -704,6 +706,27 @@ function initHeaderState() {
   window.addEventListener('scroll', updateHeader, { passive: true });
 }
 
+function initFloatingCTAVisibility() {
+  const cta = document.querySelector('.floating-cta');
+  if (!cta) return;
+  const suppressOnPage = document.querySelector('.contact-page-main');
+  const hero = document.querySelector('.hero, .page-hero-sm, .contact-page-heading');
+
+  function updateFloatingCTA() {
+    if (suppressOnPage) {
+      cta.classList.add('is-hidden');
+      return;
+    }
+    const heroBottom = hero ? hero.getBoundingClientRect().bottom : 0;
+    const shouldHide = heroBottom > 120;
+    cta.classList.toggle('is-hidden', shouldHide);
+  }
+
+  updateFloatingCTA();
+  window.addEventListener('scroll', updateFloatingCTA, { passive: true });
+  window.addEventListener('resize', updateFloatingCTA);
+}
+
 function initRevealAnimations() {
   const targets = document.querySelectorAll([
     '.section-header',
@@ -812,6 +835,11 @@ function openProductLeadModal({ mode, product, file }) {
   form.dataset.mode = mode;
   form.dataset.file = file || '';
   form.querySelector('[name="product"]').value = product;
+  setLeadContextFields(form, {
+    lead_source: 'product_modal',
+    page_context: getCurrentRoute(),
+    product_name: product
+  });
   form.querySelector('[name="subject"]').value = mode === 'gated_download'
     ? `PEIC specification download: ${product}`
     : `PEIC product enquiry: ${product}`;
@@ -839,6 +867,11 @@ function openResourceLeadModal({ title: resourceTitle, type }) {
   form.dataset.file = '';
   form.querySelector('[name="product"]').value = resourceTitle || '';
   form.querySelector('[name="document"]').value = resourceTitle || '';
+  setLeadContextFields(form, {
+    lead_source: 'resource_modal',
+    page_context: getCurrentRoute(),
+    product_name: resourceTitle || ''
+  });
   form.querySelector('[name="subject"]').value = `PEIC document request: ${resourceTitle || 'Resource'}`;
   form.querySelector('[name="from_name"]').value = 'PEIC Documentation Request';
   form.querySelector('[name="enquiry_type"]').value = `${type || 'Document'} request`;
@@ -868,6 +901,11 @@ function getProductLeadModal() {
         <input type="hidden" name="access_key" value="e36c05ee-2b9e-4cb0-b517-f79441d69cb5">
         <input type="hidden" name="subject" value="PEIC product enquiry">
         <input type="hidden" name="from_name" value="PEIC Product Catalogue">
+        <input type="hidden" name="lead_source" value="">
+        <input type="hidden" name="page_context" value="">
+        <input type="hidden" name="page_url" value="">
+        <input type="hidden" name="referrer" value="">
+        <input type="hidden" name="product_name" value="">
         <input type="hidden" name="product" value="">
         <input type="hidden" name="document" value="">
         <input type="hidden" name="enquiry_type" value="Product information / specifications">
@@ -893,6 +931,42 @@ function getProductLeadModal() {
             <label for="product-lead-phone">Phone Number *</label>
             <input id="product-lead-phone" type="tel" name="phone" autocomplete="tel" required>
           </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-lead-city">City / Region *</label>
+            <input id="product-lead-city" type="text" name="city_region" autocomplete="address-level2" required>
+          </div>
+          <div class="form-group">
+            <label for="product-lead-timeline">Buying Timeline *</label>
+            <select id="product-lead-timeline" name="buying_timeline" required>
+              <option value="">Select timeline...</option>
+              <option value="Active tender / current purchase">Active tender / current purchase</option>
+              <option value="Within 30 days">Within 30 days</option>
+              <option value="1-3 months">1-3 months</option>
+              <option value="Planning / budgeting">Planning / budgeting</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="product-lead-quantity">Quantity / Scope</label>
+            <input id="product-lead-quantity" type="text" name="quantity_scope" placeholder="e.g. 2 units, CSSD upgrade, multi-site">
+          </div>
+          <div class="form-group">
+            <label for="product-lead-tender">Tender Status</label>
+            <select id="product-lead-tender" name="tender_status">
+              <option value="">Select if applicable...</option>
+              <option value="Tender not applicable">Tender not applicable</option>
+              <option value="Tender under preparation">Tender under preparation</option>
+              <option value="Tender live">Tender live</option>
+              <option value="Specification comparison">Specification comparison</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="product-lead-notes">Additional Context</label>
+          <textarea id="product-lead-notes" name="message" rows="3" placeholder="Department, model preference, site constraints, service expectations, or tender reference"></textarea>
         </div>
         <label class="form-consent">
           <input type="checkbox" name="privacy-consent" value="accepted" required>
@@ -1031,6 +1105,11 @@ function initContactForm() {
   const form = document.querySelector('.contact-form');
   if (!form) return;
 
+  setLeadContextFields(form, {
+    lead_source: 'contact_page',
+    page_context: getCurrentRoute()
+  });
+
   const status = form.querySelector('.form-status');
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
@@ -1092,6 +1171,26 @@ function initQueryDefaults() {
   if (product && message && !message.value) {
     message.value = `I am interested in: ${product}`;
   }
+  const source = params.get('source');
+  if (source) {
+    const sourceInput = document.querySelector('[name="lead_source"]');
+    if (sourceInput) sourceInput.value = source;
+  }
+}
+
+function setLeadContextFields(form, values = {}) {
+  if (!form) return;
+  const defaults = {
+    page_url: window.location.href,
+    referrer: document.referrer || 'Direct / unknown'
+  };
+  Object.entries({ ...defaults, ...values }).forEach(([name, value]) => {
+    const field = form.querySelector(`[name="${name}"]`);
+    if (field) field.value = value || '';
+  });
+  const productName = form.querySelector('[name="product_name"]');
+  const product = form.querySelector('[name="product"]');
+  if (productName && product && !productName.value) productName.value = product.value;
 }
 
 function initPartnerCards() {

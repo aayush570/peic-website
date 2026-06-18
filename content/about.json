@@ -17,11 +17,12 @@
     "facilities_heading": {"label":"Infrastructure","title":"Facilities & Capabilities"},
     "clients_heading": {"label":"Key Clients","title":"Institutional Reach Across Sectors","description":"Serving public institutions, research organizations, and top-tier private healthcare networks nationwide."},
     "testimonials_heading": {"label":"Testimonials","title":"What Healthcare Leaders Say"},
-    "certifications_heading": {"label":"Compliance","title":"Certifications & Regulatory Compliance","description":"Every certification represents our unwavering commitment to quality, safety, and environmental responsibility."},
+    "certifications_heading": {"label":"Compliance","title":"Certifications & Regulatory Compliance","description":"Published certification details should be verified against current documents before final procurement or tender use."},
     "cta": {
-      "title": "See how our legacy supports modern care",
-      "description": "From indigenous manufacturing to long-term lifecycle support, PEIC helps institutions build dependable equipment programs backed by decades of technical trust.",
-      "button_label": "Start a conversation",
+      "label": "PEIC Legacy",
+      "title": "Turn heritage into a safer procurement decision",
+      "description": "Use PEIC's manufacturing base, institutional experience, and lifecycle support model to evaluate the right path for your facility.",
+      "button_label": "Discuss Your Requirement",
       "button_link": "contact.html"
     }
   },
