@@ -28,5 +28,11 @@
     ],
     "global_title": "Global Partners",
     "domestic_title": "Domestic Partners"
+  },
+  "cta": {
+    "title": "Explore our equipment catalog",
+    "description": "Review the right sterilization, clinical, and partner technologies for your facility, then connect with our team for specifications, pricing, and procurement guidance.",
+    "button_label": "Speak with our sales team",
+    "button_link": "contact.html?type=equipment"
   }
 }

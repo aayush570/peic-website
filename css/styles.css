@@ -5717,3 +5717,130 @@ body.is-cms-loading .logo-grid::before {
     justify-self: center;
   }
 }
+
+/* --- June 2026 page refinement pass --- */
+.solutions-content .audience-section { order: 1; }
+.solutions-content .specialty-section { order: 2; }
+
+.product-card,
+.product-card.featured {
+  background-image:
+    radial-gradient(circle at 18% 0%, rgba(86,166,97,0.18), transparent 34%),
+    var(--card-image);
+  background-position: center;
+  background-size: cover;
+}
+
+.product-card::after {
+  inset: auto 0 0;
+  height: 64%;
+  background: linear-gradient(180deg, rgba(7,20,33,0) 0%, rgba(7,20,33,0.74) 38%, rgba(7,20,33,0.96) 100%);
+}
+
+.product-card-content {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: auto;
+  padding: 5.4rem 1rem 1rem;
+  background: linear-gradient(180deg, rgba(7,20,33,0) 0%, rgba(7,20,33,0.16) 20%, rgba(7,20,33,0.78) 48%, rgba(7,20,33,0.95) 100%);
+}
+
+.product-card h4 {
+  margin-bottom: 0.45rem;
+}
+
+.product-card p {
+  margin-bottom: 0.85rem;
+}
+
+.product-actions {
+  margin-top: 0;
+}
+
+.about-page .heritage-split {
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.78fr);
+  align-items: stretch;
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.about-page .legacy-copy {
+  min-width: 0;
+}
+
+.about-page .legacy-visual {
+  display: flex;
+  align-items: stretch;
+}
+
+.about-page .legacy-media {
+  width: 100%;
+  min-height: clamp(420px, 40vw, 560px);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.about-page .legacy-image {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+  object-position: center;
+}
+
+.products-cta .section-label,
+.about-cta .section-label {
+  color: rgba(255,255,255,0.72);
+}
+
+.service-page section {
+  padding: clamp(2.5rem, 4.4vw, 4rem) 0;
+}
+
+.service-page .page-hero-sm {
+  padding: 2rem 0;
+}
+
+.service-page .section-header {
+  margin-bottom: 1.1rem;
+}
+
+.service-page .response-grid,
+.service-page .service-grid {
+  gap: 0.9rem;
+}
+
+.service-page .service-grid .info-card {
+  min-height: 210px;
+  padding: 1.35rem 1rem;
+}
+
+.service-page .response-step {
+  min-height: 132px;
+  padding: 0.9rem;
+}
+
+.service-page .custom-solution-box {
+  padding: clamp(2rem, 3vw, 2.5rem);
+}
+
+.service-page .urgent-service-banner {
+  padding: 2rem;
+}
+
+@media (max-width: 900px) {
+  .about-page .heritage-split {
+    grid-template-columns: 1fr;
+  }
+
+  .about-page .legacy-media {
+    min-height: 320px;
+  }
+
+  .product-card-content {
+    padding-top: 4.6rem;
+  }
+}

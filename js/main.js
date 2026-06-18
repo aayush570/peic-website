@@ -188,6 +188,7 @@ function renderProductsPage(page) {
   setText('#partners .container > h3', page.partners?.global_title);
   const partnerHeadings = document.querySelectorAll('#partners .container > h3');
   if (partnerHeadings[1] && page.partners?.domestic_title) partnerHeadings[1].textContent = page.partners.domestic_title;
+  setCallout(document.querySelector('.products-cta .home-cta-inner'), page.cta);
 }
 
 function renderTier(selector, tier) {
@@ -230,6 +231,7 @@ function renderAboutPage(about) {
   setHeading(document.querySelector('.clients-section'), page.clients_heading);
   setHeading(document.querySelector('.testimonials-section'), page.testimonials_heading);
   setHeading(document.querySelector('.certifications-section'), page.certifications_heading);
+  setCallout(document.querySelector('.about-cta .home-cta-inner'), page.cta);
 }
 
 function renderServicePage(page) {
