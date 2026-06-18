@@ -318,27 +318,11 @@ function renderProducts(products) {
   if (!grid || !Array.isArray(products)) return;
 
   grid.innerHTML = products.map((product) => {
-    const accessMode = ['enquiry_only', 'gated_download', 'public_download'].includes(product.access_mode)
-      ? product.access_mode
-      : 'enquiry_only';
-    const hasFile = Boolean(product.specification_file);
-    const effectiveMode = hasFile ? accessMode : 'enquiry_only';
-    const defaultLabel = effectiveMode === 'enquiry_only'
-      ? 'Request Specifications'
-      : effectiveMode === 'gated_download'
-        ? 'Get Technical Specifications'
-        : 'Request Specifications';
-    const actionLabel = product.action_label || defaultLabel;
-    const specs = effectiveMode === 'public_download'
-      ? `<a class="download-specs" href="${escapeAttribute(product.specification_file)}" target="_blank" rel="noopener">↓ ${escapeHTML(actionLabel)}</a>`
-      : `<button class="download-specs" type="button"
-          data-product-action="${escapeAttribute(effectiveMode)}"
-          data-product-name="${escapeAttribute(product.name)}"
-          data-product-file="${escapeAttribute(product.specification_file || '')}">→ ${escapeHTML(actionLabel)}</button>`;
-    const enquiryUrl = `contact.html?type=equipment&product=${encodeURIComponent(product.name)}`;
-    const secondaryAction = effectiveMode === 'enquiry_only'
-      ? ''
-      : `<a href="${escapeAttribute(enquiryUrl)}" class="btn-enquire">Enquire</a>`;
+    const actionLabel = 'Request Specifications';
+    const specs = `<button class="download-specs" type="button"
+        data-product-action="enquiry_only"
+        data-product-name="${escapeAttribute(product.name)}"
+        data-product-file="${escapeAttribute(product.specification_file || '')}">→ ${escapeHTML(actionLabel)}</button>`;
 
     return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
       <div class="product-card-content">
@@ -346,7 +330,6 @@ function renderProducts(products) {
         <p>${escapeHTML(product.description || '')}</p>
         <div class="product-actions">
           ${specs}
-          ${secondaryAction}
         </div>
       </div>
     </article>`;

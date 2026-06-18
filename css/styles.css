@@ -5777,7 +5777,7 @@ body.is-cms-loading .logo-grid::before {
 
 .about-page .legacy-media {
   width: 100%;
-  min-height: clamp(420px, 40vw, 560px);
+  min-height: clamp(360px, 34vw, 480px);
   border-radius: var(--radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
@@ -6016,27 +6016,8 @@ body.is-cms-loading .logo-grid::before {
   font-size: clamp(0.92rem, 1vw, 1.02rem);
 }
 
-.download-specs::after {
-  content: ' after enquiry';
-  opacity: 0.68;
-  font-weight: 500;
-}
-
-.download-specs[href]::after {
-  content: '';
-}
-
-.doc-card::after {
-  content: attr(data-category) ' documentation is shared after request where files are not public.';
-  display: block;
-  margin-top: 0.9rem;
-  color: var(--slate-light);
-  font-size: 0.74rem;
-  line-height: 1.45;
-}
-
-.doc-card[data-category="certificate"]::after {
-  content: 'Certificate details are shown for initial review; current documents should be verified before tender use.';
+.doc-card {
+  padding-bottom: 1.05rem;
 }
 
 .product-lead-dialog {
