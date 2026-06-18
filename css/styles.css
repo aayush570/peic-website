@@ -675,6 +675,10 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   color: rgba(255, 255, 255, 0.84);
   flex: 1;
   margin-bottom: 1.5rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .product-card-content {
@@ -684,6 +688,7 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   justify-content: flex-end;
   width: 100%;
   padding: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .product-actions {
@@ -707,6 +712,15 @@ section.bg-green h2, section.bg-green h3 { color: white; }
   cursor: pointer;
   border: none;
   font-family: var(--font);
+}
+
+.download-specs::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .download-specs:hover { background: #d4edd7; }
