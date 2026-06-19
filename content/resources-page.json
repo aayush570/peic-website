@@ -8,5 +8,31 @@
     "description": "Tell us what you need and our team will get back with the relevant product documentation, specifications, or support material.",
     "button_label": "Request Documentation",
     "button_link": "contact.html?type=general"
-  }
+  },
+  "resources": [
+    {"title":"Horizontal Sterilizer Brochure","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"Flash Sterilizer Brochure","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"Vertical Autoclave Brochure","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"CSSD Furniture & Trolleys Catalog","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"Bio Medical Waste Sanitizer Brochure","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"Tabletop Sterilizer Brochure","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"PEIC Corporate Overview","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"Partner Technologies Catalog","category":"brochure","type_label":"Brochure","file":"","file_meta":"Available on request"},
+    {"title":"BIS IS 3829 Part 1 License","category":"certificate","type_label":"Certificate","file":"","file_meta":"Compliance details"},
+    {"title":"BIS IS 3829 Part 2 License","category":"certificate","type_label":"Certificate","file":"","file_meta":"Compliance details"},
+    {"title":"ISO 13485:2016 Certificate","category":"certificate","type_label":"Certificate","file":"","file_meta":"Compliance details"},
+    {"title":"ISO 9001:2015 Certificate","category":"certificate","type_label":"Certificate","file":"","file_meta":"Compliance details"},
+    {"title":"CE Marking — MDD 93/42/EEC","category":"certificate","type_label":"Certificate","file":"","file_meta":"Compliance details"},
+    {"title":"GMP Certificate — Optimum Certifications","category":"certificate","type_label":"Certificate","file":"","file_meta":"Compliance details"},
+    {"title":"Horizontal Sterilizer User Manual","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"Flash Sterilizer User Manual","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"Vertical Autoclave User Manual","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"Bedpan Sterilizer User Manual","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"Tabletop Sterilizer User Manual","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"Bio Waste Sanitizer User Manual","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"Installation & Commissioning Guide","category":"manual","type_label":"User Manual","file":"","file_meta":"Available on request"},
+    {"title":"CSSD Modernization — Government Tertiary Hospital","category":"case-study","type_label":"Case Study","file":"","file_meta":"Available on request"},
+    {"title":"Multi-Campus OT Integration — Private Chain","category":"case-study","type_label":"Case Study","file":"","file_meta":"Available on request"},
+    {"title":"Research Lab Sterilization — B.A.R.C.","category":"case-study","type_label":"Case Study","file":"","file_meta":"Available on request"}
+  ]
 }

@@ -182,7 +182,7 @@ content:
       - { name: cta, label: Bottom call to action, component: callout }
 
   - name: products_page
-    label: "2. Products page - headings and sections"
+    label: "2. Products page"
     type: file
     path: content/products-page.json
     format: json
@@ -208,55 +208,49 @@ content:
           - { name: advantages, label: Advantages, component: advantage, list: true }
           - { name: global_title, label: Global partners heading, type: string }
           - { name: domestic_title, label: Domestic partners heading, type: string }
+      - name: manufactured_products
+        label: Manufactured products
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Product name, type: string, required: true }
+          - { name: certification, label: Certification / status line, type: string }
+          - { name: description, label: Description, type: text, required: true }
+          - { name: image, label: Product image, type: image, options: { media: images } }
+          - { name: specification_file, label: Specification PDF, type: file, options: { media: documents } }
+          - name: access_mode
+            label: Visitor action
+            type: select
+            required: true
+            default: enquiry_only
+            options:
+              values:
+                - { value: enquiry_only, label: Enquiry only }
+                - { value: gated_download, label: Form required, then download PDF }
+                - { value: public_download, label: Public PDF, no form required }
+          - { name: action_label, label: Button wording, type: string, description: "Example: Request Specifications or Download Brochure" }
+      - name: partner_companies
+        label: Partner companies
+        type: object
+        list: true
+        fields:
+          - { name: name, label: Partner name, type: string, required: true }
+          - name: group
+            label: Partner group
+            type: select
+            required: true
+            options:
+              values:
+                - { value: global, label: Global partner }
+                - { value: domestic, label: Domestic partner }
+          - { name: country, label: Country, type: string }
+          - { name: flag, label: Flag emoji, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: categories, label: Product categories, type: string, list: true }
+          - { name: solutions_url, label: Internal solutions link, type: string, description: "Example: solutions.html#oncology" }
+          - { name: website_url, label: Official website URL, type: string, description: "Leave blank if only the internal solutions page should open." }
+          - { name: logo, label: Partner logo, type: image, options: { media: images } }
       - { name: cta, label: Bottom call to action, component: callout }
-
-  - name: products
-    label: "2a. Products page - manufactured products"
-    type: file
-    path: content/products.json
-    format: json
-    list: true
-    fields:
-      - { name: name, label: Product name, type: string, required: true }
-      - { name: certification, label: Certification / status line, type: string }
-      - { name: description, label: Description, type: text, required: true }
-      - { name: image, label: Product image, type: image, options: { media: images } }
-      - { name: specification_file, label: Specification PDF, type: file, options: { media: documents } }
-      - name: access_mode
-        label: Visitor action
-        type: select
-        required: true
-        default: enquiry_only
-        options:
-          values:
-            - { value: enquiry_only, label: Enquiry only }
-            - { value: gated_download, label: Form required, then download PDF }
-            - { value: public_download, label: Public PDF, no form required }
-      - { name: action_label, label: Button wording, type: string, description: "Example: Request Specifications or Download Brochure" }
-
-  - name: partners
-    label: "2b. Products page - partner companies"
-    type: file
-    path: content/partners.json
-    format: json
-    list: true
-    fields:
-      - { name: name, label: Partner name, type: string, required: true }
-      - name: group
-        label: Partner group
-        type: select
-        required: true
-        options:
-          values:
-            - { value: global, label: Global partner }
-            - { value: domestic, label: Domestic partner }
-      - { name: country, label: Country, type: string }
-      - { name: flag, label: Flag emoji, type: string }
-      - { name: description, label: Description, type: text }
-      - { name: categories, label: Product categories, type: string, list: true }
-      - { name: solutions_url, label: Internal solutions link, type: string, description: "Example: solutions.html#oncology" }
-      - { name: website_url, label: Official website URL, type: string, description: "Leave blank if only the internal solutions page should open." }
-      - { name: logo, label: Partner logo, type: image, options: { media: images } }
 
   - name: solutions_page
     label: "3. Solutions page"
@@ -321,38 +315,35 @@ content:
       - { name: urgent_cta, label: Urgent service callout, component: callout }
 
   - name: resources_page
-    label: "6. Resources page - headings"
+    label: "6. Resources page"
     type: file
     path: content/resources-page.json
     format: json
     fields:
       - { name: hero, label: Hero section, component: simple_hero }
       - { name: help_cta, label: Documentation help callout, component: callout }
-
-  - name: resources
-    label: "6a. Resources page - downloads"
-    type: file
-    path: content/resources.json
-    format: json
-    list: true
-    fields:
-      - { name: title, label: Public title, type: string, required: true }
-      - name: category
-        label: Category
-        type: select
-        required: true
-        options:
-          values:
-            - { value: brochure, label: Brochure }
-            - { value: certificate, label: Certificate }
-            - { value: manual, label: User manual }
-            - { value: case-study, label: Case study }
-      - { name: type_label, label: Label shown on card, type: string, required: true }
-      - { name: file, label: PDF / document, type: file, options: { media: documents } }
-      - { name: file_meta, label: Small file note, type: string, description: "Example: PDF · 2.4 MB or Available on request" }
+      - name: resources
+        label: Downloads and resources
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Public title, type: string, required: true }
+          - name: category
+            label: Category
+            type: select
+            required: true
+            options:
+              values:
+                - { value: brochure, label: Brochure }
+                - { value: certificate, label: Certificate }
+                - { value: manual, label: User manual }
+                - { value: case-study, label: Case study }
+          - { name: type_label, label: Label shown on card, type: string, required: true }
+          - { name: file, label: PDF / document, type: file, options: { media: documents } }
+          - { name: file_meta, label: Small file note, type: string, description: "Example: PDF · 2.4 MB or Available on request" }
 
   - name: careers_page
-    label: "7. Careers page - headings and sections"
+    label: "7. Careers page"
     type: file
     path: content/careers-page.json
     format: json
@@ -368,19 +359,16 @@ content:
           - { name: values, label: Values line, type: string }
       - { name: jobs_heading, label: Open positions heading, component: heading }
       - { name: open_application, label: General application callout, component: callout }
-
-  - name: jobs
-    label: "7a. Careers page - job vacancies"
-    type: file
-    path: content/jobs.json
-    format: json
-    list: true
-    fields:
-      - { name: title, label: Job title, type: string, required: true }
-      - { name: category, label: Department / category, type: string, required: true }
-      - { name: location, label: Location, type: string, required: true }
-      - { name: employment_type, label: Employment type, type: string }
-      - { name: open, label: Show as open vacancy, type: boolean }
+      - name: jobs
+        label: Job vacancies
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Job title, type: string, required: true }
+          - { name: category, label: Department / category, type: string, required: true }
+          - { name: location, label: Location, type: string, required: true }
+          - { name: employment_type, label: Employment type, type: string }
+          - { name: open, label: Show as open vacancy, type: boolean }
 
   - name: contact_page
     label: "8. Contact page"

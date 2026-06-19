@@ -32,10 +32,6 @@ async function initCMSContent() {
     };
     if (pageFiles[route]) requests.push(fetchCMSData(pageFiles[route]));
 
-    if (page.querySelector('.product-grid')) requests.push(fetchCMSData('products'));
-    if (page.querySelector('#partners')) requests.push(fetchCMSData('partners'));
-    if (page.querySelector('.doc-grid')) requests.push(fetchCMSData('resources'));
-    if (page.querySelector('.job-list')) requests.push(fetchCMSData('jobs'));
     if (route !== 'about' && page.querySelector('.logo-grid')) {
       requests.push(fetchCMSData('about'));
     }
@@ -45,10 +41,6 @@ async function initCMSContent() {
 
     if (data.site) renderSiteContent(data.site);
     renderCurrentPage(route, data[pageFiles[route]]);
-    if (data.products) renderProducts(data.products);
-    if (data.partners) renderPartners(data.partners);
-    if (data.resources) renderResources(data.resources);
-    if (data.jobs) renderJobs(data.jobs);
     if (data.about) renderTrustContent(data.about);
   } catch (error) {
     console.warn('CMS content could not be loaded; using built-in page content.', error);
@@ -189,6 +181,8 @@ function renderProductsPage(page) {
   setText('#partners .container > h3', page.partners?.global_title);
   const partnerHeadings = document.querySelectorAll('#partners .container > h3');
   if (partnerHeadings[1] && page.partners?.domestic_title) partnerHeadings[1].textContent = page.partners.domestic_title;
+  renderProducts(page.manufactured_products);
+  renderPartners(page.partner_companies);
   setCallout(document.querySelector('.products-cta .home-cta-inner'), page.cta);
 }
 
@@ -245,6 +239,7 @@ function renderServicePage(page) {
 
 function renderResourcesPage(page) {
   setPageHero(page.hero);
+  renderResources(page.resources);
   setCallout(document.querySelector('.missing-doc-cta'), page.help_cta);
 }
 
@@ -254,7 +249,7 @@ function renderCareersPage(page) {
     benefits: page.benefits,
     culture_title: page.culture?.title,
     culture_subtitle: page.culture?.subtitle,
-    culture_values: page.culture?.values
+      culture_values: page.culture?.values
   } });
   const jobsSection = document.querySelector('.job-list')?.closest('section');
   const heading = jobsSection?.querySelector('.job-list')?.previousElementSibling;
@@ -262,6 +257,7 @@ function renderCareersPage(page) {
     setTextWithin(heading, '.section-label', page.jobs_heading?.label);
     setTextWithin(heading, '.section-title', page.jobs_heading?.title);
   }
+  renderJobs(page.jobs);
   setCallout(document.querySelector('.general-app-cta'), page.open_application);
 }
 

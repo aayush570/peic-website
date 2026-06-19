@@ -3,7 +3,7 @@
 The PEIC website uses PagesCMS so non-technical team members can update text,
 images, logos, PDFs, job openings, and company details without touching code.
 
-Every item in the PagesCMS sidebar now maps directly to the live website.
+Every item in the PagesCMS sidebar now maps directly to one website page.
 
 ## Sign In
 
@@ -34,8 +34,8 @@ description, tick-list items, link, and button text can be edited independently.
 The hero proof panel is also editable from the Home page: kicker, large metric,
 headline, supporting copy, and the four small specification cells.
 
-Products, partners, downloads, and vacancies appear as separate repeatable lists
-directly below their matching page settings.
+Products, partners, downloads, and vacancies are now managed inside their
+matching page entry, so the sidebar stays one item per website page.
 
 ### Site-wide company details
 
