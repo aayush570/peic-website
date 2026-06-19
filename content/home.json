@@ -3,7 +3,7 @@
     "eyebrow": "Established Indian Manufacturer · Med-Tech Integration Partner",
     "title": "Medical Equipment Credibility Built Since 1968",
     "description": "PEIC helps hospital procurement and biomedical teams evaluate sterilization systems, partner technologies, service support, and tender-ready documentation through one accountable institutional partner.",
-    "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
+    "image": "/uploads/images/cssd-equipment-1.jpg",
     "primary_button_label": "Discuss Procurement Needs",
     "primary_button_link": "contact.html?type=equipment",
     "secondary_button_label": "Review Credentials",
@@ -22,10 +22,22 @@
     "title": "Manufacturer-led equipment decisions for institutional buyers",
     "description": "Manufacturing heritage, partner integration, documentation support, and lifecycle service coordination under one accountable relationship.",
     "specs": [
-      {"label": "Proof", "value": "BIS / ISO / GMP"},
-      {"label": "Platform", "value": "CSSD + OT"},
-      {"label": "Buyer Fit", "value": "Tender + Direct"},
-      {"label": "Scope", "value": "OEM + Partners"}
+      {
+        "label": "Proof",
+        "value": "BIS / ISO / GMP"
+      },
+      {
+        "label": "Platform",
+        "value": "CSSD + OT"
+      },
+      {
+        "label": "Buyer Fit",
+        "value": "Tender + Direct"
+      },
+      {
+        "label": "Scope",
+        "value": "OEM + Partners"
+      }
     ]
   },
   "capabilities": {
