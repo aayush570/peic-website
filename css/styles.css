@@ -5709,8 +5709,9 @@ body.is-cms-loading .logo-grid::before {
   justify-content: flex-start;
 }
 
-.doc-card-meta > span {
-  display: none !important;
+.doc-card-note {
+  display: inline-flex !important;
+  margin-right: 0.65rem;
 }
 
 @media (min-width: 1100px) {

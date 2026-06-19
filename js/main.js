@@ -318,15 +318,20 @@ function renderProducts(products) {
   if (!grid || !Array.isArray(products)) return;
 
   grid.innerHTML = products.map((product) => {
-    const actionLabel = 'Request Specifications';
-    const specs = `<button class="download-specs" type="button"
-        data-product-action="enquiry_only"
-        data-product-name="${escapeAttribute(product.name)}"
-        data-product-file="${escapeAttribute(product.specification_file || '')}">${escapeHTML(actionLabel)} →</button>`;
+    const actionMode = getProductAccessMode(product);
+    const actionLabel = getProductActionLabel(product, actionMode);
+    const productFile = normalizeAssetURL(product.specification_file || '');
+    const specs = actionMode === 'public_download' && productFile
+      ? `<a class="download-specs" href="${escapeAttribute(productFile)}" target="_blank" rel="noopener">${escapeHTML(actionLabel)} →</a>`
+      : `<button class="download-specs" type="button"
+          data-product-action="${escapeAttribute(actionMode)}"
+          data-product-name="${escapeAttribute(product.name)}"
+          data-product-file="${escapeAttribute(productFile)}">${escapeHTML(actionLabel)} →</button>`;
 
     return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
+        ${product.certification ? `<div class="cert">${escapeHTML(product.certification)}</div>` : ''}
         <p>${escapeHTML(product.description || '')}</p>
         <div class="product-actions">
           ${specs}
@@ -372,8 +377,9 @@ function renderResources(resources) {
 
   grid.innerHTML = resources.map((resource) => {
     const isCertificate = resource.category === 'certificate';
-    const action = resource.file
-      ? `<a class="btn-download-doc" href="${escapeAttribute(resource.file)}" target="_blank" rel="noopener">${isCertificate ? 'View Certificate' : 'Download'}</a>`
+    const file = normalizeAssetURL(resource.file || '');
+    const action = file
+      ? `<a class="btn-download-doc" href="${escapeAttribute(file)}" target="_blank" rel="noopener">${isCertificate ? 'View Certificate' : 'Download'}</a>`
       : isCertificate
         ? '<a class="btn-download-doc" href="about.html#certifications">View Details</a>'
         : `<button class="btn-download-doc" type="button"
@@ -384,6 +390,7 @@ function renderResources(resources) {
       <span class="doc-card-type">${escapeHTML(resource.type_label)}</span>
       <h4>${escapeHTML(resource.title)}</h4>
       <div class="doc-card-meta">
+        ${resource.file_meta ? `<span class="doc-card-note">${escapeHTML(resource.file_meta)}</span>` : ''}
         ${action}
       </div>
     </article>`;
@@ -565,6 +572,24 @@ function buildingIcon() {
 function setText(selector, value) {
   const element = document.querySelector(selector);
   if (element && value) element.textContent = value;
+}
+
+function getProductAccessMode(product) {
+  const file = normalizeAssetURL(product?.specification_file || '');
+  const mode = product?.access_mode || 'enquiry_only';
+
+  if ((mode === 'gated_download' || mode === 'public_download') && !file) {
+    return 'enquiry_only';
+  }
+
+  return mode;
+}
+
+function getProductActionLabel(product, mode) {
+  if (product?.action_label) return product.action_label;
+  if (mode === 'gated_download') return 'Submit & Download';
+  if (mode === 'public_download') return 'Download PDF';
+  return 'Request Specifications';
 }
 
 function setBackgroundImage(selector, image) {

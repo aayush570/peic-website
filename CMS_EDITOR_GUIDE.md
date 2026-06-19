@@ -1,6 +1,9 @@
 # PEIC Website Editor Guide
 
-The PEIC website uses Pages CMS for non-technical editing.
+The PEIC website uses PagesCMS so non-technical team members can update text,
+images, logos, PDFs, job openings, and company details without touching code.
+
+Every item in the PagesCMS sidebar now maps directly to the live website.
 
 ## Sign In
 
@@ -31,8 +34,8 @@ description, tick-list items, link, and button text can be edited independently.
 The hero proof panel is also editable from the Home page: kicker, large metric,
 headline, supporting copy, and the four small specification cells.
 
-Products, partners, downloads, and vacancies are shown directly below their
-respective page settings as separate repeatable lists.
+Products, partners, downloads, and vacancies appear as separate repeatable lists
+directly below their matching page settings.
 
 ### Site-wide company details
 
@@ -68,6 +71,9 @@ uploaded PDF opens.
 Use **Public PDF — no form required** only for documents intended for unrestricted
 distribution. If no PDF is uploaded, the website automatically falls back to
 **Enquiry only**.
+
+If you want the button text to say something specific such as `Download brochure`
+or `Request specifications`, change the **Button wording** field for that product.
 
 ### Partner companies
 
@@ -122,6 +128,9 @@ Each resource has:
 - File note such as `PDF · 2.4 MB`
 
 When a file is uploaded, the website automatically changes the button from **Request** to **Download**.
+
+The small **File note** field is shown on the website too. Use it for text such
+as `PDF · 2.4 MB`, `Updated June 2026`, or `Available on request`.
 
 ### Job vacancies
 

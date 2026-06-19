@@ -28,71 +28,87 @@ components:
     fields:
       - { name: title, label: Page heading, type: string, required: true }
       - { name: description, label: Page introduction, type: text, required: true }
+
   image_hero:
     type: object
     fields:
       - { name: title, label: Page heading, type: string, required: true }
       - { name: description, label: Page introduction, type: text, required: true }
       - { name: image, label: Hero image, type: image, options: { media: images } }
+
   heading:
     type: object
     fields:
       - { name: label, label: Small section label, type: string }
       - { name: title, label: Section heading, type: string, required: true }
       - { name: description, label: Section introduction, type: text }
+
   callout:
     type: object
     fields:
+      - { name: label, label: Small label above heading, type: string }
       - { name: title, label: Heading, type: string, required: true }
       - { name: description, label: Description, type: text }
       - { name: button_label, label: Button text, type: string }
-      - { name: button_link, label: Button link, type: string }
+      - { name: button_link, label: Button link, type: string, description: "Example: contact.html or contact.html?type=equipment" }
+
   advantage:
     type: object
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: text }
+
   specialty:
     type: object
     fields:
-      - { name: id, label: Anchor ID, type: string, required: true, description: "Lowercase; change only with technical help." }
+      - { name: id, label: Anchor ID, type: string, required: true, description: "Keep lowercase. Only change this with technical help because links may depend on it." }
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: text }
       - { name: image, label: Card image, type: image, options: { media: images } }
-      - { name: link, label: Card link, type: string }
+      - { name: link, label: Card link, type: string, description: "Example: products.html#manufacturing" }
+      - { name: button_label, label: Link text, type: string }
+
   industry:
     type: object
     fields:
       - { name: title, label: Industry title, type: string, required: true }
       - { name: description, label: Description, type: text }
       - { name: featured, label: Large featured card, type: boolean }
-      - { name: tags, label: Departments/tags, type: string, list: true }
+      - { name: tags, label: Departments / tags, type: string, list: true }
+
   icon_card:
     type: object
     fields:
       - { name: icon, label: Icon or emoji, type: string }
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: text }
+
   metric:
     type: object
     fields:
-      - { name: value, label: Number, type: number, required: true }
+      - { name: value, label: Number value, type: number, required: true }
+      - { name: display_value, label: Custom display text, type: string, description: "Optional. Example: Single instead of 1." }
       - { name: prefix, label: Prefix, type: string, description: "Example: <" }
       - { name: suffix, label: Suffix, type: string, description: "Example: + or hr" }
       - { name: tagline, label: Small green line, type: string }
       - { name: label, label: Description, type: string, required: true }
-  facility:
+
+  facility_block:
     type: object
     fields:
-      - { name: title, label: Facility caption, type: string, required: true }
-      - { name: image, label: Facility photograph, type: image, required: true, options: { media: images } }
+      - { name: type_label, label: Type label, type: string, description: "Example: Manufacturing Facility or Office" }
+      - { name: title, label: Heading, type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: address_lines, label: Address lines, type: string, list: true }
+
   client:
     type: object
     fields:
-      - { name: short_name, label: Short letters, type: string, required: true }
+      - { name: short_name, label: Placeholder letters, type: string, required: true, description: "Shown only when no logo is uploaded." }
       - { name: name, label: Customer name, type: string, required: true }
       - { name: tagline, label: Relationship note, type: string }
       - { name: logo, label: Customer logo, type: image, options: { media: images } }
+
   testimonial:
     type: object
     fields:
@@ -100,6 +116,7 @@ components:
       - { name: author, label: Person's name, type: string, required: true }
       - { name: role, label: Role and institution, type: string }
       - { name: published, label: Show on website, type: boolean }
+
   certification:
     type: object
     fields:
@@ -116,7 +133,7 @@ content:
     format: json
     fields:
       - name: hero
-        label: Hero
+        label: Hero section
         type: object
         fields:
           - { name: eyebrow, label: Small heading, type: string }
@@ -124,10 +141,25 @@ content:
           - { name: description, label: Introduction, type: text, required: true }
           - { name: image, label: Background image, type: image, options: { media: images } }
           - { name: primary_button_label, label: Primary button text, type: string }
-          - { name: primary_button_link, label: Primary button link, type: string }
+          - { name: primary_button_link, label: Primary button link, type: string, description: "Example: contact.html?type=equipment" }
           - { name: secondary_button_label, label: Secondary button text, type: string }
-          - { name: secondary_button_link, label: Secondary button link, type: string }
+          - { name: secondary_button_link, label: Secondary button link, type: string, description: "Example: about.html" }
       - { name: trust_banner, label: Trust banner items, type: string, list: true }
+      - name: hero_panel
+        label: Hero proof panel
+        type: object
+        fields:
+          - { name: kicker, label: Small label, type: string }
+          - { name: metric, label: Large metric, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: description, label: Supporting text, type: text }
+          - name: specs
+            label: Small specification cells
+            type: object
+            list: true
+            fields:
+              - { name: label, label: Label, type: string }
+              - { name: value, label: Value, type: string }
       - name: capabilities
         label: Core capabilities
         type: object
@@ -142,7 +174,7 @@ content:
               - { name: title, label: Card title, type: string, required: true }
               - { name: description, label: Card description, type: text }
               - { name: image, label: Card image, type: image, options: { media: images } }
-              - { name: link, label: Card link, type: string }
+              - { name: link, label: Card link, type: string, description: "Example: products.html#partners" }
               - { name: advantages, label: Tick-list items, type: string, list: true }
               - { name: button_label, label: Link text, type: string }
       - { name: advantage, label: Procurement advantage heading, component: heading }
@@ -155,7 +187,7 @@ content:
     path: content/products-page.json
     format: json
     fields:
-      - { name: hero, label: Hero, component: image_hero }
+      - { name: hero, label: Hero section, component: simple_hero }
       - name: manufacturing
         label: Manufacturing section
         type: object
@@ -176,6 +208,7 @@ content:
           - { name: advantages, label: Advantages, component: advantage, list: true }
           - { name: global_title, label: Global partners heading, type: string }
           - { name: domestic_title, label: Domestic partners heading, type: string }
+      - { name: cta, label: Bottom call to action, component: callout }
 
   - name: products
     label: "2a. Products page - manufactured products"
@@ -185,7 +218,7 @@ content:
     list: true
     fields:
       - { name: name, label: Product name, type: string, required: true }
-      - { name: certification, label: Certification/status line, type: string }
+      - { name: certification, label: Certification / status line, type: string }
       - { name: description, label: Description, type: text, required: true }
       - { name: image, label: Product image, type: image, options: { media: images } }
       - { name: specification_file, label: Specification PDF, type: file, options: { media: documents } }
@@ -197,9 +230,9 @@ content:
         options:
           values:
             - { value: enquiry_only, label: Enquiry only }
-            - { value: gated_download, label: Form required, then PDF }
-            - { value: public_download, label: Public PDF }
-      - { name: action_label, label: Button wording, type: string }
+            - { value: gated_download, label: Form required, then download PDF }
+            - { value: public_download, label: Public PDF, no form required }
+      - { name: action_label, label: Button wording, type: string, description: "Example: Request Specifications or Download Brochure" }
 
   - name: partners
     label: "2b. Products page - partner companies"
@@ -221,8 +254,8 @@ content:
       - { name: flag, label: Flag emoji, type: string }
       - { name: description, label: Description, type: text }
       - { name: categories, label: Product categories, type: string, list: true }
-      - { name: solutions_url, label: Internal solutions link, type: string }
-      - { name: website_url, label: Official website URL, type: string }
+      - { name: solutions_url, label: Internal solutions link, type: string, description: "Example: solutions.html#oncology" }
+      - { name: website_url, label: Official website URL, type: string, description: "Leave blank if only the internal solutions page should open." }
       - { name: logo, label: Partner logo, type: image, options: { media: images } }
 
   - name: solutions_page
@@ -231,7 +264,7 @@ content:
     path: content/solutions-page.json
     format: json
     fields:
-      - { name: hero, label: Hero, component: simple_hero }
+      - { name: hero, label: Hero section, component: simple_hero }
       - { name: specialties_heading, label: Medical specialties heading, component: heading }
       - { name: specialties, label: Medical specialty cards, component: specialty, list: true }
       - { name: industries_heading, label: Industries heading, component: heading }
@@ -248,7 +281,7 @@ content:
         label: Page headings and copy
         type: object
         fields:
-          - { name: hero, label: Hero, component: image_hero }
+          - { name: hero, label: Hero section, component: simple_hero }
           - name: legacy
             label: Legacy section
             type: object
@@ -261,8 +294,15 @@ content:
           - { name: clients_heading, label: Clients heading, component: heading }
           - { name: testimonials_heading, label: Testimonials heading, component: heading }
           - { name: certifications_heading, label: Certifications heading, component: heading }
+          - { name: cta, label: Bottom call to action, component: callout }
       - { name: metrics, label: Company statistics, component: metric, list: true }
-      - { name: facilities, label: Facilities and photographs, component: facility, list: true }
+      - name: facilities
+        label: Facilities and offices
+        type: object
+        fields:
+          - { name: research, label: In-house testing and R&D block, component: facility_block }
+          - { name: manufacturing, label: Manufacturing facilities, component: facility_block, list: true }
+          - { name: offices, label: Offices, component: facility_block, list: true }
       - { name: clients, label: Customers, component: client, list: true }
       - { name: testimonials, label: Testimonials, component: testimonial, list: true }
       - { name: certifications, label: Certifications, component: certification, list: true }
@@ -273,7 +313,7 @@ content:
     path: content/service-page.json
     format: json
     fields:
-      - { name: hero, label: Hero, component: simple_hero }
+      - { name: hero, label: Hero section, component: simple_hero }
       - { name: process_heading, label: Service workflow heading, component: heading }
       - { name: process, label: Response process steps, component: advantage, list: true }
       - { name: offerings, label: Service offerings, component: icon_card, list: true }
@@ -286,7 +326,7 @@ content:
     path: content/resources-page.json
     format: json
     fields:
-      - { name: hero, label: Hero, component: simple_hero }
+      - { name: hero, label: Hero section, component: simple_hero }
       - { name: help_cta, label: Documentation help callout, component: callout }
 
   - name: resources
@@ -308,8 +348,8 @@ content:
             - { value: manual, label: User manual }
             - { value: case-study, label: Case study }
       - { name: type_label, label: Label shown on card, type: string, required: true }
-      - { name: file, label: PDF/document, type: file, options: { media: documents } }
-      - { name: file_meta, label: File note, type: string }
+      - { name: file, label: PDF / document, type: file, options: { media: documents } }
+      - { name: file_meta, label: Small file note, type: string, description: "Example: PDF · 2.4 MB or Available on request" }
 
   - name: careers_page
     label: "7. Careers page - headings and sections"
@@ -317,7 +357,7 @@ content:
     path: content/careers-page.json
     format: json
     fields:
-      - { name: hero, label: Hero, component: simple_hero }
+      - { name: hero, label: Hero section, component: simple_hero }
       - { name: benefits, label: Employment benefits, component: icon_card, list: true }
       - name: culture
         label: Culture
@@ -325,7 +365,7 @@ content:
         fields:
           - { name: title, label: Heading, type: string }
           - { name: subtitle, label: Subtitle, type: string }
-          - { name: values, label: Values, type: string }
+          - { name: values, label: Values line, type: string }
       - { name: jobs_heading, label: Open positions heading, component: heading }
       - { name: open_application, label: General application callout, component: callout }
 
@@ -337,7 +377,7 @@ content:
     list: true
     fields:
       - { name: title, label: Job title, type: string, required: true }
-      - { name: category, label: Department/category, type: string, required: true }
+      - { name: category, label: Department / category, type: string, required: true }
       - { name: location, label: Location, type: string, required: true }
       - { name: employment_type, label: Employment type, type: string }
       - { name: open, label: Show as open vacancy, type: boolean }
@@ -363,7 +403,7 @@ content:
       - { name: tagline, label: Header tagline, type: string }
       - { name: footer_description, label: Footer description, type: text }
       - { name: phone_display, label: Phone shown to visitors, type: string, required: true }
-      - { name: phone_link, label: Phone dialing format, type: string }
+      - { name: phone_link, label: Phone dialing format, type: string, description: "Example: +919820033597" }
       - { name: general_email, label: General email, type: string }
       - { name: sales_email, label: Sales email, type: string }
       - { name: service_email, label: Service email, type: string }
