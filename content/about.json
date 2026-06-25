@@ -7,7 +7,7 @@
     "legacy": {
       "label": "Our Legacy",
       "title": "Engineering-led from day one.",
-      "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
+      "image": "/uploads/images/photo2026-06-25-173621.jpeg",
       "image_alt": "PEIC sterilization equipment",
       "paragraphs": [
         "Precision Electronics Instruments & Components was established in 1968 with a clear mandate: engineer medical sterilization systems that hospitals and institutions could rely on for years of daily operation.",
@@ -73,7 +73,6 @@
     {
       "value": 1,
       "display_value": "Single",
-      "suffix": "",
       "tagline": "Coordinated Support",
       "label": "Accountable Service Relationship"
     }
@@ -175,7 +174,6 @@
       "tagline": "Maharashtra, Delhi & Goa"
     }
   ],
-  "testimonials": [],
   "certifications": [
     {
       "icon": "BIS",
