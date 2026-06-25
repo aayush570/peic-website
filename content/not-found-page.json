@@ -1,0 +1,7 @@
+{
+  "label": "Error 404",
+  "title": "Page not found",
+  "description": "The page may have moved or the address may be incorrect.",
+  "button_label": "Back to Homepage",
+  "button_link": "index.html"
+}

@@ -17,7 +17,7 @@ Do not send passwords, email passwords, banking information, or private customer
 
 - Legal company name:
 - Public-facing company name:
-- Company type: Pvt. Ltd. / partnership / proprietorship / other
+- Company type / legal suffix: private limited / partnership / proprietorship / other
 - Founding year:
 - Confirm domain: `peic.in`
 - GSTIN, CIN, or other registration numbers to display, if any:
@@ -66,8 +66,8 @@ Supply documentary evidence or the internal source used for each number.
 |---|---:|---|---|---|
 | Established in 1968 | | | | |
 | 50+ years in business | | | | |
-| 15,000+ total installations | | | | |
-| 12,000+ active running installations | | | | |
+| 2,000+ total installations | | | | |
+| 1,000+ active running installations | | | | |
 | 15+ years average machine lifespan | | | | |
 | Less than 24-hour Mumbai service response | | | | |
 | 16+ partner brands | | | | |
@@ -139,13 +139,13 @@ For each item provide a clear PDF scan and confirm the exact public wording.
 |---|---|---|---|---|---|---|---|
 | BIS IS 3829 Part 1 | Certified since 1976 | | | | | | |
 | BIS IS 3829 Part 2 | Certified since 1982 | | | | | | |
-| CE marking | MDD 93/42/EEC, Cert 9398 | | | | | | |
-| GMP | GMP/241622RS | | | | | | |
-| ISO 14001:2015 | EMS/241623RS | | | | | | |
-| ISO 13485:2016 | MD/241624RS | | | | | | |
-| ISO 9001:2015 | QMS/23N155 | | | | | | |
-| Udyam | UDYAM-MH-18-0044773 | | | | | | |
-| NSIC | NSIC/GPB/RS/P-314/MH | | | | | | |
+| CE marking | Current document available on request | | | | | | |
+| GMP | Current document available on request | | | | | | |
+| ISO 14001:2015 | Current document available on request | | | | | | |
+| ISO 13485:2016 | Current document available on request | | | | | | |
+| ISO 9001:2015 | Current document available on request | | | | | | |
+| Udyam | Registration document available on request | | | | | | |
+| NSIC | Registration document available on request | | | | | | |
 
 Confirm whether the footer may legally say:
 

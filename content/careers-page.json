@@ -1,34 +1,95 @@
 {
   "hero": {
-    "title": "Why Work at PEIC",
-    "description": "A stable, engineering-driven organization where your work directly impacts healthcare outcomes across India."
+    "title": "Build a career in medical technology that matters.",
+    "description": "PEIC is an engineering-led manufacturer and medical technology integration partner with institutional relationships across India. We hire for technical precision, accountability, and long-term commitment."
   },
   "benefits": [
-    {"icon":"📈","title":"Career Growth","description":"Clear technical development pathways with training and certification support."},
-    {"icon":"🏥","title":"Healthcare Benefits","description":"Company healthcare benefits according to the applicable employment policy."},
-    {"icon":"🤝","title":"Collaborative Culture","description":"Cross-functional teams spanning manufacturing, biomedical engineering, service, and B2B sales."},
-    {"icon":"💼","title":"Competitive Compensation","description":"Market-aligned compensation and long-term organizational stability."}
+    {
+      "icon": "📈",
+      "title": "Technical Development",
+      "description": "Defined career pathways with exposure across manufacturing, biomedical service, quality, and commercial functions."
+    },
+    {
+      "icon": "🏥",
+      "title": "Healthcare Coverage",
+      "description": "Medical benefits as per applicable employment policy."
+    },
+    {
+      "icon": "🤝",
+      "title": "Cross-Functional Teams",
+      "description": "Manufacturing, biomedical engineering, service, and commercial teams working across PEIC's Mumbai facility cluster."
+    },
+    {
+      "icon": "💼",
+      "title": "Competitive Compensation",
+      "description": "Market-aligned packages with the stability of an organization operating continuously since 1968."
+    }
   ],
   "culture": {
-    "title": "Our Culture",
-    "subtitle": "Engineering Excellence, Institutional Pride",
-    "values": "Precision · Institutional Pride · Collaboration"
+    "title": "How We Work",
+    "subtitle": "Technical depth. Institutional accountability. Long-term relationships.",
+    "values": "Precision · Institutional Pride · Long-Term Thinking"
   },
-  "jobs_heading": {"label":"Open Positions","title":"Current Opportunities"},
+  "jobs_heading": {
+    "label": "Open Positions",
+    "title": "Active Openings"
+  },
+  "apply_label": "Apply",
   "open_application": {
-    "title": "Don't see a role that fits?",
-    "description": "Send us a note — we're always open to outstanding engineers and biomedical talent.",
-    "button_label": "Send Your Resume"
+    "title": "Don't see the right role?",
+    "description": "PEIC maintains a talent pipeline for biomedical engineers, service technicians, quality professionals, and institutional sales talent.",
+    "button_label": "Submit Your Profile",
+    "button_link": "mailto:careers@peic.in?subject=General Application"
   },
   "jobs": [
-    {"title":"Senior Welding & Fabrication Engineer","category":"Factory / Manufacturing","location":"Vadodara","employment_type":"Full-time","open":true},
-    {"title":"Quality Control Inspector — Sterilization Systems","category":"Factory / Manufacturing","location":"Vadodara","employment_type":"Full-time","open":true},
-    {"title":"Production Supervisor — CSSD Equipment Line","category":"Factory / Manufacturing","location":"Vadodara","employment_type":"Full-time","open":true},
-    {"title":"CNC Machinist — Pressure Vessel Components","category":"Factory / Manufacturing","location":"Vadodara","employment_type":"Full-time","open":true},
-    {"title":"Assembly Technician — Autoclave Systems","category":"Factory / Manufacturing","location":"Vadodara","employment_type":"Full-time","open":true},
-    {"title":"Biomedical Service Engineer","category":"Engineering / Biomedical","location":"Mumbai","employment_type":"Full-time","open":true},
-    {"title":"Application Specialist — Diagnostic Imaging","category":"Engineering / Biomedical","location":"Bengaluru","employment_type":"Full-time","open":true},
-    {"title":"Regional Sales Manager — Government Tenders","category":"B2B Sales","location":"Delhi","employment_type":"Full-time","open":true},
-    {"title":"Key Account Manager — Private Healthcare Chains","category":"B2B Sales","location":"Mumbai","employment_type":"Full-time","open":true}
+    {
+      "title": "Senior Welding & Fabrication Engineer",
+      "category": "Factory / Manufacturing",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    },
+    {
+      "title": "Quality Control Inspector - Sterilization Systems",
+      "category": "Factory / Manufacturing",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    },
+    {
+      "title": "Production Supervisor - CSSD Equipment Line",
+      "category": "Factory / Manufacturing",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    },
+    {
+      "title": "CNC Machinist - Pressure Vessel Components",
+      "category": "Factory / Manufacturing",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    },
+    {
+      "title": "Assembly Technician - Autoclave Systems",
+      "category": "Factory / Manufacturing",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    },
+    {
+      "title": "Biomedical Service Engineer",
+      "category": "Engineering / Biomedical",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    },
+    {
+      "title": "Key Account Manager - Healthcare Procurement",
+      "category": "B2B Sales",
+      "location": "Mumbai",
+      "employment_type": "Full-time",
+      "open": true
+    }
   ]
 }

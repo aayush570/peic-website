@@ -1,6 +1,114 @@
 {
+  "hero": {
+    "label": "Get in Touch",
+    "title": "Start a procurement conversation.",
+    "description": "Describe your requirement - equipment, service, documentation, or project scope. The right PEIC team will respond promptly."
+  },
   "teams_title": "Reach Our Teams Directly",
-  "office_title": "Registered Office",
-  "form_title": "Submit Your Enquiry",
-  "form_description": "Complete the form below for equipment purchases, service contracts, distributorship inquiries, or general information. Our team typically responds within one business day."
+  "contact_channels": [
+    {
+      "icon": "📞",
+      "title": "Technical Support & Urgent Service",
+      "label": "+91 98200 33597",
+      "href": "tel:+919820033597"
+    },
+    {
+      "icon": "✉",
+      "title": "Equipment Sales & New Procurement",
+      "label": "sales@peic.in",
+      "href": "mailto:sales@peic.in"
+    },
+    {
+      "icon": "🔧",
+      "title": "Service Contracts & AMC/CMC",
+      "label": "support@peic.in",
+      "href": "mailto:support@peic.in"
+    },
+    {
+      "icon": "📋",
+      "title": "Government Tenders & Documentation",
+      "label": "sales@peic.in",
+      "href": "mailto:sales@peic.in"
+    }
+  ],
+  "office_title": "Office Addresses",
+  "offices": [
+    {
+      "label": "PRIMARY OFFICE",
+      "title": "Mumbai",
+      "address_lines": [
+        "22, 2nd Floor, Shamroz Industrial Estate",
+        "Ram Mandir Road, Goregaon West",
+        "Mumbai 400054, Maharashtra, India"
+      ]
+    },
+    {
+      "label": "REGISTERED OFFICE",
+      "title": "Registered Address",
+      "address_lines": [
+        "17, Ranvir Building, 66/70 Princess Street",
+        "Mumbai 400002, Maharashtra, India"
+      ]
+    }
+  ],
+  "form_title": "Submit Your Requirement",
+  "form_description": "Our team reviews all enquiries and responds promptly with the next relevant step.",
+  "submit_label": "Submit Enquiry",
+  "sending_label": "Sending...",
+  "sending_status": "Sending your enquiry securely...",
+  "success_message": "Thank you. Your enquiry has been sent. PEIC will respond shortly.",
+  "error_message": "We could not send the enquiry. Please try again or email sital.shah@peic.in.",
+  "fields": {
+    "name_label": "Full Name *",
+    "name_placeholder": "Your full name",
+    "email_label": "Email Address *",
+    "email_placeholder": "Work email address",
+    "phone_label": "Phone Number *",
+    "phone_placeholder": "+91 XXXXX XXXXX",
+    "organization_label": "Organization Name",
+    "organization_optional": "(optional)",
+    "organization_placeholder": "Hospital / organization name",
+    "designation_label": "Designation",
+    "designation_optional": "(optional)",
+    "designation_placeholder": "Your designation",
+    "department_label": "Department",
+    "department_optional": "(optional)",
+    "department_placeholder": "Biomedical Engineering, CSSD, Procurement, etc.",
+    "city_label": "City / Region *",
+    "city_placeholder": "City and region",
+    "timeline_label": "Timeline *",
+    "inquiry_type_label": "Inquiry Type *",
+    "quantity_label": "Quantity / Scope",
+    "quantity_optional": "(optional)",
+    "quantity_placeholder": "e.g. 2 autoclaves, AMC for 5 units",
+    "tender_label": "Tender Status",
+    "tender_optional": "(optional)",
+    "message_label": "Additional Details",
+    "message_placeholder": "Describe your requirements - equipment models, quantities, documentation needs, AMC scope, or purchase context.",
+    "consent_text": "I agree that PEIC may use these details to respond to my enquiry, as described in the Privacy Policy.",
+    "privacy_label": "Privacy Policy",
+    "privacy_link": "privacy.html"
+  },
+  "timeline_options": [
+    { "label": "Select timeline...", "value": "" },
+    { "label": "Active purchase / specification review", "value": "Active purchase / specification review" },
+    { "label": "Within 30 days", "value": "Within 30 days" },
+    { "label": "1-3 months", "value": "1-3 months" },
+    { "label": "Planning / budgeting", "value": "Planning / budgeting" },
+    { "label": "Service issue / urgent", "value": "Service issue / urgent" }
+  ],
+  "inquiry_type_options": [
+    { "label": "Select inquiry type...", "value": "" },
+    { "label": "Equipment Purchase", "value": "equipment" },
+    { "label": "Service / AMC", "value": "service" },
+    { "label": "Documentation Request", "value": "documentation" },
+    { "label": "General Enquiry", "value": "general" }
+  ],
+  "tender_options": [
+    { "label": "Select if applicable...", "value": "" },
+    { "label": "Not applicable", "value": "Not applicable" },
+    { "label": "Under preparation", "value": "Under preparation" },
+    { "label": "Live tender", "value": "Live tender" },
+    { "label": "Specification comparison", "value": "Specification comparison" }
+  ]
 }

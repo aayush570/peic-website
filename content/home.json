@@ -1,90 +1,116 @@
 {
   "hero": {
     "eyebrow": "Established Indian Manufacturer & Med-Tech Integration Partner",
-    "title": "Medical Equipment Credibility Built Since 1968",
-    "description": "PEIC helps hospital procurement and biomedical teams evaluate sterilization systems, partner technologies, service support, and tender-ready documentation through one accountable institutional partner.",
+    "title": "Medical equipment decisions backed by manufacturing discipline.",
+    "description": "PEIC manufactures sterilization systems in Mumbai and supports global and Indian medical technologies through specification, installation, documentation, and long-term lifecycle service.",
     "image": "/uploads/images/cssd-equipment-1.jpg",
-    "primary_button_label": "Discuss Procurement Needs",
+    "primary_button_label": "Start a Procurement Enquiry",
     "primary_button_link": "contact.html?type=equipment",
-    "secondary_button_label": "Review Credentials",
+    "secondary_button_label": "See Credentials",
     "secondary_button_link": "about.html"
   },
   "trust_banner": [
     "Est. 1968",
-    "BIS Certified",
+    "BIS Certified Since 1976",
+    "ISO 13485 Certified",
     "CE & GMP Compliant",
     "MSME & NSIC Registered",
-    "Serving Public, Research & Private Healthcare Institutions"
+    "Serving Hospitals, Research Institutes & Public Health Networks"
   ],
   "hero_panel": {
     "kicker": "PEIC Institutional Proof",
     "metric": "1968",
-    "title": "Manufacturer-led equipment decisions for institutional buyers",
-    "description": "Manufacturing heritage, partner integration, documentation support, and lifecycle service coordination under one accountable relationship.",
+    "title": "Manufacturer-led procurement and service accountability",
+    "description": "Sterilization manufacturing heritage, partner technology access, and post-sale service coordination under one technical relationship.",
     "specs": [
       {
         "label": "Proof",
-        "value": "BIS / ISO / GMP"
+        "value": "BIS / ISO / CE / GMP"
       },
       {
         "label": "Platform",
-        "value": "CSSD + OT"
+        "value": "CSSD / OT / Oncology"
       },
       {
         "label": "Buyer Fit",
-        "value": "Tender + Direct"
+        "value": "Direct + Tender"
       },
       {
         "label": "Scope",
-        "value": "OEM + Partners"
+        "value": "Manufactured + Partner"
       }
     ]
   },
   "capabilities": {
-    "label": "Core Capabilities",
-    "title": "Two Pillars of Healthcare Technology Excellence",
+    "label": "Two Distinct Capabilities",
+    "title": "One technical partner for equipment selection, installation, and support.",
+    "description": "PEIC combines an OEM manufacturer's engineering discipline with the reach of an integration partner for global and Indian medical technologies. The result is fewer vendor handoffs, clearer service ownership, and better procurement context.",
     "cards": [
       {
         "title": "Indigenous Manufacturing",
-        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure built to global standards.",
+        "description": "High-pressure sterilization systems and CSSD infrastructure engineered and assembled in Mumbai, with direct OEM accountability from specification to service.",
         "image": "/uploads/images/cssd-equipment.jpg",
         "link": "products.html#manufacturing",
         "advantages": [
-          "BIS Certified",
-          "15+ Year Lifespan",
-          "OEM Engineering DNA",
-          "Tender Documentation Support"
+          "BIS Certified Since 1976",
+          "Designed for 15+ Year Operational Lifespan",
+          "OEM-Manufactured, Not Rebranded",
+          "Localized Spares & MSME/NSIC Documentation"
         ],
-        "button_label": "View Manufactured Products"
+        "button_label": "Explore PEIC-Manufactured Systems"
       },
       {
-        "title": "Global & Domestic Distribution",
-        "description": "Authorized technical integration partner for 16+ world-leading medical brands across India.",
+        "title": "Medical Technology Integration",
+        "description": "Current associations with global and Indian medical equipment brands, supported through installation, calibration, training, and service coordination.",
         "image": "/uploads/images/diagnostics-1.jpeg",
         "link": "products.html#partners",
         "advantages": [
-          "Single-Point Vendor",
-          "Localized Integration",
-          "Response & Diagnosis Planning",
-          "Unified AMC & CMC"
+          "Single Point of Contact",
+          "Installation, Calibration & Application Training",
+          "AMC/CMC Coordination",
+          "Pan-India Service Coordination"
         ],
         "button_label": "Explore Partner Technologies"
       }
     ]
   },
+  "workflow": {
+    "label": "How We Work",
+    "title": "Specification to uptime. One technical chain.",
+    "description": "Every engagement begins with requirement mapping and ends with a defined post-sale service relationship.",
+    "steps": [
+      {
+        "title": "Clinical Requirement Mapping",
+        "description": "Departments, cycle loads, compliance requirements, and procurement constraints documented before a product is specified."
+      },
+      {
+        "title": "Equipment Architecture",
+        "description": "PEIC-manufactured systems and partner technologies configured as one operating portfolio."
+      },
+      {
+        "title": "Commissioning & Handover",
+        "description": "Installation, calibration, biomedical team training, and commissioning documentation at handover."
+      },
+      {
+        "title": "Lifecycle Service Support",
+        "description": "AMC, CMC, domestic spare parts, refurbishment options, and response planning after deployment."
+      }
+    ]
+  },
   "advantage": {
-    "label": "Why PEIC",
-    "title": "Built for procurement scrutiny",
-    "description": "For direct outreach, tenders, service planning, and multi-department purchases, PEIC presents the credibility of an established manufacturer with the reach of an authorized med-tech integration partner."
+    "label": "By the Numbers",
+    "title": "Operational scale with accountable support.",
+    "description": "A 1968-founded manufacturer with Mumbai infrastructure, pan-India service coordination, and a procurement model built around post-sale ownership."
   },
   "clients": {
-    "label": "Institutional Trust",
-    "title": "Institutional references and long-term relationships"
+    "label": "Client Relationships",
+    "title": "Trusted by demanding public institutions and research networks",
+    "description": "Selected institutional relationships across public health systems, national research institutes, state health departments, and public infrastructure networks."
   },
   "cta": {
     "label": "Procurement Conversation",
-    "title": "Need a credible equipment partner for an active purchase?",
-    "description": "Share the department, city, timeline, and tender context. PEIC will route the enquiry to the right commercial or technical team.",
+    "title": "Ready to evaluate PEIC for your next procurement?",
+    "description": "Share your department, city, timeline, and requirement. PEIC will route the enquiry to the right commercial or technical team.",
     "button_label": "Start an Enquiry",
     "button_link": "contact.html?type=equipment"
   }

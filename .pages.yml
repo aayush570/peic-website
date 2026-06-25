@@ -122,8 +122,67 @@ components:
     fields:
       - { name: icon, label: Short badge letters, type: string, required: true }
       - { name: name, label: Certification name, type: string, required: true }
-      - { name: details, label: Certificate number/details, type: text }
+      - { name: details, label: Public certificate note, type: text }
       - { name: file, label: Certificate PDF, type: file, options: { media: documents } }
+
+  link:
+    type: object
+    fields:
+      - { name: label, label: Link text, type: string, required: true }
+      - { name: href, label: Link URL, type: string, required: true }
+
+  nav_item:
+    type: object
+    fields:
+      - { name: label, label: Navigation label, type: string, required: true }
+      - { name: href, label: Link URL, type: string, required: true }
+      - { name: route, label: Page route key, type: string, description: "Example: home, products, contact" }
+
+  footer_column:
+    type: object
+    fields:
+      - { name: title, label: Column heading, type: string, required: true }
+      - { name: links, label: Links, component: link, list: true }
+
+  seo_entry:
+    type: object
+    fields:
+      - { name: title, label: SEO title, type: string, required: true }
+      - { name: description, label: Meta description, type: text, required: true }
+      - { name: image, label: Social preview image URL, type: string }
+
+  select_option:
+    type: object
+    fields:
+      - { name: label, label: Visitor label, type: string, required: true }
+      - { name: value, label: Submitted value, type: string }
+
+  address_block:
+    type: object
+    fields:
+      - { name: label, label: Small label, type: string }
+      - { name: title, label: Heading, type: string }
+      - { name: address_lines, label: Address lines, type: string, list: true }
+
+  contact_channel:
+    type: object
+    fields:
+      - { name: icon, label: Icon or emoji, type: string }
+      - { name: title, label: Channel title, type: string, required: true }
+      - { name: label, label: Shown contact detail, type: string, required: true }
+      - { name: href, label: Click link, type: string, required: true, description: "Example: tel:+919820033597 or mailto:sales@peic.in" }
+
+  resource_filter:
+    type: object
+    fields:
+      - { name: label, label: Filter label, type: string, required: true }
+      - { name: value, label: Category value, type: string, required: true, description: "Use all, brochure, certificate, manual, or reference." }
+
+  legal_section:
+    type: object
+    fields:
+      - { name: title, label: Section heading, type: string, required: true }
+      - { name: body, label: Body text, type: text, required: true }
 
 content:
   - name: home_page
@@ -166,6 +225,7 @@ content:
         fields:
           - { name: label, label: Small section label, type: string }
           - { name: title, label: Section heading, type: string }
+          - { name: description, label: Section introduction, type: text }
           - name: cards
             label: Capability cards
             type: object
@@ -177,6 +237,17 @@ content:
               - { name: link, label: Card link, type: string, description: "Example: products.html#partners" }
               - { name: advantages, label: Tick-list items, type: string, list: true }
               - { name: button_label, label: Link text, type: string }
+      - name: workflow
+        label: Homepage workflow
+        type: object
+        fields:
+          - { name: label, label: Small section label, type: string }
+          - { name: title, label: Section heading, type: string }
+          - { name: description, label: Section introduction, type: text }
+          - name: steps
+            label: Workflow steps
+            component: advantage
+            list: true
       - { name: advantage, label: Procurement advantage heading, component: heading }
       - { name: clients, label: Client section heading, component: heading }
       - { name: cta, label: Bottom call to action, component: callout }
@@ -282,6 +353,8 @@ content:
             fields:
               - { name: label, label: Small section label, type: string }
               - { name: title, label: Section heading, type: string }
+              - { name: image, label: Legacy image, type: image, options: { media: images } }
+              - { name: image_alt, label: Legacy image alt text, type: string }
               - { name: paragraphs, label: Paragraphs, type: text, list: true }
           - { name: metrics_heading, label: Metrics heading, component: heading }
           - { name: facilities_heading, label: Facilities heading, component: heading }
@@ -321,6 +394,15 @@ content:
     format: json
     fields:
       - { name: hero, label: Hero section, component: simple_hero }
+      - { name: search_placeholder, label: Search placeholder, type: string }
+      - name: empty_state
+        label: Empty search state
+        type: object
+        fields:
+          - { name: text, label: Empty state text, type: string }
+          - { name: link_label, label: Link label, type: string }
+          - { name: link, label: Link URL, type: string }
+      - { name: filters, label: Filter tabs, component: resource_filter, list: true }
       - { name: help_cta, label: Documentation help callout, component: callout }
       - name: resources
         label: Downloads and resources
@@ -337,10 +419,10 @@ content:
                 - { value: brochure, label: Brochure }
                 - { value: certificate, label: Certificate }
                 - { value: manual, label: User manual }
-                - { value: case-study, label: Case study }
+                - { value: reference, label: Reference }
           - { name: type_label, label: Label shown on card, type: string, required: true }
           - { name: file, label: PDF / document, type: file, options: { media: documents } }
-          - { name: file_meta, label: Small file note, type: string, description: "Example: PDF · 2.4 MB or Available on request" }
+          - { name: action_label, label: Card call-to-action, type: string, description: "Example: Request Document or Request Certificate" }
 
   - name: careers_page
     label: "7. Careers page"
@@ -358,6 +440,7 @@ content:
           - { name: subtitle, label: Subtitle, type: string }
           - { name: values, label: Values line, type: string }
       - { name: jobs_heading, label: Open positions heading, component: heading }
+      - { name: apply_label, label: Apply link label, type: string }
       - { name: open_application, label: General application callout, component: callout }
       - name: jobs
         label: Job vacancies
@@ -376,10 +459,60 @@ content:
     path: content/contact-page.json
     format: json
     fields:
+      - name: hero
+        label: Contact hero
+        type: object
+        fields:
+          - { name: label, label: Small section label, type: string }
+          - { name: title, label: Main heading, type: string, required: true }
+          - { name: description, label: Introduction, type: text }
       - { name: teams_title, label: Teams heading, type: string }
+      - { name: contact_channels, label: Contact channels, component: contact_channel, list: true }
       - { name: office_title, label: Office heading, type: string }
+      - { name: offices, label: Office addresses, component: address_block, list: true }
       - { name: form_title, label: Form heading, type: string }
       - { name: form_description, label: Form introduction, type: text }
+      - { name: submit_label, label: Submit button label, type: string }
+      - { name: sending_label, label: Sending button label, type: string }
+      - { name: sending_status, label: Sending status message, type: text }
+      - { name: success_message, label: Success message, type: text }
+      - { name: error_message, label: Error message, type: text }
+      - name: fields
+        label: Form labels and placeholders
+        type: object
+        fields:
+          - { name: name_label, label: Name label, type: string }
+          - { name: name_placeholder, label: Name placeholder, type: string }
+          - { name: email_label, label: Email label, type: string }
+          - { name: email_placeholder, label: Email placeholder, type: string }
+          - { name: phone_label, label: Phone label, type: string }
+          - { name: phone_placeholder, label: Phone placeholder, type: string }
+          - { name: organization_label, label: Organization label, type: string }
+          - { name: organization_optional, label: Organization optional text, type: string }
+          - { name: organization_placeholder, label: Organization placeholder, type: string }
+          - { name: designation_label, label: Designation label, type: string }
+          - { name: designation_optional, label: Designation optional text, type: string }
+          - { name: designation_placeholder, label: Designation placeholder, type: string }
+          - { name: department_label, label: Department label, type: string }
+          - { name: department_optional, label: Department optional text, type: string }
+          - { name: department_placeholder, label: Department placeholder, type: string }
+          - { name: city_label, label: City label, type: string }
+          - { name: city_placeholder, label: City placeholder, type: string }
+          - { name: timeline_label, label: Timeline label, type: string }
+          - { name: inquiry_type_label, label: Inquiry type label, type: string }
+          - { name: quantity_label, label: Quantity label, type: string }
+          - { name: quantity_optional, label: Quantity optional text, type: string }
+          - { name: quantity_placeholder, label: Quantity placeholder, type: string }
+          - { name: tender_label, label: Tender label, type: string }
+          - { name: tender_optional, label: Tender optional text, type: string }
+          - { name: message_label, label: Message label, type: string }
+          - { name: message_placeholder, label: Message placeholder, type: text }
+          - { name: consent_text, label: Consent text, type: text }
+          - { name: privacy_label, label: Privacy link label, type: string }
+          - { name: privacy_link, label: Privacy link URL, type: string }
+      - { name: timeline_options, label: Timeline dropdown options, component: select_option, list: true }
+      - { name: inquiry_type_options, label: Inquiry type options, component: select_option, list: true }
+      - { name: tender_options, label: Tender dropdown options, component: select_option, list: true }
 
   - name: site_settings
     label: "9. Site-wide company details"
@@ -388,13 +521,123 @@ content:
     format: json
     fields:
       - { name: company_name, label: Company name, type: string, required: true }
+      - { name: short_name, label: Short logo text, type: string }
       - { name: tagline, label: Header tagline, type: string }
-      - { name: footer_description, label: Footer description, type: text }
       - { name: phone_display, label: Phone shown to visitors, type: string, required: true }
       - { name: phone_link, label: Phone dialing format, type: string, description: "Example: +919820033597" }
+      - { name: hotline_label, label: Header phone label, type: string }
       - { name: general_email, label: General email, type: string }
       - { name: sales_email, label: Sales email, type: string }
       - { name: service_email, label: Service email, type: string }
       - { name: careers_email, label: Careers email, type: string }
       - { name: enquiry_email, label: Enquiry notification email, type: string, readonly: true }
-      - { name: address_lines, label: Address lines, type: string, list: true }
+      - name: navigation
+        label: Navigation
+        type: object
+        fields:
+          - { name: items, label: Main navigation links, component: nav_item, list: true }
+          - { name: cta, label: Contact CTA link, component: nav_item }
+          - { name: mobile_label, label: Mobile menu label, type: string }
+          - { name: drawer_label, label: Mobile drawer accessibility label, type: string }
+          - { name: mobile_open_label, label: Mobile menu open label, type: string }
+          - { name: mobile_close_label, label: Mobile menu close label, type: string }
+      - name: footer
+        label: Footer
+        type: object
+        fields:
+          - { name: description, label: Footer description, type: text }
+          - { name: hotline_label, label: Phone label, type: string }
+          - { name: columns, label: Footer columns, component: footer_column, list: true }
+          - { name: copyright, label: Copyright line, type: string }
+          - { name: certification_strip, label: Certification strip, type: string }
+          - { name: address, label: Footer address, type: text }
+      - name: floating_cta
+        label: Floating CTA
+        type: object
+        fields:
+          - { name: label, label: Button text, type: string }
+          - { name: href, label: Button link, type: string }
+          - { name: aria_label, label: Accessibility label, type: string }
+      - { name: addresses, label: Shared addresses, component: address_block, list: true }
+      - name: seo
+        label: SEO metadata
+        type: object
+        fields:
+          - { name: home, label: Home SEO, component: seo_entry }
+          - { name: products, label: Products SEO, component: seo_entry }
+          - { name: solutions, label: Solutions SEO, component: seo_entry }
+          - { name: about, label: About SEO, component: seo_entry }
+          - { name: service, label: Service SEO, component: seo_entry }
+          - { name: resources, label: Resources SEO, component: seo_entry }
+          - { name: careers, label: Careers SEO, component: seo_entry }
+          - { name: contact, label: Contact SEO, component: seo_entry }
+          - { name: privacy, label: Privacy SEO, component: seo_entry }
+          - { name: "404", label: 404 SEO, component: seo_entry }
+      - name: lead_modal
+        label: Product and resource modal
+        type: object
+        fields:
+          - { name: product_title, label: Product modal title, type: string }
+          - { name: gated_title, label: Gated download title, type: string }
+          - { name: resource_title, label: Resource modal title, type: string }
+          - { name: product_intro, label: Product modal intro, type: text }
+          - { name: gated_intro, label: Gated download intro, type: text }
+          - { name: resource_intro, label: Resource modal intro, type: text }
+          - { name: product_context_label, label: Product context label, type: string }
+          - { name: document_context_label, label: Document context label, type: string }
+          - { name: close_label, label: Close button accessibility label, type: string }
+          - { name: product_submit_label, label: Product submit label, type: string }
+          - { name: gated_submit_label, label: Gated submit label, type: string }
+          - { name: resource_submit_label, label: Resource submit label, type: string }
+          - { name: sending_label, label: Sending button label, type: string }
+          - { name: sending_status, label: Sending status, type: string }
+          - { name: resource_success, label: Resource success message, type: text }
+          - { name: product_success, label: Product success message, type: text }
+          - { name: download_success, label: Download success message, type: text }
+          - { name: error_message, label: Error message, type: text }
+          - name: fields
+            label: Modal field labels
+            type: object
+            fields:
+              - { name: name_label, label: Name label, type: string }
+              - { name: company_label, label: Company label, type: string }
+              - { name: email_label, label: Email label, type: string }
+              - { name: phone_label, label: Phone label, type: string }
+              - { name: city_label, label: City label, type: string }
+              - { name: timeline_label, label: Timeline label, type: string }
+              - { name: quantity_label, label: Quantity label, type: string }
+              - { name: quantity_placeholder, label: Quantity placeholder, type: string }
+              - { name: tender_label, label: Tender label, type: string }
+              - { name: notes_label, label: Notes label, type: string }
+              - { name: notes_placeholder, label: Notes placeholder, type: text }
+              - { name: consent_text, label: Consent text, type: text }
+              - { name: privacy_label, label: Privacy link label, type: string }
+              - { name: privacy_link, label: Privacy link URL, type: string }
+          - { name: timeline_options, label: Timeline options, component: select_option, list: true }
+          - { name: tender_options, label: Tender options, component: select_option, list: true }
+
+  - name: privacy_page
+    label: "10. Privacy page"
+    type: file
+    path: content/privacy-page.json
+    format: json
+    fields:
+      - { name: title, label: Heading, type: string, required: true }
+      - { name: last_updated, label: Last updated line, type: string }
+      - { name: intro, label: Introduction, type: text }
+      - { name: business_context, label: B2B context note, type: text }
+      - { name: sections, label: Policy sections, component: legal_section, list: true }
+      - { name: button_label, label: Button label, type: string }
+      - { name: button_link, label: Button link, type: string }
+
+  - name: not_found_page
+    label: "11. Page not found"
+    type: file
+    path: content/not-found-page.json
+    format: json
+    fields:
+      - { name: label, label: Small label, type: string }
+      - { name: title, label: Heading, type: string, required: true }
+      - { name: description, label: Description, type: text }
+      - { name: button_label, label: Button label, type: string }
+      - { name: button_link, label: Button link, type: string }

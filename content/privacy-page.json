@@ -1,0 +1,30 @@
+{
+  "title": "Privacy Policy",
+  "last_updated": "Last updated: 10 June 2026",
+  "intro": "This policy explains how Precision Electronics Instruments & Components (\"PEIC\") uses information submitted through this website.",
+  "business_context": "This is a business-to-business website serving hospital procurement, biomedical engineering, and healthcare administration professionals.",
+  "sections": [
+    {
+      "title": "Information we collect",
+      "body": "When you submit an enquiry, we may collect your name, business contact details, organization, designation, department, enquiry type, and message."
+    },
+    {
+      "title": "How we use it",
+      "body": "We use this information to respond to enquiries, prepare quotations, provide service support, evaluate business requests, and maintain necessary business records."
+    },
+    {
+      "title": "Sharing and retention",
+      "body": "We do not sell enquiry data. Information may be shared with service providers or authorized partners only where needed to respond to your request. We retain it only as long as reasonably necessary for business, contractual, or legal purposes."
+    },
+    {
+      "title": "Your choices",
+      "body": "You may request access, correction, or deletion of your enquiry information, subject to applicable legal and contractual requirements."
+    },
+    {
+      "title": "Contact",
+      "body": "For privacy questions, email contact@peic.in."
+    }
+  ],
+  "button_label": "Back to Homepage",
+  "button_link": "index.html"
+}

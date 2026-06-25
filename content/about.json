@@ -1,27 +1,46 @@
 {
   "page": {
     "hero": {
-      "title": "Heritage, Trust & Institutional Excellence",
-      "description": "Established in 1968, PEIC has evolved from a precision engineering workshop into a medical equipment manufacturer and technical distributor serving institutions across India."
+      "title": "58 years building medical equipment that institutions trust.",
+      "description": "Established in 1968 as a sterilization system manufacturer, PEIC now combines Mumbai-based manufacturing with integration support for global and Indian medical technologies."
     },
     "legacy": {
       "label": "Our Legacy",
-      "title": "Over Five Decades of Precision Engineering",
+      "title": "Engineering-led from day one.",
+      "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
+      "image_alt": "PEIC sterilization equipment",
       "paragraphs": [
-        "Founded in 1968, Precision Electronics Instruments & Components began with a singular mission: to engineer medical sterilization systems that hospitals could depend on for decades. What started as a focused manufacturing operation has grown into a comprehensive technical solutions provider serving both massive government healthcare networks and elite private hospital chains across India.",
-        "Our evolution reflects the changing landscape of Indian healthcare — from the early days of BIS-certified autoclave manufacturing to today's role as authorized integration partner for global medical technology leaders. Through every transition, our commitment to precision, safety, and reliability has remained unchanged.",
-        "Today, PEIC stands at the intersection of indigenous manufacturing excellence and world-class distribution — a unique position that allows us to offer procurement heads and biomedical engineers a single, accountable partner for their entire equipment lifecycle."
+        "Precision Electronics Instruments & Components was established in 1968 with a clear mandate: engineer medical sterilization systems that hospitals and institutions could rely on for years of daily operation.",
+        "That manufacturing foundation expanded from BIS-certified autoclave production into technical integration for global and Indian medical equipment brands. The distribution business is built on equipment understanding, not catalogue selling.",
+        "Today, PEIC gives procurement and biomedical teams clearer ownership across specification, installation, commissioning, documentation, and long-term post-sale support."
       ]
     },
-    "metrics_heading": {"label":"By the Numbers","title":"Institutional Metrics"},
-    "facilities_heading": {"label":"Infrastructure","title":"Facilities & Capabilities"},
-    "clients_heading": {"label":"Key Clients","title":"Institutional Reach Across Sectors","description":"Serving public institutions, research organizations, and top-tier private healthcare networks nationwide."},
-    "testimonials_heading": {"label":"Testimonials","title":"What Healthcare Leaders Say"},
-    "certifications_heading": {"label":"Compliance","title":"Certifications & Regulatory Compliance","description":"Published certification details should be verified against current documents before final procurement or tender use."},
+    "metrics_heading": {
+      "label": "Operational Scale",
+      "title": "Scale that institutional buyers can evaluate."
+    },
+    "facilities_heading": {
+      "label": "Infrastructure",
+      "title": "Where the work gets done."
+    },
+    "clients_heading": {
+      "label": "Key Client Relationships",
+      "title": "Selected institutional references across India",
+      "description": "Public health networks, national research institutes, state health departments, and public infrastructure organizations rely on PEIC for equipment and support."
+    },
+    "testimonials_heading": {
+      "label": "Testimonials",
+      "title": "Approved client statements"
+    },
+    "certifications_heading": {
+      "label": "Compliance & Certifications",
+      "title": "Verified credentials, available on request",
+      "description": "Current certificates and registration documents are available for qualified procurement enquiries and final compliance review."
+    },
     "cta": {
-      "label": "PEIC Legacy",
-      "title": "Turn heritage into a safer procurement decision",
-      "description": "Use PEIC's manufacturing base, institutional experience, and lifecycle support model to evaluate the right path for your facility.",
+      "label": "Start a Conversation",
+      "title": "Use PEIC's manufacturing and service base for your next equipment decision.",
+      "description": "Discuss equipment requirements, service models, specification support, or documentation needs with the PEIC team.",
       "button_label": "Discuss Your Requirement",
       "button_link": "contact.html"
     }
@@ -30,75 +49,76 @@
     {
       "value": 58,
       "suffix": "+",
-      "tagline": "Established 1968",
-      "label": "Years in Business"
+      "tagline": "Since 1968",
+      "label": "Years of Continuous Operation"
     },
     {
-      "value": 15000,
+      "value": 2000,
       "suffix": "+",
-      "tagline": "Across India",
-      "label": "Total Installations"
+      "tagline": "Pan-India",
+      "label": "Total Installations Delivered"
     },
     {
-      "value": 12000,
+      "value": 1000,
       "suffix": "+",
-      "tagline": "Operational today",
-      "label": "Active Running Installations"
+      "tagline": "Currently Operational",
+      "label": "Active Equipment Units"
     },
     {
       "value": 15,
       "suffix": "+",
-      "tagline": "Industry-leading durability",
+      "tagline": "Designed Durability",
       "label": "Years Average Machine Lifespan"
     },
     {
       "value": 1,
       "display_value": "Single",
       "suffix": "",
-      "tagline": "Coordinated support",
+      "tagline": "Coordinated Support",
       "label": "Accountable Service Relationship"
     }
   ],
   "facilities": {
     "research": {
       "type_label": "In-House Testing & R&D",
-      "title": "Testing, Validation & R&D Lab",
-      "description": "Internal testing and quality validation for sterilization systems, components, and institutional equipment configurations.",
+      "title": "Quality Validation & Testing Lab",
+      "description": "Internal testing and quality validation for sterilization systems, pressure-vessel components, and institutional equipment configurations before dispatch.",
       "address_lines": [
-        "Plot no. X, Shamroz Industrial Estate",
+        "Shamroz Industrial Estate",
         "Ram Mandir Road, Goregaon West",
-        "Mumbai, Maharashtra 400104"
+        "Mumbai 400054, Maharashtra"
       ]
     },
     "manufacturing": [
       {
         "type_label": "Manufacturing Facility",
-        "title": "Sterilization Systems Manufacturing",
-        "description": "Production and assembly facility for PEIC-manufactured CSSD and sterilization equipment.",
+        "title": "Sterilization Systems Production",
+        "description": "Manufacturing infrastructure for high-pressure sterilization systems, CSSD equipment, and specialty autoclave lines, with design, fabrication, assembly, and inspection within PEIC's Mumbai facility cluster.",
         "address_lines": [
-          "Manufacturing Facility 1",
-          "Vadodara, Gujarat"
-        ]
-      },
-      {
-        "type_label": "Manufacturing Facility",
-        "title": "Fabrication & Final Assembly",
-        "description": "Fabrication, finishing, and final inspection support for institutional-grade medical equipment.",
-        "address_lines": [
-          "Manufacturing Facility 2",
-          "Vadodara, Gujarat"
+          "Shamroz Industrial Estate",
+          "Ram Mandir Road, Goregaon West",
+          "Mumbai 400054, Maharashtra"
         ]
       }
     ],
     "offices": [
       {
-        "type_label": "Office",
-        "title": "Mumbai Corporate Office",
-        "description": "Commercial, procurement, service coordination, and technical support headquarters.",
+        "type_label": "Primary Office",
+        "title": "Mumbai Commercial & Service Hub",
+        "description": "Commercial operations, new equipment procurement, service coordination, AMC/CMC management, and technical support headquarters.",
         "address_lines": [
-          "20, Shamroz Industrial Estate",
+          "22, 2nd Floor, Shamroz Industrial Estate",
           "Ram Mandir Road, Goregaon West",
-          "Mumbai, Maharashtra 400104"
+          "Mumbai 400054, Maharashtra"
+        ]
+      },
+      {
+        "type_label": "Registered Office",
+        "title": "Registered Address",
+        "description": "Registered corporate address.",
+        "address_lines": [
+          "17, Ranvir Building, 66/70 Princess Street",
+          "Mumbai 400002, Maharashtra"
         ]
       }
     ]
@@ -106,48 +126,53 @@
   "clients": [
     {
       "short_name": "BMC",
-      "name": "BMC Hospitals",
-      "tagline": "since >20 years"
+      "name": "Brihanmumbai Municipal Corporation",
+      "tagline": "Major & Peripheral Hospitals"
     },
     {
       "short_name": "BARC",
       "name": "B.A.R.C.",
-      "tagline": "since >15 years"
+      "tagline": "Bhabha Atomic Research Centre"
     },
     {
       "short_name": "CCMB",
       "name": "C.C.M.B.",
-      "tagline": "since >10 years"
+      "tagline": "Centre for Cellular & Molecular Biology"
     },
     {
       "short_name": "NEERI",
       "name": "NEERI",
-      "tagline": "since >12 years"
+      "tagline": "National Environmental Engineering Research Institute"
+    },
+    {
+      "short_name": "IGIB",
+      "name": "IGIB",
+      "tagline": "Institute of Genomics & Integrative Biology"
     },
     {
       "short_name": "IMT",
       "name": "Imtech",
-      "tagline": "since >8 years"
+      "tagline": "Institute of Microbial Technology"
     },
     {
       "short_name": "IR",
       "name": "Indian Railways",
-      "tagline": "since >18 years"
+      "tagline": "Western, Central, Northern, ECOR & South-Eastern zones"
     },
     {
       "short_name": "ACTREC",
-      "name": "Tata Memorial Hospital",
-      "tagline": "since >15 years"
+      "name": "Tata Hospital Trust",
+      "tagline": "ACTREC, Mumbai"
+    },
+    {
+      "short_name": "PT",
+      "name": "Port Trust Hospitals",
+      "tagline": "Mumbai & Visakhapatnam"
     },
     {
       "short_name": "SHD",
-      "name": "State Health Depts.",
-      "tagline": "since >25 years"
-    },
-    {
-      "short_name": "PHC",
-      "name": "Top-Tier Private Chains",
-      "tagline": "since >10 years"
+      "name": "DMER, DHS & ESIC",
+      "tagline": "Maharashtra, Delhi & Goa"
     }
   ],
   "testimonials": [],
@@ -155,42 +180,42 @@
     {
       "icon": "BIS",
       "name": "BIS Licenses: IS 3829 Part 1 & Part 2",
-      "details": "Steam Sterilizer Standards — Certified since 1976 & 1982"
+      "details": "Steam sterilizer certification held since 1976 and 1982. Current documents available on request."
     },
     {
       "icon": "CE",
       "name": "CE Marking Compliance",
-      "details": "MDD 93/42/EEC by Unitas — Cert: 9398"
+      "details": "Medical Device Directive 93/42/EEC certification. Current document available on request."
     },
     {
       "icon": "GMP",
       "name": "Good Manufacturing Practices",
-      "details": "Optimum Certifications — Cert: GMP/241622RS"
+      "details": "GMP certification. Current document available on request."
     },
     {
       "icon": "ISO",
-      "name": "ISO 14001:2015 — Environmental Management",
-      "details": "Cert: EMS/241623RS"
+      "name": "ISO 14001:2015 - Environmental Management",
+      "details": "Current document available on request."
     },
     {
       "icon": "ISO",
-      "name": "ISO 13485:2016 — Medical Devices QMS",
-      "details": "Cert: MD/241624RS"
+      "name": "ISO 13485:2016 - Medical Devices QMS",
+      "details": "Current document available on request."
     },
     {
       "icon": "ISO",
-      "name": "ISO 9001:2015 — Quality Management System",
-      "details": "Cert: QMS/23N155"
+      "name": "ISO 9001:2015 - Quality Management System",
+      "details": "Current document available on request."
     },
     {
-      "icon": "UD",
-      "name": "Udyam Registration",
-      "details": "UDYAM-MH-18-0044773"
+      "icon": "MSME",
+      "name": "MSME / Udyam Registration",
+      "details": "Registration document available on request."
     },
     {
-      "icon": "NS",
+      "icon": "NSIC",
       "name": "NSIC Registration",
-      "details": "NSIC/GPB/RS/P-314/MH"
+      "details": "Registration document available on request."
     }
   ]
 }

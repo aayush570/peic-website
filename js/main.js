@@ -1,12 +1,16 @@
 /* PEIC — Shared interactions */
 
+const peicState = {
+  site: {}
+};
+
 document.addEventListener('DOMContentLoaded', async () => {
   document.body.classList.add('is-cms-loading');
-  initMobileNav();
   initHeaderState();
+  await initCMSContent();
+  initMobileNav();
   initFloatingCTAVisibility();
   initCounters();
-  await initCMSContent();
   initRevealAnimations();
   initDownloadSpecs();
   initResourceFilter();
@@ -28,7 +32,9 @@ async function initCMSContent() {
       service: 'service-page',
       resources: 'resources-page',
       careers: 'careers-page',
-      contact: 'contact-page'
+      contact: 'contact-page',
+      privacy: 'privacy-page',
+      '404': 'not-found-page'
     };
     if (pageFiles[route]) requests.push(fetchCMSData(pageFiles[route]));
 
@@ -39,7 +45,10 @@ async function initCMSContent() {
     const results = await Promise.all(requests);
     const data = Object.assign({}, ...results);
 
-    if (data.site) renderSiteContent(data.site);
+    if (data.site) {
+      peicState.site = data.site;
+      renderSiteContent(data.site, route);
+    }
     renderCurrentPage(route, data[pageFiles[route]]);
     if (data.about) renderTrustContent(data.about);
   } catch (error) {
@@ -61,12 +70,17 @@ async function fetchCMSData(name) {
   return { [name]: await response.json() };
 }
 
-function renderSiteContent(site) {
+function renderSiteContent(site, route = getCurrentRoute()) {
+  renderSEOContent(site.seo?.[route], route);
+  renderNavigation(site.navigation, route);
   document.querySelectorAll('.logo-name').forEach((el) => {
     el.textContent = site.company_name;
   });
   document.querySelectorAll('.logo-tagline').forEach((el) => {
     el.textContent = site.tagline;
+  });
+  document.querySelectorAll('.logo-mark').forEach((el) => {
+    if (site.short_name) el.textContent = site.short_name;
   });
   document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
     link.href = `tel:${site.phone_link}`;
@@ -77,6 +91,9 @@ function renderSiteContent(site) {
     } else if (!number && /^\+[\d\s]+$/.test(link.textContent.trim())) {
       link.textContent = site.phone_display;
     }
+  });
+  document.querySelectorAll('.hotline-label').forEach((el) => {
+    if (site.hotline_label) el.textContent = site.hotline_label;
   });
 
   const emailMap = {
@@ -93,13 +110,103 @@ function renderSiteContent(site) {
     if (link.textContent.trim() === current) link.textContent = emailMap[current];
   });
 
-  const address = document.querySelector('.office-item p');
-  if (address && Array.isArray(site.address_lines)) {
-    address.innerHTML = `${escapeHTML(site.company_name)} Pvt. Ltd.<br>${site.address_lines.map(escapeHTML).join('<br>')}`;
+  renderFooter(site);
+  renderFloatingCTA(site.floating_cta);
+  renderStandaloneHeaderCTA(site.navigation?.cta);
+}
+
+function renderSEOContent(seo, route) {
+  if (!seo) return;
+  if (seo.title) document.title = seo.title;
+  setMetaContent('meta[name="description"]', seo.description);
+  setMetaContent('meta[property="og:title"]', seo.title);
+  setMetaContent('meta[property="og:description"]', seo.description);
+  setMetaContent('meta[property="og:image"]', seo.image);
+  setMetaContent('meta[property="og:url"]', `https://peic.in/${route === 'home' ? '' : `${route}.html`}`);
+}
+
+function setMetaContent(selector, value) {
+  const element = document.querySelector(selector);
+  if (element && value) element.setAttribute('content', value);
+}
+
+function renderNavigation(navigation, route) {
+  const nav = document.querySelector('.main-nav');
+  if (!nav || !navigation) return;
+
+  const items = Array.isArray(navigation.items) ? navigation.items : [];
+  const cta = navigation.cta;
+  const mobileHotline = `<a href="tel:${escapeAttribute(peicState.site.phone_link || '+919820033597')}" class="header-hotline header-hotline-mobile">
+    <span class="hotline-label">${escapeHTML(peicState.site.hotline_label || 'Technical Support')}</span>
+    <span class="hotline-number">${escapeHTML(peicState.site.phone_display || '+91 98200 33597')}</span>
+  </a>`;
+  nav.innerHTML = `${items.map((item) => navigationLinkHTML(item, route)).join('')}
+    ${mobileHotline}
+    ${cta ? navigationLinkHTML({ ...cta, cta: true }, route) : ''}`;
+
+  const toggle = document.querySelector('.mobile-toggle');
+  if (toggle && navigation.mobile_label) toggle.setAttribute('aria-label', navigation.mobile_label);
+}
+
+function navigationLinkHTML(item, route) {
+  const isActive = item.route === route || (!item.route && getRouteFromHref(item.href) === route);
+  const classes = [item.cta ? 'nav-cta' : '', isActive ? 'active' : ''].filter(Boolean).join(' ');
+  const classAttr = classes ? ` class="${escapeAttribute(classes)}"` : '';
+  const ariaCurrent = isActive ? ' aria-current="page"' : '';
+  return `<a href="${escapeAttribute(item.href || '#')}"${classAttr}${ariaCurrent}>${escapeHTML(item.label || '')}</a>`;
+}
+
+function getRouteFromHref(href = '') {
+  const filename = href.split('?')[0].split('#')[0].split('/').pop() || 'index.html';
+  return filename === 'index.html' ? 'home' : filename.replace(/\.html$/, '');
+}
+
+function renderFooter(site) {
+  const footer = document.querySelector('.site-footer');
+  const footerGrid = footer?.querySelector('.footer-grid');
+  const footerBottom = footer?.querySelector('.footer-bottom');
+  if (!footer || !footerGrid || !site.footer) return;
+
+  const columns = Array.isArray(site.footer.columns) ? site.footer.columns : [];
+  footerGrid.innerHTML = `<div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-mark">${escapeHTML(site.short_name || 'PEIC')}</div>
+        <div class="logo-text">
+          <span class="logo-name" style="color: white;">${escapeHTML(site.company_name || '')}</span>
+          <span class="logo-tagline">${escapeHTML(site.tagline || '')}</span>
+        </div>
+      </a>
+      <p>${escapeHTML(site.footer.description || site.footer_description || '')}</p>
+      ${site.footer.address ? `<p class="footer-address">${escapeHTML(site.footer.address)}</p>` : ''}
+      <div class="footer-hotline">
+        <a href="tel:${escapeAttribute(site.phone_link || '')}">${escapeHTML(site.footer.hotline_label || 'Phone:')} ${escapeHTML(site.phone_display || '')}</a>
+      </div>
+    </div>
+    ${columns.map((column) => `<div class="footer-col">
+      <h4>${escapeHTML(column.title || '')}</h4>
+      ${(column.links || []).map((link) => `<a href="${escapeAttribute(link.href || '#')}">${escapeHTML(link.label || '')}</a>`).join('')}
+    </div>`).join('')}`;
+
+  if (footerBottom) {
+    footerBottom.innerHTML = `<span>${escapeHTML(site.footer.copyright || '')}</span>
+      <span>${escapeHTML(site.footer.certification_strip || '')}</span>`;
   }
-  document.querySelectorAll('.footer-brand > p').forEach((el) => {
-    if (site.footer_description) el.textContent = site.footer_description;
-  });
+}
+
+function renderFloatingCTA(cta) {
+  const element = document.querySelector('.floating-cta');
+  if (!element || !cta) return;
+  element.href = cta.href || element.href;
+  element.setAttribute('aria-label', cta.aria_label || cta.label || 'Make an enquiry');
+  const svg = element.querySelector('svg')?.outerHTML || '';
+  element.innerHTML = `${svg}${escapeHTML(cta.label || 'Make an Enquiry')}`;
+}
+
+function renderStandaloneHeaderCTA(cta) {
+  const link = document.querySelector('.site-header .btn[href="contact.html"]');
+  if (!link || !cta) return;
+  link.textContent = cta.label || link.textContent;
+  link.href = cta.href || link.href;
 }
 
 function renderCurrentPage(route, content) {
@@ -112,7 +219,9 @@ function renderCurrentPage(route, content) {
     service: renderServicePage,
     resources: renderResourcesPage,
     careers: renderCareersPage,
-    contact: renderContactPage
+    contact: renderContactPage,
+    privacy: renderPrivacyPage,
+    '404': renderNotFoundPage
   };
   if (renderers[route]) renderers[route](content);
 }
@@ -149,6 +258,8 @@ function renderHomePage(home) {
     </a>`).join('');
   }
 
+  renderHomeWorkflow(home.workflow);
+
   const sections = document.querySelectorAll('section');
   const advantageSection = [...sections].find((section) => section.querySelector('.stats-row'));
   setHeading(advantageSection, home.advantage);
@@ -157,6 +268,21 @@ function renderHomePage(home) {
   const ctaSection = document.querySelector('.home-cta .home-cta-inner')
     || [...sections].find((section) => section.classList.contains('bg-dark') && section.querySelector('.container .btn'))?.querySelector('.container');
   setCallout(ctaSection, home.cta);
+}
+
+function renderHomeWorkflow(workflow) {
+  const section = document.querySelector('.engineering-chain');
+  if (!section || !workflow) return;
+  setTextWithin(section, '.section-label', workflow.label);
+  setTextWithin(section, '.section-title', workflow.title);
+  setTextWithin(section, '.section-subtitle', workflow.description);
+  const steps = section.querySelector('.chain-steps');
+  if (!steps || !Array.isArray(workflow.steps)) return;
+  steps.innerHTML = workflow.steps.map((step, index) => `<div class="chain-step">
+    <span>${String(index + 1).padStart(2, '0')}</span>
+    <strong>${escapeHTML(step.title || '')}</strong>
+    <p>${escapeHTML(step.description || '')}</p>
+  </div>`).join('');
 }
 
 function renderHeroPanel(panel) {
@@ -221,6 +347,11 @@ function renderAboutPage(about) {
     legacyCopy.querySelectorAll('p').forEach((paragraph) => paragraph.remove());
     legacyCopy.insertAdjacentHTML('beforeend', page.legacy.paragraphs.map((text) => `<p style="color:var(--slate-light);margin-bottom:1rem">${escapeHTML(text)}</p>`).join(''));
   }
+  const legacyImage = document.querySelector('.legacy-image');
+  if (legacyImage && page.legacy?.image) {
+    legacyImage.src = normalizeAssetURL(page.legacy.image);
+    legacyImage.alt = page.legacy.image_alt || legacyImage.alt;
+  }
   setHeading(document.querySelector('.metrics-section'), page.metrics_heading);
   setHeading(document.querySelector('.facilities-section'), page.facilities_heading);
   setHeading(document.querySelector('.clients-section'), page.clients_heading);
@@ -239,11 +370,28 @@ function renderServicePage(page) {
 
 function renderResourcesPage(page) {
   setPageHero(page.hero);
+  setAttribute('#resource-search', 'placeholder', page.search_placeholder);
+  renderResourceFilters(page.filters);
+  const grid = document.querySelector('.doc-grid');
+  if (grid && page.empty_state) {
+    grid.dataset.emptyText = page.empty_state.text || '';
+    grid.dataset.emptyLinkLabel = page.empty_state.link_label || '';
+    grid.dataset.emptyLink = page.empty_state.link || '';
+  }
   renderResources(page.resources);
   setCallout(document.querySelector('.missing-doc-cta'), page.help_cta);
 }
 
+function renderResourceFilters(filters) {
+  const container = document.querySelector('.filter-tabs');
+  if (!container || !Array.isArray(filters)) return;
+  container.innerHTML = filters.map((filter, index) => `<button class="filter-tab ${index === 0 ? 'active' : ''}" data-filter="${escapeAttribute(filter.value || 'all')}">
+    ${escapeHTML(filter.label || '')} <span class="tab-count">(0)</span>
+  </button>`).join('');
+}
+
 function renderCareersPage(page) {
+  peicState.careers = page;
   setPageHero(page.hero);
   renderPageSections({ careers: {
     benefits: page.benefits,
@@ -262,10 +410,118 @@ function renderCareersPage(page) {
 }
 
 function renderContactPage(page) {
-  setText('.contact-info-block > h3', page.teams_title);
-  setText('.office-list > h3', page.office_title);
+  setText('.contact-page-heading .section-label', page.hero?.label);
+  setText('.contact-page-heading h1', page.hero?.title);
+  setText('.contact-page-heading p', page.hero?.description);
+  renderContactInfo(page);
   setText('.contact-form > h3', page.form_title);
   setText('.contact-form .form-desc', page.form_description);
+  renderContactFormCopy(page);
+}
+
+function renderContactInfo(page) {
+  const block = document.querySelector('.contact-info-block');
+  if (!block || !page) return;
+  const channels = (page.contact_channels || []).map((channel) => `<div class="contact-detail">
+    <div class="contact-detail-icon">${escapeHTML(channel.icon || '')}</div>
+    <div>
+      <strong>${escapeHTML(channel.title || '')}</strong>
+      <span><a href="${escapeAttribute(channel.href || '#')}">${escapeHTML(channel.label || '')}</a></span>
+    </div>
+  </div>`).join('');
+  const offices = (page.offices || []).map((office) => `<div class="office-item">
+    ${office.label ? `<span class="office-label">${escapeHTML(office.label)}</span>` : ''}
+    <h4>${escapeHTML(office.title || '')}</h4>
+    <p>${(office.address_lines || []).map(escapeHTML).join('<br>')}</p>
+  </div>`).join('');
+
+  block.innerHTML = `<h3>${escapeHTML(page.teams_title || '')}</h3>
+    ${channels}
+    <div class="office-list">
+      <h3 style="color: white; font-size: 1.1rem; margin-bottom: 1.25rem;">${escapeHTML(page.office_title || '')}</h3>
+      ${offices}
+    </div>`;
+}
+
+function renderContactFormCopy(page) {
+  const form = document.querySelector('.contact-form');
+  if (!form || !page) return;
+  const fields = page.fields || {};
+  form.dataset.submitLabel = page.submit_label || 'Submit Enquiry';
+  form.dataset.sendingLabel = page.sending_label || 'Sending...';
+  form.dataset.sendingStatus = page.sending_status || '';
+  form.dataset.successMessage = page.success_message || '';
+  form.dataset.errorMessage = page.error_message || '';
+
+  setFormLabel('name', fields.name_label);
+  setAttribute('#name', 'placeholder', fields.name_placeholder);
+  setFormLabel('email', fields.email_label);
+  setAttribute('#email', 'placeholder', fields.email_placeholder);
+  setFormLabel('phone', fields.phone_label);
+  setAttribute('#phone', 'placeholder', fields.phone_placeholder);
+  setFormLabel('organization', fields.organization_label, fields.organization_optional);
+  setAttribute('#organization', 'placeholder', fields.organization_placeholder);
+  setFormLabel('designation', fields.designation_label, fields.designation_optional);
+  setAttribute('#designation', 'placeholder', fields.designation_placeholder);
+  setFormLabel('department', fields.department_label, fields.department_optional);
+  setAttribute('#department', 'placeholder', fields.department_placeholder);
+  setFormLabel('city-region', fields.city_label);
+  setAttribute('#city-region', 'placeholder', fields.city_placeholder);
+  setFormLabel('buying-timeline', fields.timeline_label);
+  setFormLabel('inquiry-type', fields.inquiry_type_label);
+  setFormLabel('quantity-scope', fields.quantity_label, fields.quantity_optional);
+  setAttribute('#quantity-scope', 'placeholder', fields.quantity_placeholder);
+  setFormLabel('tender-status', fields.tender_label, fields.tender_optional);
+  setFormLabel('message', fields.message_label);
+  setAttribute('#message', 'placeholder', fields.message_placeholder);
+
+  renderSelectOptions('#buying-timeline', page.timeline_options);
+  renderSelectOptions('#inquiry-type', page.inquiry_type_options);
+  renderSelectOptions('#tender-status', page.tender_options);
+
+  const consent = form.querySelector('.form-consent span');
+  if (consent && fields.consent_text) {
+    consent.innerHTML = `${escapeHTML(fields.consent_text).replace(
+      escapeHTML(fields.privacy_label || 'Privacy Policy'),
+      `<a href="${escapeAttribute(fields.privacy_link || 'privacy.html')}">${escapeHTML(fields.privacy_label || 'Privacy Policy')}</a>`
+    )}`;
+  }
+  const submit = form.querySelector('[type="submit"]');
+  if (submit && page.submit_label) submit.textContent = page.submit_label;
+}
+
+function setFormLabel(forId, label, optional) {
+  const element = document.querySelector(`label[for="${forId}"]`);
+  if (!element || !label) return;
+  element.innerHTML = `${escapeHTML(label)}${optional ? ` <span class="optional-label">${escapeHTML(optional)}</span>` : ''}`;
+}
+
+function renderSelectOptions(selector, options) {
+  const select = document.querySelector(selector);
+  if (!select || !Array.isArray(options)) return;
+  select.innerHTML = options.map((option) => `<option value="${escapeAttribute(option.value || '')}">${escapeHTML(option.label || '')}</option>`).join('');
+}
+
+function renderPrivacyPage(page) {
+  const content = document.querySelector('.legal-content');
+  if (!content || !page) return;
+  content.innerHTML = `<h1>${escapeHTML(page.title || '')}</h1>
+    ${page.last_updated ? `<p>${escapeHTML(page.last_updated)}</p>` : ''}
+    ${page.intro ? `<p>${escapeHTML(page.intro)}</p>` : ''}
+    ${page.business_context ? `<p>${escapeHTML(page.business_context)}</p>` : ''}
+    ${(page.sections || []).map((section) => `<h2>${escapeHTML(section.title || '')}</h2>
+      <p>${linkifyEmailMessage(section.body || '')}</p>`).join('')}
+    <a href="${escapeAttribute(page.button_link || 'index.html')}" class="btn btn-primary">${escapeHTML(page.button_label || 'Back to Homepage')}</a>`;
+}
+
+function renderNotFoundPage(page) {
+  const content = document.querySelector('.legal-content');
+  if (!content || !page) return;
+  content.innerHTML = `<div class="logo-mark" style="margin: 0 auto 2rem;">${escapeHTML(peicState.site.short_name || 'PEIC')}</div>
+    <p class="section-label">${escapeHTML(page.label || 'Error 404')}</p>
+    <h1>${escapeHTML(page.title || 'Page not found')}</h1>
+    <p>${escapeHTML(page.description || '')}</p>
+    <a href="${escapeAttribute(page.button_link || 'index.html')}" class="btn btn-primary">${escapeHTML(page.button_label || 'Back to Homepage')}</a>`;
 }
 
 function setPageHero(hero) {
@@ -372,25 +628,35 @@ function renderResources(resources) {
   if (!grid || !Array.isArray(resources)) return;
 
   grid.innerHTML = resources.map((resource) => {
-    const isCertificate = resource.category === 'certificate';
     const file = normalizeAssetURL(resource.file || '');
-    const action = file
-      ? `<a class="btn-download-doc" href="${escapeAttribute(file)}" target="_blank" rel="noopener">${isCertificate ? 'View Certificate' : 'Download'}</a>`
-      : isCertificate
-        ? '<a class="btn-download-doc" href="about.html#certifications">View Details</a>'
-        : `<button class="btn-download-doc" type="button"
-            data-resource-action="request"
-            data-resource-title="${escapeAttribute(resource.title)}"
-            data-resource-type="${escapeAttribute(resource.type_label || 'Document')}">Request Document</button>`;
-    return `<article class="doc-card" data-category="${escapeAttribute(resource.category)}">
+    const actionLabel = resource.action_label || (file ? 'Download' : 'Request Document');
+    const content = `<span class="doc-card-type">${escapeHTML(resource.type_label)}</span>
+      <h4>${escapeHTML(resource.title)}</h4>
+      <span class="btn-download-doc">${escapeHTML(actionLabel)}</span>`;
+
+    if (file) {
+      return `<a class="doc-card doc-card-action" data-category="${escapeAttribute(resource.category)}" href="${escapeAttribute(file)}" target="_blank" rel="noopener">
+        ${content}
+      </a>`;
+    }
+
+    return `<button class="doc-card doc-card-action" type="button" data-category="${escapeAttribute(resource.category)}"
+      data-resource-action="request"
+      data-resource-title="${escapeAttribute(resource.title)}"
+      data-resource-type="${escapeAttribute(resource.type_label || 'Document')}">
+      ${content}
+    </button>`;
+  }).join('');
+}
+
+function legacyResourceCardHTML(resource) {
+  return `<article class="doc-card" data-category="${escapeAttribute(resource.category)}">
       <span class="doc-card-type">${escapeHTML(resource.type_label)}</span>
       <h4>${escapeHTML(resource.title)}</h4>
       <div class="doc-card-meta">
-        ${resource.file_meta ? `<span class="doc-card-note">${escapeHTML(resource.file_meta)}</span>` : ''}
-        ${action}
+        <button class="btn-download-doc" type="button">${escapeHTML(resource.action_label || 'Request Document')}</button>
       </div>
     </article>`;
-  }).join('');
 }
 
 function renderJobs(jobs) {
@@ -399,6 +665,8 @@ function renderJobs(jobs) {
 
   const openJobs = jobs.filter((job) => job.open);
   const categories = [...new Set(openJobs.map((job) => job.category))];
+  const applyLabel = peicState.careers?.apply_label || 'Apply';
+  const careersEmail = peicState.site.careers_email || 'careers@peic.in';
   list.innerHTML = categories.map((category) => {
     const categoryJobs = openJobs.filter((job) => job.category === category);
     return `<div class="job-category">
@@ -410,7 +678,7 @@ function renderJobs(jobs) {
         <h4>${escapeHTML(job.title)}</h4>
         <span>${escapeHTML(job.location)} · ${escapeHTML(job.employment_type || 'Full-time')}</span>
       </div>
-      <a href="mailto:careers@peic.in?subject=${encodeURIComponent(`Application: ${job.title}`)}" class="btn-apply">Apply →</a>
+      <a href="mailto:${escapeAttribute(careersEmail)}?subject=${encodeURIComponent(`Application: ${job.title}`)}" class="btn-apply">${escapeHTML(applyLabel)} →</a>
     </div>`).join('')}`;
   }).join('');
 }
@@ -570,6 +838,18 @@ function setText(selector, value) {
   if (element && value) element.textContent = value;
 }
 
+function setAttribute(selector, attribute, value) {
+  const element = document.querySelector(selector);
+  if (element && value !== undefined && value !== null) element.setAttribute(attribute, value);
+}
+
+function linkifyEmailMessage(message) {
+  return escapeHTML(message).replace(
+    /([\w.+-]+@[\w.-]+\.[A-Za-z]{2,})/g,
+    '<a href="mailto:$1">$1</a>'
+  );
+}
+
 function getProductAccessMode(product) {
   const file = normalizeAssetURL(product?.specification_file || '');
   const mode = product?.access_mode || 'enquiry_only';
@@ -625,7 +905,7 @@ function initMobileNav() {
   const drawer = document.createElement('nav');
   drawer.id = 'navigation-drawer';
   drawer.className = 'nav-drawer';
-  drawer.setAttribute('aria-label', 'Menu navigation');
+  drawer.setAttribute('aria-label', peicState.site.navigation?.drawer_label || 'Menu navigation');
 
   nav.querySelectorAll('a:not(.header-hotline-mobile)').forEach((link) => {
     drawer.appendChild(link.cloneNode(true));
@@ -640,7 +920,9 @@ function initMobileNav() {
   function setOpen(isOpen) {
     drawer.classList.toggle('open', isOpen);
     toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
+    toggle.setAttribute('aria-label', isOpen
+      ? (peicState.site.navigation?.mobile_close_label || 'Close menu')
+      : (peicState.site.navigation?.mobile_open_label || 'Open menu'));
   }
 
   setOpen(false);
@@ -834,6 +1116,7 @@ function openProductLeadModal({ mode, product, file }) {
   const title = modal.querySelector('#product-lead-title');
   const intro = modal.querySelector('.product-lead-intro');
   const submit = form.querySelector('[type="submit"]');
+  const copy = peicState.site.lead_modal || {};
 
   form.reset();
   form.dataset.mode = mode;
@@ -847,11 +1130,15 @@ function openProductLeadModal({ mode, product, file }) {
   form.querySelector('[name="subject"]').value = mode === 'gated_download'
     ? `PEIC specification download: ${product}`
     : `PEIC product enquiry: ${product}`;
-  title.textContent = mode === 'gated_download' ? 'Get Technical Specifications' : 'Request Product Information';
+  title.textContent = mode === 'gated_download'
+    ? (copy.gated_title || 'Get Technical Specifications')
+    : (copy.product_title || 'Request Product Information');
   intro.textContent = mode === 'gated_download'
-    ? `Tell us where to send follow-up information for ${product}. Your document will open after submission.`
-    : `Tell us about your interest in ${product}. PEIC will contact you with the appropriate specifications and configuration options.`;
-  submit.textContent = mode === 'gated_download' ? 'Submit & Download' : 'Send Request';
+    ? `${copy.gated_intro || 'Share your details and the requested document will open after submission.'} ${product ? `${copy.document_context_label || 'Document'}: ${product}.` : ''}`
+    : `${copy.product_intro || 'Share your requirement and PEIC will respond with the appropriate specifications and configuration guidance.'} ${product ? `${copy.product_context_label || 'Product'}: ${product}.` : ''}`;
+  submit.textContent = mode === 'gated_download'
+    ? (copy.gated_submit_label || 'Submit & Download')
+    : (copy.product_submit_label || 'Send Request');
   resetFormStatus(form);
 
   modal.hidden = false;
@@ -865,6 +1152,7 @@ function openResourceLeadModal({ title: resourceTitle, type }) {
   const title = modal.querySelector('#product-lead-title');
   const intro = modal.querySelector('.product-lead-intro');
   const submit = form.querySelector('[type="submit"]');
+  const copy = peicState.site.lead_modal || {};
 
   form.reset();
   form.dataset.mode = 'resource_request';
@@ -879,9 +1167,9 @@ function openResourceLeadModal({ title: resourceTitle, type }) {
   form.querySelector('[name="subject"]').value = `PEIC document request: ${resourceTitle || 'Resource'}`;
   form.querySelector('[name="from_name"]').value = 'PEIC Documentation Request';
   form.querySelector('[name="enquiry_type"]').value = `${type || 'Document'} request`;
-  title.textContent = 'Request Documentation';
-  intro.textContent = `Share your details and the PEIC team will get back to you with the requested ${String(type || 'document').toLowerCase()}: ${resourceTitle || 'resource'}.`;
-  submit.textContent = 'Submit Request';
+  title.textContent = copy.resource_title || 'Request Documentation';
+  intro.textContent = `${copy.resource_intro || 'Share your details and the PEIC team will respond with the requested documentation.'} ${resourceTitle ? `${copy.document_context_label || 'Document'}: ${resourceTitle}.` : ''}`;
+  submit.textContent = copy.resource_submit_label || 'Submit Request';
   resetFormStatus(form);
 
   modal.hidden = false;
@@ -898,7 +1186,7 @@ function getProductLeadModal() {
   modal.hidden = true;
   modal.innerHTML = `<div class="product-lead-backdrop" data-close-product-modal></div>
     <section class="product-lead-dialog" role="dialog" aria-modal="true" aria-labelledby="product-lead-title">
-      <button class="product-lead-close" type="button" aria-label="Close" data-close-product-modal>×</button>
+      <button class="product-lead-close" type="button" aria-label="${escapeAttribute(peicState.site.lead_modal?.close_label || 'Close')}" data-close-product-modal>×</button>
       <h2 id="product-lead-title">Request Product Information</h2>
       <p class="product-lead-intro"></p>
       <form class="product-lead-form">
@@ -980,6 +1268,7 @@ function getProductLeadModal() {
       </form>
     </section>`;
   document.body.appendChild(modal);
+  renderLeadModalStaticCopy(modal);
 
   modal.querySelectorAll('[data-close-product-modal]').forEach((button) => {
     button.addEventListener('click', closeProductLeadModal);
@@ -989,6 +1278,34 @@ function getProductLeadModal() {
     if (event.key === 'Escape' && !modal.hidden) closeProductLeadModal();
   });
   return modal;
+}
+
+function renderLeadModalStaticCopy(modal) {
+  const copy = peicState.site.lead_modal || {};
+  const fields = copy.fields || {};
+  const destination = modal.querySelector('[name="destination_email"]');
+  if (destination && peicState.site.enquiry_email) destination.value = peicState.site.enquiry_email;
+  setText('label[for="product-lead-name"]', fields.name_label);
+  setText('label[for="product-lead-company"]', fields.company_label);
+  setText('label[for="product-lead-email"]', fields.email_label);
+  setText('label[for="product-lead-phone"]', fields.phone_label);
+  setText('label[for="product-lead-city"]', fields.city_label);
+  setText('label[for="product-lead-timeline"]', fields.timeline_label);
+  setText('label[for="product-lead-quantity"]', fields.quantity_label);
+  setAttribute('#product-lead-quantity', 'placeholder', fields.quantity_placeholder);
+  setText('label[for="product-lead-tender"]', fields.tender_label);
+  setText('label[for="product-lead-notes"]', fields.notes_label);
+  setAttribute('#product-lead-notes', 'placeholder', fields.notes_placeholder);
+  renderSelectOptions('#product-lead-timeline', copy.timeline_options);
+  renderSelectOptions('#product-lead-tender', copy.tender_options);
+
+  const consent = modal.querySelector('.form-consent span');
+  if (consent && fields.consent_text) {
+    consent.innerHTML = `${escapeHTML(fields.consent_text).replace(
+      escapeHTML(fields.privacy_label || 'Privacy Policy'),
+      `<a href="${escapeAttribute(fields.privacy_link || 'privacy.html')}">${escapeHTML(fields.privacy_label || 'Privacy Policy')}</a>`
+    )}`;
+  }
 }
 
 function closeProductLeadModal() {
@@ -1003,15 +1320,16 @@ async function submitProductLead(event) {
   const form = event.currentTarget;
   const status = form.querySelector('.form-status');
   const submit = form.querySelector('[type="submit"]');
+  const copy = peicState.site.lead_modal || {};
   const defaultLabel = form.dataset.mode === 'gated_download'
-    ? 'Submit & Download'
+    ? (copy.gated_submit_label || 'Submit & Download')
     : form.dataset.mode === 'resource_request'
-      ? 'Submit Request'
-      : 'Send Request';
+      ? (copy.resource_submit_label || 'Submit Request')
+      : (copy.product_submit_label || 'Send Request');
 
   submit.disabled = true;
-  submit.textContent = 'Sending...';
-  status.textContent = 'Sending your request securely...';
+  submit.textContent = copy.sending_label || 'Sending...';
+  status.textContent = copy.sending_status || 'Sending your request securely...';
   status.className = 'form-status visible';
 
   try {
@@ -1027,20 +1345,20 @@ async function submitProductLead(event) {
     if (!response.ok || !result.success) throw new Error(result.message || 'Submission failed');
 
     if (form.dataset.mode === 'gated_download' && form.dataset.file) {
-      status.textContent = 'Thank you. Your request was sent and the document is opening now.';
+      status.textContent = copy.download_success || 'Thank you. Your request was sent and the document is opening now.';
       status.className = 'form-status success visible';
       window.setTimeout(() => {
         window.location.assign(form.dataset.file);
       }, 500);
     } else {
       status.textContent = form.dataset.mode === 'resource_request'
-        ? 'Thank you. Your request has been sent. Our team will get back to you with the requested documentation.'
-        : 'Thank you. Your request has been sent. PEIC will contact you shortly.';
+        ? (copy.resource_success || 'Thank you. Your request has been sent. Our team will get back to you with the requested documentation.')
+        : (copy.product_success || 'Thank you. Your request has been sent. PEIC will contact you shortly.');
       status.className = 'form-status success visible';
       form.reset();
     }
   } catch (error) {
-    status.innerHTML = 'We could not send the request. Please try again or email <a href="mailto:sital.shah@peic.in">sital.shah@peic.in</a>.';
+    status.innerHTML = linkifyEmailMessage(copy.error_message || 'We could not send the request. Please try again or email sital.shah@peic.in.');
     status.className = 'form-status error visible';
   } finally {
     submit.disabled = false;
@@ -1065,7 +1383,10 @@ function initResourceFilter() {
   const grid = document.querySelector('.doc-grid');
   const emptyState = document.createElement('p');
   emptyState.className = 'empty-state';
-  emptyState.innerHTML = 'No documents match your search. <a href="contact.html">Contact us</a> for the document you need.';
+  const emptyText = grid?.dataset.emptyText || 'No documents match your search.';
+  const emptyLink = grid?.dataset.emptyLink || 'contact.html';
+  const emptyLinkLabel = grid?.dataset.emptyLinkLabel || 'Contact us for the document you need.';
+  emptyState.innerHTML = `${escapeHTML(emptyText)} ${emptyLinkLabel ? `<a href="${escapeAttribute(emptyLink)}">${escapeHTML(emptyLinkLabel)}</a>` : ''}`;
   grid?.after(emptyState);
 
   tabs.forEach((tab) => {
@@ -1118,13 +1439,14 @@ function initContactForm() {
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     const submit = form.querySelector('[type="submit"]');
+    const defaultLabel = form.dataset.submitLabel || submit?.textContent || 'Submit Enquiry';
     if (submit) {
-      submit.textContent = 'Sending enquiry...';
+      submit.textContent = form.dataset.sendingLabel || 'Sending...';
       submit.disabled = true;
     }
 
     if (status) {
-      status.textContent = 'Sending your enquiry securely...';
+      status.textContent = form.dataset.sendingStatus || 'Sending your enquiry securely...';
       status.className = 'form-status visible';
     }
 
@@ -1144,18 +1466,18 @@ function initContactForm() {
       }
 
       if (status) {
-        status.textContent = 'Thank you. Your enquiry has been sent successfully. Our team will respond shortly.';
+        status.textContent = form.dataset.successMessage || 'Thank you. Your enquiry has been sent. PEIC will respond shortly.';
         status.className = 'form-status success visible';
       }
       form.reset();
     } catch (error) {
       if (status) {
-        status.innerHTML = 'We could not send the enquiry. Please try again or email <a href="mailto:sital.shah@peic.in">sital.shah@peic.in</a>.';
+        status.innerHTML = linkifyEmailMessage(form.dataset.errorMessage || 'We could not send the enquiry. Please try again or email sital.shah@peic.in.');
         status.className = 'form-status error visible';
       }
     } finally {
       if (submit) {
-        submit.textContent = 'Make an Enquiry';
+        submit.textContent = defaultLabel;
         submit.disabled = false;
       }
     }

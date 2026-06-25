@@ -1,17 +1,17 @@
 {
   "hero": {
-    "title": "Solutions by Medical Specialty",
-    "description": "Shop by clinical use-case rather than brand. Explore integrated equipment ecosystems tailored to your department's specific needs."
+    "title": "Equipment by department. Integrated by specialty.",
+    "description": "Clinical equipment portfolios configured for infection control, workflow, procurement, and service requirements - from CSSD and OT to oncology, imaging, NICU, dental, labs, and research facilities."
   },
   "specialties_heading": {
-    "label": "By Medical Specialty",
-    "title": "Integrated Clinical Solutions"
+    "label": "Specialty Equipment Portfolios",
+    "title": "Six clinical areas. One integration partner."
   },
   "specialties": [
     {
       "id": "cssd",
       "title": "CSSD & Sterilization",
-      "description": "Complete central sterile supply department solutions — autoclaves, flash sterilizers, CSSD furniture, and workflow integration.",
+      "description": "CSSD infrastructure from one accountable supplier - horizontal autoclaves, flash sterilizers, vertical units, bedpan sterilizers, CSSD furniture, and sterile-processing workflow support.",
       "image": "/uploads/images/cssd-equipment.jpg",
       "link": "products.html#manufacturing",
       "button_label": "Explore portfolio"
@@ -19,7 +19,7 @@
     {
       "id": "ot",
       "title": "Operating Theatre (OT) Integration",
-      "description": "Surgical tables, OT lighting, electrosurgical units, suction systems, and complete theatre fit-out solutions.",
+      "description": "Surgical tables, OT lighting, electrosurgical systems, suction, illumination, and theatre equipment sourced through PEIC's partner portfolio and supported through coordinated service planning.",
       "image": "/uploads/images/ot.jpeg",
       "link": "products.html#partners",
       "button_label": "Explore portfolio"
@@ -27,7 +27,7 @@
     {
       "id": "oncology",
       "title": "Oncology & Ablation",
-      "description": "RFA, microwave ablation, NanoKnife IRE systems, and AI-assisted imaging for targeted cancer treatment.",
+      "description": "Locoregional ablation and oncology-support systems, including RFA, microwave ablation, NanoKnife IRE, and imaging workflow support through relevant partner technologies.",
       "image": "/uploads/images/oncology.jpg",
       "link": "products.html#partners",
       "button_label": "Explore portfolio"
@@ -35,7 +35,7 @@
     {
       "id": "diagnostic",
       "title": "Diagnostic Imaging & Radiology",
-      "description": "Portable DR, endoscopic ultrasound, CBCT imaging, and advanced diagnostic modalities from global partners.",
+      "description": "Portable digital radiography, endoscopic ultrasound, CBCT imaging, and imaging post-processing options configured for radiology and specialty departments.",
       "image": "/uploads/images/diagnostics.jpeg",
       "link": "products.html#partners",
       "button_label": "Explore portfolio"
@@ -43,7 +43,7 @@
     {
       "id": "maternal",
       "title": "Maternal / Neonatal Care",
-      "description": "Radiant heat warmers, LED phototherapy units, infusion pumps, NST machines, and NICU equipment.",
+      "description": "NICU and maternity ward equipment, including radiant warmers, phototherapy, syringe pumps, infusion pumps, and NST systems for labour ward and neonatal workflows.",
       "image": "/uploads/images/maternal.jpeg",
       "link": "products.html#partners",
       "button_label": "Explore portfolio"
@@ -51,21 +51,21 @@
     {
       "id": "dental",
       "title": "Dental Suites",
-      "description": "Comprehensive operatory suites, CBCT imaging, and end-to-end dental practice infrastructure.",
+      "description": "Dental chairs, delivery units, CBCT imaging, and operatory infrastructure for clinics, departments, and dental practice expansion projects.",
       "image": "/uploads/images/dental.jpeg",
       "link": "products.html#partners",
       "button_label": "Explore portfolio"
     }
   ],
   "industries_heading": {
-    "label": "By Industry & Client",
-    "title": "Who We Serve",
-    "description": "Tailored solutions across healthcare, pharma, research, and medical device sectors."
+    "label": "Client Segments",
+    "title": "Institutions we equip",
+    "description": "PEIC serves facilities where equipment reliability, documentation, and post-sale support matter from the first purchase conversation."
   },
   "industries": [
     {
       "title": "Healthcare",
-      "description": "From government tertiary hospitals to private chains, clinics, and specialty practices.",
+      "description": "Government tertiary hospitals, private hospitals, specialty clinics, and diagnostic centres, from CSSD infrastructure projects to department-specific equipment supply.",
       "featured": true,
       "tags": [
         "CSSD Departments",
@@ -79,7 +79,7 @@
     },
     {
       "title": "Pharma & Biopharma",
-      "description": "Sterilization and cleanroom infrastructure for pharmaceutical manufacturing and quality-control labs.",
+      "description": "Sterilization and cleanroom-aligned infrastructure for pharmaceutical manufacturing environments and quality-control laboratories.",
       "featured": false,
       "tags": [
         "Cleanroom CSSD",
@@ -89,7 +89,7 @@
     },
     {
       "title": "Medical Device Manufacturers",
-      "description": "Testing, validation, and sterilization equipment for device OEMs and component suppliers.",
+      "description": "Sterilization, validation, and testing equipment for Indian medical device manufacturers and component suppliers.",
       "featured": false,
       "tags": [
         "Validation Labs",
@@ -98,7 +98,7 @@
     },
     {
       "title": "Diagnostic Labs",
-      "description": "Imaging systems, lab sterilization, and diagnostic equipment for standalone and hospital-affiliated labs.",
+      "description": "Laboratory sterilization, imaging systems, and diagnostic equipment for standalone diagnostic centres and hospital-affiliated labs.",
       "featured": false,
       "tags": [
         "Pathology Labs",
@@ -107,7 +107,7 @@
     },
     {
       "title": "Research Institutes",
-      "description": "Specialized sterilization and laboratory equipment for research and university facilities.",
+      "description": "Sterilization, laboratory autoclaves, and biomedical waste sanitization for research institutes, CSIR labs, and university facilities.",
       "featured": false,
       "tags": [
         "Bio-safety Labs",
@@ -117,8 +117,8 @@
     }
   ],
   "cta": {
-    "title": "Not sure which solution fits your facility?",
-    "description": "Our biomedical engineers can design an integrated solution combining equipment from multiple specialty areas.",
+    "title": "Not sure which equipment mix fits your facility?",
+    "description": "PEIC's technical team can map requirements across departments and configure a portfolio combining manufactured and partner-brand systems as needed.",
     "button_label": "Discuss Your Requirements",
     "button_link": "contact.html"
   }

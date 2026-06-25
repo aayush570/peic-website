@@ -125,12 +125,11 @@ Each resource has:
 - Category
 - Card label
 - Uploaded PDF/document
-- File note such as `PDF · 2.4 MB`
+- Card call-to-action text
 
-When a file is uploaded, the website automatically changes the button from **Request** to **Download**.
-
-The small **File note** field is shown on the website too. Use it for text such
-as `PDF · 2.4 MB`, `Updated June 2026`, or `Available on request`.
+The whole resource card is clickable. When no file is uploaded, the card opens
+the documentation request form. When a file is uploaded, the card opens that
+document directly.
 
 ### Job vacancies
 
@@ -159,7 +158,7 @@ Turn **Show on website** off to hide a testimonial.
 Use:
 
 - **Images and logos** for JPG, PNG, WebP, or SVG files
-- **PDFs and downloadable files** for brochures, manuals, certificates, and case studies
+- **PDFs and downloadable files** for brochures, manuals, certificates, and reference documentation
 
 Use clear filenames, for example:
 

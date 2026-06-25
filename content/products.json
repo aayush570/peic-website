@@ -1,8 +1,8 @@
 [
   {
     "name": "Horizontal Cylindrical / Rectangular High-Pressure Steam Sterilizers",
-    "certification": "BIS IS: 3829 (Part 1) — Certified since 1976",
-    "description": "Industrial-grade autoclaves for CSSD departments, designed for high-volume sterilization cycles with precision temperature and pressure control.",
+    "certification": "BIS IS 3829 Part 1 - Certified since 1976",
+    "description": "High-capacity autoclaves for CSSD departments, engineered for continuous sterilization loads with controlled temperature and pressure performance. Available in horizontal cylindrical and rectangular configurations.",
     "image": "uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -10,8 +10,8 @@
   },
   {
     "name": "High-Speed 'Flash' Steam Sterilizers",
-    "certification": "BIS IS: 3829 (Part 2) — Certified since 1982",
-    "description": "Specialized units for rapid sterilization of surgical instruments between procedures, minimizing OT downtime and ensuring instrument readiness.",
+    "certification": "BIS IS 3829 Part 2 - Certified since 1982",
+    "description": "Rapid-cycle sterilizers for OT instrument turnaround between procedures, designed to reduce inter-procedure delays while supporting sterilization assurance.",
     "image": "uploads/images/cssd-equipment.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -19,8 +19,8 @@
   },
   {
     "name": "Vertical Autoclaves",
-    "certification": "PEIC Manufactured · BIS Compliant",
-    "description": "Space-efficient vertical sterilizers ideal for laboratories, clinics, and smaller CSSD units with full regulatory compliance.",
+    "certification": "PEIC Manufactured",
+    "description": "Space-efficient vertical sterilizers for laboratories, clinics, and smaller CSSD units where dependable sterilization is needed within a compact footprint.",
     "image": "uploads/images/product-catalog-hero.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -29,7 +29,7 @@
   {
     "name": "Bedpan / Bowl & Utensil Sterilizers",
     "certification": "PEIC Manufactured",
-    "description": "Dedicated sterilization systems for patient-care utensils, supporting infection control in ward and ICU environments.",
+    "description": "Dedicated systems for patient-care utensils in ward and ICU environments, supporting infection-control workflows outside the main CSSD.",
     "image": "uploads/images/cssd-equipment.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -38,7 +38,7 @@
   {
     "name": "Hot & Cold-Water Pressure Sterilizers",
     "certification": "PEIC Manufactured",
-    "description": "Pressure sterilization systems using hot and cold-water cycles for specialized medical and laboratory applications.",
+    "description": "Pressure sterilization systems using hot and cold-water cycles for specialized medical, laboratory, and pharma-adjacent requirements.",
     "image": "uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -47,7 +47,7 @@
   {
     "name": "Bio Medical Waste Sanitizers",
     "certification": "PEIC Manufactured",
-    "description": "Biomedical-waste treatment systems for safe sanitization in accordance with applicable healthcare waste-management requirements.",
+    "description": "On-site biomedical waste sanitization systems for healthcare facilities that need controlled treatment workflows before disposal.",
     "image": "uploads/images/product-catalog-hero.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -56,7 +56,7 @@
   {
     "name": "Tabletop Sterilization Units",
     "certification": "PEIC Manufactured",
-    "description": "Compact bench-top autoclaves for dental clinics, small operating theatres, and outpatient surgical centres.",
+    "description": "Compact bench-top autoclaves for dental clinics, outpatient procedure rooms, and smaller facilities with limited floor space.",
     "image": "uploads/images/cssd-equipment.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",
@@ -65,7 +65,7 @@
   {
     "name": "CSSD Furniture & Equipment Trolleys",
     "certification": "PEIC Manufactured",
-    "description": "Stainless-steel CSSD workstations, instrument trolleys, and storage solutions designed for sterile-processing workflows.",
+    "description": "Stainless-steel workstations, instrument trolleys, and sterile storage infrastructure configured for CSSD workflow and infection-control zoning.",
     "image": "uploads/images/product-catalog-hero.jpg",
     "specification_file": "",
     "access_mode": "enquiry_only",

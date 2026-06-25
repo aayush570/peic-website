@@ -1,31 +1,62 @@
 {
   "hero": {
-    "title": "Service & Lifecycle Support",
-    "description": "Post-sale reliability is our commitment. From AMC/CMC contracts to spare parts, diagnosis, and solution planning, PEIC helps institutions keep supported equipment running."
+    "title": "Post-sale service with defined accountability.",
+    "description": "PEIC coordinates the service relationship for systems it supplies - manufactured or distributed. AMC/CMC contracts, domestic spares, site diagnosis, refurbishment, and technical response are handled through one team."
   },
-  "process_heading": {"label":"Service Workflow","title":"Response Process"},
+  "process_heading": {
+    "label": "How Service Works",
+    "title": "From logged request to resolved issue."
+  },
   "process": [
-    {"title":"Log Request","description":"Hotline, email, or enquiry form"},
-    {"title":"Triage & Dispatch","description":"Target acknowledgment within two hours"},
-    {"title":"On-Site Resolution","description":"Priority dispatch based on location and equipment criticality"},
-    {"title":"Follow-Up & Report","description":"Service completion record and recommended next actions"}
+    {
+      "title": "Log the Request",
+      "description": "By phone, email, or service ticket through PEIC's support channels."
+    },
+    {
+      "title": "Triage & Dispatch Planning",
+      "description": "Prompt diagnosis and dispatch planning based on equipment criticality, location, and parts availability."
+    },
+    {
+      "title": "On-Site Technical Response",
+      "description": "PEIC engineers or partner engineers coordinated pan-India based on location and equipment type."
+    },
+    {
+      "title": "Resolution & Service Record",
+      "description": "Service report with findings, actions taken, parts used, and recommended next steps."
+    }
   ],
   "offerings": [
-    {"icon":"📋","title":"AMC / CMC Contract Tiers","description":"Flexible annual and comprehensive maintenance contracts covering preventive maintenance, emergency callouts, parts replacement, and calibration."},
-    {"icon":"🔩","title":"Spare Parts Inventory","description":"In-house spare parts stock for PEIC-manufactured equipment and authorized sourcing for supported partner-brand spares."},
-    {"icon":"⚡","title":"Response, Diagnosis & Solution Outline","description":"Requests are triaged promptly, with diagnosis and next-step planning based on location, access, equipment criticality, and parts availability."},
-    {"icon":"↻","title":"Equipment Refurbishing & Upgrades","description":"Mechanical overhaul, electronic-control upgrades, refinishing, testing, and re-commissioning for suitable ageing equipment."}
+    {
+      "icon": "📋",
+      "title": "AMC / CMC Contract Tiers",
+      "description": "Structured annual and comprehensive maintenance contracts covering preventive maintenance, callout response, parts replacement, and calibration where applicable."
+    },
+    {
+      "icon": "🔩",
+      "title": "Spare Parts Inventory",
+      "description": "Critical components stocked domestically for PEIC-manufactured systems, with authorized sourcing channels for supported partner-brand spares."
+    },
+    {
+      "icon": "⚡",
+      "title": "Response, Diagnosis & Solution Outline",
+      "description": "Each request is triaged for criticality and geography before dispatch planning, then followed with a documented solution path."
+    },
+    {
+      "icon": "↻",
+      "title": "Equipment Refurbishing & Upgrades",
+      "description": "Lifecycle extension for suitable ageing equipment, including mechanical overhaul, control upgrades, refinishing, testing, and re-commissioning."
+    }
   ],
   "custom_cta": {
-    "title": "Need a custom solution?",
-    "description": "Our technical team can design integrated solutions tailored to your facility's specific requirements, combining equipment from multiple solution areas.",
-    "button_label": "Explore Solutions",
-    "button_link": "solutions.html"
+    "title": "Planning service coverage for a multi-equipment facility?",
+    "description": "PEIC can structure coordinated AMC/CMC support for manufactured and supported partner-brand equipment under one service relationship.",
+    "button_label": "Discuss Service Coverage",
+    "button_link": "contact.html?type=service"
   },
   "urgent_cta": {
-    "title": "NEED URGENT SERVICE?",
-    "description": "Call our technical support line — or raise a ticket for immediate dispatch.",
-    "button_label": "Raise a Service Request",
+    "title": "Equipment down?",
+    "description": "Call our technical support line directly for immediate triage.",
+    "button_label": "Raise a Service Ticket",
     "button_link": "contact.html?type=service"
   }
 }
