@@ -8,6 +8,10 @@
     "label": "How Service Works",
     "title": "From logged request to resolved issue."
   },
+  "offerings_heading": {
+    "label": "PEIC Service Advantages",
+    "title": "Support coverage built to reduce downtime."
+  },
   "process": [
     {
       "title": "Log the Request",

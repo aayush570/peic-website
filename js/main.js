@@ -390,6 +390,7 @@ function renderAboutPage(about) {
 function renderServicePage(page) {
   setPageHero(page.hero);
   setHeading(document.querySelector('.response-grid')?.closest('section'), page.process_heading);
+  setHeading(document.querySelector('.service-grid')?.closest('section'), page.offerings_heading);
   renderPageSections({ service: page });
   setCallout(document.querySelector('.custom-solution-box'), page.custom_cta);
   setCallout(document.querySelector('.urgent-service-banner'), page.urgent_cta);
@@ -767,6 +768,7 @@ function renderPageSections(pages) {
   if (responseGrid && pages.service?.process) {
     responseGrid.innerHTML = pages.service.process.map((item, index) => `<div class="info-card response-step">
       <div class="info-card-icon">${index + 1}</div>
+      <span class="response-step-arrow" aria-hidden="true">→</span>
       <h3>${escapeHTML(item.title)}</h3>
       <p>${escapeHTML(item.description || '')}</p>
     </div>`).join('');
