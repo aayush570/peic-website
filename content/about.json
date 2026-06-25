@@ -84,7 +84,7 @@
       "title": "Quality Validation & Testing Lab",
       "description": "Internal testing and quality validation for sterilization systems, pressure-vessel components, and institutional equipment configurations before dispatch.",
       "address_lines": [
-        "Shamroz Industrial Estate",
+        "27, Shamroz Industrial Estate",
         "Ram Mandir Road, Goregaon West",
         "Mumbai 400054, Maharashtra"
       ]
@@ -95,7 +95,7 @@
         "title": "Sterilization Systems Production",
         "description": "Manufacturing infrastructure for high-pressure sterilization systems, CSSD equipment, and specialty autoclave lines, with design, fabrication, assembly, and inspection within PEIC's Mumbai facility cluster.",
         "address_lines": [
-          "Shamroz Industrial Estate",
+          "Gala Nos. 4 & 47, Ground Floor, Shamroz Industrial Estate",
           "Ram Mandir Road, Goregaon West",
           "Mumbai 400054, Maharashtra"
         ]
@@ -107,7 +107,7 @@
         "title": "Mumbai Commercial & Service Hub",
         "description": "Commercial operations, new equipment procurement, service coordination, AMC/CMC management, and technical support headquarters.",
         "address_lines": [
-          "22, 2nd Floor, Shamroz Industrial Estate",
+          "20, 21 & 22, Shamroz Industrial Estate",
           "Ram Mandir Road, Goregaon West",
           "Mumbai 400054, Maharashtra"
         ]
@@ -127,7 +127,7 @@
     {
       "short_name": "BMC",
       "name": "Brihanmumbai Municipal Corporation",
-      "tagline": "Major & Peripheral Hospitals"
+      "tagline": "KEM, LTMG, Nair & Cooper"
     },
     {
       "short_name": "BARC",
@@ -138,11 +138,6 @@
       "short_name": "CCMB",
       "name": "C.C.M.B.",
       "tagline": "Centre for Cellular & Molecular Biology"
-    },
-    {
-      "short_name": "NEERI",
-      "name": "NEERI",
-      "tagline": "National Environmental Engineering Research Institute"
     },
     {
       "short_name": "IGIB",
@@ -160,9 +155,9 @@
       "tagline": "Western, Central, Northern, ECOR & South-Eastern zones"
     },
     {
-      "short_name": "ACTREC",
-      "name": "Tata Hospital Trust",
-      "tagline": "ACTREC, Mumbai"
+      "short_name": "TMH",
+      "name": "Tata Memorial Hospital",
+      "tagline": "Parel & ACTREC"
     },
     {
       "short_name": "PT",
@@ -173,6 +168,21 @@
       "short_name": "SHD",
       "name": "DMER, DHS & ESIC",
       "tagline": "Maharashtra, Delhi & Goa"
+    },
+    {
+      "short_name": "WADIA",
+      "name": "Wadia Hospital",
+      "tagline": "Private Hospital"
+    },
+    {
+      "short_name": "LOTUS",
+      "name": "Lotus Eye Hospital",
+      "tagline": "Private Hospital"
+    },
+    {
+      "short_name": "HSH",
+      "name": "Holy Spirit Hospital",
+      "tagline": "Private Hospital"
     }
   ],
   "certifications": [

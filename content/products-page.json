@@ -187,14 +187,14 @@
       "logo": ""
     },
     {
-      "name": "Pentax Corporation",
+      "name": "Medicon Germany",
       "group": "global",
-      "country": "Japan",
-      "flag": "🇯🇵",
-      "description": "Gastrointestinal endoscopy and endoscopic ultrasound systems for gastroenterology and hepatobiliary departments.",
-      "categories": ["Gastroscopes", "Duodenoscopes", "Ultrasound Scopes"],
-      "solutions_url": "solutions.html#diagnostic",
-      "website_url": "https://www.pentaxmedical.com/",
+      "country": "Germany",
+      "flag": "🇩🇪",
+      "description": "German surgical instruments and OT accessories for procedure rooms and sterile services.",
+      "categories": ["Surgical Instruments", "OT Accessories", "Sterile Processing"],
+      "solutions_url": "solutions.html#ot",
+      "website_url": "",
       "logo": ""
     },
     {
@@ -282,28 +282,6 @@
       "description": "Neonatal care equipment including radiant warmers and LED phototherapy systems.",
       "categories": ["Radiant Warmers", "Phototherapy", "Neonatal Care"],
       "solutions_url": "solutions.html#maternal",
-      "website_url": "",
-      "logo": ""
-    },
-    {
-      "name": "Alan Electronic Systems",
-      "group": "domestic",
-      "country": "India",
-      "flag": "🇮🇳",
-      "description": "High-frequency electrosurgical generators and OT lighting for surgical theatre infrastructure.",
-      "categories": ["Electrosurgical Units", "OT Lights", "HF Generators"],
-      "solutions_url": "solutions.html#ot",
-      "website_url": "",
-      "logo": ""
-    },
-    {
-      "name": "Palakkad Surgical Industries & Technomed",
-      "group": "domestic",
-      "country": "India",
-      "flag": "🇮🇳",
-      "description": "Electrically operated and electro-hydraulic surgical tables for general and specialty operating theatres.",
-      "categories": ["Operating Tables", "Electro-hydraulic", "OT Furniture"],
-      "solutions_url": "solutions.html#ot",
       "website_url": "",
       "logo": ""
     }

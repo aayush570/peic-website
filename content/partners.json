@@ -55,14 +55,14 @@
     "logo": ""
   },
   {
-    "name": "Pentax Corporation",
+    "name": "Medicon Germany",
     "group": "global",
-    "country": "Japan",
-    "flag": "🇯🇵",
-    "description": "Ultrasound gastroscopes and duodenoscopes.",
-    "categories": ["Gastroscopes", "Duodenoscopes", "Ultrasound Scopes"],
-    "solutions_url": "solutions.html#diagnostic",
-    "website_url": "https://www.pentaxmedical.com/",
+    "country": "Germany",
+    "flag": "🇩🇪",
+    "description": "German surgical instruments and OT accessories.",
+    "categories": ["Surgical Instruments", "OT Accessories", "Sterile Processing"],
+    "solutions_url": "solutions.html#ot",
+    "website_url": "",
     "logo": ""
   },
   {
@@ -150,28 +150,6 @@
     "description": "Radiant heat warmers and LED phototherapy units.",
     "categories": ["Radiant Warmers", "Phototherapy", "Neonatal Care"],
     "solutions_url": "solutions.html#maternal",
-    "website_url": "",
-    "logo": ""
-  },
-  {
-    "name": "Alan Electronic Systems",
-    "group": "domestic",
-    "country": "India",
-    "flag": "🇮🇳",
-    "description": "High-frequency electrosurgical units and OT lights.",
-    "categories": ["Electrosurgical Units", "OT Lights", "HF Generators"],
-    "solutions_url": "solutions.html#ot",
-    "website_url": "",
-    "logo": ""
-  },
-  {
-    "name": "Palakkad Surgical Industries & Technomed",
-    "group": "domestic",
-    "country": "India",
-    "flag": "🇮🇳",
-    "description": "Electrically operated and electro-hydraulic operating tables.",
-    "categories": ["Operating Tables", "Electro-hydraulic", "OT Furniture"],
-    "solutions_url": "solutions.html#ot",
     "website_url": "",
     "logo": ""
   }
