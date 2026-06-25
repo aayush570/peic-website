@@ -19,25 +19,25 @@
   ],
   "hero_panel": {
     "kicker": "PEIC Institutional Proof",
-    "metric": "1968",
-    "title": "Manufacturer-led equipment decisions for institutional buyers",
-    "description": "Manufacturing heritage, partner integration, documentation support, and lifecycle service coordination under one accountable relationship.",
+    "metric": "Since 1968",
+    "title": "OEM manufacturer with direct service accountability",
+    "description": "Long manufacturing heritage, 16 integrated global and domestic brands, and a single post-sale service relationship. All under 1 partner.",
     "specs": [
       {
         "label": "Proof",
-        "value": "BIS / ISO / GMP"
+        "value": "BIS | ISO 13485 | CE | GMP"
       },
       {
         "label": "Platform",
-        "value": "CSSD + OT"
+        "value": "CSSD | OT | Oncology | Imaging | Dental"
       },
       {
         "label": "Buyer Fit",
-        "value": "Tender + Direct"
+        "value": "Direct Purchase | Tender Eligible"
       },
       {
         "label": "Scope",
-        "value": "OEM + Partners"
+        "value": "Manufactured Equipment + 16 Global and Domestic Brands"
       }
     ]
   },
