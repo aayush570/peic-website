@@ -1,7 +1,8 @@
 {
   "hero": {
     "title": "Technical documentation and compliance records.",
-    "description": "Request product brochures, user manuals, specifications, and compliance documents. PEIC responds with the relevant material for qualified equipment and procurement enquiries."
+    "description": "Request product brochures, user manuals, specifications, and compliance documents. PEIC responds with the relevant material for qualified equipment and procurement enquiries.",
+    "image": "/uploads/images/product-catalog-hero.jpg"
   },
   "search_placeholder": "Search by product, document type, or certification...",
   "empty_state": {

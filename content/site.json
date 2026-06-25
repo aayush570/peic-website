@@ -10,6 +10,31 @@
   "service_email": "support@peic.in",
   "careers_email": "careers@peic.in",
   "enquiry_email": "sital.shah@peic.in",
+  "site_url": "https://peic.in",
+  "organization_schema": {
+    "name": "Precision Electronics Instruments & Components",
+    "url": "https://peic.in",
+    "telephone": "+919820033597",
+    "email": "contact@peic.in",
+    "founding_date": "1968",
+    "street_address": "20, Shamroz Industrial Estate, Ram Mandir Road, Goregaon West",
+    "address_locality": "Mumbai",
+    "postal_code": "400104",
+    "address_region": "Maharashtra",
+    "address_country": "IN"
+  },
+  "form_service": {
+    "endpoint": "https://api.web3forms.com/submit",
+    "access_key": "e36c05ee-2b9e-4cb0-b517-f79441d69cb5",
+    "destination_email": "sital.shah@peic.in",
+    "contact_subject": "New PEIC website enquiry",
+    "contact_from_name": "PEIC Website",
+    "product_subject_prefix": "PEIC product enquiry",
+    "download_subject_prefix": "PEIC specification download",
+    "resource_subject_prefix": "PEIC document request",
+    "product_from_name": "PEIC Product Catalogue",
+    "resource_from_name": "PEIC Documentation Request"
+  },
   "navigation": {
     "items": [
       { "label": "Home", "href": "index.html", "route": "home" },

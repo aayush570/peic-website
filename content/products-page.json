@@ -1,9 +1,11 @@
 {
   "hero": {
     "title": "Equipment built and sourced for institutional reliability.",
-    "description": "PEIC-manufactured sterilization systems from Mumbai, supported by partner medical technologies from global and Indian brands. Specified, installed, and supported by one technical team."
+    "description": "PEIC-manufactured sterilization systems from Mumbai, supported by partner medical technologies from global and Indian brands. Specified, installed, and supported by one technical team.",
+    "image": "/uploads/images/product-catalog-hero.jpg"
   },
   "manufacturing": {
+    "badge": "Tier 1 · Core Competency",
     "title": "PEIC Sterilization Systems",
     "description": "Engineered and assembled at PEIC's Shamroz Industrial Estate facility cluster in Goregaon West, with direct OEM accountability from pressure vessel to commissioning.",
     "advantages_title": "Advantages of PEIC Manufacturing",
@@ -28,6 +30,7 @@
     ]
   },
   "partners": {
+    "badge": "Tier 2 · Partner Technologies",
     "title": "Global & Domestic Partner Technologies",
     "description": "Current associations with medical equipment brands across oncology, OT, imaging, dental, neonatal care, and specialty departments.",
     "advantages_title": "Advantages of Procurement Through PEIC",

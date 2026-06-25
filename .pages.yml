@@ -28,6 +28,7 @@ components:
     fields:
       - { name: title, label: Page heading, type: string, required: true }
       - { name: description, label: Page introduction, type: text, required: true }
+      - { name: image, label: Background image, type: image, options: { media: images } }
 
   image_hero:
     type: object
@@ -263,6 +264,7 @@ content:
         label: Manufacturing section
         type: object
         fields:
+          - { name: badge, label: Small tier label, type: string, description: "Example: Tier 1 · Core Competency" }
           - { name: title, label: Heading, type: string }
           - { name: description, label: Introduction, type: text }
           - { name: advantages_title, label: Advantages heading, type: string }
@@ -272,6 +274,7 @@ content:
         label: Partner technologies section
         type: object
         fields:
+          - { name: badge, label: Small tier label, type: string, description: "Example: Tier 2 · Partner Technologies" }
           - { name: title, label: Heading, type: string }
           - { name: description, label: Introduction, type: text }
           - { name: advantages_title, label: Advantages heading, type: string }
@@ -442,6 +445,9 @@ content:
       - { name: jobs_heading, label: Open positions heading, component: heading }
       - { name: apply_label, label: Apply link label, type: string }
       - { name: open_application, label: General application callout, component: callout }
+      - { name: general_email_note, label: Extra careers note, type: text, description: "Example: Or email your resume directly to careers@peic.in" }
+      - { name: general_email_label, label: Email text inside careers note, type: string }
+      - { name: general_email_link, label: Careers note email link, type: string, description: "Example: mailto:careers@peic.in" }
       - name: jobs
         label: Job vacancies
         type: object
@@ -531,6 +537,7 @@ content:
       - { name: service_email, label: Service email, type: string }
       - { name: careers_email, label: Careers email, type: string }
       - { name: enquiry_email, label: Enquiry notification email, type: string, readonly: true }
+      - { name: site_url, label: Website base URL, type: string, description: "Example: https://peic.in" }
       - name: navigation
         label: Navigation
         type: object
@@ -558,7 +565,35 @@ content:
           - { name: label, label: Button text, type: string }
           - { name: href, label: Button link, type: string }
           - { name: aria_label, label: Accessibility label, type: string }
+      - name: organization_schema
+        label: Homepage organization schema
+        type: object
+        fields:
+          - { name: name, label: Organization name, type: string }
+          - { name: url, label: Organization URL, type: string }
+          - { name: telephone, label: Telephone, type: string }
+          - { name: email, label: Email, type: string }
+          - { name: founding_date, label: Founding year or date, type: string }
+          - { name: street_address, label: Street address, type: string }
+          - { name: address_locality, label: City, type: string }
+          - { name: postal_code, label: Postal code, type: string }
+          - { name: address_region, label: State / region, type: string }
+          - { name: address_country, label: Country code, type: string, description: "Example: IN" }
       - { name: addresses, label: Shared addresses, component: address_block, list: true }
+      - name: form_service
+        label: Form delivery settings
+        type: object
+        fields:
+          - { name: endpoint, label: Form endpoint URL, type: string }
+          - { name: access_key, label: Form access key, type: string }
+          - { name: destination_email, label: Notification email, type: string }
+          - { name: contact_subject, label: Contact form subject, type: string }
+          - { name: contact_from_name, label: Contact form sender name, type: string }
+          - { name: product_subject_prefix, label: Product request subject prefix, type: string }
+          - { name: download_subject_prefix, label: Download request subject prefix, type: string }
+          - { name: resource_subject_prefix, label: Resource request subject prefix, type: string }
+          - { name: product_from_name, label: Product modal sender name, type: string }
+          - { name: resource_from_name, label: Resource modal sender name, type: string }
       - name: seo
         label: SEO metadata
         type: object

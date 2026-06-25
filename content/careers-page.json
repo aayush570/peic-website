@@ -1,7 +1,8 @@
 {
   "hero": {
     "title": "Build a career in medical technology that matters.",
-    "description": "PEIC is an engineering-led manufacturer and medical technology integration partner with institutional relationships across India. We hire for technical precision, accountability, and long-term commitment."
+    "description": "PEIC is an engineering-led manufacturer and medical technology integration partner with institutional relationships across India. We hire for technical precision, accountability, and long-term commitment.",
+    "image": "/uploads/images/heritage-and-legacy-hero.jpg"
   },
   "benefits": [
     {
@@ -41,6 +42,9 @@
     "button_label": "Submit Your Profile",
     "button_link": "mailto:careers@peic.in?subject=General Application"
   },
+  "general_email_note": "Or email your resume directly to careers@peic.in",
+  "general_email_label": "careers@peic.in",
+  "general_email_link": "mailto:careers@peic.in",
   "jobs": [
     {
       "title": "Senior Welding & Fabrication Engineer",

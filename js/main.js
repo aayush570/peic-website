@@ -72,6 +72,7 @@ async function fetchCMSData(name) {
 
 function renderSiteContent(site, route = getCurrentRoute()) {
   renderSEOContent(site.seo?.[route], route);
+  renderOrganizationSchema(site);
   renderNavigation(site.navigation, route);
   document.querySelectorAll('.logo-name').forEach((el) => {
     el.textContent = site.company_name;
@@ -116,13 +117,15 @@ function renderSiteContent(site, route = getCurrentRoute()) {
 }
 
 function renderSEOContent(seo, route) {
+  const siteURL = (peicState.site.site_url || 'https://peic.in').replace(/\/+$/, '');
   if (!seo) return;
   if (seo.title) document.title = seo.title;
   setMetaContent('meta[name="description"]', seo.description);
   setMetaContent('meta[property="og:title"]', seo.title);
   setMetaContent('meta[property="og:description"]', seo.description);
   setMetaContent('meta[property="og:image"]', seo.image);
-  setMetaContent('meta[property="og:url"]', `https://peic.in/${route === 'home' ? '' : `${route}.html`}`);
+  setMetaContent('meta[property="og:url"]', `${siteURL}/${route === 'home' ? '' : `${route}.html`}`);
+  setAttribute('link[rel="canonical"]', 'href', `${siteURL}/${route === 'home' ? '' : `${route}.html`}`);
 }
 
 function setMetaContent(selector, value) {
@@ -207,6 +210,29 @@ function renderStandaloneHeaderCTA(cta) {
   if (!link || !cta) return;
   link.textContent = cta.label || link.textContent;
   link.href = cta.href || link.href;
+}
+
+function renderOrganizationSchema(site) {
+  const script = document.querySelector('#organization-schema');
+  if (!script || !site) return;
+  const schema = site.organization_schema || {};
+  script.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: schema.name || site.company_name,
+    url: schema.url || site.site_url,
+    telephone: schema.telephone || site.phone_link,
+    email: schema.email || site.general_email,
+    foundingDate: schema.founding_date || '',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: schema.street_address || '',
+      addressLocality: schema.address_locality || '',
+      postalCode: schema.postal_code || '',
+      addressRegion: schema.address_region || '',
+      addressCountry: schema.address_country || ''
+    }
+  }, null, 2);
 }
 
 function renderCurrentPage(route, content) {
@@ -315,6 +341,7 @@ function renderProductsPage(page) {
 function renderTier(selector, tier) {
   const section = document.querySelector(selector);
   if (!section || !tier) return;
+  setTextWithin(section, '.tier-header .tier-badge', tier.badge);
   setTextWithin(section, '.tier-header .section-title', tier.title);
   setTextWithin(section, '.tier-header .tier-intro', tier.description);
   const bar = section.querySelector('.advantage-bar');
@@ -407,6 +434,19 @@ function renderCareersPage(page) {
   }
   renderJobs(page.jobs);
   setCallout(document.querySelector('.general-app-cta'), page.open_application);
+  const followup = document.querySelector('.general-app-cta .general-application-note');
+  if (followup) {
+    const note = page.general_email_note || '';
+    const emailLabel = page.general_email_label || peicState.site.careers_email || '';
+    const emailHref = page.general_email_link || (peicState.site.careers_email ? `mailto:${peicState.site.careers_email}` : '');
+    followup.hidden = !note;
+    if (note) {
+      followup.innerHTML = `${escapeHTML(note).replace(
+        escapeHTML(emailLabel),
+        emailHref ? `<a href="${escapeAttribute(emailHref)}" style="color: var(--green); font-weight: 600;">${escapeHTML(emailLabel)}</a>` : escapeHTML(emailLabel)
+      )}`;
+    }
+  }
 }
 
 function renderContactPage(page) {
@@ -447,11 +487,17 @@ function renderContactFormCopy(page) {
   const form = document.querySelector('.contact-form');
   if (!form || !page) return;
   const fields = page.fields || {};
+  const formService = peicState.site.form_service || {};
   form.dataset.submitLabel = page.submit_label || 'Submit Enquiry';
   form.dataset.sendingLabel = page.sending_label || 'Sending...';
   form.dataset.sendingStatus = page.sending_status || '';
   form.dataset.successMessage = page.success_message || '';
   form.dataset.errorMessage = page.error_message || '';
+  form.action = formService.endpoint || 'https://api.web3forms.com/submit';
+  setFormHiddenValue(form, 'access_key', formService.access_key || '');
+  setFormHiddenValue(form, 'subject', formService.contact_subject || 'New PEIC website enquiry');
+  setFormHiddenValue(form, 'from_name', formService.contact_from_name || 'PEIC Website');
+  setFormHiddenValue(form, 'destination_email', formService.destination_email || peicState.site.enquiry_email || '');
 
   setFormLabel('name', fields.name_label);
   setAttribute('#name', 'placeholder', fields.name_placeholder);
@@ -496,6 +542,11 @@ function setFormLabel(forId, label, optional) {
   element.innerHTML = `${escapeHTML(label)}${optional ? ` <span class="optional-label">${escapeHTML(optional)}</span>` : ''}`;
 }
 
+function setFormHiddenValue(form, name, value) {
+  const field = form?.querySelector(`[name="${name}"]`);
+  if (field) field.value = value || '';
+}
+
 function renderSelectOptions(selector, options) {
   const select = document.querySelector(selector);
   if (!select || !Array.isArray(options)) return;
@@ -525,6 +576,14 @@ function renderNotFoundPage(page) {
 }
 
 function setPageHero(hero) {
+  const heroSection = document.querySelector('.page-hero-sm');
+  if (heroSection) {
+    if (hero?.image) {
+      heroSection.style.setProperty('--page-hero-image', `url("${normalizeAssetURL(hero.image).replace(/"/g, '%22')}")`);
+    } else {
+      heroSection.style.removeProperty('--page-hero-image');
+    }
+  }
   setText('.page-hero-sm h1', hero?.title);
   setText('.page-hero-sm p', hero?.description);
 }
@@ -1117,6 +1176,7 @@ function openProductLeadModal({ mode, product, file }) {
   const intro = modal.querySelector('.product-lead-intro');
   const submit = form.querySelector('[type="submit"]');
   const copy = peicState.site.lead_modal || {};
+  const formService = peicState.site.form_service || {};
 
   form.reset();
   form.dataset.mode = mode;
@@ -1127,9 +1187,10 @@ function openProductLeadModal({ mode, product, file }) {
     page_context: getCurrentRoute(),
     product_name: product
   });
+  form.querySelector('[name="from_name"]').value = formService.product_from_name || 'PEIC Product Catalogue';
   form.querySelector('[name="subject"]').value = mode === 'gated_download'
-    ? `PEIC specification download: ${product}`
-    : `PEIC product enquiry: ${product}`;
+    ? `${formService.download_subject_prefix || 'PEIC specification download'}: ${product}`
+    : `${formService.product_subject_prefix || 'PEIC product enquiry'}: ${product}`;
   title.textContent = mode === 'gated_download'
     ? (copy.gated_title || 'Get Technical Specifications')
     : (copy.product_title || 'Request Product Information');
@@ -1153,6 +1214,7 @@ function openResourceLeadModal({ title: resourceTitle, type }) {
   const intro = modal.querySelector('.product-lead-intro');
   const submit = form.querySelector('[type="submit"]');
   const copy = peicState.site.lead_modal || {};
+  const formService = peicState.site.form_service || {};
 
   form.reset();
   form.dataset.mode = 'resource_request';
@@ -1164,8 +1226,8 @@ function openResourceLeadModal({ title: resourceTitle, type }) {
     page_context: getCurrentRoute(),
     product_name: resourceTitle || ''
   });
-  form.querySelector('[name="subject"]').value = `PEIC document request: ${resourceTitle || 'Resource'}`;
-  form.querySelector('[name="from_name"]').value = 'PEIC Documentation Request';
+  form.querySelector('[name="subject"]').value = `${formService.resource_subject_prefix || 'PEIC document request'}: ${resourceTitle || 'Resource'}`;
+  form.querySelector('[name="from_name"]').value = formService.resource_from_name || 'PEIC Documentation Request';
   form.querySelector('[name="enquiry_type"]').value = `${type || 'Document'} request`;
   title.textContent = copy.resource_title || 'Request Documentation';
   intro.textContent = `${copy.resource_intro || 'Share your details and the PEIC team will respond with the requested documentation.'} ${resourceTitle ? `${copy.document_context_label || 'Document'}: ${resourceTitle}.` : ''}`;
@@ -1190,9 +1252,9 @@ function getProductLeadModal() {
       <h2 id="product-lead-title">Request Product Information</h2>
       <p class="product-lead-intro"></p>
       <form class="product-lead-form">
-        <input type="hidden" name="access_key" value="e36c05ee-2b9e-4cb0-b517-f79441d69cb5">
-        <input type="hidden" name="subject" value="PEIC product enquiry">
-        <input type="hidden" name="from_name" value="PEIC Product Catalogue">
+        <input type="hidden" name="access_key" value="">
+        <input type="hidden" name="subject" value="">
+        <input type="hidden" name="from_name" value="">
         <input type="hidden" name="lead_source" value="">
         <input type="hidden" name="page_context" value="">
         <input type="hidden" name="page_url" value="">
@@ -1201,7 +1263,7 @@ function getProductLeadModal() {
         <input type="hidden" name="product" value="">
         <input type="hidden" name="document" value="">
         <input type="hidden" name="enquiry_type" value="Product information / specifications">
-        <input type="hidden" name="destination_email" value="sital.shah@peic.in">
+        <input type="hidden" name="destination_email" value="">
         <input type="checkbox" name="botcheck" class="form-honeypot" tabindex="-1" autocomplete="off">
         <div class="form-status" role="status" aria-live="polite"></div>
         <div class="form-row">
@@ -1282,9 +1344,15 @@ function getProductLeadModal() {
 
 function renderLeadModalStaticCopy(modal) {
   const copy = peicState.site.lead_modal || {};
+  const formService = peicState.site.form_service || {};
   const fields = copy.fields || {};
-  const destination = modal.querySelector('[name="destination_email"]');
-  if (destination && peicState.site.enquiry_email) destination.value = peicState.site.enquiry_email;
+  const form = modal.querySelector('.product-lead-form');
+  if (form) {
+    setFormHiddenValue(form, 'access_key', formService.access_key || '');
+    setFormHiddenValue(form, 'from_name', formService.product_from_name || 'PEIC Product Catalogue');
+    setFormHiddenValue(form, 'subject', formService.product_subject_prefix || 'PEIC product enquiry');
+    setFormHiddenValue(form, 'destination_email', formService.destination_email || peicState.site.enquiry_email || '');
+  }
   setText('label[for="product-lead-name"]', fields.name_label);
   setText('label[for="product-lead-company"]', fields.company_label);
   setText('label[for="product-lead-email"]', fields.email_label);
@@ -1333,7 +1401,7 @@ async function submitProductLead(event) {
   status.className = 'form-status visible';
 
   try {
-    const response = await fetch('https://api.web3forms.com/submit', {
+    const response = await fetch(peicState.site.form_service?.endpoint || 'https://api.web3forms.com/submit', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -1451,7 +1519,7 @@ function initContactForm() {
     }
 
     try {
-      const response = await fetch('https://api.web3forms.com/submit', {
+      const response = await fetch(form.action || peicState.site.form_service?.endpoint || 'https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

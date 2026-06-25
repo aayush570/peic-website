@@ -2,7 +2,8 @@
   "page": {
     "hero": {
       "title": "58 years building medical equipment that institutions trust.",
-      "description": "Established in 1968 as a sterilization system manufacturer, PEIC now combines Mumbai-based manufacturing with integration support for global and Indian medical technologies."
+      "description": "Established in 1968 as a sterilization system manufacturer, PEIC now combines Mumbai-based manufacturing with integration support for global and Indian medical technologies.",
+      "image": "/uploads/images/heritage-and-legacy-hero.jpg"
     },
     "legacy": {
       "label": "Our Legacy",

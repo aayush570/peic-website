@@ -1,7 +1,8 @@
 {
   "hero": {
     "title": "Equipment by department. Integrated by specialty.",
-    "description": "Clinical equipment portfolios configured for infection control, workflow, procurement, and service requirements - from CSSD and OT to oncology, imaging, NICU, dental, labs, and research facilities."
+    "description": "Clinical equipment portfolios configured for infection control, workflow, procurement, and service requirements - from CSSD and OT to oncology, imaging, NICU, dental, labs, and research facilities.",
+    "image": "/uploads/images/product-catalog-hero.jpg"
   },
   "specialties_heading": {
     "label": "Specialty Equipment Portfolios",
