@@ -12,7 +12,7 @@
   "trust_banner": [
     "Est. 1968",
     "BIS Certified Since 1976",
-    "ISO 13485 Certified",
+    "ISO Certified",
     "CE & GMP Compliant",
     "MSME & NSIC Registered",
     "Serving India's Leading Healthcare Institutions"
@@ -25,7 +25,7 @@
     "specs": [
       {
         "label": "Proof",
-        "value": "BIS | ISO 13485 | CE | GMP"
+        "value": "BIS | ISO | CE | GMP"
       },
       {
         "label": "Platform",
@@ -51,10 +51,10 @@
         "image": "/uploads/images/cssd-equipment.jpg",
         "link": "products.html#manufacturing",
         "advantages": [
-          "BIS Certified",
-          "15+ Year Lifespan",
+          "BIS, ISO, CE, GMP Certified",
+          "20+ Year Lifespan",
           "OEM Engineering DNA",
-          "Tender Documentation Support"
+          "Lifecycle Service Support"
         ],
         "button_label": "View Manufactured Products"
       },
@@ -71,7 +71,8 @@
         ],
         "button_label": "Explore Partner Technologies"
       }
-    ]
+    ],
+    "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the global medical brands it represents. Fewer vendor handoffs. Clearer service ownership. Equipment decisions backed by engineering judgment."
   },
   "advantage": {
     "label": "Why PEIC",
@@ -85,7 +86,7 @@
   "cta": {
     "label": "Procurement Conversation",
     "title": "Need a credible equipment partner for an active purchase?",
-    "description": "Share the department, city, timeline, and tender context. PEIC will route the enquiry to the right commercial or technical team.",
+    "description": "Share the department, city, timeline, and products required. PEIC will route the enquiry to the right commercial or technical team.",
     "button_label": "Start an Enquiry",
     "button_link": "contact.html?type=equipment"
   }
