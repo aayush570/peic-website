@@ -1,20 +1,21 @@
 {
   "hero": {
     "eyebrow": "Established Indian Manufacturer & Med-Tech Integration Partner",
-    "title": "Medical Equipment Credibility Built Since 1968",
-    "description": "PEIC helps hospital procurement and biomedical teams evaluate sterilization systems, partner technologies, service support, and tender-ready documentation through one accountable institutional partner.",
+    "title": "India's Most Accountable Medical Equipment Partnership",
+    "description": "PEIC manufactures high-pressure sterilization systems at our Mumbai facility and represents 16+ leading global and domestic medical equipment brands across India: AngioDynamics, Steris, Richard Wolf, Samsung, and many more. One technical team. Specification through long-term lifecycle support.",
     "image": "/uploads/images/cssd-equipment-1.jpg",
-    "primary_button_label": "Discuss Procurement Needs",
+    "primary_button_label": "Start a Procurement Conversation",
     "primary_button_link": "contact.html?type=equipment",
-    "secondary_button_label": "Review Credentials",
+    "secondary_button_label": "See Credentials and Track Record",
     "secondary_button_link": "about.html"
   },
   "trust_banner": [
     "Est. 1968",
-    "BIS Certified",
+    "BIS Certified Since 1976",
+    "ISO 13485 Certified",
     "CE & GMP Compliant",
     "MSME & NSIC Registered",
-    "Serving Public, Research & Private Healthcare Institutions"
+    "Serving India's Leading Healthcare Institutions"
   ],
   "hero_panel": {
     "kicker": "PEIC Institutional Proof",
