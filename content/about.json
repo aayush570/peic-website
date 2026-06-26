@@ -127,62 +127,74 @@
     {
       "short_name": "BMC",
       "name": "Brihanmumbai Municipal Corporation",
-      "tagline": "KEM, LTMG, Nair & Cooper"
+      "tagline": "KEM, LTMG, Nair & Cooper",
+      "logo": "/uploads/images/logov1.png"
     },
     {
       "short_name": "BARC",
       "name": "B.A.R.C.",
-      "tagline": "Bhabha Atomic Research Centre"
+      "tagline": "Bhabha Atomic Research Centre",
+      "logo": "/uploads/images/bhabhaatomicresearchcentrelogo.png"
     },
     {
       "short_name": "CCMB",
       "name": "C.C.M.B.",
-      "tagline": "Centre for Cellular & Molecular Biology"
+      "tagline": "Centre for Cellular & Molecular Biology",
+      "logo": "/uploads/images/ccmbemblem.png"
     },
     {
       "short_name": "IGIB",
       "name": "IGIB",
-      "tagline": "Institute of Genomics & Integrative Biology"
+      "tagline": "Institute of Genomics & Integrative Biology",
+      "logo": "/uploads/images/instituteofgenomicsandintegrativebiologysvg.png"
     },
     {
       "short_name": "IMT",
-      "name": "Imtech",
-      "tagline": "Institute of Microbial Technology"
+      "name": "CSIR IMTech",
+      "tagline": "Institute of Microbial Technology",
+      "logo": "/uploads/images/images-11.png"
     },
     {
       "short_name": "IR",
       "name": "Indian Railways",
-      "tagline": "Western, Central, Northern, ECOR & South-Eastern zones"
+      "tagline": "Western, Central, Northern, ECOR & South-Eastern zones",
+      "logo": "/uploads/images/indianrailwaylogo1.png"
     },
     {
       "short_name": "TMH",
       "name": "Tata Memorial Hospital",
-      "tagline": "Parel & ACTREC"
+      "tagline": "Parel & ACTREC",
+      "logo": "/uploads/images/tatamemorialhospitallogosvg.png"
     },
     {
       "short_name": "PT",
       "name": "Port Trust Hospitals",
-      "tagline": "Mumbai & Visakhapatnam"
+      "tagline": "Mumbai & Visakhapatnam",
+      "logo": "/uploads/images/images-3.jpeg"
     },
     {
       "short_name": "SHD",
       "name": "DMER, DHS & ESIC",
-      "tagline": "Maharashtra, Delhi & Goa"
+      "tagline": "Maharashtra, Delhi & Goa",
+      "logo": "/uploads/images/logo-3.png"
     },
     {
       "short_name": "WADIA",
       "name": "Wadia Hospital",
-      "tagline": "Private Hospital"
+      "tagline": "Private Hospital",
+      "logo": "/uploads/images/images-4.jpeg"
     },
     {
       "short_name": "LOTUS",
       "name": "Lotus Eye Hospital",
-      "tagline": "Private Hospital"
+      "tagline": "Private Hospital",
+      "logo": "/uploads/images/qtq-95.webp"
     },
     {
       "short_name": "HSH",
       "name": "Holy Spirit Hospital",
-      "tagline": "Private Hospital"
+      "tagline": "Private Hospital",
+      "logo": "/uploads/images/images-5.jpeg"
     }
   ],
   "certifications": [
