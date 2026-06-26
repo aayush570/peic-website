@@ -285,7 +285,8 @@
         "Delivery Systems"
       ],
       "solutions_url": "solutions.html#dental",
-      "website_url": "https://www.confidentdental.com/"
+      "website_url": "https://www.confidentdental.com/",
+      "logo": "/uploads/images/images-14.png"
     },
     {
       "name": "Neuro Equilibrium Diagnostics",
@@ -299,7 +300,8 @@
         "VR Rehabilitation"
       ],
       "solutions_url": "solutions.html#diagnostic",
-      "website_url": "https://neuroequilibrium.in/"
+      "website_url": "https://neuroequilibrium.in/",
+      "logo": "/uploads/images/logo-big.png"
     },
     {
       "name": "Simtek Medico Systems",
@@ -313,7 +315,8 @@
         "NST Machines"
       ],
       "solutions_url": "solutions.html#maternal",
-      "website_url": "https://simtekmedico.com"
+      "website_url": "https://simtekmedico.com",
+      "logo": "/uploads/images/images-15.png"
     },
     {
       "name": "Bird Meditech",
@@ -327,7 +330,8 @@
         "Neonatal Care"
       ],
       "solutions_url": "solutions.html#maternal",
-      "website_url": "https://www.birdmeditech.com"
+      "website_url": "https://www.birdmeditech.com",
+      "logo": "/uploads/images/2528f482a681aa73e02c0180800786f6.jpg"
     }
   ],
   "cta": {
