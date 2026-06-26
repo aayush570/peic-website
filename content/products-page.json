@@ -204,7 +204,8 @@
         "OT Accessories",
         "Sterile Processing"
       ],
-      "solutions_url": "solutions.html#ot"
+      "solutions_url": "solutions.html#ot",
+      "website_url": "https://medicon.de/en/"
     },
     {
       "name": "BOWA Medical",
@@ -301,7 +302,8 @@
         "Infusion Pumps",
         "NST Machines"
       ],
-      "solutions_url": "solutions.html#maternal"
+      "solutions_url": "solutions.html#maternal",
+      "website_url": "https://simtekmedico.com"
     },
     {
       "name": "Bird Meditech",
@@ -314,7 +316,8 @@
         "Phototherapy",
         "Neonatal Care"
       ],
-      "solutions_url": "solutions.html#maternal"
+      "solutions_url": "solutions.html#maternal",
+      "website_url": "https://www.birdmeditech.com"
     }
   ],
   "cta": {
