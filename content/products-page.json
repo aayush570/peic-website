@@ -101,7 +101,7 @@
       "name": "Bio Medical Waste Sanitizers",
       "certification": "PEIC Manufactured",
       "description": "On-site biomedical waste sanitization systems for healthcare facilities that need controlled treatment workflows before disposal.",
-      "image": "/uploads/images/product-catalog-hero.jpg",
+      "image": "/uploads/images/biomedical-waste-sterilizer-500x500jpg.webp",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -109,7 +109,7 @@
       "name": "Tabletop Sterilization Units",
       "certification": "PEIC Manufactured",
       "description": "Compact bench-top autoclaves for dental clinics, outpatient procedure rooms, and smaller facilities with limited floor space.",
-      "image": "/uploads/images/cssd-equipment.jpg",
+      "image": "/uploads/images/table-top-sterilizer.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -117,7 +117,7 @@
       "name": "CSSD Furniture & Equipment Trolleys",
       "certification": "PEIC Manufactured",
       "description": "Stainless-steel workstations, instrument trolleys, and sterile storage infrastructure configured for CSSD workflow and infection-control zoning.",
-      "image": "/uploads/images/product-catalog-hero.jpg",
+      "image": "/uploads/images/hospital-cssd-furniture.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     }
