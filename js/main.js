@@ -687,6 +687,7 @@ function renderProductDetailPage(page) {
           <span class="section-label">${escapeHTML(detail.eyebrow || product.certification || 'PEIC manufactured')}</span>
           <h1>${escapeHTML(detail.title || product.name)}</h1>
           <p>${escapeHTML(detail.summary || product.description || '')}</p>
+          ${quickFactsHTML(detail.quick_facts)}
           <div class="product-detail-actions">
             <button class="btn btn-primary product-detail-enquire" type="button"
               data-product-action="enquiry_only"
@@ -717,11 +718,13 @@ function renderProductDetailPage(page) {
       </div>
     </section>
 
+    ${productOptionsSectionHTML(detail)}
+
     <section class="product-detail-section product-detail-highlights-section">
       <div class="container">
         <div class="section-header">
-          <span class="section-label">Public product guide</span>
-          <h2 class="section-title">Understand the fit before requesting specifications.</h2>
+          <span class="section-label">${escapeHTML(detail.highlights_label || 'Public product guide')}</span>
+          <h2 class="section-title">${escapeHTML(detail.highlights_title || 'Understand the fit before requesting specifications.')}</h2>
         </div>
         <div class="product-detail-card-grid">
           ${detailCardsHTML(detail.highlights)}
@@ -740,6 +743,8 @@ function renderProductDetailPage(page) {
         </ul>
       </div>
     </section>
+
+    ${buyerQuestionsSectionHTML(detail)}
 
     <section class="home-cta product-detail-cta">
       <div class="container">
@@ -815,6 +820,59 @@ function detailCardsHTML(cards) {
     <h3>${escapeHTML(card.title || '')}</h3>
     <p>${escapeHTML(card.description || '')}</p>
   </article>`).join('');
+}
+
+function quickFactsHTML(facts) {
+  if (!Array.isArray(facts) || !facts.length) return '';
+  return `<dl class="product-quick-facts">
+    ${facts.map((fact) => `<div>
+      <dt>${escapeHTML(fact.label || '')}</dt>
+      <dd>${escapeHTML(fact.value || '')}</dd>
+    </div>`).join('')}
+  </dl>`;
+}
+
+function productOptionsSectionHTML(detail) {
+  const options = Array.isArray(detail.options) ? detail.options : [];
+  if (!options.length) return '';
+  return `<section class="product-detail-section product-options-section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">${escapeHTML(detail.options_label || 'Main options')}</span>
+        <h2 class="section-title">${escapeHTML(detail.options_title || 'Configuration choices buyers usually compare.')}</h2>
+        ${detail.options_intro ? `<p class="section-subtitle">${escapeHTML(detail.options_intro)}</p>` : ''}
+      </div>
+      <div class="product-options-table" role="table" aria-label="${escapeAttribute(detail.options_title || 'Product options')}">
+        <div class="product-options-row product-options-head" role="row">
+          <span role="columnheader">Buyer decision</span>
+          <span role="columnheader">PEIC can discuss</span>
+          <span role="columnheader">Why it matters</span>
+        </div>
+        ${options.map((option) => `<div class="product-options-row" role="row">
+          <span role="cell">${escapeHTML(option.label || '')}</span>
+          <span role="cell">${escapeHTML(option.choices || '')}</span>
+          <span role="cell">${escapeHTML(option.note || '')}</span>
+        </div>`).join('')}
+      </div>
+      ${detail.spec_note ? `<p class="product-spec-note">${escapeHTML(detail.spec_note)}</p>` : ''}
+    </div>
+  </section>`;
+}
+
+function buyerQuestionsSectionHTML(detail) {
+  const questions = Array.isArray(detail.buyer_questions) ? detail.buyer_questions : [];
+  if (!questions.length) return '';
+  return `<section class="product-detail-section product-buyer-section">
+    <div class="container product-buyer-panel">
+      <div>
+        <span class="section-label">${escapeHTML(detail.buyer_questions_label || 'Before PEIC shares specifications')}</span>
+        <h2>${escapeHTML(detail.buyer_questions_title || 'A few details help us recommend the right configuration.')}</h2>
+      </div>
+      <ul class="product-buyer-list">
+        ${detailListHTML(questions)}
+      </ul>
+    </div>
+  </section>`;
 }
 
 function detailListHTML(items) {
@@ -1225,7 +1283,7 @@ function initHeaderState() {
 function initFloatingCTAVisibility() {
   const cta = document.querySelector('.floating-cta');
   if (!cta) return;
-  const suppressOnPage = document.querySelector('.contact-page-main');
+  const suppressOnPage = document.querySelector('.contact-page-main, .product-detail-main');
   const hero = document.querySelector('.hero, .page-hero-sm, .contact-page-heading, .product-detail-hero');
 
   function updateFloatingCTA() {

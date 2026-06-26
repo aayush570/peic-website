@@ -108,7 +108,66 @@
         "cta_title": "Share your CSSD requirement",
         "cta_description": "PEIC will recommend a suitable configuration and share detailed specifications privately after understanding your site and procurement context.",
         "seo_title": "Horizontal Rectangular Steam Sterilizer | PEIC",
-        "seo_description": "PEIC manufactures horizontal rectangular high-pressure steam sterilizers for CSSD and institutional sterilization workflows, with custom configuration support by enquiry."
+        "seo_description": "PEIC manufactures horizontal rectangular high-pressure steam sterilizers for CSSD and institutional sterilization workflows, with custom configuration support by enquiry.",
+        "spec_note": "Exact capacities, chamber dimensions, model codes, utility loads, and operating set points are shared privately after PEIC reviews the intended use, site conditions, and procurement context.",
+        "buyer_questions_label": "For a useful enquiry",
+        "buyer_questions_title": "Send these details and PEIC can respond with a better-fit recommendation.",
+        "quick_facts": [
+          {
+            "label": "Best for",
+            "value": "CSSD and high-load departments"
+          },
+          {
+            "label": "Format",
+            "value": "Rectangular horizontal chamber"
+          },
+          {
+            "label": "Workflow",
+            "value": "Trolley and pass-through planning"
+          },
+          {
+            "label": "Records",
+            "value": "Cycle reporting options"
+          }
+        ],
+        "options_label": "Main options",
+        "options_title": "What hospitals usually compare before selecting a rectangular sterilizer.",
+        "options_intro": "PEIC uses these decisions to recommend the right rectangular sterilizer configuration after understanding the facility workflow.",
+        "options": [
+          {
+            "label": "Door workflow",
+            "choices": "Single-side loading or pass-through department zoning",
+            "note": "Impacts CSSD layout, clean/sterile separation, and operator movement."
+          },
+          {
+            "label": "Control package",
+            "choices": "Automatic operation with manual backup, PC-based monitoring, and programmable cycle support",
+            "note": "Helps the buyer match daily use with audit and operator requirements."
+          },
+          {
+            "label": "Documentation",
+            "choices": "Digital records, printout support, batch context, and cycle traceability options",
+            "note": "Relevant for hospitals, tenders, quality teams, and validation reviews."
+          },
+          {
+            "label": "Load handling",
+            "choices": "Trolleys, shelves, loading accessories, and chamber access planning",
+            "note": "Determines usability for linen, instruments, and mixed CSSD loads."
+          },
+          {
+            "label": "Site planning",
+            "choices": "Utility readiness, room access, drainage, ventilation, and installation pathway",
+            "note": "Avoids delays after purchase and helps PEIC recommend the right build."
+          }
+        ],
+        "buyer_questions": [
+          "Department or CSSD workflow where the unit will be installed",
+          "Single-side loading or pass-through zoning preference",
+          "Typical load type: instruments, linen, dressings, glassware, or mixed loads",
+          "Required documentation: digital record, printed report, tender documents, or validation support",
+          "Available room size, access route, and utility readiness",
+          "Procurement stage: early planning, tender drafting, live tender, or replacement purchase"
+        ]
       }
     },
     {
@@ -162,7 +221,66 @@
         "cta_title": "Request a suitable horizontal autoclave configuration",
         "cta_description": "Tell PEIC the department, load type, site location, and procurement stage, and the team will respond with configuration guidance.",
         "seo_title": "Horizontal Cylindrical Steam Sterilizer | PEIC",
-        "seo_description": "PEIC manufactures horizontal cylindrical high-pressure steam sterilizers for hospitals, laboratories, CSSD support areas, and institutional sterilization rooms."
+        "seo_description": "PEIC manufactures horizontal cylindrical high-pressure steam sterilizers for hospitals, laboratories, CSSD support areas, and institutional sterilization rooms.",
+        "spec_note": "Exact capacities, chamber dimensions, model codes, utility loads, and operating set points are shared privately after PEIC reviews the intended use, site conditions, and procurement context.",
+        "buyer_questions_label": "For a useful enquiry",
+        "buyer_questions_title": "Send these details and PEIC can respond with a better-fit recommendation.",
+        "quick_facts": [
+          {
+            "label": "Best for",
+            "value": "Hospitals and laboratories"
+          },
+          {
+            "label": "Format",
+            "value": "Cylindrical horizontal autoclave"
+          },
+          {
+            "label": "Control",
+            "value": "Automatic and recordable options"
+          },
+          {
+            "label": "Support",
+            "value": "PEIC-built serviceability"
+          }
+        ],
+        "options_label": "Main options",
+        "options_title": "Configuration choices that matter more than public model numbers.",
+        "options_intro": "For cylindrical autoclaves, buyers usually need to understand workflow fit, control level, reporting, and installation readiness before comparing exact models.",
+        "options": [
+          {
+            "label": "Chamber and loading",
+            "choices": "Cylindrical layout with loading accessories selected around the load type",
+            "note": "Supports practical daily handling without forcing a one-size-fits-all model."
+          },
+          {
+            "label": "Automation level",
+            "choices": "Automatic cycle control with manual override provisions for trained operators",
+            "note": "Balances routine operation with service and contingency needs."
+          },
+          {
+            "label": "Vacuum and drying",
+            "choices": "Drying and vacuum arrangements discussed around the load and department workflow",
+            "note": "Important for instruments, dressings, and mixed-load expectations."
+          },
+          {
+            "label": "Records and reports",
+            "choices": "Cycle visibility, printout or data capture, operator context, and batch traceability",
+            "note": "Helps quality and procurement teams evaluate accountability."
+          },
+          {
+            "label": "Installation support",
+            "choices": "Room fit, utility planning, commissioning, spares, and AMC/CMC support",
+            "note": "Affects lifecycle reliability as much as the machine selection itself."
+          }
+        ],
+        "buyer_questions": [
+          "Whether the unit is for hospital, lab, CSSD support, or replacement use",
+          "Expected load mix and frequency of use",
+          "Need for drying, vacuum, cycle graph, printout, or digital records",
+          "Preferred service arrangement after commissioning",
+          "Available space, utilities, drainage, and installation access",
+          "Tender or internal approval timeline"
+        ]
       }
     },
     {
@@ -216,7 +334,66 @@
         "cta_title": "Discuss high-speed sterilization needs",
         "cta_description": "Share your turnaround requirement and PEIC will advise whether this category fits your department workflow.",
         "seo_title": "High-Speed Steam Sterilizer | PEIC",
-        "seo_description": "PEIC manufactures high-speed steam sterilizers for OT support, CSSD fast-turnaround workflows, and instrument reprocessing departments."
+        "seo_description": "PEIC manufactures high-speed steam sterilizers for OT support, CSSD fast-turnaround workflows, and instrument reprocessing departments.",
+        "spec_note": "Exact capacities, chamber dimensions, model codes, utility loads, and operating set points are shared privately after PEIC reviews the intended use, site conditions, and procurement context.",
+        "buyer_questions_label": "For a useful enquiry",
+        "buyer_questions_title": "Send these details and PEIC can respond with a better-fit recommendation.",
+        "quick_facts": [
+          {
+            "label": "Best for",
+            "value": "Faster selected instrument turnaround"
+          },
+          {
+            "label": "Use area",
+            "value": "OT support and CSSD fast lane"
+          },
+          {
+            "label": "Control",
+            "value": "Cycle visibility and records"
+          },
+          {
+            "label": "Fit check",
+            "value": "Application review recommended"
+          }
+        ],
+        "options_label": "Main options",
+        "options_title": "High-speed sterilization should be matched to the instrument workflow.",
+        "options_intro": "The useful starting point is whether the load, turnaround expectation, and documentation process suit a high-speed steam category.",
+        "options": [
+          {
+            "label": "Load eligibility",
+            "choices": "Selected instruments and department-specific loads reviewed before recommendation",
+            "note": "Prevents buying speed where the workflow actually needs capacity, drying, or zoning."
+          },
+          {
+            "label": "Cycle approach",
+            "choices": "Fast-turnaround steam cycle planning with exhaust and drying choices discussed privately",
+            "note": "Helps match speed with process assurance."
+          },
+          {
+            "label": "Control and display",
+            "choices": "Automatic controls, visible process status, and operator-friendly cycle indication",
+            "note": "Useful for busy OT support teams."
+          },
+          {
+            "label": "Traceability",
+            "choices": "Cycle records, printout or data capture, and operator or batch context options",
+            "note": "Supports hospital quality and audit expectations."
+          },
+          {
+            "label": "Placement",
+            "choices": "OT-side support, CSSD fast lane, or procedure department installation planning",
+            "note": "Location affects utilities, operator flow, and service access."
+          }
+        ],
+        "buyer_questions": [
+          "Which department needs faster turnaround and why",
+          "Type of instruments or loads intended for this unit",
+          "Whether it is supporting OT, CSSD, or a procedure room",
+          "Required records, printouts, or audit trail expectations",
+          "Current bottleneck: cycle time, load volume, drying, or instrument availability",
+          "Installation location and service access constraints"
+        ]
       }
     },
     {
@@ -270,7 +447,66 @@
         "cta_title": "Find the right vertical autoclave fit",
         "cta_description": "PEIC can recommend a suitable vertical autoclave after reviewing your use case, room constraints, and procurement timeline.",
         "seo_title": "Fully Automatic Vertical Autoclave | PEIC",
-        "seo_description": "PEIC manufactures fully automatic vertical autoclaves for laboratories, clinics, outpatient facilities, and compact sterile-processing needs."
+        "seo_description": "PEIC manufactures fully automatic vertical autoclaves for laboratories, clinics, outpatient facilities, and compact sterile-processing needs.",
+        "spec_note": "Exact capacities, chamber dimensions, model codes, utility loads, and operating set points are shared privately after PEIC reviews the intended use, site conditions, and procurement context.",
+        "buyer_questions_label": "For a useful enquiry",
+        "buyer_questions_title": "Send these details and PEIC can respond with a better-fit recommendation.",
+        "quick_facts": [
+          {
+            "label": "Best for",
+            "value": "Labs, clinics, compact rooms"
+          },
+          {
+            "label": "Format",
+            "value": "Top-loading vertical autoclave"
+          },
+          {
+            "label": "Operation",
+            "value": "Fully automatic control"
+          },
+          {
+            "label": "Options",
+            "value": "Baskets and accessories"
+          }
+        ],
+        "options_label": "Main options",
+        "options_title": "What to decide before selecting a vertical autoclave.",
+        "options_intro": "PEIC can first help the buyer decide what load type, control package, and accessory set actually fits the site.",
+        "options": [
+          {
+            "label": "Load type",
+            "choices": "Dressings, instruments, glassware, laboratory media, or mixed small loads",
+            "note": "Determines the accessory set and whether this compact format is the right fit."
+          },
+          {
+            "label": "Control package",
+            "choices": "Fully automatic controller with timing, indication, and routine operation support",
+            "note": "Reduces operator guesswork for regular sterilization workflows."
+          },
+          {
+            "label": "Safety and protection",
+            "choices": "Water-level protection, pressure and temperature indication, exhaust behavior, and lid sealing choices",
+            "note": "Relevant for everyday use, operator confidence, and serviceability."
+          },
+          {
+            "label": "Accessories",
+            "choices": "Baskets, drums, trays, and loading support discussed around the intended load",
+            "note": "Often matters more to users than the headline machine category."
+          },
+          {
+            "label": "Room fit",
+            "choices": "Footprint, lid clearance, power availability, drainage, and ventilation reviewed before specification",
+            "note": "Prevents a compact autoclave from becoming awkward after delivery."
+          }
+        ],
+        "buyer_questions": [
+          "Facility type: lab, clinic, dental, outpatient, research, or small sterile room",
+          "Main load type and expected daily usage pattern",
+          "Need for baskets, drums, trays, or special accessories",
+          "Available room footprint and lid-opening clearance",
+          "Power, water, drainage, and ventilation readiness",
+          "Whether the request is for replacement, expansion, or new setup"
+        ]
       }
     },
     {
@@ -324,7 +560,66 @@
         "cta_title": "Discuss utensil sterilization for your department",
         "cta_description": "Share your department workflow and PEIC will respond with a suitable configuration and private specification support.",
         "seo_title": "Bowl & Utensil Sterilizer | PEIC",
-        "seo_description": "PEIC manufactures bowl and utensil sterilizers for OT, ICU, ward, procedure-room, and patient-care support workflows."
+        "seo_description": "PEIC manufactures bowl and utensil sterilizers for OT, ICU, ward, procedure-room, and patient-care support workflows.",
+        "spec_note": "Exact capacities, chamber dimensions, model codes, utility loads, and operating set points are shared privately after PEIC reviews the intended use, site conditions, and procurement context.",
+        "buyer_questions_label": "For a useful enquiry",
+        "buyer_questions_title": "Send these details and PEIC can respond with a better-fit recommendation.",
+        "quick_facts": [
+          {
+            "label": "Best for",
+            "value": "OT, ICU, ward utensils"
+          },
+          {
+            "label": "Format",
+            "value": "Stainless open-top unit"
+          },
+          {
+            "label": "Handling",
+            "value": "Tray and lid workflow"
+          },
+          {
+            "label": "Build",
+            "value": "Custom fittings possible"
+          }
+        ],
+        "options_label": "Main options",
+        "options_title": "Bowl and utensil sterilizers are selected around workflow and cleanability.",
+        "options_intro": "This category is best evaluated around department workflow, cleanability, handling, and maintenance access.",
+        "options": [
+          {
+            "label": "Department workflow",
+            "choices": "OT, ICU, ward, or procedure-area utensil processing",
+            "note": "Clarifies whether this is a dedicated support unit or part of a larger CSSD process."
+          },
+          {
+            "label": "Loading and lifting",
+            "choices": "Tray arrangement, lid handling, operator access, and stand height discussed around use",
+            "note": "Determines day-to-day ergonomics and speed."
+          },
+          {
+            "label": "Construction finish",
+            "choices": "Stainless-steel surfaces, fittings, drainage, and cleanability details reviewed privately",
+            "note": "Important for infection-control and maintenance routines."
+          },
+          {
+            "label": "Electrical safeguards",
+            "choices": "Heating control, low-water protection, indication, and service access options",
+            "note": "Helps the buyer evaluate operational reliability."
+          },
+          {
+            "label": "Placement",
+            "choices": "Room layout, water inlet, outlet, overflow, and cleaning workflow",
+            "note": "Makes the unit easier to integrate into an existing department."
+          }
+        ],
+        "buyer_questions": [
+          "Department where bowls or utensils are currently processed",
+          "Typical items handled and approximate usage frequency",
+          "Preferred loading height, tray handling, and operator workflow",
+          "Water inlet, outlet, drainage, and room layout constraints",
+          "Cleaning, maintenance, and infection-control expectations",
+          "Whether the unit is for a new department or replacement purchase"
+        ]
       }
     },
     {
@@ -378,7 +673,66 @@
         "cta_title": "Request hot and cold water sterilizer guidance",
         "cta_description": "Tell PEIC your department use case and installation context, and the team will respond with a suitable private recommendation.",
         "seo_title": "Hot & Cold Water Pressure Sterilizer | PEIC",
-        "seo_description": "PEIC manufactures fully automatic hot and cold water pressure sterilizers for controlled sterile-water workflows in healthcare facilities."
+        "seo_description": "PEIC manufactures fully automatic hot and cold water pressure sterilizers for controlled sterile-water workflows in healthcare facilities.",
+        "spec_note": "Exact capacities, chamber dimensions, model codes, utility loads, and operating set points are shared privately after PEIC reviews the intended use, site conditions, and procurement context.",
+        "buyer_questions_label": "For a useful enquiry",
+        "buyer_questions_title": "Send these details and PEIC can respond with a better-fit recommendation.",
+        "quick_facts": [
+          {
+            "label": "Best for",
+            "value": "Sterile-water supply workflows"
+          },
+          {
+            "label": "Format",
+            "value": "Hot and cold pressure sections"
+          },
+          {
+            "label": "Control",
+            "value": "Automatic operation options"
+          },
+          {
+            "label": "Planning",
+            "value": "Site-specific recommendation"
+          }
+        ],
+        "options_label": "Main options",
+        "options_title": "Hot and cold water sterilizers need workflow and site planning together.",
+        "options_intro": "Buyers usually need to understand draw-off workflow, control type, safety fittings, and maintenance access before requesting exact capacities.",
+        "options": [
+          {
+            "label": "Water workflow",
+            "choices": "Hot sterile-water and cold sterile-water draw-off patterns discussed by department use",
+            "note": "Helps PEIC recommend the right configuration without over- or under-sizing."
+          },
+          {
+            "label": "Control system",
+            "choices": "Microprocessor or PLC-based automatic operation options",
+            "note": "Allows the buyer to match controls with operator skill and maintenance expectations."
+          },
+          {
+            "label": "Draw-off and platform",
+            "choices": "Faucets, collection platform, splash control, and operator access planned around daily use",
+            "note": "Impacts usability more than a simple capacity label."
+          },
+          {
+            "label": "Safety fittings",
+            "choices": "Gauge, safety valve, air release, drain, filter, and level indication arrangements reviewed privately",
+            "note": "Gives engineers and procurement teams confidence in the category."
+          },
+          {
+            "label": "Maintenance access",
+            "choices": "Cleaning access, sediment removal, drainage, and service clearance planned with the site",
+            "note": "Improves lifecycle reliability and reduces avoidable downtime."
+          }
+        ],
+        "buyer_questions": [
+          "Department and reason for hot and cold sterile-water requirement",
+          "Expected draw-off pattern and number of user points",
+          "Room layout, drainage, water supply, and platform space",
+          "Preference for microprocessor or PLC-style operation",
+          "Maintenance access and cleaning expectations",
+          "Procurement stage and any tender documentation required"
+        ]
       }
     }
   ],
