@@ -225,7 +225,8 @@
         "Vessel Sealing"
       ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.bowa-medical.com/"
+      "website_url": "https://www.bowa-medical.com/",
+      "logo": "/uploads/images/logo.webp"
     },
     {
       "name": "ATMOS MedizinTechnik",
@@ -239,7 +240,8 @@
         "ENT Systems"
       ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.atmos.de/"
+      "website_url": "https://www.atmos.de/",
+      "logo": "/uploads/images/images-13.png"
     },
     {
       "name": "INTRASENSE",
@@ -253,7 +255,8 @@
         "Cardiovascular AI"
       ],
       "solutions_url": "solutions.html#oncology",
-      "website_url": "https://www.intrasense.fr/"
+      "website_url": "https://www.intrasense.fr/",
+      "logo": "/uploads/images/63727fa72a3b3fdc58dcdd57logo-intrasense-545x377.png"
     },
     {
       "name": "Designs for Vision",
@@ -267,7 +270,8 @@
         "Autofluorescence"
       ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.designsforvision.com/"
+      "website_url": "https://www.designsforvision.com/",
+      "logo": "/uploads/images/logo-dvi.png"
     },
     {
       "name": "Confident Dental Equipment",
