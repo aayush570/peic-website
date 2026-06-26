@@ -61,8 +61,7 @@
       "name": "Horizontal Cylindrical / Rectangular High-Pressure Steam Sterilizers",
       "certification": "BIS IS 3829 Part 1 - Certified since 1976",
       "description": "High-capacity autoclaves for CSSD departments, engineered for continuous sterilization loads with controlled temperature and pressure performance. Available in horizontal cylindrical and rectangular configurations.",
-      "image": "uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -70,8 +69,7 @@
       "name": "High-Speed 'Flash' Steam Sterilizers",
       "certification": "BIS IS 3829 Part 2 - Certified since 1982",
       "description": "Rapid-cycle sterilizers for OT instrument turnaround between procedures, designed to reduce inter-procedure delays while supporting sterilization assurance.",
-      "image": "uploads/images/cssd-equipment.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/cleanshot-2026-06-26-at-1213102x.png",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -79,8 +77,7 @@
       "name": "Vertical Autoclaves",
       "certification": "PEIC Manufactured",
       "description": "Space-efficient vertical sterilizers for laboratories, clinics, and smaller CSSD units where dependable sterilization is needed within a compact footprint.",
-      "image": "uploads/images/product-catalog-hero.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/vertical.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -88,8 +85,7 @@
       "name": "Bedpan / Bowl & Utensil Sterilizers",
       "certification": "PEIC Manufactured",
       "description": "Dedicated systems for patient-care utensils in ward and ICU environments, supporting infection-control workflows outside the main CSSD.",
-      "image": "uploads/images/cssd-equipment.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/bed-and-bowl-utensil.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -97,8 +93,7 @@
       "name": "Hot & Cold-Water Pressure Sterilizers",
       "certification": "PEIC Manufactured",
       "description": "Pressure sterilization systems using hot and cold-water cycles for specialized medical, laboratory, and pharma-adjacent requirements.",
-      "image": "uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/hot-and-cold-water.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -106,8 +101,7 @@
       "name": "Bio Medical Waste Sanitizers",
       "certification": "PEIC Manufactured",
       "description": "On-site biomedical waste sanitization systems for healthcare facilities that need controlled treatment workflows before disposal.",
-      "image": "uploads/images/product-catalog-hero.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/product-catalog-hero.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -115,8 +109,7 @@
       "name": "Tabletop Sterilization Units",
       "certification": "PEIC Manufactured",
       "description": "Compact bench-top autoclaves for dental clinics, outpatient procedure rooms, and smaller facilities with limited floor space.",
-      "image": "uploads/images/cssd-equipment.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/cssd-equipment.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     },
@@ -124,8 +117,7 @@
       "name": "CSSD Furniture & Equipment Trolleys",
       "certification": "PEIC Manufactured",
       "description": "Stainless-steel workstations, instrument trolleys, and sterile storage infrastructure configured for CSSD workflow and infection-control zoning.",
-      "image": "uploads/images/product-catalog-hero.jpg",
-      "specification_file": "",
+      "image": "/uploads/images/product-catalog-hero.jpg",
       "access_mode": "enquiry_only",
       "action_label": "Request Specifications"
     }
@@ -137,10 +129,13 @@
       "country": "USA",
       "flag": "🇺🇸",
       "description": "Ablation and interventional oncology systems for locoregional cancer treatment, including RFA, microwave ablation, and NanoKnife IRE.",
-      "categories": ["RFA Systems", "Microwave Ablation", "NanoKnife IRE"],
+      "categories": [
+        "RFA Systems",
+        "Microwave Ablation",
+        "NanoKnife IRE"
+      ],
       "solutions_url": "solutions.html#oncology",
-      "website_url": "https://www.angiodynamics.com/",
-      "logo": ""
+      "website_url": "https://www.angiodynamics.com/"
     },
     {
       "name": "Steris Corporation",
@@ -148,10 +143,13 @@
       "country": "USA",
       "flag": "🇺🇸",
       "description": "Operating theatre and sterile processing technologies for surgical and CSSD infrastructure planning.",
-      "categories": ["OT Lighting", "Surgical Tables", "CSSD Systems"],
+      "categories": [
+        "OT Lighting",
+        "Surgical Tables",
+        "CSSD Systems"
+      ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.steris.com/",
-      "logo": ""
+      "website_url": "https://www.steris.com/"
     },
     {
       "name": "Dentsply Sirona",
@@ -159,10 +157,13 @@
       "country": "Germany",
       "flag": "🇩🇪",
       "description": "Dental operatory systems and cone-beam CT imaging for clinical dental infrastructure.",
-      "categories": ["Dental Suites", "CBCT Imaging", "Operatory Chairs"],
+      "categories": [
+        "Dental Suites",
+        "CBCT Imaging",
+        "Operatory Chairs"
+      ],
       "solutions_url": "solutions.html#dental",
-      "website_url": "https://www.dentsplysirona.com/",
-      "logo": ""
+      "website_url": "https://www.dentsplysirona.com/"
     },
     {
       "name": "Samsung Electronics",
@@ -170,10 +171,13 @@
       "country": "South Korea",
       "flag": "🇰🇷",
       "description": "Diagnostic imaging and portable radiography technologies for hospital and imaging-center requirements.",
-      "categories": ["Portable DR", "Endoscopic US", "Diagnostic Imaging"],
+      "categories": [
+        "Portable DR",
+        "Endoscopic US",
+        "Diagnostic Imaging"
+      ],
       "solutions_url": "solutions.html#diagnostic",
-      "website_url": "https://www.samsunghealthcare.com/",
-      "logo": ""
+      "website_url": "https://www.samsunghealthcare.com/"
     },
     {
       "name": "Richard Wolf GmbH",
@@ -181,10 +185,13 @@
       "country": "Germany",
       "flag": "🇩🇪",
       "description": "Rigid and flexible endoscopic systems for surgical and diagnostic departments.",
-      "categories": ["Rigid Endoscopes", "Flexible Scopes", "Video Systems"],
+      "categories": [
+        "Rigid Endoscopes",
+        "Flexible Scopes",
+        "Video Systems"
+      ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.richard-wolf.com/",
-      "logo": ""
+      "website_url": "https://www.richard-wolf.com/"
     },
     {
       "name": "Medicon Germany",
@@ -192,10 +199,12 @@
       "country": "Germany",
       "flag": "🇩🇪",
       "description": "German surgical instruments and OT accessories for procedure rooms and sterile services.",
-      "categories": ["Surgical Instruments", "OT Accessories", "Sterile Processing"],
-      "solutions_url": "solutions.html#ot",
-      "website_url": "",
-      "logo": ""
+      "categories": [
+        "Surgical Instruments",
+        "OT Accessories",
+        "Sterile Processing"
+      ],
+      "solutions_url": "solutions.html#ot"
     },
     {
       "name": "BOWA Medical",
@@ -203,10 +212,13 @@
       "country": "Germany",
       "flag": "🇩🇪",
       "description": "Electrosurgical generators and energy platforms for operating theatre applications.",
-      "categories": ["Electrosurgical Units", "Argon Plasma", "Vessel Sealing"],
+      "categories": [
+        "Electrosurgical Units",
+        "Argon Plasma",
+        "Vessel Sealing"
+      ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.bowa-medical.com/",
-      "logo": ""
+      "website_url": "https://www.bowa-medical.com/"
     },
     {
       "name": "ATMOS MedizinTechnik",
@@ -214,10 +226,13 @@
       "country": "Germany",
       "flag": "🇩🇪",
       "description": "Surgical suction, smoke evacuation, and ENT-focused suction solutions for procedure environments.",
-      "categories": ["Surgical Suction", "Smoke Evacuation", "ENT Systems"],
+      "categories": [
+        "Surgical Suction",
+        "Smoke Evacuation",
+        "ENT Systems"
+      ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.atmos.de/",
-      "logo": ""
+      "website_url": "https://www.atmos.de/"
     },
     {
       "name": "INTRASENSE",
@@ -225,10 +240,13 @@
       "country": "France",
       "flag": "🇫🇷",
       "description": "MYRIAN medical imaging software for radiology, oncology, and advanced post-processing workflows.",
-      "categories": ["AI Imaging", "Prostate Analysis", "Cardiovascular AI"],
+      "categories": [
+        "AI Imaging",
+        "Prostate Analysis",
+        "Cardiovascular AI"
+      ],
       "solutions_url": "solutions.html#oncology",
-      "website_url": "https://www.intrasense.fr/",
-      "logo": ""
+      "website_url": "https://www.intrasense.fr/"
     },
     {
       "name": "Designs for Vision",
@@ -236,10 +254,13 @@
       "country": "USA",
       "flag": "🇺🇸",
       "description": "Surgical illumination and autofluorescence wound-imaging systems for surgical and wound-care settings.",
-      "categories": ["LED Headlights", "Wound Imaging", "Autofluorescence"],
+      "categories": [
+        "LED Headlights",
+        "Wound Imaging",
+        "Autofluorescence"
+      ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.designsforvision.com/",
-      "logo": ""
+      "website_url": "https://www.designsforvision.com/"
     },
     {
       "name": "Confident Dental Equipment",
@@ -247,10 +268,13 @@
       "country": "India",
       "flag": "🇮🇳",
       "description": "Dental chairs, delivery systems, and operatory suites from an established Indian dental equipment manufacturer.",
-      "categories": ["Operatory Suites", "Dental Chairs", "Delivery Systems"],
+      "categories": [
+        "Operatory Suites",
+        "Dental Chairs",
+        "Delivery Systems"
+      ],
       "solutions_url": "solutions.html#dental",
-      "website_url": "https://www.confidentdental.com/",
-      "logo": ""
+      "website_url": "https://www.confidentdental.com/"
     },
     {
       "name": "Neuro Equilibrium Diagnostics",
@@ -258,10 +282,13 @@
       "country": "India",
       "flag": "🇮🇳",
       "description": "Vestibular diagnostic and rehabilitation technology for ENT and neurology departments.",
-      "categories": ["VNG Systems", "vHIT Testing", "VR Rehabilitation"],
+      "categories": [
+        "VNG Systems",
+        "vHIT Testing",
+        "VR Rehabilitation"
+      ],
       "solutions_url": "solutions.html#diagnostic",
-      "website_url": "https://neuroequilibrium.in/",
-      "logo": ""
+      "website_url": "https://neuroequilibrium.in/"
     },
     {
       "name": "Simtek Medico Systems",
@@ -269,10 +296,12 @@
       "country": "India",
       "flag": "🇮🇳",
       "description": "Infusion management and NST systems for labour ward, neonatal, and monitoring environments.",
-      "categories": ["Syringe Pumps", "Infusion Pumps", "NST Machines"],
-      "solutions_url": "solutions.html#maternal",
-      "website_url": "",
-      "logo": ""
+      "categories": [
+        "Syringe Pumps",
+        "Infusion Pumps",
+        "NST Machines"
+      ],
+      "solutions_url": "solutions.html#maternal"
     },
     {
       "name": "Bird Meditech",
@@ -280,10 +309,12 @@
       "country": "India",
       "flag": "🇮🇳",
       "description": "Neonatal care equipment including radiant warmers and LED phototherapy systems.",
-      "categories": ["Radiant Warmers", "Phototherapy", "Neonatal Care"],
-      "solutions_url": "solutions.html#maternal",
-      "website_url": "",
-      "logo": ""
+      "categories": [
+        "Radiant Warmers",
+        "Phototherapy",
+        "Neonatal Care"
+      ],
+      "solutions_url": "solutions.html#maternal"
     }
   ],
   "cta": {
