@@ -135,7 +135,8 @@
         "NanoKnife IRE"
       ],
       "solutions_url": "solutions.html#oncology",
-      "website_url": "https://www.angiodynamics.com/"
+      "website_url": "https://www.angiodynamics.com/",
+      "logo": "/uploads/images/ango-619ac5c6.png"
     },
     {
       "name": "Steris Corporation",
@@ -164,7 +165,8 @@
         "Operatory Chairs"
       ],
       "solutions_url": "solutions.html#dental",
-      "website_url": "https://www.dentsplysirona.com/"
+      "website_url": "https://www.dentsplysirona.com/",
+      "logo": "/uploads/images/images-12.png"
     },
     {
       "name": "Samsung Electronics",
@@ -178,7 +180,8 @@
         "Diagnostic Imaging"
       ],
       "solutions_url": "solutions.html#diagnostic",
-      "website_url": "https://www.samsunghealthcare.com/"
+      "website_url": "https://www.samsunghealthcare.com/",
+      "logo": "/uploads/images/samsungoldlogobeforeyear2015.svg"
     },
     {
       "name": "Richard Wolf GmbH",
@@ -192,7 +195,8 @@
         "Video Systems"
       ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://www.richard-wolf.com/"
+      "website_url": "https://www.richard-wolf.com/",
+      "logo": "/uploads/images/images-6.jpeg"
     },
     {
       "name": "Medicon Germany",
@@ -206,7 +210,8 @@
         "Sterile Processing"
       ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://medicon.de/en/"
+      "website_url": "https://medicon.de/en/",
+      "logo": "/uploads/images/05-medicon-1.png"
     },
     {
       "name": "BOWA Medical",
