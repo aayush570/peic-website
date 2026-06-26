@@ -1,5 +1,13 @@
 {
   "cleanUrls": false,
+  "rewrites": [
+    { "source": "/horizontal-rectangular-sterilizer", "destination": "/horizontal-rectangular-sterilizer.html" },
+    { "source": "/horizontal-cylindrical-sterilizer", "destination": "/horizontal-cylindrical-sterilizer.html" },
+    { "source": "/high-speed-steam-sterilizer", "destination": "/high-speed-steam-sterilizer.html" },
+    { "source": "/vertical-autoclave", "destination": "/vertical-autoclave.html" },
+    { "source": "/bowl-utensil-sterilizer", "destination": "/bowl-utensil-sterilizer.html" },
+    { "source": "/hot-cold-water-pressure-sterilizer", "destination": "/hot-cold-water-pressure-sterilizer.html" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
