@@ -58,68 +58,328 @@
   },
   "manufactured_products": [
     {
-      "name": "Horizontal Cylindrical / Rectangular High-Pressure Steam Sterilizers",
-      "certification": "BIS IS 3829 Part 1 - Certified since 1976",
-      "description": "High-capacity autoclaves for CSSD departments, engineered for continuous sterilization loads with controlled temperature and pressure performance. Available in horizontal cylindrical and rectangular configurations.",
+      "name": "Horizontal Rectangular High-Pressure Steam Sterilizer",
+      "slug": "horizontal-rectangular-sterilizer",
+      "certification": "BIS IS 3829 Part 1 - PEIC manufactured",
+      "description": "A CSSD-focused rectangular steam sterilizer for institutions that need repeatable cycles, load documentation, and enquiry-based configuration support.",
+      "image": "/uploads/images/cssd-equipment.jpg",
+      "detail_url": "horizontal-rectangular-sterilizer.html",
+      "detail_label": "See details",
+      "enquiry_label": "Submit enquiry",
+      "access_mode": "enquiry_only",
+      "action_label": "Submit enquiry",
+      "detail": {
+        "eyebrow": "High-pressure steam sterilization",
+        "title": "Horizontal rectangular sterilizers for CSSD-scale workflows.",
+        "summary": "Built for hospital sterile-processing departments where load handling, validated process control, and service ownership matter. PEIC can discuss chamber format, door workflow, documentation, and utility planning directly with your team.",
+        "brief_title": "What this product is suited for",
+        "brief": "A rectangular horizontal format is useful when a facility needs broad chamber access, trolley-based loading, and predictable steam sterilization for institutional use. PEIC can share the detailed configuration after understanding the requirement.",
+        "highlights": [
+          {
+            "title": "CSSD-ready workflow",
+            "description": "Designed around department-level loading, sterilization, exhaust, and drying workflows."
+          },
+          {
+            "title": "PC-based control options",
+            "description": "Monitoring, programming, recording, and reporting can be aligned to the facility's documentation needs."
+          },
+          {
+            "title": "Automatic with manual backup",
+            "description": "Routine process automation can be supported with manual override provisions for trained operators."
+          },
+          {
+            "title": "Custom build discussion",
+            "description": "Materials, accessories, records, and site requirements can be reviewed before specifications are issued."
+          }
+        ],
+        "applications": [
+          "Central sterile supply departments",
+          "Hospital sterilization rooms",
+          "Teaching and research institutions",
+          "Large instrument and linen workflows"
+        ],
+        "customization_title": "Configuration can be discussed around",
+        "customization": [
+          "Loading pattern and chamber format",
+          "Automation, recording, and printout needs",
+          "Site utilities and installation constraints",
+          "Accessories, trolleys, and validation documentation"
+        ],
+        "cta_title": "Share your CSSD requirement",
+        "cta_description": "PEIC will recommend a suitable configuration and share detailed specifications privately after understanding your site and procurement context.",
+        "seo_title": "Horizontal Rectangular Steam Sterilizer | PEIC",
+        "seo_description": "PEIC manufactures horizontal rectangular high-pressure steam sterilizers for CSSD and institutional sterilization workflows, with custom configuration support by enquiry."
+      }
+    },
+    {
+      "name": "Horizontal Cylindrical High-Pressure Steam Sterilizer",
+      "slug": "horizontal-cylindrical-sterilizer",
+      "certification": "BIS IS 3829 Part 1 - PEIC manufactured",
+      "description": "A cylindrical horizontal autoclave for hospitals and laboratories that need dependable pressure-steam sterilization with automated cycle control and domestic service support.",
       "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
+      "detail_url": "horizontal-cylindrical-sterilizer.html",
+      "detail_label": "See details",
+      "enquiry_label": "Submit enquiry",
       "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "eyebrow": "Horizontal cylindrical autoclave",
+        "title": "Cylindrical high-pressure sterilizers for dependable institutional use.",
+        "summary": "A robust horizontal sterilizer format for facilities that want PEIC-built equipment, direct engineering accountability, controlled steam cycles, and detailed configuration guidance after enquiry.",
+        "brief_title": "What this product is suited for",
+        "brief": "The cylindrical layout is a familiar autoclave format for hospitals, laboratories, and specialist departments. PEIC can configure controls, documentation, and accessories around how the equipment will actually be used.",
+        "highlights": [
+          {
+            "title": "Pressure-steam process control",
+            "description": "Supports repeatable sterilization, exhaust, and drying workflows for institutional loads."
+          },
+          {
+            "title": "Automation and cycle records",
+            "description": "PC-based monitoring and reporting options can support audit and process documentation."
+          },
+          {
+            "title": "Serviceable local build",
+            "description": "PEIC keeps manufacturing, spares, and service coordination close to the installation."
+          },
+          {
+            "title": "Procurement-ready support",
+            "description": "Detailed specifications are shared after the application, site, and tender context are reviewed."
+          }
+        ],
+        "applications": [
+          "Hospitals and nursing homes",
+          "Laboratories and research units",
+          "CSSD support areas",
+          "Institutional sterilization rooms"
+        ],
+        "customization_title": "Configuration can be discussed around",
+        "customization": [
+          "Control and reporting preferences",
+          "Load type and accessory requirements",
+          "Installation space and utility planning",
+          "Documentation required for procurement"
+        ],
+        "cta_title": "Request a suitable horizontal autoclave configuration",
+        "cta_description": "Tell PEIC the department, load type, site location, and procurement stage, and the team will respond with configuration guidance.",
+        "seo_title": "Horizontal Cylindrical Steam Sterilizer | PEIC",
+        "seo_description": "PEIC manufactures horizontal cylindrical high-pressure steam sterilizers for hospitals, laboratories, CSSD support areas, and institutional sterilization rooms."
+      }
     },
     {
-      "name": "High-Speed 'Flash' Steam Sterilizers",
-      "certification": "BIS IS 3829 Part 2 - Certified since 1982",
-      "description": "Rapid-cycle sterilizers for OT instrument turnaround between procedures, designed to reduce inter-procedure delays while supporting sterilization assurance.",
-      "image": "/uploads/images/cleanshot-2026-06-26-at-1213102x.png",
+      "name": "Horizontal High-Speed Steam Sterilizer",
+      "slug": "high-speed-steam-sterilizer",
+      "certification": "BIS IS 3829 Part 2 - PEIC manufactured",
+      "description": "A high-speed steam sterilizer for OT and sterile-processing teams that need faster instrument turnaround with controlled automation, cycle visibility, and service accountability.",
+      "image": "/uploads/images/high-speed-steam-sterilizer.png",
+      "detail_url": "high-speed-steam-sterilizer.html",
+      "detail_label": "See details",
+      "enquiry_label": "Submit enquiry",
       "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "eyebrow": "High-speed steam sterilization",
+        "title": "High-speed sterilizers for faster instrument turnaround.",
+        "summary": "Designed for departments where sterilization speed and process assurance both matter. PEIC can help evaluate whether a high-speed unit is appropriate for the instrument mix, operating rhythm, and documentation expectations.",
+        "brief_title": "What this product is suited for",
+        "brief": "High-speed steam sterilizers support faster turnaround workflows for selected instruments and clinical departments. PEIC first confirms the intended use, then shares cycle and configuration guidance.",
+        "highlights": [
+          {
+            "title": "Turnaround-focused design",
+            "description": "Built for workflows where selected loads need a faster sterilization path."
+          },
+          {
+            "title": "Controlled exhaust and drying",
+            "description": "Cycle phases can be configured to support the load type and department requirement."
+          },
+          {
+            "title": "PC-based visibility",
+            "description": "Live process display, records, and reporting options can be provided for traceability."
+          },
+          {
+            "title": "Application-led recommendation",
+            "description": "PEIC reviews the intended use before sharing detailed specifications."
+          }
+        ],
+        "applications": [
+          "Operating theatre support",
+          "CSSD fast-turnaround workflows",
+          "Procedure departments",
+          "Instrument reprocessing areas"
+        ],
+        "customization_title": "Configuration can be discussed around",
+        "customization": [
+          "Instrument mix and load workflow",
+          "Cycle records and operator controls",
+          "Drying and exhaust preferences",
+          "Site readiness and service plan"
+        ],
+        "cta_title": "Discuss high-speed sterilization needs",
+        "cta_description": "Share your turnaround requirement and PEIC will advise whether this category fits your department workflow.",
+        "seo_title": "High-Speed Steam Sterilizer | PEIC",
+        "seo_description": "PEIC manufactures high-speed steam sterilizers for OT support, CSSD fast-turnaround workflows, and instrument reprocessing departments."
+      }
     },
     {
-      "name": "Vertical Autoclaves",
-      "certification": "PEIC Manufactured",
-      "description": "Space-efficient vertical sterilizers for laboratories, clinics, and smaller CSSD units where dependable sterilization is needed within a compact footprint.",
+      "name": "Fully Automatic Vertical Autoclave",
+      "slug": "vertical-autoclave",
+      "certification": "PEIC manufactured",
+      "description": "A compact vertical autoclave for labs, clinics, and smaller departments that need automated sterilization controls in a space-conscious footprint.",
       "image": "/uploads/images/vertical.jpg",
+      "detail_url": "vertical-autoclave.html",
+      "detail_label": "See details",
+      "enquiry_label": "Submit enquiry",
       "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "eyebrow": "Automatic vertical autoclave",
+        "title": "Vertical autoclaves for compact, dependable sterilization.",
+        "summary": "A space-efficient PEIC autoclave category for facilities that need automatic control, straightforward operation, and reliable service support without a full CSSD-scale footprint.",
+        "brief_title": "What this product is suited for",
+        "brief": "Vertical autoclaves are useful for laboratories, clinics, and smaller sterile-processing areas. PEIC can discuss model selection, accessories, and installation needs after understanding the site.",
+        "highlights": [
+          {
+            "title": "Compact installation",
+            "description": "A vertical footprint helps fit sterilization capability into smaller rooms and support areas."
+          },
+          {
+            "title": "Automatic controller",
+            "description": "Programmable control options can support routine operation, timing, and process indication."
+          },
+          {
+            "title": "Operator-focused fittings",
+            "description": "Pressure, temperature, water-level, and safety features can be configured for practical daily use."
+          },
+          {
+            "title": "Accessory options",
+            "description": "Baskets and load-handling accessories can be discussed as part of the enquiry."
+          }
+        ],
+        "applications": [
+          "Clinical laboratories",
+          "Dental and outpatient facilities",
+          "Research and education labs",
+          "Small sterile-processing rooms"
+        ],
+        "customization_title": "Configuration can be discussed around",
+        "customization": [
+          "Load type and basket requirement",
+          "Control and indication preferences",
+          "Room footprint and utility availability",
+          "Procurement documentation"
+        ],
+        "cta_title": "Find the right vertical autoclave fit",
+        "cta_description": "PEIC can recommend a suitable vertical autoclave after reviewing your use case, room constraints, and procurement timeline.",
+        "seo_title": "Fully Automatic Vertical Autoclave | PEIC",
+        "seo_description": "PEIC manufactures fully automatic vertical autoclaves for laboratories, clinics, outpatient facilities, and compact sterile-processing needs."
+      }
     },
     {
-      "name": "Bedpan / Bowl & Utensil Sterilizers",
-      "certification": "PEIC Manufactured",
-      "description": "Dedicated systems for patient-care utensils in ward and ICU environments, supporting infection-control workflows outside the main CSSD.",
+      "name": "Bowl & Utensil Sterilizer",
+      "slug": "bowl-utensil-sterilizer",
+      "certification": "PEIC manufactured",
+      "description": "A stainless-steel sterilizer for OT, ward, and patient-care utensil workflows where infection-control support is needed outside the main CSSD.",
       "image": "/uploads/images/bed-and-bowl-utensil.jpg",
+      "detail_url": "bowl-utensil-sterilizer.html",
+      "detail_label": "See details",
+      "enquiry_label": "Submit enquiry",
       "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "eyebrow": "OT and patient-care support",
+        "title": "Bowl and utensil sterilizers for practical infection-control workflows.",
+        "summary": "A dedicated PEIC-built unit for departments that need to process bowls, utensils, trays, and similar patient-care items with simple operation and stainless-steel cleanability.",
+        "brief_title": "What this product is suited for",
+        "brief": "This category supports ward, ICU, OT, and procedure-area workflows where utensils need a dedicated sterilization process. PEIC can configure the unit and accessories around the way the department handles daily loads.",
+        "highlights": [
+          {
+            "title": "Dedicated utensil workflow",
+            "description": "Keeps patient-care item processing separate from larger CSSD equipment when appropriate."
+          },
+          {
+            "title": "Stainless-steel cleanability",
+            "description": "Built around durable surfaces and fittings suited to healthcare cleaning routines."
+          },
+          {
+            "title": "Operator-friendly handling",
+            "description": "Tray and lid arrangements can support practical loading and unloading."
+          },
+          {
+            "title": "Custom build available",
+            "description": "Construction, fittings, and accessories can be discussed against department needs."
+          }
+        ],
+        "applications": [
+          "Operation theatres",
+          "ICU and ward support",
+          "Procedure rooms",
+          "Patient-care utensil processing"
+        ],
+        "customization_title": "Configuration can be discussed around",
+        "customization": [
+          "Utensil mix and loading workflow",
+          "Tray and stand preferences",
+          "Electrical and room constraints",
+          "Cleaning and maintenance expectations"
+        ],
+        "cta_title": "Discuss utensil sterilization for your department",
+        "cta_description": "Share your department workflow and PEIC will respond with a suitable configuration and private specification support.",
+        "seo_title": "Bowl & Utensil Sterilizer | PEIC",
+        "seo_description": "PEIC manufactures bowl and utensil sterilizers for OT, ICU, ward, procedure-room, and patient-care support workflows."
+      }
     },
     {
-      "name": "Hot & Cold-Water Pressure Sterilizers",
-      "certification": "PEIC Manufactured",
-      "description": "Pressure sterilization systems using hot and cold-water cycles for specialized medical, laboratory, and pharma-adjacent requirements.",
+      "name": "Fully Automatic Hot & Cold Water Pressure Sterilizer",
+      "slug": "hot-cold-water-pressure-sterilizer",
+      "certification": "PEIC manufactured",
+      "description": "A fully automatic hot and cold water pressure sterilizer for departments that need controlled sterile-water handling, safety fittings, and serviceable stainless construction.",
       "image": "/uploads/images/hot-and-cold-water.jpg",
+      "detail_url": "hot-cold-water-pressure-sterilizer.html",
+      "detail_label": "See details",
+      "enquiry_label": "Submit enquiry",
       "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
-    },
-    {
-      "name": "Bio Medical Waste Sanitizers",
-      "certification": "PEIC Manufactured",
-      "description": "On-site biomedical waste sanitization systems for healthcare facilities that need controlled treatment workflows before disposal.",
-      "image": "/uploads/images/biomedical-waste-sterilizer-500x500jpg.webp",
-      "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
-    },
-    {
-      "name": "Tabletop Sterilization Units",
-      "certification": "PEIC Manufactured",
-      "description": "Compact bench-top autoclaves for dental clinics, outpatient procedure rooms, and smaller facilities with limited floor space.",
-      "image": "/uploads/images/table-top-sterilizer.jpg",
-      "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
-    },
-    {
-      "name": "CSSD Furniture & Equipment Trolleys",
-      "certification": "PEIC Manufactured",
-      "description": "Stainless-steel workstations, instrument trolleys, and sterile storage infrastructure configured for CSSD workflow and infection-control zoning.",
-      "image": "/uploads/images/hospital-cssd-furniture.jpg",
-      "access_mode": "enquiry_only",
-      "action_label": "Request Specifications"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "eyebrow": "Hot and cold sterile-water workflow",
+        "title": "Hot and cold water pressure sterilizers for controlled sterile-water supply.",
+        "summary": "A PEIC-built twin-shell category for facilities that need hot and cold sterile-water availability with automatic operation, safety fittings, and maintenance access considered from the start.",
+        "brief_title": "What this product is suited for",
+        "brief": "Hot and cold water pressure sterilizers support departments that need controlled sterile-water draw-off and reliable pressure-vessel operation. PEIC shares full technical details after reviewing the site and intended use.",
+        "highlights": [
+          {
+            "title": "Twin hot and cold workflow",
+            "description": "Designed around controlled sterile-water availability from dedicated hot and cold sections."
+          },
+          {
+            "title": "Automatic operation options",
+            "description": "Microprocessor or PLC-based control can be discussed for the operating workflow."
+          },
+          {
+            "title": "Serviceable construction",
+            "description": "Maintenance access, drain points, filters, gauges, and fittings can be planned around use."
+          },
+          {
+            "title": "Site-specific recommendation",
+            "description": "Capacity and utility details are handled privately after enquiry."
+          }
+        ],
+        "applications": [
+          "Operation theatre support areas",
+          "Sterile-water handling workflows",
+          "Hospital service departments",
+          "Specialized clinical utility rooms"
+        ],
+        "customization_title": "Configuration can be discussed around",
+        "customization": [
+          "Hot and cold water use pattern",
+          "Control panel and safety fittings",
+          "Collection platform and room layout",
+          "Maintenance access and utility planning"
+        ],
+        "cta_title": "Request hot and cold water sterilizer guidance",
+        "cta_description": "Tell PEIC your department use case and installation context, and the team will respond with a suitable private recommendation.",
+        "seo_title": "Hot & Cold Water Pressure Sterilizer | PEIC",
+        "seo_description": "PEIC manufactures fully automatic hot and cold water pressure sterilizers for controlled sterile-water workflows in healthcare facilities."
+      }
     }
   ],
   "partner_companies": [

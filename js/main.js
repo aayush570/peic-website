@@ -36,7 +36,9 @@ async function initCMSContent() {
       privacy: 'privacy-page',
       '404': 'not-found-page'
     };
+    const isProductDetailPage = page.classList.contains('product-detail-page');
     if (pageFiles[route]) requests.push(fetchCMSData(pageFiles[route]));
+    if (isProductDetailPage) requests.push(fetchCMSData('products-page'));
 
     if (route !== 'about' && page.querySelector('.logo-grid')) {
       requests.push(fetchCMSData('about'));
@@ -47,9 +49,13 @@ async function initCMSContent() {
 
     if (data.site) {
       peicState.site = data.site;
-      renderSiteContent(data.site, route);
+      renderSiteContent(data.site, isProductDetailPage ? 'products' : route);
     }
-    renderCurrentPage(route, data[pageFiles[route]]);
+    if (isProductDetailPage) {
+      renderProductDetailPage(data['products-page']);
+    } else {
+      renderCurrentPage(route, data[pageFiles[route]]);
+    }
     if (data.about) renderTrustContent(data.about);
   } catch (error) {
     console.warn('CMS content could not be loaded; using built-in page content.', error);
@@ -630,27 +636,190 @@ function renderProducts(products) {
   if (!grid || !Array.isArray(products)) return;
 
   grid.innerHTML = products.map((product) => {
-    const actionMode = getProductAccessMode(product);
-    const actionLabel = getProductActionLabel(product, actionMode);
-    const productFile = normalizeAssetURL(product.specification_file || '');
-    const specs = actionMode === 'public_download' && productFile
-      ? `<a class="download-specs" href="${escapeAttribute(productFile)}" target="_blank" rel="noopener">${escapeHTML(actionLabel)} →</a>`
-      : `<button class="download-specs" type="button"
-          data-product-action="${escapeAttribute(actionMode)}"
-          data-product-name="${escapeAttribute(product.name)}"
-          data-product-file="${escapeAttribute(productFile)}">${escapeHTML(actionLabel)} →</button>`;
+    const detailURL = product.detail_url || product.url || `product-detail.html?product=${encodeURIComponent(product.slug || product.name || '')}`;
+    const detailLabel = product.detail_label || 'See details';
+    const enquiryLabel = product.enquiry_label || product.action_label || 'Submit enquiry';
 
     return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
+      <a class="product-card-link-overlay" href="${escapeAttribute(detailURL)}" aria-label="${escapeAttribute(`See details for ${product.name}`)}"></a>
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
         ${product.certification ? `<div class="cert">${escapeHTML(product.certification)}</div>` : ''}
         <p>${escapeHTML(product.description || '')}</p>
         <div class="product-actions">
-          ${specs}
+          <a class="download-specs product-detail-link" href="${escapeAttribute(detailURL)}">${escapeHTML(detailLabel)} →</a>
+          <button class="download-specs product-enquiry-button" type="button"
+            data-product-action="enquiry_only"
+            data-product-name="${escapeAttribute(product.name)}"
+            data-product-file="">${escapeHTML(enquiryLabel)} →</button>
         </div>
       </div>
     </article>`;
   }).join('');
+}
+
+function renderProductDetailPage(page) {
+  const main = document.querySelector('.product-detail-main');
+  if (!main || !page) return;
+
+  const products = Array.isArray(page.manufactured_products) ? page.manufactured_products : [];
+  const slug = getProductDetailSlug();
+  const product = products.find((item) => item.slug === slug)
+    || products.find((item) => item.detail_url && getRouteFromHref(item.detail_url) === slug);
+
+  if (!product) {
+    renderMissingProductDetail(main);
+    return;
+  }
+
+  renderProductDetailSEO(product);
+  const detail = product.detail || {};
+  const image = normalizeAssetURL(product.image || page.hero?.image || '');
+  const enquiryLabel = product.enquiry_label || product.action_label || 'Submit enquiry';
+
+  main.innerHTML = `<section class="product-detail-hero">
+      <div class="container product-detail-hero-inner">
+        <div class="product-detail-copy">
+          <nav class="product-breadcrumb" aria-label="Breadcrumb">
+            <a href="products.html#manufacturing">Products</a>
+            <span>${escapeHTML(product.name)}</span>
+          </nav>
+          <span class="section-label">${escapeHTML(detail.eyebrow || product.certification || 'PEIC manufactured')}</span>
+          <h1>${escapeHTML(detail.title || product.name)}</h1>
+          <p>${escapeHTML(detail.summary || product.description || '')}</p>
+          <div class="product-detail-actions">
+            <button class="btn btn-primary product-detail-enquire" type="button"
+              data-product-action="enquiry_only"
+              data-product-name="${escapeAttribute(product.name)}"
+              data-product-file="">${escapeHTML(enquiryLabel)}</button>
+            <a class="btn btn-outline-green" href="products.html#manufacturing">All manufactured products</a>
+          </div>
+        </div>
+        <figure class="product-detail-media">
+          ${image ? `<img src="${escapeAttribute(image)}" alt="${escapeAttribute(product.name)}">` : ''}
+        </figure>
+      </div>
+    </section>
+
+    <section class="product-detail-section">
+      <div class="container product-detail-layout">
+        <article class="product-detail-panel product-detail-brief">
+          <span class="section-label">Overview</span>
+          <h2>${escapeHTML(detail.brief_title || 'What this product is suited for')}</h2>
+          <p>${escapeHTML(detail.brief || product.description || '')}</p>
+        </article>
+        <aside class="product-detail-side">
+          <h3>${escapeHTML(detail.customization_title || 'Configuration can be discussed around')}</h3>
+          <ul class="product-detail-list">
+            ${detailListHTML(detail.customization)}
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="product-detail-section product-detail-highlights-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-label">Public product guide</span>
+          <h2 class="section-title">Understand the fit before requesting specifications.</h2>
+        </div>
+        <div class="product-detail-card-grid">
+          ${detailCardsHTML(detail.highlights)}
+        </div>
+      </div>
+    </section>
+
+    <section class="product-detail-section product-detail-fit-section">
+      <div class="container product-detail-fit">
+        <div>
+          <span class="section-label">Common use cases</span>
+          <h2>${escapeHTML(product.name)}</h2>
+        </div>
+        <ul class="product-application-list">
+          ${detailListHTML(detail.applications)}
+        </ul>
+      </div>
+    </section>
+
+    <section class="home-cta product-detail-cta">
+      <div class="container">
+        <div class="home-cta-inner">
+          <span class="section-label">Product enquiry</span>
+          <h2>${escapeHTML(detail.cta_title || 'Request product guidance')}</h2>
+          <p>${escapeHTML(detail.cta_description || 'Share your requirement and PEIC will respond with suitable configuration guidance.')}</p>
+          <button class="btn btn-primary product-detail-enquire" type="button"
+            data-product-action="enquiry_only"
+            data-product-name="${escapeAttribute(product.name)}"
+            data-product-file="">${escapeHTML(enquiryLabel)}</button>
+        </div>
+      </div>
+    </section>`;
+}
+
+function getProductDetailSlug() {
+  const params = new URLSearchParams(window.location.search);
+  return document.body.dataset.productSlug
+    || params.get('product')
+    || getCurrentRoute();
+}
+
+function renderMissingProductDetail(main) {
+  document.title = 'Product Not Found - PEIC';
+  main.innerHTML = `<section class="product-detail-hero product-detail-missing">
+    <div class="container product-detail-hero-inner">
+      <div class="product-detail-copy">
+        <nav class="product-breadcrumb" aria-label="Breadcrumb">
+          <a href="products.html#manufacturing">Products</a>
+          <span>Product not found</span>
+        </nav>
+        <span class="section-label">PEIC products</span>
+        <h1>We could not find this product page.</h1>
+        <p>Please return to the products page or send an enquiry and PEIC will help you find the right sterilizer category.</p>
+        <div class="product-detail-actions">
+          <a class="btn btn-primary" href="products.html#manufacturing">View products</a>
+          <a class="btn btn-outline-green" href="contact.html?type=equipment">Submit enquiry</a>
+        </div>
+      </div>
+    </div>
+  </section>`;
+}
+
+function renderProductDetailSEO(product) {
+  const detail = product.detail || {};
+  const siteURL = (peicState.site.site_url || 'https://peic.in').replace(/\/+$/, '');
+  const canonicalPath = product.detail_url || window.location.pathname.split('/').pop() || '';
+  const canonicalURL = absoluteSiteURL(canonicalPath, siteURL);
+  const image = product.image ? absoluteSiteURL(normalizeAssetURL(product.image), siteURL) : '';
+
+  document.title = detail.seo_title || `${product.name} | PEIC`;
+  setMetaContent('meta[name="description"]', detail.seo_description || product.description);
+  setMetaContent('meta[property="og:title"]', detail.seo_title || `${product.name} | PEIC`);
+  setMetaContent('meta[property="og:description"]', detail.seo_description || product.description);
+  setMetaContent('meta[property="og:image"]', image);
+  setMetaContent('meta[property="og:url"]', canonicalURL);
+  setAttribute('link[rel="canonical"]', 'href', canonicalURL);
+}
+
+function absoluteSiteURL(path, siteURL) {
+  if (!path) return siteURL;
+  try {
+    return new URL(path, `${siteURL}/`).href;
+  } catch (error) {
+    return `${siteURL}/${String(path).replace(/^\/+/, '')}`;
+  }
+}
+
+function detailCardsHTML(cards) {
+  if (!Array.isArray(cards) || !cards.length) return '';
+  return cards.map((card) => `<article class="product-detail-card">
+    <h3>${escapeHTML(card.title || '')}</h3>
+    <p>${escapeHTML(card.description || '')}</p>
+  </article>`).join('');
+}
+
+function detailListHTML(items) {
+  if (!Array.isArray(items) || !items.length) return '';
+  return items.map((item) => `<li>${escapeHTML(item)}</li>`).join('');
 }
 
 function renderPartners(partners) {
@@ -1057,7 +1226,7 @@ function initFloatingCTAVisibility() {
   const cta = document.querySelector('.floating-cta');
   if (!cta) return;
   const suppressOnPage = document.querySelector('.contact-page-main');
-  const hero = document.querySelector('.hero, .page-hero-sm, .contact-page-heading');
+  const hero = document.querySelector('.hero, .page-hero-sm, .contact-page-heading, .product-detail-hero');
 
   function updateFloatingCTA() {
     if (suppressOnPage) {
@@ -1096,7 +1265,11 @@ function initRevealAnimations() {
     '.legacy-container',
     '.custom-solution-box',
     '.urgent-service-banner',
-    '.missing-doc-cta'
+    '.missing-doc-cta',
+    '.product-detail-panel',
+    '.product-detail-card',
+    '.product-detail-media',
+    '.product-detail-fit'
   ].join(','));
 
   if (!targets.length) return;
