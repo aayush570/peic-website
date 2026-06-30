@@ -125,11 +125,12 @@ function renderSiteContent(site, route = getCurrentRoute()) {
 function renderSEOContent(seo, route) {
   const siteURL = (peicState.site.site_url || 'https://peic.in').replace(/\/+$/, '');
   if (!seo) return;
+  const seoImage = seo.image ? absoluteSiteURL(normalizeAssetURL(seo.image), siteURL) : '';
   if (seo.title) document.title = seo.title;
   setMetaContent('meta[name="description"]', seo.description);
   setMetaContent('meta[property="og:title"]', seo.title);
   setMetaContent('meta[property="og:description"]', seo.description);
-  setMetaContent('meta[property="og:image"]', seo.image);
+  setMetaContent('meta[property="og:image"]', seoImage);
   setMetaContent('meta[property="og:url"]', `${siteURL}/${route === 'home' ? '' : `${route}.html`}`);
   setAttribute('link[rel="canonical"]', 'href', `${siteURL}/${route === 'home' ? '' : `${route}.html`}`);
 }
@@ -892,8 +893,9 @@ function partnerCardHTML(partner) {
   const tags = (partner.categories || [])
     .map((category) => `<span class="partner-cat-tag">${escapeHTML(category)}</span>`)
     .join('');
+  const partnerLogo = normalizeAssetURL(partner.logo || '');
   const logo = partner.logo
-    ? `<div class="partner-logo-slot has-image"><img src="${escapeAttribute(partner.logo)}" alt="${escapeAttribute(partner.name)} logo"></div>`
+    ? `<div class="partner-logo-slot has-image"><img src="${escapeAttribute(partnerLogo)}" alt="${escapeAttribute(partner.name)} logo"></div>`
     : '';
   const href = partner.website_url || partner.solutions_url || '#';
   const target = partner.website_url ? ' target="_blank" rel="noopener noreferrer"' : '';
@@ -1038,11 +1040,12 @@ function renderTrustContent(about) {
 
   if (Array.isArray(about.clients)) {
     const clientHTML = about.clients.map((client) => {
-      const logo = client.logo
-        ? `<img src="${escapeAttribute(client.logo)}" alt="${escapeAttribute(client.name)} logo">`
+      const clientLogo = normalizeAssetURL(client.logo || '');
+      const logo = clientLogo
+        ? `<img src="${escapeAttribute(clientLogo)}" alt="${escapeAttribute(client.name)} logo">`
         : escapeHTML(client.short_name);
       return `<div class="client-card">
-        <div class="client-logo ${client.logo ? 'has-image' : ''}">${logo}</div>
+        <div class="client-logo ${clientLogo ? 'has-image' : ''}">${logo}</div>
         <div class="client-name">${escapeHTML(client.name)}</div>
         <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
       </div>`;
@@ -1066,12 +1069,13 @@ function renderTrustContent(about) {
   const badgeGrid = document.querySelector('.badge-grid');
   if (badgeGrid && Array.isArray(about.certifications)) {
     badgeGrid.innerHTML = about.certifications.map((cert) => {
+      const certificateFile = normalizeAssetURL(cert.file || '');
       const badge = `<div class="cert-badge">
         <div class="cert-icon">${escapeHTML(cert.icon)}</div>
         <div><h4>${escapeHTML(cert.name)}</h4><p class="cert-num">${escapeHTML(cert.details || '')}</p></div>
       </div>`;
-      return cert.file
-        ? `<a class="cert-link" href="${escapeAttribute(cert.file)}" target="_blank" rel="noopener">${badge}<span class="cert-download-indicator">↓</span></a>`
+      return certificateFile
+        ? `<a class="cert-link" href="${escapeAttribute(certificateFile)}" target="_blank" rel="noopener">${badge}<span class="cert-download-indicator">↓</span></a>`
         : badge;
     }).join('');
   }
@@ -1158,8 +1162,9 @@ function getProductActionLabel(product, mode) {
 
 function setBackgroundImage(selector, image) {
   const element = document.querySelector(selector);
-  if (element && image) {
-    element.style.backgroundImage = `linear-gradient(90deg, rgba(16, 20, 24, 0.95) 0%, rgba(16, 20, 24, 0.84) 43%, rgba(16, 20, 24, 0.2) 100%), url("${image.replace(/"/g, '%22')}")`;
+  const assetURL = normalizeAssetURL(image);
+  if (element && assetURL) {
+    element.style.setProperty('--hero-bg-image', `url("${assetURL.replace(/"/g, '%22')}")`);
   }
 }
 

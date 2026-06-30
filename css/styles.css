@@ -261,7 +261,7 @@ h1, h2, h3, h4 {
   inset: 0;
   background:
     linear-gradient(105deg, rgba(15, 23, 42, 0.88) 0%, rgba(15, 23, 42, 0.55) 55%, rgba(15, 23, 42, 0.3) 100%),
-    url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg') center/cover no-repeat;
+    var(--hero-bg-image, url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg')) center/cover no-repeat;
 }
 
 .hero-content {
@@ -4329,7 +4329,7 @@ section.bg-dark::before {
   background:
     linear-gradient(90deg, rgba(11,17,20,0.98), rgba(11,17,20,0.45) 38%, rgba(11,17,20,0.08)),
     linear-gradient(180deg, rgba(22,138,100,0.18), rgba(22,138,100,0)),
-    url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg') center/cover no-repeat !important;
+    var(--hero-bg-image, url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg')) center/cover no-repeat;
   opacity: 0.95;
 }
 
