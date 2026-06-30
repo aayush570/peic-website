@@ -6,7 +6,8 @@
     "primary_button_label": "Start a Procurement Conversation",
     "primary_button_link": "contact.html?type=equipment",
     "secondary_button_label": "See Credentials and Track Record",
-    "secondary_button_link": "about.html"
+    "secondary_button_link": "about.html",
+    "image": "/uploads/images/cssd-equipment-2-1.jpg"
   },
   "trust_banner": [
     "Est. 1968",
