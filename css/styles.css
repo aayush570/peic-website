@@ -2296,6 +2296,16 @@ button.doc-card {
   padding: 2.25rem 0;
 }
 
+.resources-page .page-hero-sm,
+.careers-page .page-hero-sm {
+  padding: 2rem 0;
+}
+
+.resources-page .page-hero-sm + section,
+.careers-page .page-hero-sm + section {
+  padding-top: clamp(2.25rem, 4vw, 3rem);
+}
+
 .solutions-page .specialty-section {
   padding: 1.75rem 0;
 }
