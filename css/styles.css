@@ -4833,21 +4833,44 @@ li { font-size: clamp(0.94rem, 0.45vw + 0.84rem, 1rem); }
 .product-grid,
 .doc-grid,
 .partner-grid,
-.logo-grid {
+.logo-grid,
+.dual-cards,
+.specialty-grid,
+.about-page .legacy-media {
   min-height: clamp(260px, 24vw, 420px);
 }
 
+html.is-cms-loading body .product-grid,
+html.is-cms-loading body .doc-grid,
+html.is-cms-loading body .partner-grid,
+html.is-cms-loading body .logo-grid,
+html.is-cms-loading body .dual-cards,
+html.is-cms-loading body .specialty-grid,
+html.is-cms-loading body .about-page .legacy-media,
 body.is-cms-loading .product-grid,
 body.is-cms-loading .doc-grid,
 body.is-cms-loading .partner-grid,
-body.is-cms-loading .logo-grid {
+body.is-cms-loading .logo-grid,
+body.is-cms-loading .dual-cards,
+body.is-cms-loading .specialty-grid,
+body.is-cms-loading .about-page .legacy-media {
   position: relative;
 }
 
+html.is-cms-loading body .product-grid::before,
+html.is-cms-loading body .doc-grid::before,
+html.is-cms-loading body .partner-grid::before,
+html.is-cms-loading body .logo-grid::before,
+html.is-cms-loading body .dual-cards::before,
+html.is-cms-loading body .specialty-grid::before,
+html.is-cms-loading body .about-page .legacy-media::before,
 body.is-cms-loading .product-grid::before,
 body.is-cms-loading .doc-grid::before,
 body.is-cms-loading .partner-grid::before,
-body.is-cms-loading .logo-grid::before {
+body.is-cms-loading .logo-grid::before,
+body.is-cms-loading .dual-cards::before,
+body.is-cms-loading .specialty-grid::before,
+body.is-cms-loading .about-page .legacy-media::before {
   content: '';
   position: absolute;
   inset: 0;

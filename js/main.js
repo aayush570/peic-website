@@ -3,9 +3,10 @@
 const peicState = {
   site: {}
 };
+const CMS_CACHE_PREFIX = 'peic-cms-cache:';
 
 document.addEventListener('DOMContentLoaded', async () => {
-  document.body.classList.add('is-cms-loading');
+  setCMSLoadingState(true);
   initHeaderState();
   await initCMSContent();
   initMobileNav();
@@ -20,49 +21,60 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 async function initCMSContent() {
+  const page = document.body;
+  const route = getCurrentRoute();
+  const pageFiles = {
+    home: 'home',
+    products: 'products-page',
+    solutions: 'solutions-page',
+    about: 'about',
+    service: 'service-page',
+    resources: 'resources-page',
+    careers: 'careers-page',
+    contact: 'contact-page',
+    privacy: 'privacy-page',
+    '404': 'not-found-page'
+  };
+  const isProductDetailPage = page.classList.contains('product-detail-page');
+  const requestedFiles = ['site'];
+  if (pageFiles[route]) requestedFiles.push(pageFiles[route]);
+  if (isProductDetailPage && !requestedFiles.includes('products-page')) requestedFiles.push('products-page');
+  if (route !== 'about' && page.querySelector('.logo-grid')) requestedFiles.push('about');
+
+  const cachedResults = requestedFiles
+    .map((name) => {
+      const cached = readCachedCMSData(name);
+      return cached ? { [name]: cached } : null;
+    })
+    .filter(Boolean);
+
+  if (cachedResults.length) {
+    applyCMSData(Object.assign({}, ...cachedResults), route, pageFiles, isProductDetailPage);
+    setCMSLoadingState(false);
+  }
+
   try {
-    const page = document.body;
-    const requests = [fetchCMSData('site')];
-    const route = getCurrentRoute();
-    const pageFiles = {
-      home: 'home',
-      products: 'products-page',
-      solutions: 'solutions-page',
-      about: 'about',
-      service: 'service-page',
-      resources: 'resources-page',
-      careers: 'careers-page',
-      contact: 'contact-page',
-      privacy: 'privacy-page',
-      '404': 'not-found-page'
-    };
-    const isProductDetailPage = page.classList.contains('product-detail-page');
-    if (pageFiles[route]) requests.push(fetchCMSData(pageFiles[route]));
-    if (isProductDetailPage) requests.push(fetchCMSData('products-page'));
-
-    if (route !== 'about' && page.querySelector('.logo-grid')) {
-      requests.push(fetchCMSData('about'));
-    }
-
+    const requests = requestedFiles.map((name) => fetchCMSData(name));
     const results = await Promise.all(requests);
-    const data = Object.assign({}, ...results);
-
-    if (data.site) {
-      peicState.site = data.site;
-      renderSiteContent(data.site, isProductDetailPage ? 'products' : route);
-    }
-    if (isProductDetailPage) {
-      renderProductDetailPage(data['products-page']);
-    } else {
-      renderCurrentPage(route, data[pageFiles[route]]);
-    }
-    if (data.about) renderTrustContent(data.about);
+    applyCMSData(Object.assign({}, ...results), route, pageFiles, isProductDetailPage);
   } catch (error) {
     console.warn('CMS content could not be loaded; using built-in page content.', error);
   } finally {
-    document.body.classList.remove('is-cms-loading');
-    document.body.classList.add('is-cms-ready');
+    setCMSLoadingState(false);
   }
+}
+
+function applyCMSData(data, route, pageFiles, isProductDetailPage) {
+  if (data.site) {
+    peicState.site = data.site;
+    renderSiteContent(data.site, isProductDetailPage ? 'products' : route);
+  }
+  if (isProductDetailPage) {
+    renderProductDetailPage(data['products-page']);
+  } else {
+    renderCurrentPage(route, data[pageFiles[route]]);
+  }
+  if (data.about) renderTrustContent(data.about);
 }
 
 function getCurrentRoute() {
@@ -73,7 +85,9 @@ function getCurrentRoute() {
 async function fetchCMSData(name) {
   const response = await fetch(`content/${name}.json`, { cache: 'no-cache' });
   if (!response.ok) throw new Error(`Unable to load ${name} content`);
-  return { [name]: await response.json() };
+  const data = await response.json();
+  writeCachedCMSData(name, data);
+  return { [name]: data };
 }
 
 function renderSiteContent(site, route = getCurrentRoute()) {
@@ -1160,6 +1174,13 @@ function getProductActionLabel(product, mode) {
   return 'Request Specifications';
 }
 
+function setCMSLoadingState(isLoading) {
+  document.documentElement.classList.toggle('is-cms-loading', isLoading);
+  document.documentElement.classList.toggle('is-cms-ready', !isLoading);
+  document.body.classList.toggle('is-cms-loading', isLoading);
+  document.body.classList.toggle('is-cms-ready', !isLoading);
+}
+
 function setBackgroundImage(selector, image) {
   const element = document.querySelector(selector);
   const assetURL = normalizeAssetURL(image);
@@ -1186,6 +1207,33 @@ function normalizeAssetURL(url) {
   if (!url) return '';
   if (/^(https?:|data:|\/|#)/i.test(url)) return url;
   return `/${url.replace(/^\.?\//, '')}`;
+}
+
+function readCachedCMSData(name) {
+  if (!name) return null;
+
+  if (window.__PEIC_CMS_CACHE__ && Object.prototype.hasOwnProperty.call(window.__PEIC_CMS_CACHE__, name)) {
+    return window.__PEIC_CMS_CACHE__[name];
+  }
+
+  try {
+    const raw = window.localStorage.getItem(`${CMS_CACHE_PREFIX}${name}`);
+    return raw ? JSON.parse(raw) : null;
+  } catch (error) {
+    return null;
+  }
+}
+
+function writeCachedCMSData(name, data) {
+  if (!name || !data) return;
+
+  try {
+    if (!window.__PEIC_CMS_CACHE__) window.__PEIC_CMS_CACHE__ = {};
+    window.__PEIC_CMS_CACHE__[name] = data;
+    window.localStorage.setItem(`${CMS_CACHE_PREFIX}${name}`, JSON.stringify(data));
+  } catch (error) {
+    // Ignore storage errors so live CMS rendering still works.
+  }
 }
 
 function initMobileNav() {
