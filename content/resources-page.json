@@ -2,7 +2,7 @@
   "hero": {
     "title": "Technical documentation and compliance records.",
     "description": "Request product brochures, user manuals, specifications, and compliance documents. PEIC responds with the relevant material for qualified equipment and procurement enquiries.",
-    "image": "/uploads/images/product-catalog-hero.jpg"
+    "image": "/uploads/images/cssd-equipment.jpg"
   },
   "search_placeholder": "Search by product, document type, or certification...",
   "empty_state": {
@@ -11,11 +11,26 @@
     "link": "contact.html?type=general"
   },
   "filters": [
-    { "label": "All", "value": "all" },
-    { "label": "Brochures", "value": "brochure" },
-    { "label": "Certificates", "value": "certificate" },
-    { "label": "User Manuals", "value": "manual" },
-    { "label": "References", "value": "reference" }
+    {
+      "label": "All",
+      "value": "all"
+    },
+    {
+      "label": "Brochures",
+      "value": "brochure"
+    },
+    {
+      "label": "Certificates",
+      "value": "certificate"
+    },
+    {
+      "label": "User Manuals",
+      "value": "manual"
+    },
+    {
+      "label": "References",
+      "value": "reference"
+    }
   ],
   "help_cta": {
     "title": "Need something not listed here?",
@@ -28,168 +43,144 @@
       "title": "High-Pressure Horizontal Sterilizer - Product Brochure",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "High-Speed Flash Sterilizer - Product Brochure",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Vertical Autoclave Range - Product Brochure",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "CSSD Furniture & Trolley Systems - Equipment Catalog",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Biomedical Waste Sanitizer - Product Brochure",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Tabletop Autoclave Range - Product Brochure",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "PEIC Company Overview - Corporate Brochure",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Partner Technologies - Integration Catalog",
       "category": "brochure",
       "type_label": "Brochure",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "BIS IS 3829 Part 1 License",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "BIS IS 3829 Part 2 License",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "ISO 13485:2016 Certificate",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "ISO 9001:2015 Certificate",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "ISO 14001:2015 Certificate",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "CE Marking Certificate",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "GMP Certificate",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "MSME / Udyam & NSIC Registration Documents",
       "category": "certificate",
       "type_label": "Certificate",
-      "file": "",
       "action_label": "Request Certificate"
     },
     {
       "title": "Horizontal Sterilizer User Manual",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Flash Sterilizer User Manual",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Vertical Autoclave User Manual",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Bedpan Sterilizer User Manual",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Tabletop Sterilizer User Manual",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Bio Waste Sanitizer User Manual",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Installation & Commissioning Guide",
       "category": "manual",
       "type_label": "User Manual",
-      "file": "",
       "action_label": "Request Document"
     },
     {
       "title": "Client References & Procurement Documentation",
       "category": "reference",
       "type_label": "Reference",
-      "file": "",
       "action_label": "Request References"
     }
   ]
