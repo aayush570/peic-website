@@ -1715,19 +1715,46 @@ body.modal-open {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2.2fr 1fr 1fr 1fr;
-  gap: 2.5rem;
+  grid-template-columns: minmax(360px, 1.7fr) repeat(3, minmax(140px, 0.85fr));
+  align-items: start;
+  column-gap: clamp(2.75rem, 4vw, 4.5rem);
+  row-gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .footer-brand {
-  max-width: 380px;
+  max-width: 460px;
+  padding-right: clamp(1rem, 2vw, 2.5rem);
+}
+
+.footer-brand .logo {
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-brand .logo-text {
+  min-width: 0;
+  gap: 0.25rem;
+}
+
+.footer-brand .logo-name {
+  line-height: 1.15;
+}
+
+.footer-brand .logo-tagline {
+  max-width: 34ch;
+  line-height: 1.55;
 }
 
 .footer-brand p {
   font-size: 0.9rem;
   margin-top: 1rem;
   line-height: 1.7;
+}
+
+.footer-col {
+  min-width: 0;
+  padding-top: 0.35rem;
 }
 
 .footer-col h4 {
@@ -1741,7 +1768,8 @@ body.modal-open {
 .footer-col a {
   display: block;
   font-size: 0.9rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.8rem;
+  line-height: 1.55;
   transition: color var(--transition);
 }
 
@@ -1824,7 +1852,10 @@ body.modal-open {
     font-size: 0.8rem;
     padding: 0.75rem 1.25rem;
   }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 2rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -7554,4 +7585,193 @@ section.bg-dark .section-label,
 .client-name a:hover::after {
   display: none !important;
   content: none !important;
+}
+
+/* ─── Final UI fixes: labels, client cards, credentials spacing ─── */
+.section-label {
+  display: inline-flex !important;
+  align-items: center !important;
+  width: fit-content !important;
+  padding: 0.46rem 0.92rem !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(61, 138, 72, 0.18) !important;
+  background: linear-gradient(180deg, #f4fbf5 0%, #e3f2e5 100%) !important;
+  color: #24552c !important;
+  font-family: var(--font-display) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.12em !important;
+  line-height: 1.1 !important;
+  text-transform: uppercase !important;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset !important;
+}
+
+.bg-dark .section-label,
+section.bg-dark .section-label,
+.home-cta .section-label,
+.products-cta .section-label,
+.about-cta .section-label,
+.trust-section .section-label,
+.about-page .clients-section .section-label {
+  background: rgba(86, 166, 97, 0.2) !important;
+  border-color: rgba(181, 231, 189, 0.34) !important;
+  color: #effcf1 !important;
+  box-shadow: none !important;
+}
+
+.logo-grid {
+  align-items: stretch !important;
+}
+
+.trust-section .logo-grid,
+.about-page .clients-section .logo-grid {
+  grid-auto-rows: 1fr;
+}
+
+.client-card {
+  width: 100% !important;
+  min-height: 100% !important;
+  gap: 0.45rem !important;
+  justify-content: flex-start !important;
+  text-decoration: none !important;
+}
+
+.client-card.is-clickable {
+  cursor: pointer;
+}
+
+.trust-section .client-name,
+.trust-section .client-tagline,
+.about-page .clients-section .client-name,
+.about-page .clients-section .client-tagline {
+  color: #8fd09a !important;
+}
+
+.trust-section .client-name,
+.about-page .clients-section .client-name {
+  font-weight: 700 !important;
+}
+
+.client-card.is-clickable:hover,
+.client-card.is-clickable:focus-visible {
+  border-color: rgba(143, 208, 154, 0.68) !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  box-shadow: 0 18px 36px rgba(7, 20, 33, 0.22) !important;
+  transform: translateY(-4px) !important;
+}
+
+.client-card.is-clickable:hover .client-name,
+.client-card.is-clickable:focus-visible .client-name,
+.client-card.is-clickable:hover .client-tagline,
+.client-card.is-clickable:focus-visible .client-tagline {
+  color: #bfe7c6 !important;
+}
+
+.client-name a,
+.client-name a:hover,
+.client-name a:focus-visible {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.badge-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  grid-auto-rows: 1fr !important;
+  gap: 1rem !important;
+  align-items: stretch !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.badge-grid > * {
+  min-width: 0;
+}
+
+.cert-link,
+.badge-grid > .cert-badge {
+  display: flex !important;
+  height: 100% !important;
+}
+
+.cert-link {
+  position: relative;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+.cert-badge {
+  width: 100% !important;
+  min-height: 164px !important;
+  align-items: flex-start !important;
+  gap: 1rem !important;
+  padding: 1.45rem !important;
+  border: 1px solid rgba(214, 223, 229, 0.95) !important;
+  border-radius: 18px !important;
+  background: #ffffff !important;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.05) !important;
+}
+
+.cert-badge > div:last-child {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.cert-badge h4 {
+  margin-bottom: 0.45rem !important;
+  color: var(--ink) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.2 !important;
+}
+
+.cert-badge .cert-num {
+  color: var(--slate-mid) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+.cert-download-indicator {
+  top: 1rem !important;
+  right: 1rem !important;
+  color: var(--green-dark) !important;
+}
+
+.cert-link:hover .cert-badge,
+.cert-link:focus-visible .cert-badge {
+  border-color: rgba(86, 166, 97, 0.52) !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.1) !important;
+  transform: translateY(-4px) !important;
+}
+
+.about-content .certifications-section {
+  padding-bottom: clamp(1.6rem, 3vw, 2.35rem) !important;
+}
+
+.about-content .facilities-section {
+  padding-top: clamp(1.9rem, 3.2vw, 2.6rem) !important;
+}
+
+.about-content .certifications-section .section-header,
+.about-content .facilities-section .section-header {
+  margin-bottom: clamp(1.7rem, 3vw, 2.4rem) !important;
+}
+
+@media (max-width: 1024px) {
+  .badge-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .section-label {
+    font-size: 0.72rem !important;
+    letter-spacing: 0.1em !important;
+  }
+
+  .badge-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .cert-badge {
+    min-height: 0 !important;
+  }
 }

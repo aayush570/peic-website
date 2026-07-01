@@ -1206,7 +1206,7 @@ function renderTrustContent(about) {
         <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
       `;
       if (client.website_url) {
-        return `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="${cardClass}">
+        return `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="${cardClass}" aria-label="Visit ${escapeAttribute(client.name)} website">
           ${innerContent}
         </a>`;
       } else {
