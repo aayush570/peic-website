@@ -6188,17 +6188,41 @@ body.is-cms-loading .about-page .legacy-media::before {
   font-size: clamp(1rem, 1.1vw, 1.12rem);
 }
 
+.home-hero-copy {
+  padding-bottom: 0;
+}
+
+.home-precision-hero .hero-eyebrow {
+  margin-bottom: 1rem;
+}
+
+.home-precision-hero .hero h1,
+.home-precision-hero h1 {
+  margin-bottom: 0.85rem;
+}
+
+.home-precision-hero .hero-desc {
+  margin-bottom: 1.35rem;
+}
+
+.hero-actions {
+  gap: 0.8rem;
+}
+
 .hero-actions .btn {
-  min-height: 48px;
+  min-height: 46px;
+  padding: 0.8rem 1.45rem;
 }
 
 .precision-panel {
-  width: min(100%, 380px);
+  width: min(100%, 360px);
   border-radius: 14px;
+  padding: 1rem;
 }
 
 .panel-gauge {
-  min-height: 142px;
+  min-height: 128px;
+  padding: 1rem 0;
 }
 
 .panel-gauge strong {
@@ -6210,7 +6234,34 @@ body.is-cms-loading .about-page .legacy-media::before {
 }
 
 .panel-spec-grid div {
-  min-height: 82px;
+  min-height: 72px;
+  padding: 1rem 1.05rem;
+}
+
+@media (min-width: 1181px) and (max-width: 1366px) {
+  .home-precision-hero {
+    min-height: clamp(430px, 50vh, 540px);
+    padding: 1rem 0;
+  }
+
+  .home-hero-grid {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 340px);
+    gap: 1.35rem;
+    padding: 0.35rem 0 0.75rem;
+  }
+
+  .home-precision-hero .hero h1,
+  .home-precision-hero h1 {
+    max-width: 640px;
+    font-size: clamp(2.65rem, 4.2vw, 4.15rem) !important;
+    line-height: 0.95;
+  }
+
+  .home-precision-hero .hero-desc {
+    max-width: 600px;
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
 }
 
 .home-rebuilt .trust-banner {
