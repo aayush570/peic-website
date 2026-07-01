@@ -288,15 +288,15 @@ function renderHomePage(home) {
 
   const banner = document.querySelector('.trust-banner-inner');
   if (banner && Array.isArray(home.trust_banner)) {
-    banner.innerHTML = home.trust_banner
+    replaceHTMLIfChanged(banner, home.trust_banner
       .map((item, index) => `${index ? '<span class="sep">|</span>' : ''}<span>${escapeHTML(item)}</span>`)
-      .join('');
+      .join(''));
   }
 
   setHeadingBlock('.dual-cards', home.capabilities);
   const cards = document.querySelector('.dual-cards');
   if (cards && Array.isArray(home.capabilities?.cards)) {
-    cards.innerHTML = home.capabilities.cards.map((card, index) => `<a href="${escapeAttribute(card.link || '#')}" class="cap-card-link">
+    replaceHTMLIfChanged(cards, home.capabilities.cards.map((card, index) => `<a href="${escapeAttribute(card.link || '#')}" class="cap-card-link">
       <div class="cap-card cap-card-image"${card.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(card.image))}')"` : ''}>
         <div class="cap-card-body">
           <span class="cap-index">${String(index + 1).padStart(2, '0')}</span>
@@ -306,7 +306,7 @@ function renderHomePage(home) {
           <div class="cap-card-footer"><span>${escapeHTML(card.button_label || 'Learn more')}</span> <span class="arrow">→</span></div>
         </div>
       </div>
-    </a>`).join('');
+    </a>`).join(''));
   }
 
   renderHomeWorkflow(home.workflow);
@@ -340,7 +340,7 @@ function renderHeroPanel(panel) {
   const element = document.querySelector('.precision-panel');
   if (!element || !panel) return;
   const specs = Array.isArray(panel.specs) ? panel.specs : [];
-  element.innerHTML = `<div class="panel-kicker">${escapeHTML(panel.kicker || '')}</div>
+  replaceHTMLIfChanged(element, `<div class="panel-kicker">${escapeHTML(panel.kicker || '')}</div>
     <div class="panel-gauge">
       <span>${escapeHTML(panel.metric || '')}</span>
       <strong>${escapeHTML(panel.title || '')}</strong>
@@ -348,7 +348,7 @@ function renderHeroPanel(panel) {
     </div>
     <div class="panel-spec-grid">
       ${specs.map((item) => `<div><span>${escapeHTML(item.label || '')}</span><strong>${escapeHTML(item.value || '')}</strong></div>`).join('')}
-    </div>`;
+    </div>`);
 }
 
 function renderProductsPage(page) {
@@ -1361,6 +1361,13 @@ function normalizeAssetURL(url) {
   return `/${url.replace(/^\.?\//, '')}`;
 }
 
+function replaceHTMLIfChanged(element, markup) {
+  if (!element) return;
+  const nextMarkup = String(markup ?? '').trim();
+  if (element.innerHTML.trim() === nextMarkup) return;
+  element.innerHTML = markup;
+}
+
 function renderLogoMarks(site) {
   const logoURL = normalizeAssetURL(site.logo);
   const logoAlt = site.short_name || 'PEIC';
@@ -1376,6 +1383,9 @@ function renderLogoMarks(site) {
 
       if (image.getAttribute('src') !== logoURL) image.setAttribute('src', logoURL);
       if (image.getAttribute('alt') !== logoAlt) image.setAttribute('alt', logoAlt);
+      image.setAttribute('width', '160');
+      image.setAttribute('height', '160');
+      image.setAttribute('decoding', 'async');
       image.onerror = () => {
         element.classList.remove('has-logo');
         element.textContent = logoAlt;
