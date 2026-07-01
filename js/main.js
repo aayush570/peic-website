@@ -1199,15 +1199,21 @@ function renderTrustContent(about) {
       const logo = clientLogo
         ? `<img src="${escapeAttribute(clientLogo)}" alt="${escapeAttribute(client.name)} logo">`
         : escapeHTML(client.short_name);
-      const displayName = client.website_url
-        ? `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="client-website-link">${escapeHTML(client.name)}</a>`
-        : escapeHTML(client.name);
       const cardClass = `client-card${client.website_url ? ' is-clickable' : ''}`;
-      return `<div class="${cardClass}">
+      const innerContent = `
         <div class="client-logo ${clientLogo ? 'has-image' : ''}">${logo}</div>
-        <div class="client-name">${displayName}</div>
+        <div class="client-name">${escapeHTML(client.name)}</div>
         <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
-      </div>`;
+      `;
+      if (client.website_url) {
+        return `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="${cardClass}">
+          ${innerContent}
+        </a>`;
+      } else {
+        return `<div class="${cardClass}">
+          ${innerContent}
+        </div>`;
+      }
     }).join('');
     document.querySelectorAll('.logo-grid').forEach((grid) => {
       grid.innerHTML = clientHTML;

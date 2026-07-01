@@ -7464,3 +7464,78 @@ section.bg-dark .section-label,
 .tier-badge {
   color: white !important;
 }
+
+/* ─── Client card and name overrides ─── */
+.client-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  height: 100% !important;
+  text-decoration: none !important;
+}
+
+.client-name {
+  color: var(--green-muted) !important;
+  transition: color var(--transition) !important;
+}
+
+.client-card.is-clickable:hover {
+  border-color: var(--green-muted) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  transform: translateY(-4px) !important;
+}
+
+.client-card.is-clickable:hover .client-name {
+  color: white !important;
+}
+
+/* ─── Certifications grid spacing and size alignment ─── */
+.badge-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1.25rem !important;
+  background: transparent !important;
+  border: 0 !important;
+}
+
+.cert-link {
+  display: flex !important;
+  flex-direction: column !important;
+  height: 100% !important;
+  text-decoration: none !important;
+}
+
+.cert-badge {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 1rem !important;
+  align-items: flex-start !important;
+  height: 100% !important;
+  flex: 1 !important;
+  padding: 1.5rem !important;
+  background: white !important;
+  border: 1px solid var(--border) !important;
+  border-radius: var(--radius-lg) !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.cert-link:hover .cert-badge {
+  border-color: var(--green) !important;
+  box-shadow: var(--shadow-lg) !important;
+  transform: translateY(-4px) !important;
+}
+
+/* Responsive grid layouts */
+@media (max-width: 1024px) {
+  .badge-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .badge-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
