@@ -212,39 +212,54 @@
   "certifications": [
     {
       "icon": "BIS",
+      "logo": "/uploads/images/bureauofindianstandardslogo.svg",
       "name": "BIS Licenses: IS 3829 Part 1 & Part 2",
       "details": "Steam sterilizer certification held since 1976 and 1982.",
       "link": "https://bis.gov.in"
     },
     {
       "icon": "CE",
+      "logo": "/uploads/images/conformiteeuropeennelogosvg.png",
       "name": "CE Marking Compliance",
-      "details": "Medical Device Directive 93/42/EEC certification."
+      "details": "Medical Device Directive 93/42/EEC certification.",
+      "link": "https://europa.eu/youreurope/business/product-requirements/labels-markings/ce-marking/index_en.htm"
     },
     {
       "icon": "GMP",
+      "logo": "/uploads/images/gmp-quality-logo-pngseeklogo-285045.png",
       "name": "Good Manufacturing Practices",
-      "details": "GMP certification."
+      "details": "GMP certification.",
+      "link": "https://www.gmpplus.org"
     },
     {
       "icon": "ISO",
-      "name": "ISO 14001:2015 - Environmental Management"
+      "logo": "/uploads/images/iso-14001.png",
+      "name": "ISO 14001:2015 - Environmental Management",
+      "link": "https://www.iso.org/standard/60857.html?__cf_chl_f_tk=l2Ccaxiad2MLfKi4dlFZyPy61n3BpgDGr.IFGvZaW2A-1782936193-1.0.1.1-vpZS1IH1xFzIa5HSCeVcHQmaIjNjd4hVilOeiU7kjSM"
     },
     {
       "icon": "ISO",
-      "name": "ISO 13485:2016 - Medical Devices QMS"
+      "logo": "/uploads/images/iso-logo-13485-2016png.webp",
+      "name": "ISO 13485:2016 - Medical Devices QMS",
+      "link": "https://www.iso.org/standard/59752.html"
     },
     {
       "icon": "ISO",
-      "name": "ISO 9001:2015 - Quality Management System"
+      "logo": "/uploads/images/iso-logo-13485-2016png-1.webp",
+      "name": "ISO 9001:2015 - Quality Management System",
+      "link": "https://www.iso.org/standard/62085.html"
     },
     {
       "icon": "MSME",
-      "name": "MSME / Udyam Registration"
+      "logo": "/uploads/images/msme-logo.png",
+      "name": "MSME / Udyam Registration",
+      "link": "https://www.msme.gov.in"
     },
     {
       "icon": "NSIC",
-      "name": "NSIC Registration"
+      "logo": "/uploads/images/newns.png",
+      "name": "NSIC Registration",
+      "link": "https://www.nsic.co.in"
     }
   ]
 }
