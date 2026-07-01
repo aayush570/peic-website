@@ -846,7 +846,7 @@ body.modal-open {
 }
 
 .advantage-bar.distribution {
-  background: linear-gradient(135deg, var(--charcoal) 0%, #1e3a2f 100%);
+  background: linear-gradient(135deg, var(--charcoal) 0%, #1e3b23 100%);
   color: white;
   margin-top: 2.5rem;
 }
@@ -1411,7 +1411,7 @@ body.modal-open {
 /* ─── Supporting Pages ─── */
 .page-hero-sm {
   margin-top: var(--header-h);
-  background: linear-gradient(135deg, var(--charcoal) 0%, #1e3a2f 100%);
+  background: linear-gradient(135deg, var(--charcoal) 0%, #1e3b23 100%);
   padding: 4rem 0;
   color: white;
   text-align: center;
@@ -2756,10 +2756,10 @@ button.doc-card {
 
 /* --- Global medical technology redesign --- */
 :root {
-  --green: #13a36f;
-  --green-dark: #087653;
-  --green-light: #e7f8f1;
-  --green-muted: #6de0b4;
+  --green: #3f7e49;
+  --green-dark: #2c5933;
+  --green-light: #e9f5eb;
+  --green-muted: #8abf94;
   --aqua: #1db7c4;
   --indigo: #243b70;
   --ink: #071421;
@@ -2791,7 +2791,7 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(19, 163, 111, 0.045) 1px, transparent 1px),
+    linear-gradient(rgba(63, 126, 73, 0.045) 1px, transparent 1px),
     linear-gradient(90deg, rgba(29, 183, 196, 0.035) 1px, transparent 1px);
   background-size: 48px 48px;
   mask-image: linear-gradient(180deg, black, transparent 62%);
@@ -2856,7 +2856,7 @@ h4 {
   background:
     linear-gradient(145deg, rgba(255,255,255,0.18), rgba(255,255,255,0) 35%),
     linear-gradient(135deg, var(--green) 0%, var(--aqua) 100%);
-  box-shadow: 0 12px 28px rgba(19, 163, 111, 0.28);
+  box-shadow: 0 12px 28px rgba(63, 126, 73, 0.28);
 }
 
 .logo-name {
@@ -2869,8 +2869,8 @@ h4 {
 }
 
 .header-hotline {
-  background: rgba(231, 248, 241, 0.86);
-  border-color: rgba(19, 163, 111, 0.28);
+  background: rgba(233, 245, 235, 0.86);
+  border-color: rgba(63, 126, 73, 0.28);
   box-shadow: inset 0 0 0 1px rgba(255,255,255,0.7);
 }
 
@@ -2890,7 +2890,7 @@ h4 {
 .btn-apply {
   background: linear-gradient(135deg, var(--green), var(--aqua));
   border-color: transparent;
-  box-shadow: 0 14px 30px rgba(19, 163, 111, 0.22);
+  box-shadow: 0 14px 30px rgba(63, 126, 73, 0.22);
 }
 
 .nav-cta:hover,
@@ -2898,7 +2898,7 @@ h4 {
 .floating-cta:hover,
 .btn-apply:hover {
   background: linear-gradient(135deg, var(--green-dark), #138c9a);
-  box-shadow: 0 18px 42px rgba(19, 163, 111, 0.28);
+  box-shadow: 0 18px 42px rgba(63, 126, 73, 0.28);
 }
 
 .hero {
@@ -2934,9 +2934,9 @@ h4 {
   bottom: max(5vh, 2rem);
   width: min(390px, 36vw);
   aspect-ratio: 1;
-  border: 1px solid rgba(109, 224, 180, 0.34);
+  border: 1px solid rgba(138, 191, 148, 0.34);
   background:
-    linear-gradient(90deg, rgba(109,224,180,0.2) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(138, 191, 148, 0.2) 1px, transparent 1px),
     linear-gradient(rgba(29,183,196,0.18) 1px, transparent 1px);
   background-size: 24px 24px;
   border-radius: 50%;
@@ -2949,9 +2949,9 @@ h4 {
 }
 
 .hero-eyebrow {
-  color: #d9fff0;
-  background: rgba(19, 163, 111, 0.18);
-  border-color: rgba(109, 224, 180, 0.45);
+  color: #eef7f0;
+  background: rgba(63, 126, 73, 0.18);
+  border-color: rgba(138, 191, 148, 0.45);
   border-radius: 8px;
   box-shadow: 0 10px 34px rgba(0, 0, 0, 0.14);
 }
@@ -3037,8 +3037,8 @@ section.bg-dark::before {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(90deg, rgba(109,224,180,0.08) 1px, transparent 1px),
-    linear-gradient(rgba(109,224,180,0.06) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(138, 191, 148, 0.08) 1px, transparent 1px),
+    linear-gradient(rgba(138, 191, 148, 0.06) 1px, transparent 1px);
   background-size: 56px 56px;
   mask-image: linear-gradient(180deg, black, transparent 82%);
 }
@@ -3094,7 +3094,7 @@ section.bg-dark::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(19,163,111,0.18), rgba(29,183,196,0.06) 42%, transparent);
+  background: linear-gradient(135deg, rgba(63, 126, 73, 0.18), rgba(29,183,196,0.06) 42%, transparent);
   pointer-events: none;
 }
 
@@ -3107,9 +3107,9 @@ section.bg-dark::before {
 }
 
 .cap-advantages li {
-  background: #f4fbf8;
+  background: #f4faf5;
   border-left: 0;
-  border: 1px solid rgba(19, 163, 111, 0.14);
+  border: 1px solid rgba(63, 126, 73, 0.14);
 }
 
 .cap-card-footer,
@@ -3190,8 +3190,8 @@ section.bg-dark::before {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(90deg, rgba(109,224,180,0.1) 1px, transparent 1px),
-    linear-gradient(rgba(109,224,180,0.08) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(138, 191, 148, 0.1) 1px, transparent 1px),
+    linear-gradient(rgba(138, 191, 148, 0.08) 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: linear-gradient(90deg, black 0 52%, transparent 86%);
 }
@@ -3221,17 +3221,17 @@ section.bg-dark::before {
 
 .advantage-bar.manufacturing {
   background:
-    linear-gradient(135deg, rgba(231,248,241,0.95), rgba(235,250,252,0.95));
-  border: 1px solid rgba(19, 163, 111, 0.22);
+    linear-gradient(135deg, rgba(233, 245, 235, 0.95), rgba(235, 250, 252, 0.95));
+  border: 1px solid rgba(63, 126, 73, 0.22);
 }
 
 .advantage-item-icon,
 .info-card-icon,
 .cert-icon {
-  background: linear-gradient(135deg, #ffffff, #e8fbf8);
+  background: linear-gradient(135deg, #ffffff, #eff9f1);
   color: var(--green-dark);
-  border: 1px solid rgba(19, 163, 111, 0.14);
-  box-shadow: 0 10px 24px rgba(19, 163, 111, 0.1);
+  border: 1px solid rgba(63, 126, 73, 0.14);
+  box-shadow: 0 10px 24px rgba(63, 126, 73, 0.1);
 }
 
 .product-grid,
@@ -3267,7 +3267,7 @@ section.bg-dark::before {
 .cert-badge:hover {
   transform: translateY(-6px);
   box-shadow: var(--shadow-lg);
-  border-color: rgba(19, 163, 111, 0.42);
+  border-color: rgba(63, 126, 73, 0.42);
 }
 
 .product-card-content,
@@ -3473,10 +3473,10 @@ section.bg-dark::before {
 
 /* --- Executive precision redesign: restrained, engineered, premium --- */
 :root {
-  --green: #0b6b57;
-  --green-dark: #06483c;
-  --green-light: #edf5f2;
-  --green-muted: #7ba99b;
+  --green: #2d5333;
+  --green-dark: #1d3521;
+  --green-light: #edf2ee;
+  --green-muted: #8ba190;
   --aqua: #4d8f96;
   --ink: #101418;
   --charcoal: #15191d;
@@ -4286,11 +4286,11 @@ section.bg-dark::before {
 
 /* --- PEIC first-principles homepage rebuild --- */
 :root {
-  --green: #168a64;
-  --green-dark: #075d45;
-  --green-light: #e8f5ef;
-  --green-muted: #83c7ac;
-  --mint-line: rgba(22, 138, 100, 0.28);
+  --green: #56A661;
+  --green-dark: #3d8a48;
+  --green-light: #eef7f0;
+  --green-muted: #7bc484;
+  --mint-line: rgba(86, 166, 97, 0.28);
   --steel-950: #0b1114;
   --steel-900: #10181c;
   --steel-800: #182227;
@@ -4341,7 +4341,7 @@ section.bg-dark::before {
   inset: 0 0 0 46%;
   background:
     linear-gradient(90deg, rgba(11,17,20,0.98), rgba(11,17,20,0.45) 38%, rgba(11,17,20,0.08)),
-    linear-gradient(180deg, rgba(22,138,100,0.18), rgba(22,138,100,0)),
+    linear-gradient(180deg, rgba(86, 166, 97, 0.18), rgba(86, 166, 97, 0)),
     var(--hero-bg-image, url('/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg')) center/cover no-repeat;
   opacity: 0.95;
 }
@@ -4349,8 +4349,8 @@ section.bg-dark::before {
 .home-precision-hero::before {
   z-index: 1;
   background:
-    linear-gradient(90deg, rgba(131,199,172,0.13) 1px, transparent 1px),
-    linear-gradient(rgba(131,199,172,0.1) 1px, transparent 1px);
+    linear-gradient(90deg, rgba(123, 196, 132, 0.13) 1px, transparent 1px),
+    linear-gradient(rgba(123, 196, 132, 0.1) 1px, transparent 1px);
   background-size: 72px 72px;
   mask-image: linear-gradient(90deg, black 0 68%, transparent 94%);
 }
@@ -4376,9 +4376,9 @@ section.bg-dark::before {
 }
 
 .home-precision-hero .hero-eyebrow {
-  color: #daf4ea;
+  color: #eef7f0;
   border-color: var(--mint-line);
-  background: rgba(22, 138, 100, 0.16);
+  background: rgba(86, 166, 97, 0.16);
 }
 
 .home-precision-hero .hero h1,
@@ -5245,7 +5245,7 @@ body.is-cms-loading .about-page .legacy-media::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(135deg, rgba(19,163,111,0.2), transparent 45%);
+  background: linear-gradient(135deg, rgba(63, 126, 73, 0.2), transparent 45%);
   pointer-events: none;
 }
 
