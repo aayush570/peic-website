@@ -7947,14 +7947,14 @@ section.bg-dark .section-label,
 
 /* ─── Final footer layout override ─── */
 .site-footer .footer-grid {
-  grid-template-columns: minmax(420px, 520px) max-content;
+  grid-template-columns: minmax(560px, 680px) max-content;
   justify-content: space-between;
   column-gap: clamp(2.5rem, 4vw, 4rem);
   align-items: start;
 }
 
 .site-footer .footer-brand {
-  max-width: 520px;
+  max-width: 680px;
   padding-right: clamp(1.25rem, 2vw, 2rem);
 }
 
@@ -7985,8 +7985,8 @@ section.bg-dark .section-label,
 }
 
 .site-footer .footer-brand .logo-tagline {
-  white-space: normal !important;
-  max-width: 28ch;
+  white-space: nowrap !important;
+  max-width: none;
   line-height: 1.35;
 }
 
