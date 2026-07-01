@@ -7539,3 +7539,19 @@ section.bg-dark .section-label,
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ─── Whitespace reduction between credentials & locations ─── */
+.about-content .certifications-section {
+  padding-bottom: 2rem !important;
+}
+
+.about-content .facilities-section {
+  padding-top: 2rem !important;
+}
+
+/* ─── Prevent underline on client name links ─── */
+.client-name a::after,
+.client-name a:hover::after {
+  display: none !important;
+  content: none !important;
+}
