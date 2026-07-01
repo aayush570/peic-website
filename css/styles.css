@@ -7698,7 +7698,7 @@ section.bg-dark .section-label,
 .badge-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
   grid-auto-rows: auto !important;
-  gap: 1rem !important;
+  gap: 0.75rem !important;
   align-items: start !important;
   background: transparent !important;
   border: 0 !important;
@@ -7722,10 +7722,10 @@ section.bg-dark .section-label,
 
 .cert-badge {
   width: 100% !important;
-  min-height: 118px !important;
+  min-height: 96px !important;
   align-items: flex-start !important;
-  gap: 0.72rem !important;
-  padding: 1rem !important;
+  gap: 0.62rem !important;
+  padding: 0.85rem 0.9rem !important;
   border: 1px solid rgba(214, 223, 229, 0.95) !important;
   border-radius: 18px !important;
   background: #ffffff !important;
@@ -7738,16 +7738,16 @@ section.bg-dark .section-label,
 }
 
 .cert-badge h4 {
-  margin-bottom: 0.28rem !important;
+  margin-bottom: 0.18rem !important;
   color: var(--ink) !important;
-  font-size: 0.92rem !important;
-  line-height: 1.2 !important;
+  font-size: 0.86rem !important;
+  line-height: 1.15 !important;
 }
 
 .cert-badge .cert-num {
   color: var(--slate-mid) !important;
-  font-size: 0.8rem !important;
-  line-height: 1.32 !important;
+  font-size: 0.75rem !important;
+  line-height: 1.24 !important;
 }
 
 .cert-download-indicator {
@@ -7774,6 +7774,16 @@ section.bg-dark .section-label,
 .about-content .certifications-section .section-header,
 .about-content .facilities-section .section-header {
   margin-bottom: clamp(1.7rem, 3vw, 2.4rem) !important;
+}
+
+.certifications-section .section-header {
+  margin-bottom: 1.15rem !important;
+}
+
+.certifications-section .cert-icon {
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
 }
 
 @media (max-width: 1024px) {
