@@ -1648,9 +1648,13 @@ body.modal-open {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: 2.2fr 1fr 1fr 1fr;
   gap: 2.5rem;
   margin-bottom: 3rem;
+}
+
+.footer-brand {
+  max-width: 380px;
 }
 
 .footer-brand p {
