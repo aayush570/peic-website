@@ -110,7 +110,7 @@ function renderSiteContent(site, route = getCurrentRoute()) {
   });
   document.querySelectorAll('.logo-mark').forEach((el) => {
     if (site.logo) {
-      el.innerHTML = `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}">`;
+      el.innerHTML = `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}" onerror="this.parentNode.classList.remove('has-logo'); this.parentNode.textContent='${escapeHTML(site.short_name || 'PEIC').replace(/'/g, "\\'")}';">`;
       el.classList.add('has-logo');
     } else {
       if (site.short_name) el.textContent = site.short_name;
@@ -210,7 +210,7 @@ function renderFooter(site) {
 
   const columns = Array.isArray(site.footer.columns) ? site.footer.columns : [];
   const logoMarkContent = site.logo
-    ? `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}">`
+    ? `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}" onerror="this.parentNode.classList.remove('has-logo'); this.parentNode.textContent='${escapeHTML(site.short_name || 'PEIC').replace(/'/g, "\\'")}';">`
     : escapeHTML(site.short_name || 'PEIC');
   const logoMarkClass = site.logo ? 'logo-mark has-logo' : 'logo-mark';
 
@@ -615,7 +615,7 @@ function renderNotFoundPage(page) {
   const content = document.querySelector('.legal-content');
   if (!content || !page) return;
   const logoMarkContent = peicState.site.logo
-    ? `<img src="${normalizeAssetURL(peicState.site.logo)}" alt="${escapeAttribute(peicState.site.short_name || 'PEIC')}">`
+    ? `<img src="${normalizeAssetURL(peicState.site.logo)}" alt="${escapeAttribute(peicState.site.short_name || 'PEIC')}" onerror="this.parentNode.classList.remove('has-logo'); this.parentNode.textContent='${escapeHTML(peicState.site.short_name || 'PEIC').replace(/'/g, "\\'")}';">`
     : escapeHTML(peicState.site.short_name || 'PEIC');
   const logoMarkClass = peicState.site.logo ? 'logo-mark has-logo' : 'logo-mark';
   content.innerHTML = `<div class="${logoMarkClass}" style="margin: 0 auto 2rem;">${logoMarkContent}</div>

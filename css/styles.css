@@ -7298,21 +7298,24 @@ body:has(.contact-page-main) .floating-cta {
   border: none !important;
   border-radius: 0 !important;
   width: auto !important;
-  height: 54px !important;
-  display: flex;
-  align-items: center;
+  height: auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-shrink: 0 !important;
 }
 
 .logo-mark.has-logo img {
-  height: 100%;
-  width: auto;
+  height: 54px !important;
+  width: auto !important;
+  max-width: 100% !important;
   object-fit: contain;
   padding: 0 !important;
   display: block;
 }
 
 @media (max-width: 430px) {
-  .logo-mark.has-logo {
+  .logo-mark.has-logo img {
     height: 44px !important;
   }
 }
