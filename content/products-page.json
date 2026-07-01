@@ -151,9 +151,9 @@
       "group": "global",
       "country": "USA",
       "flag": "🇺🇸",
-      "description": "Ablation and interventional oncology systems for locoregional cancer treatment, including RFA, microwave ablation, and NanoKnife IRE.",
+      "description": "Specialized oncology systems for radiofrequency and microwave ablation, including NanoKnife IRE technology.",
       "categories": [
-        "RFA Systems",
+        "Radiofrequency Ablation",
         "Microwave Ablation",
         "NanoKnife IRE"
       ],
@@ -166,11 +166,11 @@
       "group": "global",
       "country": "USA",
       "flag": "🇺🇸",
-      "description": "Operating theatre and sterile processing technologies for surgical and CSSD infrastructure planning.",
+      "description": "Integrated OT lighting, surgical tables, and advanced CSSD infrastructure.",
       "categories": [
         "OT Lighting",
         "Surgical Tables",
-        "CSSD Systems"
+        "CSSD Infrastructure"
       ],
       "solutions_url": "solutions.html#ot",
       "website_url": "https://www.steris.com/",
@@ -181,11 +181,11 @@
       "group": "global",
       "country": "Germany",
       "flag": "🇩🇪",
-      "description": "Dental operatory systems and cone-beam CT imaging for clinical dental infrastructure.",
+      "description": "Comprehensive dental suites including CBCT imaging.",
       "categories": [
         "Dental Suites",
         "CBCT Imaging",
-        "Operatory Chairs"
+        "Clinical Equipment"
       ],
       "solutions_url": "solutions.html#dental",
       "website_url": "https://www.dentsplysirona.com/",
@@ -196,11 +196,11 @@
       "group": "global",
       "country": "South Korea",
       "flag": "🇰🇷",
-      "description": "Diagnostic imaging and portable radiography technologies for hospital and imaging-center requirements.",
+      "description": "Advanced diagnostic imaging, including Endoscopic Ultrasound (EUS) systems and Portable Digital Radiography (DR).",
       "categories": [
-        "Portable DR",
-        "Endoscopic US",
-        "Diagnostic Imaging"
+        "Diagnostic Imaging",
+        "EUS Systems",
+        "Portable DR"
       ],
       "solutions_url": "solutions.html#diagnostic",
       "website_url": "https://www.samsunghealthcare.com/",
@@ -211,11 +211,10 @@
       "group": "global",
       "country": "Germany",
       "flag": "🇩🇪",
-      "description": "Rigid and flexible endoscopic systems for surgical and diagnostic departments.",
+      "description": "Premium medical endoscopic systems and instrumentation.",
       "categories": [
-        "Rigid Endoscopes",
-        "Flexible Scopes",
-        "Video Systems"
+        "Endoscopic Systems",
+        "Instrumentation"
       ],
       "solutions_url": "solutions.html#ot",
       "website_url": "https://www.richard-wolf.com/",
@@ -226,14 +225,12 @@
       "group": "global",
       "country": "Germany",
       "flag": "🇩🇪",
-      "description": "German surgical instruments and OT accessories for procedure rooms and sterile services.",
+      "description": "Placeholder text only. Product details for Medicon are to be confirmed and added by PEIC.",
       "categories": [
-        "Surgical Instruments",
-        "OT Accessories",
-        "Sterile Processing"
+        "To Be Confirmed"
       ],
       "solutions_url": "solutions.html#ot",
-      "website_url": "https://medicon.de/en/",
+      "website_url": "",
       "logo": "/uploads/images/05-medicon-1.png"
     },
     {
@@ -241,11 +238,11 @@
       "group": "global",
       "country": "Germany",
       "flag": "🇩🇪",
-      "description": "Electrosurgical generators and energy platforms for operating theatre applications.",
+      "description": "High-end Electrosurgical Units (ESU) featuring under-water cutting, vessel sealing, and torsional ultrasonic scalpels.",
       "categories": [
-        "Electrosurgical Units",
-        "Argon Plasma",
-        "Vessel Sealing"
+        "Under-Water Cutting",
+        "Vessel Sealing",
+        "Ultrasonic Scalpels"
       ],
       "solutions_url": "solutions.html#ot",
       "website_url": "https://www.bowa-medical.com/",
@@ -256,11 +253,11 @@
       "group": "global",
       "country": "Germany",
       "flag": "🇩🇪",
-      "description": "Surgical suction, smoke evacuation, and ENT-focused suction solutions for procedure environments.",
+      "description": "Specialized surgical suction systems, including microprocessor-based cardiac and gynec and thoracic drainage units.",
       "categories": [
         "Surgical Suction",
-        "Smoke Evacuation",
-        "ENT Systems"
+        "Cardiac Drainage",
+        "Gynec & Thoracic Drainage"
       ],
       "solutions_url": "solutions.html#ot",
       "website_url": "https://www.atmos.de/",
@@ -271,11 +268,11 @@
       "group": "global",
       "country": "France",
       "flag": "🇫🇷",
-      "description": "MYRIAN medical imaging software for radiology, oncology, and advanced post-processing workflows.",
+      "description": "MYRIAN software offers a complete suite of clinical tools and AI algorithms for prostate, lung, and brain pathologies, with additional modules for head and neck, cardiovascular, abdomen, and women's health imaging.",
       "categories": [
-        "AI Imaging",
-        "Prostate Analysis",
-        "Cardiovascular AI"
+        "Prostate AI",
+        "Lung AI",
+        "Brain AI"
       ],
       "solutions_url": "solutions.html#oncology",
       "website_url": "https://www.intrasense.fr/",
@@ -286,11 +283,11 @@
       "group": "global",
       "country": "USA",
       "flag": "🇺🇸",
-      "description": "Surgical illumination and autofluorescence wound-imaging systems for surgical and wound-care settings.",
+      "description": "LED HDi Headlights with High-Definition Imaging, compact Hi-Definition Video, Autofluorescence Wound Imaging (REVEAL FC), and REVEAL Fluorescence Guided Dentistry.",
       "categories": [
-        "LED Headlights",
-        "Wound Imaging",
-        "Autofluorescence"
+        "LED HDi Headlights",
+        "REVEAL FC Imaging",
+        "Fluorescence Dentistry"
       ],
       "solutions_url": "solutions.html#ot",
       "website_url": "https://www.designsforvision.com/",
@@ -301,11 +298,11 @@
       "group": "domestic",
       "country": "India",
       "flag": "🇮🇳",
-      "description": "Dental chairs, delivery systems, and operatory suites from an established Indian dental equipment manufacturer.",
+      "description": "We provide their comprehensive dental range, including advanced operatory suites and clinical equipment.",
       "categories": [
         "Operatory Suites",
-        "Dental Chairs",
-        "Delivery Systems"
+        "Clinical Equipment",
+        "Dental Range"
       ],
       "solutions_url": "solutions.html#dental",
       "website_url": "https://www.confidentdental.com/",
@@ -316,11 +313,11 @@
       "group": "domestic",
       "country": "India",
       "flag": "🇮🇳",
-      "description": "Vestibular diagnostic and rehabilitation technology for ENT and neurology departments.",
+      "description": "Vestibular diagnostic and rehabilitation systems including VNG, SVV, DVA, CCG, rotary chair, vHIT, stabilometry, posturography, vestibular rehabilitation, and vestibular assessment platforms.",
       "categories": [
-        "VNG Systems",
-        "vHIT Testing",
-        "VR Rehabilitation"
+        "Vestibular Diagnostics",
+        "Posturography",
+        "Vestibular Rehabilitation"
       ],
       "solutions_url": "solutions.html#diagnostic",
       "website_url": "https://neuroequilibrium.in/",
@@ -331,7 +328,7 @@
       "group": "domestic",
       "country": "India",
       "flag": "🇮🇳",
-      "description": "Infusion management and NST systems for labour ward, neonatal, and monitoring environments.",
+      "description": "Our portfolio includes their precision critical care range, specifically Syringe Pumps, Infusion Pumps, and Non-Stress Test (NST) Machines.",
       "categories": [
         "Syringe Pumps",
         "Infusion Pumps",
@@ -346,10 +343,10 @@
       "group": "domestic",
       "country": "India",
       "flag": "🇮🇳",
-      "description": "Neonatal care equipment including radiant warmers and LED phototherapy systems.",
+      "description": "We supply maternal and neonatal care solutions, including BIS-marked radiant heat warmers and high-intensity LED phototherapy units.",
       "categories": [
-        "Radiant Warmers",
-        "Phototherapy",
+        "Radiant Heat Warmers",
+        "LED Phototherapy Units",
         "Neonatal Care"
       ],
       "solutions_url": "solutions.html#maternal",
