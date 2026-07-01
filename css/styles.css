@@ -1734,6 +1734,7 @@ body.modal-open {
   column-gap: clamp(2rem, 3vw, 3.25rem);
   row-gap: 1.5rem;
   min-width: 0;
+  padding-left: clamp(0.5rem, 1.5vw, 1.5rem);
 }
 
 .footer-brand .logo {
@@ -1744,15 +1745,19 @@ body.modal-open {
 .footer-brand .logo-text {
   min-width: 0;
   gap: 0.25rem;
+  max-width: 100%;
 }
 
 .footer-brand .logo-name {
   line-height: 1.15;
+  white-space: normal;
+  max-width: 22ch;
 }
 
 .footer-brand .logo-tagline {
   max-width: 34ch;
   line-height: 1.55;
+  white-space: normal;
 }
 
 .footer-brand p {
@@ -1840,6 +1845,7 @@ body.modal-open {
   .footer-grid,
   .industry-grid { grid-template-columns: 1fr; }
   .footer-links { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .footer-links { padding-left: 0; }
   .industry-card.featured { grid-row: span 1; }
   .stats-row { grid-template-columns: repeat(3, 1fr); }
   .masonry-grid { grid-template-columns: 1fr; }
@@ -1866,6 +1872,7 @@ body.modal-open {
   .footer-links {
     grid-template-columns: 1fr 1fr;
     column-gap: 2rem;
+    padding-left: 0;
   }
 }
 
@@ -7690,9 +7697,9 @@ section.bg-dark .section-label,
 
 .badge-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  grid-auto-rows: 1fr !important;
+  grid-auto-rows: auto !important;
   gap: 1rem !important;
-  align-items: stretch !important;
+  align-items: start !important;
   background: transparent !important;
   border: 0 !important;
 }
@@ -7704,7 +7711,7 @@ section.bg-dark .section-label,
 .cert-link,
 .badge-grid > .cert-badge {
   display: flex !important;
-  height: 100% !important;
+  height: auto !important;
 }
 
 .cert-link {
@@ -7715,10 +7722,10 @@ section.bg-dark .section-label,
 
 .cert-badge {
   width: 100% !important;
-  min-height: 132px !important;
+  min-height: 118px !important;
   align-items: flex-start !important;
-  gap: 0.8rem !important;
-  padding: 1.1rem !important;
+  gap: 0.72rem !important;
+  padding: 1rem !important;
   border: 1px solid rgba(214, 223, 229, 0.95) !important;
   border-radius: 18px !important;
   background: #ffffff !important;
@@ -7739,8 +7746,8 @@ section.bg-dark .section-label,
 
 .cert-badge .cert-num {
   color: var(--slate-mid) !important;
-  font-size: 0.84rem !important;
-  line-height: 1.4 !important;
+  font-size: 0.8rem !important;
+  line-height: 1.32 !important;
 }
 
 .cert-download-indicator {
