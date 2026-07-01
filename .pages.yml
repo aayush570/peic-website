@@ -109,6 +109,7 @@ components:
       - { name: name, label: Customer name, type: string, required: true }
       - { name: tagline, label: Relationship note, type: string }
       - { name: logo, label: Customer logo, type: image, options: { media: images } }
+      - { name: website_url, label: Website URL, type: string, description: "Optional. Link to client's website (makes client name clickable)." }
 
   testimonial:
     type: object
@@ -121,10 +122,12 @@ components:
   certification:
     type: object
     fields:
-      - { name: icon, label: Short badge letters, type: string, required: true }
+      - { name: icon, label: Short badge letters, type: string, required: true, description: "Shown only when no logo is uploaded." }
+      - { name: logo, label: Certification logo, type: image, options: { media: images }, description: "Optional. Upload logo image instead of letters." }
       - { name: name, label: Certification name, type: string, required: true }
       - { name: details, label: Public certificate note, type: text }
       - { name: file, label: Certificate PDF, type: file, options: { media: documents } }
+      - { name: link, label: Card hyperlink URL, type: string, description: "Optional. Link to a document or website if not uploading a PDF." }
 
   link:
     type: object

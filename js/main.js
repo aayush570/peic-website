@@ -1199,9 +1199,13 @@ function renderTrustContent(about) {
       const logo = clientLogo
         ? `<img src="${escapeAttribute(clientLogo)}" alt="${escapeAttribute(client.name)} logo">`
         : escapeHTML(client.short_name);
-      return `<div class="client-card">
+      const displayName = client.website_url
+        ? `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="client-website-link">${escapeHTML(client.name)}</a>`
+        : escapeHTML(client.name);
+      const cardClass = `client-card${client.website_url ? ' is-clickable' : ''}`;
+      return `<div class="${cardClass}">
         <div class="client-logo ${clientLogo ? 'has-image' : ''}">${logo}</div>
-        <div class="client-name">${escapeHTML(client.name)}</div>
+        <div class="client-name">${displayName}</div>
         <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
       </div>`;
     }).join('');
@@ -1224,13 +1228,32 @@ function renderTrustContent(about) {
   const badgeGrid = document.querySelector('.badge-grid');
   if (badgeGrid && Array.isArray(about.certifications)) {
     badgeGrid.innerHTML = about.certifications.map((cert) => {
-      const certificateFile = normalizeAssetURL(cert.file || '');
-      const badge = `<div class="cert-badge">
-        <div class="cert-icon">${escapeHTML(cert.icon)}</div>
-        <div><h4>${escapeHTML(cert.name)}</h4><p class="cert-num">${escapeHTML(cert.details || '')}</p></div>
+      const clickUrl = cert.link || cert.file || '';
+      const certificateFile = clickUrl ? normalizeAssetURL(clickUrl) : '';
+      const logoUrl = normalizeAssetURL(cert.logo || '');
+      const iconContent = logoUrl
+        ? `<img src="${escapeAttribute(logoUrl)}" alt="${escapeAttribute(cert.name)} logo">`
+        : escapeHTML(cert.icon);
+      const iconClass = `cert-icon${logoUrl ? ' has-image' : ''}`;
+      
+      const badge = `<div class="cert-badge${certificateFile ? ' is-clickable' : ''}">
+        <div class="${iconClass}">${iconContent}</div>
+        <div>
+          <h4>${escapeHTML(cert.name)}</h4>
+          ${cert.details ? `<p class="cert-num">${escapeHTML(cert.details)}</p>` : ''}
+        </div>
       </div>`;
+      
+      let indicator = '';
+      if (certificateFile) {
+        const isPdf = certificateFile.toLowerCase().endsWith('.pdf');
+        indicator = isPdf
+          ? `<span class="cert-download-indicator" title="Download Document">↓</span>`
+          : `<span class="cert-download-indicator" title="Open Link">→</span>`;
+      }
+      
       return certificateFile
-        ? `<a class="cert-link" href="${escapeAttribute(certificateFile)}" target="_blank" rel="noopener">${badge}<span class="cert-download-indicator">↓</span></a>`
+        ? `<a class="cert-link" href="${escapeAttribute(certificateFile)}" target="_blank" rel="noopener">${badge}${indicator}</a>`
         : badge;
     }).join('');
   }

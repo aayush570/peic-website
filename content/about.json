@@ -35,8 +35,8 @@
     },
     "certifications_heading": {
       "label": "Compliance & Certifications",
-      "title": "Verified credentials, available on request",
-      "description": "Current certificates and registration documents are available for qualified procurement enquiries and final compliance review."
+      "title": "Verified credentials",
+      "description": "Current certificates and registration documents for procurement enquiries and final compliance review."
     },
     "cta": {
       "label": "Start a Conversation",
@@ -128,115 +128,143 @@
       "short_name": "BMC",
       "name": "Brihanmumbai Municipal Corporation",
       "tagline": "KEM, LTMG, Nair & Cooper",
-      "logo": "/uploads/images/logov1.png"
+      "logo": "/uploads/images/logov1.png",
+      "website_url": "https://www.mcgm.gov.in"
     },
     {
       "short_name": "BARC",
       "name": "B.A.R.C.",
       "tagline": "Bhabha Atomic Research Centre",
-      "logo": "/uploads/images/bhabhaatomicresearchcentrelogo.png"
+      "logo": "/uploads/images/bhabhaatomicresearchcentrelogo.png",
+      "website_url": ""
     },
     {
       "short_name": "CCMB",
       "name": "C.C.M.B.",
       "tagline": "Centre for Cellular & Molecular Biology",
-      "logo": "/uploads/images/ccmbemblem.png"
+      "logo": "/uploads/images/ccmbemblem.png",
+      "website_url": ""
     },
     {
       "short_name": "IGIB",
       "name": "IGIB",
       "tagline": "Institute of Genomics & Integrative Biology",
-      "logo": "/uploads/images/instituteofgenomicsandintegrativebiologysvg.png"
+      "logo": "/uploads/images/instituteofgenomicsandintegrativebiologysvg.png",
+      "website_url": ""
     },
     {
       "short_name": "IMT",
       "name": "CSIR IMTech",
       "tagline": "Institute of Microbial Technology",
-      "logo": "/uploads/images/images-11.png"
+      "logo": "/uploads/images/images-11.png",
+      "website_url": ""
     },
     {
       "short_name": "IR",
       "name": "Indian Railways",
       "tagline": "Western, Central, Northern, ECOR & South-Eastern zones",
-      "logo": "/uploads/images/indianrailwaylogo1.png"
+      "logo": "/uploads/images/indianrailwaylogo1.png",
+      "website_url": ""
     },
     {
       "short_name": "TMH",
       "name": "Tata Memorial Hospital",
       "tagline": "Parel & ACTREC",
-      "logo": "/uploads/images/tatamemorialhospitallogosvg.png"
+      "logo": "/uploads/images/tatamemorialhospitallogosvg.png",
+      "website_url": ""
     },
     {
       "short_name": "PT",
       "name": "Port Trust Hospitals",
       "tagline": "Mumbai & Visakhapatnam",
-      "logo": "/uploads/images/images-3.jpeg"
+      "logo": "/uploads/images/images-3.jpeg",
+      "website_url": ""
     },
     {
       "short_name": "SHD",
       "name": "DMER, DHS & ESIC",
       "tagline": "Maharashtra, Delhi & Goa",
-      "logo": "/uploads/images/logo-3.png"
+      "logo": "/uploads/images/logo-3.png",
+      "website_url": ""
     },
     {
       "short_name": "WADIA",
       "name": "Wadia Hospital",
       "tagline": "Private Hospital",
-      "logo": "/uploads/images/images-4.jpeg"
+      "logo": "/uploads/images/images-4.jpeg",
+      "website_url": ""
     },
     {
       "short_name": "LOTUS",
       "name": "Lotus Eye Hospital",
       "tagline": "Private Hospital",
-      "logo": "/uploads/images/qtq-95.webp"
+      "logo": "/uploads/images/qtq-95.webp",
+      "website_url": ""
     },
     {
       "short_name": "HSH",
       "name": "Holy Spirit Hospital",
       "tagline": "Private Hospital",
-      "logo": "/uploads/images/images-5.jpeg"
+      "logo": "/uploads/images/images-5.jpeg",
+      "website_url": ""
     }
   ],
   "certifications": [
     {
       "icon": "BIS",
       "name": "BIS Licenses: IS 3829 Part 1 & Part 2",
-      "details": "Steam sterilizer certification held since 1976 and 1982. Current documents available on request."
+      "details": "Steam sterilizer certification held since 1976 and 1982.",
+      "logo": "",
+      "link": "https://bis.gov.in"
     },
     {
       "icon": "CE",
       "name": "CE Marking Compliance",
-      "details": "Medical Device Directive 93/42/EEC certification. Current document available on request."
+      "details": "Medical Device Directive 93/42/EEC certification.",
+      "logo": "",
+      "link": ""
     },
     {
       "icon": "GMP",
       "name": "Good Manufacturing Practices",
-      "details": "GMP certification. Current document available on request."
+      "details": "GMP certification.",
+      "logo": "",
+      "link": ""
     },
     {
       "icon": "ISO",
       "name": "ISO 14001:2015 - Environmental Management",
-      "details": "Current document available on request."
+      "details": "",
+      "logo": "",
+      "link": ""
     },
     {
       "icon": "ISO",
       "name": "ISO 13485:2016 - Medical Devices QMS",
-      "details": "Current document available on request."
+      "details": "",
+      "logo": "",
+      "link": ""
     },
     {
       "icon": "ISO",
       "name": "ISO 9001:2015 - Quality Management System",
-      "details": "Current document available on request."
+      "details": "",
+      "logo": "",
+      "link": ""
     },
     {
       "icon": "MSME",
       "name": "MSME / Udyam Registration",
-      "details": "Registration document available on request."
+      "details": "",
+      "logo": "",
+      "link": ""
     },
     {
       "icon": "NSIC",
       "name": "NSIC Registration",
-      "details": "Registration document available on request."
+      "details": "",
+      "logo": "",
+      "link": ""
     }
   ]
 }
