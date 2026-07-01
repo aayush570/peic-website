@@ -648,12 +648,19 @@ function setTextWithin(container, selector, value) {
   if (element && value !== undefined && value !== null) element.textContent = value;
 }
 
+function getProductDetailURL(product = {}) {
+  if (product.detail_url) return product.detail_url;
+  if (product.url) return product.url;
+  if (product.slug) return `${product.slug}.html`;
+  return `product-detail.html?product=${encodeURIComponent(product.name || '')}`;
+}
+
 function renderProducts(products) {
   const grid = document.querySelector('.product-grid');
   if (!grid || !Array.isArray(products)) return;
 
   grid.innerHTML = products.map((product) => {
-    const detailURL = product.detail_url || product.url || `product-detail.html?product=${encodeURIComponent(product.slug || product.name || '')}`;
+    const detailURL = getProductDetailURL(product);
     const detailLabel = product.detail_label || 'See details';
     const enquiryLabel = product.enquiry_label || product.action_label || 'Submit enquiry';
 
@@ -837,7 +844,7 @@ function renderMissingProductDetail(main) {
 function renderProductDetailSEO(product) {
   const detail = product.detail || {};
   const siteURL = (peicState.site.site_url || 'https://peic.in').replace(/\/+$/, '');
-  const canonicalPath = product.detail_url || window.location.pathname.split('/').pop() || '';
+  const canonicalPath = getProductDetailURL(product) || window.location.pathname.split('/').pop() || '';
   const canonicalURL = absoluteSiteURL(canonicalPath, siteURL);
   const image = product.image ? absoluteSiteURL(normalizeAssetURL(product.image), siteURL) : '';
 
