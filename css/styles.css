@@ -6423,6 +6423,23 @@ body:has(.contact-page-main) .floating-cta {
   }
 }
 
+@media (min-width: 1181px) and (max-width: 1360px) {
+  .home-precision-hero {
+    min-height: clamp(500px, 58vh, 620px);
+    padding: clamp(1.75rem, 3vw, 2.5rem) 0;
+  }
+
+  .home-hero-grid {
+    align-items: center;
+    gap: clamp(1.5rem, 2.8vw, 2.5rem);
+    padding: clamp(1.25rem, 2.5vh, 2rem) 0;
+  }
+
+  .home-hero-copy {
+    padding-bottom: 0;
+  }
+}
+
 @media (max-width: 820px) {
   body {
     padding-bottom: calc(74px + env(safe-area-inset-bottom, 0px));
