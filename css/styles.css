@@ -4,6 +4,7 @@
   --green-dark: #3d8a48;
   --green-light: #e8f4ea;
   --green-muted: #7bc484;
+  --green-contrast: #23572b;
   --white: #ffffff;
   --slate: #1e293b;
   --slate-mid: #334155;
@@ -7388,4 +7389,78 @@ body:has(.contact-page-main) .floating-cta {
   .logo-mark.has-logo img {
     height: 44px !important;
   }
+}
+
+/* Accessibility & Visual Polish: High-Contrast Green Text & Badge Adjustments */
+.section-label {
+  display: inline-block !important;
+  font-family: var(--font) !important;
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  background-color: var(--green-light) !important;
+  color: var(--green-contrast) !important;
+  padding: 0.35rem 0.85rem !important;
+  border-radius: 50px !important;
+  border: 1px solid rgba(86, 166, 97, 0.22) !important;
+  margin-bottom: 0.75rem !important;
+  width: fit-content !important;
+  line-height: 1 !important;
+}
+
+/* Ensure no margins are broken where it should be zero */
+.home-cta .section-label,
+.home-cta-inner .section-label,
+.about-cta .section-label,
+.products-cta .section-label {
+  margin-bottom: 0 !important;
+}
+
+/* Dark theme badges inside dark background sections */
+.bg-dark .section-label,
+section.bg-dark .section-label,
+.home-cta .section-label,
+.products-cta .section-label,
+.about-cta .section-label {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: #a8e6b0 !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+/* High contrast adjustments for stats taglines */
+.stat-tagline {
+  color: var(--green-contrast) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  font-size: 0.75rem !important;
+}
+
+/* High contrast adjustments for doc-card-type (Resources Page) */
+.doc-card-type {
+  display: inline-flex !important;
+  align-items: center !important;
+  background-color: var(--green-light) !important;
+  color: var(--green-contrast) !important;
+  border: 1px solid rgba(86, 166, 97, 0.18) !important;
+  padding: 0.25rem 0.65rem !important;
+  border-radius: 4px !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  margin-bottom: 0.5rem !important;
+  width: fit-content !important;
+  line-height: 1 !important;
+}
+
+/* Hotline label high contrast adjustment */
+.hotline-label {
+  color: var(--green-contrast) !important;
+  font-weight: 700 !important;
+}
+
+/* Fix text visibility bug on .tier-badge */
+.tier-badge {
+  color: white !important;
 }
