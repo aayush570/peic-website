@@ -154,6 +154,9 @@ function renderSEOContent(seo, route) {
   setMetaContent('meta[property="og:description"]', seo.description);
   setMetaContent('meta[property="og:image"]', seoImage);
   setMetaContent('meta[property="og:url"]', `${siteURL}/${route === 'home' ? '' : `${route}.html`}`);
+  setMetaContent('meta[name="twitter:title"]', seo.title);
+  setMetaContent('meta[name="twitter:description"]', seo.description);
+  setMetaContent('meta[name="twitter:image"]', seoImage);
   setAttribute('link[rel="canonical"]', 'href', `${siteURL}/${route === 'home' ? '' : `${route}.html`}`);
 }
 
@@ -737,6 +740,7 @@ function renderProductDetailPage(page) {
   }
 
   renderProductDetailSEO(product);
+  renderProductDetailSchema(product);
   const detail = product.detail || {};
   const image = normalizeAssetURL(product.image || page.hero?.image || '');
   const productAction = productActionHTML(product, 'btn btn-primary product-detail-enquire', product.enquiry_label || product.action_label || 'Submit enquiry');
@@ -875,7 +879,71 @@ function renderProductDetailSEO(product) {
   setMetaContent('meta[property="og:description"]', detail.seo_description || product.description);
   setMetaContent('meta[property="og:image"]', image);
   setMetaContent('meta[property="og:url"]', canonicalURL);
+  setMetaContent('meta[name="twitter:title"]', detail.seo_title || `${product.name} | PEIC`);
+  setMetaContent('meta[name="twitter:description"]', detail.seo_description || product.description);
+  setMetaContent('meta[name="twitter:image"]', image);
   setAttribute('link[rel="canonical"]', 'href', canonicalURL);
+}
+
+function renderProductDetailSchema(product) {
+  const siteURL = (peicState.site.site_url || 'https://peic.in').replace(/\/+$/, '');
+  const canonicalURL = absoluteSiteURL(getProductDetailURL(product), siteURL);
+  const image = product.image ? absoluteSiteURL(normalizeAssetURL(product.image), siteURL) : undefined;
+  let script = document.querySelector('#product-schema');
+  if (!script) {
+    script = document.createElement('script');
+    script.id = 'product-schema';
+    script.type = 'application/ld+json';
+    document.head.appendChild(script);
+  }
+
+  script.textContent = JSON.stringify({
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'Product',
+        '@id': `${canonicalURL}#product`,
+        name: product.name,
+        description: product.detail?.seo_description || product.description || '',
+        image,
+        url: canonicalURL,
+        brand: {
+          '@type': 'Brand',
+          name: peicState.site.short_name || 'PEIC'
+        },
+        manufacturer: {
+          '@type': 'Organization',
+          name: peicState.site.company_name || 'Precision Electronics Instruments & Components',
+          url: siteURL
+        },
+        category: 'Medical equipment'
+      },
+      {
+        '@type': 'BreadcrumbList',
+        '@id': `${canonicalURL}#breadcrumb`,
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: `${siteURL}/`
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Products',
+            item: `${siteURL}/products.html`
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: product.name,
+            item: canonicalURL
+          }
+        ]
+      }
+    ]
+  }, null, 2);
 }
 
 function absoluteSiteURL(path, siteURL) {

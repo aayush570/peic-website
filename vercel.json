@@ -1,20 +1,20 @@
 {
   "cleanUrls": false,
-  "rewrites": [
-    { "source": "/products", "destination": "/products.html" },
-    { "source": "/solutions", "destination": "/solutions.html" },
-    { "source": "/service", "destination": "/service.html" },
-    { "source": "/about", "destination": "/about.html" },
-    { "source": "/resources", "destination": "/resources.html" },
-    { "source": "/careers", "destination": "/careers.html" },
-    { "source": "/contact", "destination": "/contact.html" },
-    { "source": "/privacy", "destination": "/privacy.html" },
-    { "source": "/horizontal-rectangular-sterilizer", "destination": "/horizontal-rectangular-sterilizer.html" },
-    { "source": "/horizontal-cylindrical-sterilizer", "destination": "/horizontal-cylindrical-sterilizer.html" },
-    { "source": "/high-speed-steam-sterilizer", "destination": "/high-speed-steam-sterilizer.html" },
-    { "source": "/vertical-autoclave", "destination": "/vertical-autoclave.html" },
-    { "source": "/bowl-utensil-sterilizer", "destination": "/bowl-utensil-sterilizer.html" },
-    { "source": "/hot-cold-water-pressure-sterilizer", "destination": "/hot-cold-water-pressure-sterilizer.html" }
+  "redirects": [
+    { "source": "/products", "destination": "/products.html", "permanent": true },
+    { "source": "/solutions", "destination": "/solutions.html", "permanent": true },
+    { "source": "/service", "destination": "/service.html", "permanent": true },
+    { "source": "/about", "destination": "/about.html", "permanent": true },
+    { "source": "/resources", "destination": "/resources.html", "permanent": true },
+    { "source": "/careers", "destination": "/careers.html", "permanent": true },
+    { "source": "/contact", "destination": "/contact.html", "permanent": true },
+    { "source": "/privacy", "destination": "/privacy.html", "permanent": true },
+    { "source": "/horizontal-rectangular-sterilizer", "destination": "/horizontal-rectangular-sterilizer.html", "permanent": true },
+    { "source": "/horizontal-cylindrical-sterilizer", "destination": "/horizontal-cylindrical-sterilizer.html", "permanent": true },
+    { "source": "/high-speed-steam-sterilizer", "destination": "/high-speed-steam-sterilizer.html", "permanent": true },
+    { "source": "/vertical-autoclave", "destination": "/vertical-autoclave.html", "permanent": true },
+    { "source": "/bowl-utensil-sterilizer", "destination": "/bowl-utensil-sterilizer.html", "permanent": true },
+    { "source": "/hot-cold-water-pressure-sterilizer", "destination": "/hot-cold-water-pressure-sterilizer.html", "permanent": true }
   ],
   "headers": [
     {
