@@ -7291,11 +7291,28 @@ body:has(.contact-page-main) .floating-cta {
   }
 }
 
-/* Custom logo image scaling and padding inside the green box */
-.logo-mark img {
-  width: 100%;
+/* Custom logo styling when uploaded (removes background square & increases prominence) */
+.logo-mark.has-logo {
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  width: auto !important;
+  height: 54px !important;
+  display: flex;
+  align-items: center;
+}
+
+.logo-mark.has-logo img {
   height: 100%;
+  width: auto;
   object-fit: contain;
-  padding: 4px;
+  padding: 0 !important;
   display: block;
+}
+
+@media (max-width: 430px) {
+  .logo-mark.has-logo {
+    height: 44px !important;
+  }
 }
