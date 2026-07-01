@@ -136,77 +136,77 @@
       "name": "B.A.R.C.",
       "tagline": "Bhabha Atomic Research Centre",
       "logo": "/uploads/images/bhabhaatomicresearchcentrelogo.png",
-      "website_url": ""
+      "website_url": "http://www.barc.gov.in"
     },
     {
       "short_name": "CCMB",
       "name": "C.C.M.B.",
       "tagline": "Centre for Cellular & Molecular Biology",
       "logo": "/uploads/images/ccmbemblem.png",
-      "website_url": ""
+      "website_url": "https://ccmb.res.in"
     },
     {
       "short_name": "IGIB",
       "name": "IGIB",
       "tagline": "Institute of Genomics & Integrative Biology",
       "logo": "/uploads/images/instituteofgenomicsandintegrativebiologysvg.png",
-      "website_url": ""
+      "website_url": "https://www.igib.res.in"
     },
     {
       "short_name": "IMT",
       "name": "CSIR IMTech",
       "tagline": "Institute of Microbial Technology",
       "logo": "/uploads/images/images-11.png",
-      "website_url": ""
+      "website_url": "https://www.imtech.res.in"
     },
     {
       "short_name": "IR",
       "name": "Indian Railways",
       "tagline": "Western, Central, Northern, ECOR & South-Eastern zones",
       "logo": "/uploads/images/indianrailwaylogo1.png",
-      "website_url": ""
+      "website_url": "https://indianrailways.gov.in/"
     },
     {
       "short_name": "TMH",
       "name": "Tata Memorial Hospital",
       "tagline": "Parel & ACTREC",
       "logo": "/uploads/images/tatamemorialhospitallogosvg.png",
-      "website_url": ""
+      "website_url": "https://tmc.gov.in"
     },
     {
       "short_name": "PT",
       "name": "Port Trust Hospitals",
       "tagline": "Mumbai & Visakhapatnam",
       "logo": "/uploads/images/images-3.jpeg",
-      "website_url": ""
+      "website_url": "https://mumbaiport.gov.in/show_content.php?lang=1&level=0&ls_id=262&lid=229"
     },
     {
-      "short_name": "SHD",
+      "short_name": "DHS",
       "name": "DMER, DHS & ESIC",
       "tagline": "Maharashtra, Delhi & Goa",
       "logo": "/uploads/images/logo-3.png",
-      "website_url": ""
+      "website_url": "https://www.dhshospitals.com"
     },
     {
       "short_name": "WADIA",
       "name": "Wadia Hospital",
       "tagline": "Private Hospital",
       "logo": "/uploads/images/images-4.jpeg",
-      "website_url": ""
+      "website_url": "https://www.wadiahospitals.org"
     },
     {
       "short_name": "LOTUS",
       "name": "Lotus Eye Hospital",
       "tagline": "Private Hospital",
       "logo": "/uploads/images/qtq-95.webp",
-      "website_url": ""
+      "website_url": "https://lotuseyehospital.org"
     },
     {
       "short_name": "HSH",
       "name": "Holy Spirit Hospital",
       "tagline": "Private Hospital",
       "logo": "/uploads/images/images-5.jpeg",
-      "website_url": ""
+      "website_url": "https://holyspirithospital.org"
     }
   ],
   "certifications": [
@@ -214,57 +214,37 @@
       "icon": "BIS",
       "name": "BIS Licenses: IS 3829 Part 1 & Part 2",
       "details": "Steam sterilizer certification held since 1976 and 1982.",
-      "logo": "",
       "link": "https://bis.gov.in"
     },
     {
       "icon": "CE",
       "name": "CE Marking Compliance",
-      "details": "Medical Device Directive 93/42/EEC certification.",
-      "logo": "",
-      "link": ""
+      "details": "Medical Device Directive 93/42/EEC certification."
     },
     {
       "icon": "GMP",
       "name": "Good Manufacturing Practices",
-      "details": "GMP certification.",
-      "logo": "",
-      "link": ""
+      "details": "GMP certification."
     },
     {
       "icon": "ISO",
-      "name": "ISO 14001:2015 - Environmental Management",
-      "details": "",
-      "logo": "",
-      "link": ""
+      "name": "ISO 14001:2015 - Environmental Management"
     },
     {
       "icon": "ISO",
-      "name": "ISO 13485:2016 - Medical Devices QMS",
-      "details": "",
-      "logo": "",
-      "link": ""
+      "name": "ISO 13485:2016 - Medical Devices QMS"
     },
     {
       "icon": "ISO",
-      "name": "ISO 9001:2015 - Quality Management System",
-      "details": "",
-      "logo": "",
-      "link": ""
+      "name": "ISO 9001:2015 - Quality Management System"
     },
     {
       "icon": "MSME",
-      "name": "MSME / Udyam Registration",
-      "details": "",
-      "logo": "",
-      "link": ""
+      "name": "MSME / Udyam Registration"
     },
     {
       "icon": "NSIC",
-      "name": "NSIC Registration",
-      "details": "",
-      "logo": "",
-      "link": ""
+      "name": "NSIC Registration"
     }
   ]
 }
