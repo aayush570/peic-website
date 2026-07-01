@@ -109,7 +109,13 @@ function renderSiteContent(site, route = getCurrentRoute()) {
     el.textContent = site.tagline;
   });
   document.querySelectorAll('.logo-mark').forEach((el) => {
-    if (site.short_name) el.textContent = site.short_name;
+    if (site.logo) {
+      el.innerHTML = `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}">`;
+      el.classList.add('has-logo');
+    } else {
+      if (site.short_name) el.textContent = site.short_name;
+      el.classList.remove('has-logo');
+    }
   });
   document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
     link.href = `tel:${site.phone_link}`;
@@ -203,9 +209,14 @@ function renderFooter(site) {
   if (!footer || !footerGrid || !site.footer) return;
 
   const columns = Array.isArray(site.footer.columns) ? site.footer.columns : [];
+  const logoMarkContent = site.logo
+    ? `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}">`
+    : escapeHTML(site.short_name || 'PEIC');
+  const logoMarkClass = site.logo ? 'logo-mark has-logo' : 'logo-mark';
+
   footerGrid.innerHTML = `<div class="footer-brand">
       <a href="index.html" class="logo">
-        <div class="logo-mark">${escapeHTML(site.short_name || 'PEIC')}</div>
+        <div class="${logoMarkClass}">${logoMarkContent}</div>
         <div class="logo-text">
           <span class="logo-name" style="color: white;">${escapeHTML(site.company_name || '')}</span>
           <span class="logo-tagline">${escapeHTML(site.tagline || '')}</span>
@@ -603,7 +614,11 @@ function renderPrivacyPage(page) {
 function renderNotFoundPage(page) {
   const content = document.querySelector('.legal-content');
   if (!content || !page) return;
-  content.innerHTML = `<div class="logo-mark" style="margin: 0 auto 2rem;">${escapeHTML(peicState.site.short_name || 'PEIC')}</div>
+  const logoMarkContent = peicState.site.logo
+    ? `<img src="${normalizeAssetURL(peicState.site.logo)}" alt="${escapeAttribute(peicState.site.short_name || 'PEIC')}">`
+    : escapeHTML(peicState.site.short_name || 'PEIC');
+  const logoMarkClass = peicState.site.logo ? 'logo-mark has-logo' : 'logo-mark';
+  content.innerHTML = `<div class="${logoMarkClass}" style="margin: 0 auto 2rem;">${logoMarkContent}</div>
     <p class="section-label">${escapeHTML(page.label || 'Error 404')}</p>
     <h1>${escapeHTML(page.title || 'Page not found')}</h1>
     <p>${escapeHTML(page.description || '')}</p>

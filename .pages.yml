@@ -546,6 +546,7 @@ content:
     format: json
     fields:
       - { name: company_name, label: Company name, type: string, required: true }
+      - { name: logo, label: Logo PNG/Image, type: image, options: { media: images } }
       - { name: short_name, label: Short logo text, type: string }
       - { name: tagline, label: Header tagline, type: string }
       - { name: phone_display, label: Phone shown to visitors, type: string, required: true }

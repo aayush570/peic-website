@@ -7290,3 +7290,12 @@ body:has(.contact-page-main) .floating-cta {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
+/* Custom logo image scaling and padding inside the green box */
+.logo-mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 4px;
+  display: block;
+}
