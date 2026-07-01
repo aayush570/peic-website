@@ -59,53 +59,92 @@
   "manufactured_products": [
     {
       "name": "Horizontal Rectangular High-Pressure Steam Sterilizer",
+      "slug": "horizontal-rectangular-sterilizer",
       "certification": "BIS IS 3829 Part 1 - PEIC manufactured",
       "description": "A CSSD-focused rectangular steam sterilizer for institutions that need repeatable cycles, load documentation, and enquiry-based configuration support.",
       "image": "/uploads/images/office-pramesh-bhai-2026-06-26-064246-1.jpg",
+      "detail_url": "horizontal-rectangular-sterilizer.html",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
     {
       "name": "Horizontal Cylindrical High-Pressure Steam Sterilizer",
+      "slug": "horizontal-cylindrical-sterilizer",
       "certification": "BIS IS 3829 Part 1 - PEIC manufactured",
       "description": "A cylindrical horizontal autoclave for hospitals and laboratories that need dependable pressure-steam sterilization with automated cycle control and domestic service support.",
       "image": "/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg",
+      "detail_url": "horizontal-cylindrical-sterilizer.html",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
     {
       "name": "Horizontal High-Speed Steam Sterilizer",
+      "slug": "high-speed-steam-sterilizer",
       "certification": "BIS IS 3829 Part 2 - PEIC manufactured",
       "description": "A high-speed steam sterilizer for OT and sterile-processing teams that need faster instrument turnaround with controlled automation, cycle visibility, and service accountability.",
       "image": "/uploads/images/high-speed-steam-sterilizer.png",
+      "detail_url": "high-speed-steam-sterilizer.html",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
     {
       "name": "Fully Automatic Vertical Autoclave",
+      "slug": "vertical-autoclave",
       "certification": "PEIC manufactured",
       "description": "A compact vertical autoclave for labs, clinics, and smaller departments that need automated sterilization controls in a space-conscious footprint.",
       "image": "/uploads/images/vertical.jpg",
+      "detail_url": "vertical-autoclave.html",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
     {
       "name": "Bowl & Utensil Sterilizer",
+      "slug": "bowl-utensil-sterilizer",
       "certification": "PEIC manufactured",
       "description": "A stainless-steel sterilizer for OT, ward, and patient-care utensil workflows where infection-control support is needed outside the main CSSD.",
       "image": "/uploads/images/bed-and-bowl-utensil.jpg",
+      "detail_url": "bowl-utensil-sterilizer.html",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
     {
       "name": "Fully Automatic Hot & Cold Water Pressure Sterilizer",
+      "slug": "hot-cold-water-pressure-sterilizer",
       "certification": "PEIC manufactured",
       "description": "A fully automatic hot and cold water pressure sterilizer for departments that need controlled sterile-water handling, safety fittings, and serviceable stainless construction.",
       "image": "/uploads/images/hot-and-cold-water.jpg",
+      "detail_url": "hot-cold-water-pressure-sterilizer.html",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     }
   ],
+  "manufactured_range": {
+    "label": "Available on enquiry",
+    "title": "And many more sterilization and CSSD support systems",
+    "description": "The six featured categories above have dedicated product pages. PEIC also supports related sterilization and department-support requirements through enquiry-led configuration, documentation, and service planning.",
+    "items": [
+      "Bedpan sterilizers",
+      "Bio-medical waste sanitizers",
+      "Tabletop sterilization units",
+      "CSSD furniture",
+      "Trolleys for medical equipment"
+    ]
+  },
+  "hospital_scope": {
+    "label": "Hospital-wide equipment scope",
+    "title": "One technical partner across CSSD and the wider hospital.",
+    "description": "PEIC helps biomedical engineering and procurement teams consolidate equipment sourcing beyond CSSD, bringing specification support, quotation coordination, installation, training, AMC/CMC planning, and service escalation into one accountable relationship.",
+    "items": [
+      "CSSD & infection control",
+      "Operating theatres & endoscopy",
+      "Oncology & interventional therapy",
+      "Radiology, imaging & AI post-processing",
+      "Dental suites & CBCT",
+      "Maternal, neonatal & infusion care",
+      "ENT, vestibular diagnostics & rehabilitation",
+      "Surgical instruments, suction & OT accessories"
+    ]
+  },
   "partner_companies": [
     {
       "name": "AngioDynamics",

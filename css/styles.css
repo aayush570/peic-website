@@ -6540,6 +6540,104 @@ body:has(.contact-page-main) .floating-cta {
   margin-bottom: 1rem;
 }
 
+.products-page .manufactured-range-card {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  margin-top: clamp(1.15rem, 2.2vw, 1.6rem);
+  padding: clamp(1.25rem, 2.6vw, 2rem);
+  border: 1px solid rgba(86, 166, 97, 0.24);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(232, 244, 234, 0.9), rgba(255, 255, 255, 0.98));
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+.products-page .manufactured-range-card .section-label,
+.products-page .hospital-scope-panel .section-label {
+  margin-bottom: 0.45rem;
+}
+
+.products-page .manufactured-range-card h3,
+.products-page .hospital-scope-panel h3 {
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  letter-spacing: 0;
+  margin-bottom: 0.45rem;
+}
+
+.products-page .manufactured-range-card p,
+.products-page .hospital-scope-panel p {
+  color: var(--slate-mid);
+  font-size: 0.94rem;
+  line-height: 1.62;
+  max-width: 680px;
+}
+
+.manufactured-range-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  list-style: none;
+}
+
+.manufactured-range-list li {
+  position: relative;
+  min-height: 48px;
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--slate-mid);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 0.78rem 0.85rem 0.78rem 2.2rem;
+}
+
+.manufactured-range-list li::before {
+  content: "";
+  position: absolute;
+  top: 1.05rem;
+  left: 0.9rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 50%;
+  background: var(--green);
+}
+
+.products-page .hospital-scope-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 0.75fr) minmax(320px, 1fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: start;
+  margin: 0 0 2rem;
+  padding: clamp(1.25rem, 2.6vw, 2rem);
+  border: 1px solid rgba(226, 232, 240, 0.95);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.07);
+}
+
+.hospital-scope-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.hospital-scope-grid span {
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid rgba(86, 166, 97, 0.22);
+  border-radius: 999px;
+  background: var(--green-light);
+  color: var(--green-dark);
+  font-size: 0.82rem;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 0.55rem 0.78rem;
+}
+
 .products-page #manufacturing .product-actions {
   display: flex;
   flex-wrap: wrap;
@@ -7008,6 +7106,15 @@ body:has(.contact-page-main) .floating-cta {
 
 @media (max-width: 680px) {
   .products-page #manufacturing .product-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .products-page .manufactured-range-card,
+  .products-page .hospital-scope-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .manufactured-range-list {
     grid-template-columns: 1fr;
   }
 

@@ -355,6 +355,8 @@ function renderProductsPage(page) {
   const partnerHeadings = document.querySelectorAll('#partners .container > h3');
   if (partnerHeadings[1] && page.partners?.domestic_title) partnerHeadings[1].textContent = page.partners.domestic_title;
   renderProducts(page.manufactured_products);
+  renderManufacturedRange(page.manufactured_range);
+  renderHospitalScope(page.hospital_scope);
   renderPartners(page.partner_companies);
   setCallout(document.querySelector('.products-cta .home-cta-inner'), page.cta);
 }
@@ -671,6 +673,34 @@ function renderProducts(products) {
       </div>
     </article>`;
   }).join('');
+}
+
+function renderManufacturedRange(range) {
+  const card = document.querySelector('.manufactured-range-card');
+  if (!card || !range) return;
+
+  setTextWithin(card, '.section-label', range.label);
+  setTextWithin(card, 'h3', range.title);
+  setTextWithin(card, 'p', range.description);
+
+  const list = card.querySelector('.manufactured-range-list');
+  if (list && Array.isArray(range.items)) {
+    list.innerHTML = range.items.map((item) => `<li>${escapeHTML(item)}</li>`).join('');
+  }
+}
+
+function renderHospitalScope(scope) {
+  const panel = document.querySelector('.hospital-scope-panel');
+  if (!panel || !scope) return;
+
+  setTextWithin(panel, '.section-label', scope.label);
+  setTextWithin(panel, 'h3', scope.title);
+  setTextWithin(panel, 'p', scope.description);
+
+  const grid = panel.querySelector('.hospital-scope-grid');
+  if (grid && Array.isArray(scope.items)) {
+    grid.innerHTML = scope.items.map((item) => `<span>${escapeHTML(item)}</span>`).join('');
+  }
 }
 
 function renderProductDetailPage(page) {
