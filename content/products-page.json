@@ -61,7 +61,7 @@
       "name": "Horizontal Rectangular High-Pressure Steam Sterilizer",
       "certification": "BIS IS 3829 Part 1 - PEIC manufactured",
       "description": "A CSSD-focused rectangular steam sterilizer for institutions that need repeatable cycles, load documentation, and enquiry-based configuration support.",
-      "image": "/uploads/images/slide5.jpeg",
+      "image": "/uploads/images/horizontal-rectangular-high-pressure-steam-sterilizer.jpeg",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
@@ -69,7 +69,7 @@
       "name": "Horizontal Cylindrical High-Pressure Steam Sterilizer",
       "certification": "BIS IS 3829 Part 1 - PEIC manufactured",
       "description": "A cylindrical horizontal autoclave for hospitals and laboratories that need dependable pressure-steam sterilization with automated cycle control and domestic service support.",
-      "image": "/uploads/images/slide1.jpeg",
+      "image": "/uploads/images/horizontal-cylindrical-high-pressure-steam-sterilizer.jpeg",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
@@ -77,7 +77,7 @@
       "name": "Horizontal High-Speed Steam Sterilizer",
       "certification": "BIS IS 3829 Part 2 - PEIC manufactured",
       "description": "A high-speed steam sterilizer for OT and sterile-processing teams that need faster instrument turnaround with controlled automation, cycle visibility, and service accountability.",
-      "image": "/uploads/images/slide4.jpeg",
+      "image": "/uploads/images/horizontal-high-speed-steam-sterilizer.jpeg",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
@@ -85,7 +85,7 @@
       "name": "Fully Automatic Vertical Autoclave",
       "certification": "PEIC manufactured",
       "description": "A compact vertical autoclave for labs, clinics, and smaller departments that need automated sterilization controls in a space-conscious footprint.",
-      "image": "/uploads/images/slide3.jpeg",
+      "image": "/uploads/images/fully-automatic-vertical-autoclave.jpeg",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
@@ -93,7 +93,7 @@
       "name": "Bowl & Utensil Sterilizer",
       "certification": "PEIC manufactured",
       "description": "A stainless-steel sterilizer for OT, ward, and patient-care utensil workflows where infection-control support is needed outside the main CSSD.",
-      "image": "/uploads/images/slide2.jpeg",
+      "image": "/uploads/images/bowl-and-utensil-sterilizer.jpeg",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     },
@@ -101,7 +101,7 @@
       "name": "Fully Automatic Hot & Cold Water Pressure Sterilizer",
       "certification": "PEIC manufactured",
       "description": "A fully automatic hot and cold water pressure sterilizer for departments that need controlled sterile-water handling, safety fittings, and serviceable stainless construction.",
-      "image": "/uploads/images/slide6.jpeg",
+      "image": "/uploads/images/fully-automatic-hot-and-cold-water-pressure-sterilizer.jpeg",
       "access_mode": "enquiry_only",
       "action_label": "Submit enquiry"
     }
