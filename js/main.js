@@ -49,18 +49,6 @@ async function initCMSContent() {
   if (isProductDetailPage && !requestedFiles.includes('products-page')) requestedFiles.push('products-page');
   if (route !== 'about' && page.querySelector('.logo-grid')) requestedFiles.push('about');
 
-  const cachedResults = requestedFiles
-    .map((name) => {
-      const cached = readCachedCMSData(name);
-      return cached ? { [name]: cached } : null;
-    })
-    .filter(Boolean);
-
-  if (cachedResults.length) {
-    applyCMSData(Object.assign({}, ...cachedResults), route, pageFiles, isProductDetailPage);
-    setCMSLoadingState(false);
-  }
-
   try {
     const requests = requestedFiles.map((name) => fetchCMSData(name));
     const results = await Promise.all(requests);
@@ -108,15 +96,7 @@ function renderSiteContent(site, route = getCurrentRoute()) {
   document.querySelectorAll('.logo-tagline').forEach((el) => {
     el.textContent = site.tagline;
   });
-  document.querySelectorAll('.logo-mark').forEach((el) => {
-    if (site.logo) {
-      el.innerHTML = `<img src="${normalizeAssetURL(site.logo)}" alt="${escapeAttribute(site.short_name || 'PEIC')}" onerror="this.parentNode.classList.remove('has-logo'); this.parentNode.textContent='${escapeHTML(site.short_name || 'PEIC').replace(/'/g, "\\'")}';">`;
-      el.classList.add('has-logo');
-    } else {
-      if (site.short_name) el.textContent = site.short_name;
-      el.classList.remove('has-logo');
-    }
-  });
+  renderLogoMarks(site);
   document.querySelectorAll('a[href^="tel:"]').forEach((link) => {
     link.href = `tel:${site.phone_link}`;
     const number = link.querySelector('.hotline-number');
@@ -1379,6 +1359,35 @@ function normalizeAssetURL(url) {
   if (!url) return '';
   if (/^(https?:|data:|\/|#)/i.test(url)) return url;
   return `/${url.replace(/^\.?\//, '')}`;
+}
+
+function renderLogoMarks(site) {
+  const logoURL = normalizeAssetURL(site.logo);
+  const logoAlt = site.short_name || 'PEIC';
+
+  document.querySelectorAll('.logo-mark').forEach((element) => {
+    if (logoURL) {
+      let image = element.querySelector('img');
+
+      if (!image) {
+        image = document.createElement('img');
+        element.replaceChildren(image);
+      }
+
+      if (image.getAttribute('src') !== logoURL) image.setAttribute('src', logoURL);
+      if (image.getAttribute('alt') !== logoAlt) image.setAttribute('alt', logoAlt);
+      image.onerror = () => {
+        element.classList.remove('has-logo');
+        element.textContent = logoAlt;
+      };
+
+      element.classList.add('has-logo');
+      return;
+    }
+
+    if (site.short_name) element.textContent = site.short_name;
+    element.classList.remove('has-logo');
+  });
 }
 
 function readCachedCMSData(name) {
