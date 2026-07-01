@@ -4,6 +4,14 @@ const peicState = {
   site: {}
 };
 const CMS_CACHE_PREFIX = 'peic-cms-cache:';
+const LEGACY_PRODUCT_SLUGS = {
+  'horizontal rectangular high-pressure steam sterilizer': 'horizontal-rectangular-sterilizer',
+  'horizontal cylindrical high-pressure steam sterilizer': 'horizontal-cylindrical-sterilizer',
+  'horizontal high-speed steam sterilizer': 'high-speed-steam-sterilizer',
+  'fully automatic vertical autoclave': 'vertical-autoclave',
+  'bowl & utensil sterilizer': 'bowl-utensil-sterilizer',
+  'fully automatic hot & cold water pressure sterilizer': 'hot-cold-water-pressure-sterilizer'
+};
 
 document.addEventListener('DOMContentLoaded', async () => {
   setCMSLoadingState(true);
@@ -652,7 +660,13 @@ function getProductDetailURL(product = {}) {
   if (product.detail_url) return product.detail_url;
   if (product.url) return product.url;
   if (product.slug) return `${product.slug}.html`;
+  const inferredSlug = inferProductSlug(product);
+  if (inferredSlug) return `${inferredSlug}.html`;
   return `product-detail.html?product=${encodeURIComponent(product.name || '')}`;
+}
+
+function inferProductSlug(product = {}) {
+  return LEGACY_PRODUCT_SLUGS[String(product.name || '').toLowerCase()] || '';
 }
 
 function renderProducts(products) {
@@ -662,7 +676,7 @@ function renderProducts(products) {
   grid.innerHTML = products.map((product) => {
     const detailURL = getProductDetailURL(product);
     const detailLabel = product.detail_label || 'See details';
-    const enquiryLabel = product.enquiry_label || product.action_label || 'Submit enquiry';
+    const productAction = productActionHTML(product, 'download-specs product-enquiry-button');
 
     return `<article class="product-card featured"${product.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(product.image))}')"` : ''}>
       <a class="product-card-link-overlay" href="${escapeAttribute(detailURL)}" aria-label="${escapeAttribute(`See details for ${product.name}`)}"></a>
@@ -672,10 +686,7 @@ function renderProducts(products) {
         <p>${escapeHTML(product.description || '')}</p>
         <div class="product-actions">
           <a class="download-specs product-detail-link" href="${escapeAttribute(detailURL)}">${escapeHTML(detailLabel)} →</a>
-          <button class="download-specs product-enquiry-button" type="button"
-            data-product-action="enquiry_only"
-            data-product-name="${escapeAttribute(product.name)}"
-            data-product-file="">${escapeHTML(enquiryLabel)} →</button>
+          ${productAction}
         </div>
       </div>
     </article>`;
@@ -717,7 +728,8 @@ function renderProductDetailPage(page) {
   const products = Array.isArray(page.manufactured_products) ? page.manufactured_products : [];
   const slug = getProductDetailSlug();
   const product = products.find((item) => item.slug === slug)
-    || products.find((item) => item.detail_url && getRouteFromHref(item.detail_url) === slug);
+    || products.find((item) => item.detail_url && getRouteFromHref(item.detail_url) === slug)
+    || products.find((item) => inferProductSlug(item) === slug);
 
   if (!product) {
     renderMissingProductDetail(main);
@@ -727,7 +739,7 @@ function renderProductDetailPage(page) {
   renderProductDetailSEO(product);
   const detail = product.detail || {};
   const image = normalizeAssetURL(product.image || page.hero?.image || '');
-  const enquiryLabel = product.enquiry_label || product.action_label || 'Submit enquiry';
+  const productAction = productActionHTML(product, 'btn btn-primary product-detail-enquire', product.enquiry_label || product.action_label || 'Submit enquiry');
 
   main.innerHTML = `<section class="product-detail-hero">
       <div class="container product-detail-hero-inner">
@@ -741,10 +753,7 @@ function renderProductDetailPage(page) {
           <p>${escapeHTML(detail.summary || product.description || '')}</p>
           ${quickFactsHTML(detail.quick_facts)}
           <div class="product-detail-actions">
-            <button class="btn btn-primary product-detail-enquire" type="button"
-              data-product-action="enquiry_only"
-              data-product-name="${escapeAttribute(product.name)}"
-              data-product-file="">${escapeHTML(enquiryLabel)}</button>
+            ${productAction}
             <a class="btn btn-outline-green" href="products.html#manufacturing">All manufactured products</a>
           </div>
         </div>
@@ -804,13 +813,25 @@ function renderProductDetailPage(page) {
           <span class="section-label">Product enquiry</span>
           <h2>${escapeHTML(detail.cta_title || 'Request product guidance')}</h2>
           <p>${escapeHTML(detail.cta_description || 'Share your requirement and PEIC will respond with suitable configuration guidance.')}</p>
-          <button class="btn btn-primary product-detail-enquire" type="button"
-            data-product-action="enquiry_only"
-            data-product-name="${escapeAttribute(product.name)}"
-            data-product-file="">${escapeHTML(enquiryLabel)}</button>
+          ${productActionHTML(product, 'btn btn-primary product-detail-enquire', product.enquiry_label || product.action_label || 'Submit enquiry')}
         </div>
       </div>
     </section>`;
+}
+
+function productActionHTML(product, className, fallbackLabel) {
+  const mode = getProductAccessMode(product);
+  const file = normalizeAssetURL(product?.specification_file || '');
+  const label = fallbackLabel || getProductActionLabel(product, mode);
+
+  if (mode === 'public_download') {
+    return `<a class="${escapeAttribute(className)}" href="${escapeAttribute(file)}" target="_blank" rel="noopener">${escapeHTML(label)} →</a>`;
+  }
+
+  return `<button class="${escapeAttribute(className)}" type="button"
+    data-product-action="${escapeAttribute(mode)}"
+    data-product-name="${escapeAttribute(product?.name || 'Product specifications')}"
+    data-product-file="${escapeAttribute(mode === 'gated_download' ? file : '')}">${escapeHTML(label)} →</button>`;
 }
 
 function getProductDetailSlug() {

@@ -1,6 +1,14 @@
 {
   "cleanUrls": false,
   "rewrites": [
+    { "source": "/products", "destination": "/products.html" },
+    { "source": "/solutions", "destination": "/solutions.html" },
+    { "source": "/service", "destination": "/service.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/resources", "destination": "/resources.html" },
+    { "source": "/careers", "destination": "/careers.html" },
+    { "source": "/contact", "destination": "/contact.html" },
+    { "source": "/privacy", "destination": "/privacy.html" },
     { "source": "/horizontal-rectangular-sterilizer", "destination": "/horizontal-rectangular-sterilizer.html" },
     { "source": "/horizontal-cylindrical-sterilizer", "destination": "/horizontal-cylindrical-sterilizer.html" },
     { "source": "/high-speed-steam-sterilizer", "destination": "/high-speed-steam-sterilizer.html" },

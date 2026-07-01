@@ -25,6 +25,14 @@
     'bowl-utensil-sterilizer',
     'hot-cold-water-pressure-sterilizer'
   ]);
+  const legacyProductSlugs = {
+    'horizontal rectangular high-pressure steam sterilizer': 'horizontal-rectangular-sterilizer',
+    'horizontal cylindrical high-pressure steam sterilizer': 'horizontal-cylindrical-sterilizer',
+    'horizontal high-speed steam sterilizer': 'high-speed-steam-sterilizer',
+    'fully automatic vertical autoclave': 'vertical-autoclave',
+    'bowl & utensil sterilizer': 'bowl-utensil-sterilizer',
+    'fully automatic hot & cold water pressure sterilizer': 'hot-cold-water-pressure-sterilizer'
+  };
 
   const normalizeAssetURL = (url) => {
     if (!url) return '';
@@ -83,6 +91,8 @@
       if (item.slug === currentRoute) return true;
       const detailRoute = (item.detail_url || '').split('?')[0].split('#')[0].replace(/^\//, '').replace(/\.html$/, '');
       return detailRoute === currentRoute;
+    }) || (productsPage?.manufactured_products || []).find((item) => {
+      return legacyProductSlugs[String(item.name || '').toLowerCase()] === currentRoute;
     });
 
     return product?.image || productsPage?.hero?.image || '';

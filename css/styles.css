@@ -1,5 +1,4 @@
 /* PEIC — Precision Electronics Instruments & Components */
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;450;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap');
 :root {
   --green: #56A661;
   --green-dark: #3d8a48;
@@ -6705,8 +6704,7 @@ body:has(.contact-page-main) .floating-cta {
   line-height: 1.6;
 }
 
-.products-page .manufactured-range-card,
-.products-page .advantage-bar.manufacturing.tier-end-callout {
+.products-page .advantage-bar.tier-end-callout {
   background:
     linear-gradient(135deg, rgba(232, 244, 234, 0.88), rgba(255, 255, 255, 0.98));
   border-color: rgba(86, 166, 97, 0.24);
@@ -6720,15 +6718,16 @@ body:has(.contact-page-main) .floating-cta {
   color: var(--slate-mid);
 }
 
-.products-page .hospital-scope-panel,
-.products-page .advantage-bar.procurement-advantages.tier-end-callout {
+.products-page .manufactured-range-card,
+.products-page .hospital-scope-panel {
   background:
     linear-gradient(135deg, rgba(248, 250, 252, 0.98), rgba(255, 255, 255, 0.98));
   border-color: rgba(15, 23, 42, 0.1);
 }
 
+.products-page .manufactured-range-card::before,
 .products-page .hospital-scope-panel::before,
-.products-page .advantage-bar.procurement-advantages.tier-end-callout::before {
+.products-page .advantage-bar.tier-end-callout::before {
   background: #2f8f60;
 }
 

@@ -59,8 +59,8 @@
     "group": "global",
     "country": "Germany",
     "flag": "🇩🇪",
-    "description": "Placeholder text only. Product details for Medicon are to be confirmed and added by PEIC.",
-    "categories": ["To Be Confirmed"],
+    "description": "German surgical instruments and specialty OT instrumentation supplied through PEIC's operating theatre portfolio.",
+    "categories": ["Surgical Instruments", "OT Instrumentation"],
     "solutions_url": "solutions.html#ot",
     "website_url": "",
     "logo": ""

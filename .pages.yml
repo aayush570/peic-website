@@ -288,6 +288,8 @@ content:
         list: true
         fields:
           - { name: name, label: Product name, type: string, required: true }
+          - { name: slug, label: Product page slug, type: string, required: true, description: "Must match the HTML page route, without .html. Example: horizontal-rectangular-sterilizer" }
+          - { name: detail_url, label: Product detail page URL, type: string, required: true, description: "Example: horizontal-rectangular-sterilizer.html" }
           - { name: certification, label: Certification / status line, type: string }
           - { name: description, label: Description, type: text, required: true }
           - { name: image, label: Product image, type: image, options: { media: images } }
@@ -303,6 +305,23 @@ content:
                 - { value: gated_download, label: Form required, then download PDF }
                 - { value: public_download, label: Public PDF, no form required }
           - { name: action_label, label: Button wording, type: string, description: "Example: Request Specifications or Download Brochure" }
+          - { name: detail_label, label: Detail link wording, type: string, description: "Optional. Example: See details" }
+      - name: manufactured_range
+        label: Additional manufactured range callout
+        type: object
+        fields:
+          - { name: label, label: Small label, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: items, label: Range items, type: string, list: true }
+      - name: hospital_scope
+        label: Hospital-wide equipment scope callout
+        type: object
+        fields:
+          - { name: label, label: Small label, type: string }
+          - { name: title, label: Heading, type: string }
+          - { name: description, label: Description, type: text }
+          - { name: items, label: Scope tags, type: string, list: true }
       - name: partner_companies
         label: Partner companies
         type: object
