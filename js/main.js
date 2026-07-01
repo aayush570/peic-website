@@ -228,10 +228,12 @@ function renderFooter(site) {
         <a href="tel:${escapeAttribute(site.phone_link || '')}">${escapeHTML(site.footer.hotline_label || 'Phone:')} ${escapeHTML(site.phone_display || '')}</a>
       </div>
     </div>
-    ${columns.map((column) => `<div class="footer-col">
+    <div class="footer-links">
+      ${columns.map((column) => `<div class="footer-col">
       <h4>${escapeHTML(column.title || '')}</h4>
       ${(column.links || []).map((link) => `<a href="${escapeAttribute(link.href || '#')}">${escapeHTML(link.label || '')}</a>`).join('')}
-    </div>`).join('')}`;
+    </div>`).join('')}
+    </div>`;
 
   if (footerBottom) {
     footerBottom.innerHTML = `<span>${escapeHTML(site.footer.copyright || '')}</span>
