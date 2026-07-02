@@ -1,8 +1,8 @@
 {
   "hero": {
-    "eyebrow": "Established Medical Equipment OEM and Supplier",
+    "eyebrow": "Established Medical Equipment OEM Manufacturer and Authorised Supplier",
     "title": "6 Decades as India's Most Accountable Medical Equipment Partner",
-    "description": "\nWe manufacture CSSD equipment and sterilisation systems at our Mumbai facility and distribute 14+ elite global and domestic brands to equip every other department in your healthcare facility. \n\nOur direct engineering and sales team serves as your single point of contact: handling layout design, technical specifications, commercials, compliance validation, and lifetime AMC/CMC support",
+    "description": "\nWe manufacture CSSD equipment and sterilisation systems at our Mumbai facility and are an authorised distributor for 14+ leading global and domestic brands to equip every other department in your healthcare facility including Operating Theatres (OT), Radiology/Imaging, Critical Care, Neonatal/Maternal Care, Oncology, Dental, and Specialized Diagnostics among others. \n\nOur direct engineering and sales team serves as your single point of contact: handling layout design, technical specifications, commercials, compliance validation, and lifetime AMC/CMC support",
     "primary_button_label": "Start a Procurement Conversation",
     "primary_button_link": "contact.html?type=equipment",
     "secondary_button_label": "See Credentials and Track Record",
@@ -127,8 +127,8 @@
       "label": "Durable Machine Lifespan"
     },
     {
-      "value": 1,
       "display_value": "Single",
+      "value": 1,
       "tagline": "Coordinated support",
       "label": "Accountable Service Relationship"
     }
