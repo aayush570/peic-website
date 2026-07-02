@@ -33,11 +33,11 @@
     }
   ],
   "help_cta": {
+    "label": "Documentation Help",
     "title": "Need something not listed here?",
     "description": "Request specifications, installation guides, validation documentation, or custom configuration data. PEIC will route the request to the right team.",
     "button_label": "Request Documentation",
-    "button_link": "contact.html?type=general",
-    "label": "Special Case"
+    "button_link": "contact.html?type=general"
   },
   "resources": [
     {

@@ -440,8 +440,18 @@ function renderServicePage(page) {
   setHeading(document.querySelector('.response-grid')?.closest('section'), page.process_heading);
   setHeading(document.querySelector('.service-grid')?.closest('section'), page.offerings_heading);
   renderPageSections({ service: page });
-  setCallout(document.querySelector('.service-coverage-cta .home-cta-inner'), page.custom_cta);
-  setCallout(document.querySelector('.service-urgent-cta .home-cta-inner'), page.urgent_cta);
+  setCallout(document.querySelector('.service-final-cta .home-cta-inner'), page.custom_cta);
+  const support = document.querySelector('.service-cta-support');
+  if (support && page.urgent_cta) {
+    setTextWithin(support, '.service-cta-support-label', page.urgent_cta.label);
+    setTextWithin(support, 'h3', page.urgent_cta.title);
+    setTextWithin(support, 'p', page.urgent_cta.description);
+    const supportButton = support.querySelector('.btn');
+    if (supportButton) {
+      if (page.urgent_cta.button_label) supportButton.textContent = page.urgent_cta.button_label;
+      if (page.urgent_cta.button_link) supportButton.href = page.urgent_cta.button_link;
+    }
+  }
 }
 
 function renderResourcesPage(page) {
@@ -455,7 +465,7 @@ function renderResourcesPage(page) {
     grid.dataset.emptyLink = page.empty_state.link || '';
   }
   renderResources(page.resources);
-  setCallout(document.querySelector('.missing-doc-cta'), page.help_cta);
+  setCallout(document.querySelector('.resources-cta .home-cta-inner'), page.help_cta);
 }
 
 function renderResourceFilters(filters) {
@@ -482,8 +492,8 @@ function renderCareersPage(page) {
     setTextWithin(heading, '.section-title', page.jobs_heading?.title);
   }
   renderJobs(page.jobs);
-  setCallout(document.querySelector('.general-app-cta'), page.open_application);
-  const followup = document.querySelector('.general-app-cta .general-application-note');
+  setCallout(document.querySelector('.careers-cta .home-cta-inner'), page.open_application);
+  const followup = document.querySelector('.careers-cta .general-application-note');
   if (followup) {
     const note = page.general_email_note || '';
     const emailLabel = page.general_email_label || peicState.site.careers_email || '';
@@ -492,7 +502,7 @@ function renderCareersPage(page) {
     if (note) {
       followup.innerHTML = `${escapeHTML(note).replace(
         escapeHTML(emailLabel),
-        emailHref ? `<a href="${escapeAttribute(emailHref)}" style="color: var(--green); font-weight: 600;">${escapeHTML(emailLabel)}</a>` : escapeHTML(emailLabel)
+        emailHref ? `<a href="${escapeAttribute(emailHref)}">${escapeHTML(emailLabel)}</a>` : escapeHTML(emailLabel)
       )}`;
     }
   }
@@ -1612,9 +1622,9 @@ function initRevealAnimations() {
     '.contact-info-block',
     '.contact-form',
     '.legacy-container',
-    '.service-coverage-cta .home-cta-inner',
-    '.service-urgent-cta .home-cta-inner',
-    '.missing-doc-cta',
+    '.service-final-cta .home-cta-inner',
+    '.resources-cta .home-cta-inner',
+    '.careers-cta .home-cta-inner',
     '.product-detail-panel',
     '.product-detail-card',
     '.product-detail-media',

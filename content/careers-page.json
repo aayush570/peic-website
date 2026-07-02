@@ -37,6 +37,7 @@
   },
   "apply_label": "Apply",
   "open_application": {
+    "label": "General Application",
     "title": "Don't see the right role?",
     "description": "PEIC maintains a talent pipeline for biomedical engineers, service technicians, quality professionals, and institutional sales talent.",
     "button_label": "Submit Your Profile",
