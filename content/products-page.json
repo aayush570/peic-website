@@ -1,7 +1,7 @@
 {
   "hero": {
     "title": "Equipment built and sourced for institutional reliability.",
-    "description": "PEIC-manufactured sterilization systems from Mumbai, supported by partner medical technologies from global and Indian brands. Specified, installed, and supported by one technical team.",
+    "description": "Proprietary PEIC-manufactured sterilization systems from Mumbai, supported by partner medical technologies from 14+ global and Indian brands to cover your entire hospital's requirements. \nSpecified, installed, and supported by one technical team with a single point of contact.",
     "image": "/uploads/images/cssd-equipment.jpg"
   },
   "manufacturing": {
@@ -13,15 +13,15 @@
     "advantages": [
       {
         "title": "In-House Engineering",
-        "description": "Design, production, inspection, and service feedback handled through PEIC's Mumbai manufacturing base."
+        "description": "Design, production, inspection, and installation handled through PEIC's Mumbai manufacturing base."
       },
       {
         "title": "BIS-Certified Since 1976",
-        "description": "IS 3829 Part 1 and Part 2 certification history across PEIC's primary sterilizer categories."
+        "description": "Longest standing BIS 3829 Part 1 and Part 2 certification history across PEIC's primary sterilizer categories."
       },
       {
         "title": "Localized Spare Parts",
-        "description": "Critical spares for PEIC-manufactured systems stocked domestically to reduce avoidable downtime."
+        "description": "Stocked critical spares for PEIC-manufactured systems and localised team of technical experts for rapid-response service to minimise avoidable downtime."
       },
       {
         "title": "MSME & NSIC Registered",
@@ -32,7 +32,7 @@
   "partners": {
     "badge": "Tier 2 · Partner Technologies",
     "title": "Global & Domestic Partner Technologies",
-    "description": "Current associations with medical equipment brands across oncology, OT, imaging, dental, neonatal care, and specialty departments.",
+    "description": "Current associations with 14+ leading medical equipment brands across oncology, OT, imaging, dental, neonatal care, specialty departments and many more.",
     "advantages_title": "Advantages of Procurement Through PEIC",
     "advantages_subtitle": "Specification support, installation, training, service coordination, and documentation through one PEIC relationship.",
     "advantages": [
