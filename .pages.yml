@@ -87,12 +87,12 @@ components:
   metric:
     type: object
     fields:
-      - { name: value, label: Number value, type: number, required: true }
-      - { name: display_value, label: Custom display text, type: string, description: "Optional. Example: Single instead of 1." }
-      - { name: prefix, label: Prefix, type: string, description: "Example: <" }
-      - { name: suffix, label: Suffix, type: string, description: "Example: + or hr" }
-      - { name: tagline, label: Small green line, type: string }
-      - { name: label, label: Description, type: string, required: true }
+      - { name: display_value, label: Card number text, type: string, description: "Recommended when you want exact text like 2,000+, 58+, or Single." }
+      - { name: value, label: Numeric value, type: number, required: true, description: "Used when Card number text is left blank." }
+      - { name: prefix, label: Number prefix, type: string, description: "Example: <" }
+      - { name: suffix, label: Number suffix, type: string, description: "Example: + or hr" }
+      - { name: tagline, label: Small line above description, type: string }
+      - { name: label, label: Card description, type: string, required: true }
 
   facility_block:
     type: object
@@ -242,21 +242,21 @@ content:
               - { name: advantages, label: Tick-list items, type: string, list: true }
               - { name: button_label, label: Link text, type: string }
       - name: workflow
-        label: Homepage workflow
+        label: Engineering workflow section
         type: object
         fields:
           - { name: label, label: Small section label, type: string }
           - { name: title, label: Section heading, type: string }
           - { name: description, label: Section introduction, type: text }
           - name: steps
-            label: Workflow steps
+            label: Workflow step cards
             component: advantage
             list: true
-      - { name: stats, label: Homepage proof statistics, component: metric, list: true }
-      - { name: advantage, label: Procurement advantage heading, component: heading }
-      - { name: clients, label: Client section heading, component: heading }
-      - { name: clients_list, label: Homepage client logos, component: client, list: true }
-      - { name: cta, label: Bottom call to action, component: callout }
+      - { name: stats, label: Number callout cards, component: metric, list: true }
+      - { name: advantage, label: Proof section heading, component: heading }
+      - { name: clients, label: Trust section heading, component: heading }
+      - { name: clients_list, label: Trust section client cards, component: client, list: true }
+      - { name: cta, label: Bottom call-to-action section, component: callout }
 
   - name: products_page
     label: "2. Products page"

@@ -33,8 +33,17 @@ The Home page includes both Core Capabilities cards. Each card's image, title,
 description, tick-list items, link, and button text can be edited independently.
 The hero proof panel is also editable from the Home page: kicker, large metric,
 headline, supporting copy, and the four small specification cells.
-The Home page also includes the engineering workflow section, proof statistics,
-institutional trust cards, and the bottom call-to-action.
+The Home page also includes:
+
+- **Engineering workflow section**
+- **Number callout cards**
+- **Proof section heading**
+- **Trust section heading**
+- **Trust section client cards**
+- **Bottom call-to-action section**
+
+For the number callout cards, use **Card number text** when you want exact text
+such as `2,000+`, `1,000+`, `58+`, or `Single`.
 
 Products, partners, downloads, and vacancies are now managed inside their
 matching page entry, so the sidebar stays one item per website page.
