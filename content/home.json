@@ -1,8 +1,8 @@
 {
   "hero": {
-    "eyebrow": "Established Indian Manufacturer & Med-Tech Integration Partner",
-    "title": "India's Most Accountable Medical Equipment Partnership",
-    "description": "PEIC manufactures high-pressure sterilization systems at our Mumbai facility and represents 14 leading global and domestic medical equipment brands across India: AngioDynamics, Steris, Richard Wolf, Samsung, and many more. One technical team. Specification through long-term lifecycle support.",
+    "eyebrow": "Established Medical Equipment OEM and Supplier",
+    "title": "6 Decades as India's Most Accountable Medical Equipment Partner",
+    "description": "\nWe manufacture CSSD equipment and sterilisation systems at our Mumbai facility and distribute 14+ elite global and domestic brands to equip every other department in your healthcare facility. \n\nOur direct engineering and sales team serves as your single point of contact: handling layout design, technical specifications, commercials, compliance validation, and lifetime AMC/CMC support",
     "primary_button_label": "Start a Procurement Conversation",
     "primary_button_link": "contact.html?type=equipment",
     "secondary_button_label": "See Credentials and Track Record",
@@ -47,32 +47,32 @@
     "cards": [
       {
         "title": "Indigenous Manufacturing",
-        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure built to global standards.",
+        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure \nbuilt to global standards at our Mumbai Factory.",
         "image": "/uploads/images/cssd-equipment.jpg",
         "link": "products.html#manufacturing",
         "advantages": [
-          "BIS, ISO, CE, GMP Certified",
-          "20+ Year Lifespan",
           "OEM Engineering DNA",
+          "BIS, ISO, CE, GMP Certified",
+          "15+ Year Average Lifespan",
           "Lifecycle Service Support"
         ],
         "button_label": "View Manufactured Products"
       },
       {
         "title": "Global & Domestic Distribution",
-        "description": "Authorized technical integration partner for 14 medical brands across India.",
+        "description": "Authorised integration partner for 14+ global and domestic medical equipment brands across India. \nCatering to every department in your healthcare facility.",
         "image": "/uploads/images/diagnostics-1.jpeg",
         "link": "products.html#partners",
         "advantages": [
           "Single-Point Vendor",
           "Localized Integration",
-          "Response & Diagnosis Planning",
+          "Flexible Commercial Terms",
           "Unified AMC & CMC"
         ],
         "button_label": "Explore Partner Technologies"
       }
     ],
-    "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the global medical brands it represents. Fewer vendor handoffs. Clearer service ownership. Equipment decisions backed by engineering judgment."
+    "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. \nFewer vendor handoffs. Integrated commercial Terms. Clearer service ownership. Equipment decisions backed by engineering judgment."
   },
   "workflow": {
     "label": "Engineering Discipline",
@@ -132,11 +132,12 @@
   "advantage": {
     "label": "Why PEIC",
     "title": "Built for procurement scrutiny",
-    "description": "For direct outreach, tenders, service planning, and multi-department purchases, PEIC presents the credibility of an established manufacturer with the reach of an authorized med-tech integration partner."
+    "description": "For direct outreach, tenders, service planning, and multi-department purchases, PEIC presents the credibility and engineering expertise of an established manufacturer with the scope to integrate 14+ global and domestic medical equipment brands. A single vendor to consolidate and cater to your procurement needs."
   },
   "clients": {
-    "label": "Institutional Trust",
-    "title": "Institutional references and long-term relationships"
+    "label": "Our Existing Clients",
+    "title": "Institutional references and long-term relationships",
+    "description": "PEIC has been supplying our manufactured CSSD Equipment and Sterilisation Systems alongwith equipment and machines for every department in a hospital manufactured by leading brands to major hospitals and healthcare institutions across India for 6 decades."
   },
   "clients_list": [
     {
@@ -182,8 +183,8 @@
   ],
   "cta": {
     "label": "Procurement Conversation",
-    "title": "Need a credible equipment partner for an active purchase?",
-    "description": "Share the department, city, timeline, and products required. PEIC will route the enquiry to the right commercial or technical team.",
+    "title": "Need a credible medical equipment partner?",
+    "description": "Share your requirements and PEIC will get back to you in 1 business day.",
     "button_label": "Start an Enquiry",
     "button_link": "contact.html?type=equipment"
   }
