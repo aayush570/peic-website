@@ -81,19 +81,19 @@
     "steps": [
       {
         "title": "Clinical Requirement",
-        "description": "Understand and map departments, load, technical feasibility, compliance and procurement constraints."
+        "description": "Understand and map departments, load, technical feasibility, commercial terms, compliance and procurement constraints."
       },
       {
         "title": "Equipment Architecture",
-        "description": "Manufactured and partner systems configured as one operating portfolio."
+        "description": "Manufactured hardware and partner brand equipment configured as one complete portfolio."
       },
       {
         "title": "Commissioning",
-        "description": "Installation, calibration and testing, training and documentation for biomedical teams."
+        "description": "Installation, testing, training and documentation for biomedical teams."
       },
       {
         "title": "Lifecycle Support",
-        "description": "AMC, CMC, spares, refurbishing and response planning after deployment."
+        "description": "AMC, CMC, spares and refurbishment throughout product's lifespan."
       }
     ]
   },
