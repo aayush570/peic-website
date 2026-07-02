@@ -27,8 +27,8 @@
     {
       "icon": "📋",
       "title": "Government Tenders & Documentation",
-      "label": "sales@peic.in",
-      "href": "mailto:sales@peic.in"
+      "label": "backoffice@peic.in",
+      "href": "mailto:backoffice@peic.in"
     }
   ],
   "office_title": "Office Addresses",
@@ -90,25 +90,70 @@
     "privacy_link": "privacy.html"
   },
   "timeline_options": [
-    { "label": "Select timeline...", "value": "" },
-    { "label": "Active purchase / specification review", "value": "Active purchase / specification review" },
-    { "label": "Within 30 days", "value": "Within 30 days" },
-    { "label": "1-3 months", "value": "1-3 months" },
-    { "label": "Planning / budgeting", "value": "Planning / budgeting" },
-    { "label": "Service issue / urgent", "value": "Service issue / urgent" }
+    {
+      "label": "Select timeline..."
+    },
+    {
+      "label": "Active purchase / specification review",
+      "value": "Active purchase / specification review"
+    },
+    {
+      "label": "Within 30 days",
+      "value": "Within 30 days"
+    },
+    {
+      "label": "1-3 months",
+      "value": "1-3 months"
+    },
+    {
+      "label": "Planning / budgeting",
+      "value": "Planning / budgeting"
+    },
+    {
+      "label": "Service issue / urgent",
+      "value": "Service issue / urgent"
+    }
   ],
   "inquiry_type_options": [
-    { "label": "Select inquiry type...", "value": "" },
-    { "label": "Equipment Purchase", "value": "equipment" },
-    { "label": "Service / AMC", "value": "service" },
-    { "label": "Documentation Request", "value": "documentation" },
-    { "label": "General Enquiry", "value": "general" }
+    {
+      "label": "Select inquiry type..."
+    },
+    {
+      "label": "Equipment Purchase",
+      "value": "equipment"
+    },
+    {
+      "label": "Service / AMC",
+      "value": "service"
+    },
+    {
+      "label": "Documentation Request",
+      "value": "documentation"
+    },
+    {
+      "label": "General Enquiry",
+      "value": "general"
+    }
   ],
   "tender_options": [
-    { "label": "Select if applicable...", "value": "" },
-    { "label": "Not applicable", "value": "Not applicable" },
-    { "label": "Under preparation", "value": "Under preparation" },
-    { "label": "Live tender", "value": "Live tender" },
-    { "label": "Specification comparison", "value": "Specification comparison" }
+    {
+      "label": "Select if applicable..."
+    },
+    {
+      "label": "Not applicable",
+      "value": "Not applicable"
+    },
+    {
+      "label": "Under preparation",
+      "value": "Under preparation"
+    },
+    {
+      "label": "Live tender",
+      "value": "Live tender"
+    },
+    {
+      "label": "Specification comparison",
+      "value": "Specification comparison"
+    }
   ]
 }
