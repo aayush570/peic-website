@@ -60,7 +60,7 @@
   },
   "urgent_cta": {
     "title": "Equipment down?",
-    "description": "Call our technical support line directly for immediate triage.",
+    "description": "Call our technical priority support line directly for urgent resolution. You can also raise a service ticket for non-urgent matters.",
     "button_label": "Raise a Service Ticket",
     "button_link": "contact.html?type=service"
   }
