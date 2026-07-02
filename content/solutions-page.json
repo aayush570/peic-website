@@ -6,13 +6,13 @@
   },
   "specialties_heading": {
     "label": "Specialty Equipment Portfolios",
-    "title": "Six clinical areas. One integration partner."
+    "title": "All clinical areas. One integration partner."
   },
   "specialties": [
     {
       "id": "cssd",
       "title": "CSSD & Sterilization",
-      "description": "CSSD infrastructure from one accountable supplier - horizontal autoclaves, flash sterilizers, vertical units, bedpan sterilizers, CSSD furniture, and sterile-processing workflow support.",
+      "description": "CSSD infrastructure from one accountable supplier: horizontal autoclaves, flash sterilizers, vertical units, bedpan sterilizers, CSSD furniture, and sterile-processing workflow support.",
       "image": "/uploads/images/cssd-equipment.jpg",
       "link": "products.html#manufacturing",
       "button_label": "Explore portfolio"
