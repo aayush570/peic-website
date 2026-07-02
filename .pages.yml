@@ -252,8 +252,10 @@ content:
             label: Workflow steps
             component: advantage
             list: true
+      - { name: stats, label: Homepage proof statistics, component: metric, list: true }
       - { name: advantage, label: Procurement advantage heading, component: heading }
       - { name: clients, label: Client section heading, component: heading }
+      - { name: clients_list, label: Homepage client logos, component: client, list: true }
       - { name: cta, label: Bottom call to action, component: callout }
 
   - name: products_page

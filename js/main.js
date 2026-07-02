@@ -334,8 +334,10 @@ function renderHomePage(home) {
   const sections = document.querySelectorAll('section');
   const advantageSection = [...sections].find((section) => section.querySelector('.stats-row'));
   setHeading(advantageSection, home.advantage);
+  renderStatsGrid(home.stats);
   const clientsSection = [...sections].find((section) => section.querySelector('.logo-grid'));
   setHeading(clientsSection, home.clients);
+  renderClientGrid(home.clients_list);
   const ctaSection = document.querySelector('.home-cta .home-cta-inner')
     || [...sections].find((section) => section.classList.contains('bg-dark') && section.querySelector('.container .btn'))?.querySelector('.container');
   setCallout(ctaSection, home.cta);
@@ -1183,44 +1185,11 @@ function renderPageSections(pages) {
 }
 
 function renderTrustContent(about) {
-  if (Array.isArray(about.metrics)) {
-    document.querySelectorAll('.stats-row').forEach((grid) => {
-      grid.innerHTML = about.metrics.map((metric) => `<div class="stat-item">
-        <div class="stat-number cms-stat-number">${metric.display_value ? escapeHTML(metric.display_value) : `${escapeHTML(metric.prefix || '')}${Number(metric.value).toLocaleString()}${escapeHTML(metric.suffix || '')}`}</div>
-        <div class="stat-tagline">${escapeHTML(metric.tagline || '')}</div>
-        <div class="stat-label">${escapeHTML(metric.label)}</div>
-      </div>`).join('');
-    });
-  }
+  renderStatsGrid(about.metrics);
 
   renderFacilityBlocks(about.facilities);
 
-  if (Array.isArray(about.clients)) {
-    const clientHTML = about.clients.map((client) => {
-      const clientLogo = normalizeAssetURL(client.logo || '');
-      const logo = clientLogo
-        ? `<img src="${escapeAttribute(clientLogo)}" alt="${escapeAttribute(client.name)} logo">`
-        : escapeHTML(client.short_name);
-      const cardClass = `client-card${client.website_url ? ' is-clickable' : ''}`;
-      const innerContent = `
-        <div class="client-logo ${clientLogo ? 'has-image' : ''}">${logo}</div>
-        <div class="client-name">${escapeHTML(client.name)}</div>
-        <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
-      `;
-      if (client.website_url) {
-        return `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="${cardClass}" aria-label="Visit ${escapeAttribute(client.name)} website">
-          ${innerContent}
-        </a>`;
-      } else {
-        return `<div class="${cardClass}">
-          ${innerContent}
-        </div>`;
-      }
-    }).join('');
-    document.querySelectorAll('.logo-grid').forEach((grid) => {
-      grid.innerHTML = clientHTML;
-    });
-  }
+  renderClientGrid(about.clients);
 
   const testimonials = (about.testimonials || []).filter((item) => (
     item.published && item.quote && item.author
@@ -1382,6 +1351,47 @@ function setElementText(element, value) {
   const text = String(value);
   element.textContent = text;
   element.classList.toggle('cms-preserve-lines', /[\r\n]/.test(text));
+}
+
+function renderStatsGrid(metrics) {
+  if (!Array.isArray(metrics)) return;
+
+  document.querySelectorAll('.stats-row').forEach((grid) => {
+    grid.innerHTML = metrics.map((metric) => `<div class="stat-item">
+      <div class="stat-number cms-stat-number">${metric.display_value ? escapeHTML(metric.display_value) : `${escapeHTML(metric.prefix || '')}${Number(metric.value).toLocaleString()}${escapeHTML(metric.suffix || '')}`}</div>
+      <div class="stat-tagline">${escapeHTML(metric.tagline || '')}</div>
+      <div class="stat-label">${escapeHTML(metric.label || '')}</div>
+    </div>`).join('');
+  });
+}
+
+function renderClientGrid(clients) {
+  if (!Array.isArray(clients)) return;
+
+  const clientHTML = clients.map((client) => {
+    const clientLogo = normalizeAssetURL(client.logo || '');
+    const logo = clientLogo
+      ? `<img src="${escapeAttribute(clientLogo)}" alt="${escapeAttribute(client.name)} logo">`
+      : escapeHTML(client.short_name);
+    const cardClass = `client-card${client.website_url ? ' is-clickable' : ''}`;
+    const innerContent = `
+      <div class="client-logo ${clientLogo ? 'has-image' : ''}">${logo}</div>
+      <div class="client-name">${escapeHTML(client.name)}</div>
+      <div class="client-tagline">${escapeHTML(client.tagline || '')}</div>
+    `;
+    if (client.website_url) {
+      return `<a href="${escapeAttribute(client.website_url)}" target="_blank" rel="noopener" class="${cardClass}" aria-label="Visit ${escapeAttribute(client.name)} website">
+        ${innerContent}
+      </a>`;
+    }
+    return `<div class="${cardClass}">
+      ${innerContent}
+    </div>`;
+  }).join('');
+
+  document.querySelectorAll('.logo-grid').forEach((grid) => {
+    grid.innerHTML = clientHTML;
+  });
 }
 
 function escapeAttribute(value) {

@@ -74,6 +74,61 @@
     ],
     "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the global medical brands it represents. Fewer vendor handoffs. Clearer service ownership. Equipment decisions backed by engineering judgment."
   },
+  "workflow": {
+    "label": "Engineering Discipline",
+    "title": "A single technical chain from specification to uptime.",
+    "description": "Every project is treated as a lifecycle system: requirement mapping, product selection, installation, validation, training, spare parts, and service accountability.",
+    "steps": [
+      {
+        "title": "Clinical Requirement",
+        "description": "Map departments, load, compliance and procurement constraints."
+      },
+      {
+        "title": "Equipment Architecture",
+        "description": "Manufactured and partner systems configured as one operating portfolio."
+      },
+      {
+        "title": "Commissioning",
+        "description": "Installation, calibration, training and documentation for biomedical teams."
+      },
+      {
+        "title": "Lifecycle Support",
+        "description": "AMC, CMC, spares, refurbishing and response planning after deployment."
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": 50,
+      "suffix": "+",
+      "tagline": "Since 1968",
+      "label": "Years in Business"
+    },
+    {
+      "value": 2000,
+      "suffix": "+",
+      "tagline": "Pan-India",
+      "label": "Total Installations Delivered"
+    },
+    {
+      "value": 1000,
+      "suffix": "+",
+      "tagline": "Currently operational",
+      "label": "Active Equipment Units"
+    },
+    {
+      "value": 15,
+      "suffix": "+",
+      "tagline": "Built to last",
+      "label": "Years Avg. Machine Lifespan"
+    },
+    {
+      "value": 1,
+      "display_value": "Single",
+      "tagline": "Coordinated support",
+      "label": "Accountable Service Relationship"
+    }
+  ],
   "advantage": {
     "label": "Why PEIC",
     "title": "Built for procurement scrutiny",
@@ -83,6 +138,48 @@
     "label": "Institutional Trust",
     "title": "Institutional references and long-term relationships"
   },
+  "clients_list": [
+    {
+      "short_name": "BMC",
+      "name": "BMC Hospitals",
+      "tagline": "since >20 years"
+    },
+    {
+      "short_name": "BARC",
+      "name": "B.A.R.C.",
+      "tagline": "since >15 years"
+    },
+    {
+      "short_name": "CCMB",
+      "name": "C.C.M.B.",
+      "tagline": "since >10 years"
+    },
+    {
+      "short_name": "NEERI",
+      "name": "NEERI",
+      "tagline": "since >12 years"
+    },
+    {
+      "short_name": "IR",
+      "name": "Indian Railways",
+      "tagline": "since >18 years"
+    },
+    {
+      "short_name": "TMH",
+      "name": "Tata Memorial Hospital",
+      "tagline": "since >15 years"
+    },
+    {
+      "short_name": "SHD",
+      "name": "State Health Depts.",
+      "tagline": "since >25 years"
+    },
+    {
+      "short_name": "PHC",
+      "name": "Private Hospital Chains",
+      "tagline": "since >10 years"
+    }
+  ],
   "cta": {
     "label": "Procurement Conversation",
     "title": "Need a credible equipment partner for an active purchase?",
