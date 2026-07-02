@@ -202,8 +202,8 @@ function renderFooter(site) {
           <span class="logo-tagline">${escapeHTML(site.tagline || '')}</span>
         </div>
       </a>
-      <p>${escapeHTML(site.footer.description || site.footer_description || '')}</p>
-      ${site.footer.address ? `<p class="footer-address">${escapeHTML(site.footer.address)}</p>` : ''}
+      <p>${formatMultilineHTML(site.footer.description || site.footer_description || '')}</p>
+      ${site.footer.address ? `<p class="footer-address">${formatMultilineHTML(site.footer.address)}</p>` : ''}
       <div class="footer-hotline">
         <a href="tel:${escapeAttribute(site.phone_link || '')}">${escapeHTML(site.footer.hotline_label || 'Phone:')} ${escapeHTML(site.phone_display || '')}</a>
       </div>
@@ -301,7 +301,7 @@ function renderHomePage(home) {
         <div class="cap-card-body">
           <span class="cap-index">${String(index + 1).padStart(2, '0')}</span>
           <h3>${escapeHTML(card.title)}</h3>
-          <p>${escapeHTML(card.description || '')}</p>
+          <p>${formatMultilineHTML(card.description || '')}</p>
           <ul class="cap-advantages">${(card.advantages || []).map((item) => `<li><span class="tick">✓</span> <strong>${escapeHTML(item)}</strong></li>`).join('')}</ul>
           <div class="cap-card-footer"><span>${escapeHTML(card.button_label || 'Learn more')}</span> <span class="arrow">→</span></div>
         </div>
@@ -332,7 +332,7 @@ function renderHomeWorkflow(workflow) {
   steps.innerHTML = workflow.steps.map((step, index) => `<div class="chain-step">
     <span>${String(index + 1).padStart(2, '0')}</span>
     <strong>${escapeHTML(step.title || '')}</strong>
-    <p>${escapeHTML(step.description || '')}</p>
+    <p>${formatMultilineHTML(step.description || '')}</p>
   </div>`).join('');
 }
 
@@ -344,7 +344,7 @@ function renderHeroPanel(panel) {
     <div class="panel-gauge">
       <span>${escapeHTML(panel.metric || '')}</span>
       <strong>${escapeHTML(panel.title || '')}</strong>
-      ${panel.description ? `<p>${escapeHTML(panel.description)}</p>` : ''}
+      ${panel.description ? `<p>${formatMultilineHTML(panel.description)}</p>` : ''}
     </div>
     <div class="panel-spec-grid">
       ${specs.map((item) => `<div><span>${escapeHTML(item.label || '')}</span><strong>${escapeHTML(item.value || '')}</strong></div>`).join('')}
@@ -399,7 +399,7 @@ function renderAboutPage(about) {
   const legacyCopy = document.querySelector('.legacy-section .two-col-split > div');
   if (legacyCopy && Array.isArray(page.legacy?.paragraphs)) {
     legacyCopy.querySelectorAll('p').forEach((paragraph) => paragraph.remove());
-    legacyCopy.insertAdjacentHTML('beforeend', page.legacy.paragraphs.map((text) => `<p style="color:var(--slate-light);margin-bottom:1rem">${escapeHTML(text)}</p>`).join(''));
+    legacyCopy.insertAdjacentHTML('beforeend', page.legacy.paragraphs.map((text) => `<p style="color:var(--slate-light);margin-bottom:1rem">${formatMultilineHTML(text)}</p>`).join(''));
   }
   const legacyImage = document.querySelector('.legacy-image');
   if (legacyImage && page.legacy?.image) {
@@ -585,9 +585,9 @@ function renderPrivacyPage(page) {
   const content = document.querySelector('.legal-content');
   if (!content || !page) return;
   content.innerHTML = `<h1>${escapeHTML(page.title || '')}</h1>
-    ${page.last_updated ? `<p>${escapeHTML(page.last_updated)}</p>` : ''}
-    ${page.intro ? `<p>${escapeHTML(page.intro)}</p>` : ''}
-    ${page.business_context ? `<p>${escapeHTML(page.business_context)}</p>` : ''}
+    ${page.last_updated ? `<p>${formatMultilineHTML(page.last_updated)}</p>` : ''}
+    ${page.intro ? `<p>${formatMultilineHTML(page.intro)}</p>` : ''}
+    ${page.business_context ? `<p>${formatMultilineHTML(page.business_context)}</p>` : ''}
     ${(page.sections || []).map((section) => `<h2>${escapeHTML(section.title || '')}</h2>
       <p>${linkifyEmailMessage(section.body || '')}</p>`).join('')}
     <a href="${escapeAttribute(page.button_link || 'index.html')}" class="btn btn-primary">${escapeHTML(page.button_label || 'Back to Homepage')}</a>`;
@@ -603,7 +603,7 @@ function renderNotFoundPage(page) {
   content.innerHTML = `<div class="${logoMarkClass}" style="margin: 0 auto 2rem;">${logoMarkContent}</div>
     <p class="section-label">${escapeHTML(page.label || 'Error 404')}</p>
     <h1>${escapeHTML(page.title || 'Page not found')}</h1>
-    <p>${escapeHTML(page.description || '')}</p>
+    <p>${formatMultilineHTML(page.description || '')}</p>
     <a href="${escapeAttribute(page.button_link || 'index.html')}" class="btn btn-primary">${escapeHTML(page.button_label || 'Back to Homepage')}</a>`;
 }
 
@@ -653,7 +653,7 @@ function setLink(selector, label, href) {
 
 function setTextWithin(container, selector, value) {
   const element = container?.querySelector(selector);
-  if (element && value !== undefined && value !== null) element.textContent = value;
+  setElementText(element, value);
 }
 
 function getProductDetailURL(product = {}) {
@@ -683,7 +683,7 @@ function renderProducts(products) {
       <div class="product-card-content">
         <h4>${escapeHTML(product.name)}</h4>
         ${product.certification ? `<div class="cert">${escapeHTML(product.certification)}</div>` : ''}
-        <p>${escapeHTML(product.description || '')}</p>
+        <p>${formatMultilineHTML(product.description || '')}</p>
         <div class="product-actions">
           <a class="download-specs product-detail-link" href="${escapeAttribute(detailURL)}">${escapeHTML(detailLabel)} →</a>
           ${productAction}
@@ -751,7 +751,7 @@ function renderProductDetailPage(page) {
           </nav>
           <span class="section-label">${escapeHTML(detail.eyebrow || product.certification || 'PEIC manufactured')}</span>
           <h1>${escapeHTML(detail.title || product.name)}</h1>
-          <p>${escapeHTML(detail.summary || product.description || '')}</p>
+          <p>${formatMultilineHTML(detail.summary || product.description || '')}</p>
           ${quickFactsHTML(detail.quick_facts)}
           <div class="product-detail-actions">
             ${productAction}
@@ -769,7 +769,7 @@ function renderProductDetailPage(page) {
         <article class="product-detail-panel product-detail-brief">
           <span class="section-label">Overview</span>
           <h2>${escapeHTML(detail.brief_title || 'What this product is suited for')}</h2>
-          <p>${escapeHTML(detail.brief || product.description || '')}</p>
+          <p>${formatMultilineHTML(detail.brief || product.description || '')}</p>
         </article>
         <aside class="product-detail-side">
           <h3>${escapeHTML(detail.customization_title || 'Configuration can be discussed around')}</h3>
@@ -813,7 +813,7 @@ function renderProductDetailPage(page) {
         <div class="home-cta-inner">
           <span class="section-label">Product enquiry</span>
           <h2>${escapeHTML(detail.cta_title || 'Request product guidance')}</h2>
-          <p>${escapeHTML(detail.cta_description || 'Share your requirement and PEIC will respond with suitable configuration guidance.')}</p>
+          <p>${formatMultilineHTML(detail.cta_description || 'Share your requirement and PEIC will respond with suitable configuration guidance.')}</p>
           ${productActionHTML(product, 'btn btn-primary product-detail-enquire', product.enquiry_label || product.action_label || 'Submit enquiry')}
         </div>
       </div>
@@ -956,7 +956,7 @@ function detailCardsHTML(cards) {
   if (!Array.isArray(cards) || !cards.length) return '';
   return cards.map((card) => `<article class="product-detail-card">
     <h3>${escapeHTML(card.title || '')}</h3>
-    <p>${escapeHTML(card.description || '')}</p>
+    <p>${formatMultilineHTML(card.description || '')}</p>
   </article>`).join('');
 }
 
@@ -978,7 +978,7 @@ function productOptionsSectionHTML(detail) {
       <div class="section-header">
         <span class="section-label">${escapeHTML(detail.options_label || 'Main options')}</span>
         <h2 class="section-title">${escapeHTML(detail.options_title || 'Configuration choices buyers usually compare.')}</h2>
-        ${detail.options_intro ? `<p class="section-subtitle">${escapeHTML(detail.options_intro)}</p>` : ''}
+        ${detail.options_intro ? `<p class="section-subtitle">${formatMultilineHTML(detail.options_intro)}</p>` : ''}
       </div>
       <div class="product-options-table" role="table" aria-label="${escapeAttribute(detail.options_title || 'Product options')}">
         <div class="product-options-row product-options-head" role="row">
@@ -992,7 +992,7 @@ function productOptionsSectionHTML(detail) {
           <span role="cell">${escapeHTML(option.note || '')}</span>
         </div>`).join('')}
       </div>
-      ${detail.spec_note ? `<p class="product-spec-note">${escapeHTML(detail.spec_note)}</p>` : ''}
+      ${detail.spec_note ? `<p class="product-spec-note">${formatMultilineHTML(detail.spec_note)}</p>` : ''}
     </div>
   </section>`;
 }
@@ -1042,7 +1042,7 @@ function partnerCardHTML(partner) {
     <div class="partner-card-content">
       <div class="origin">${escapeHTML(partner.country || '')}</div>
       <h4>${escapeHTML(partner.name)}</h4>
-      <p>${escapeHTML(partner.description || '')}</p>
+      <p>${formatMultilineHTML(partner.description || '')}</p>
       <div class="partner-categories">${tags}</div>
     </div>
     ${logo}
@@ -1115,7 +1115,7 @@ function renderPageSections(pages) {
     specialties.innerHTML = pages.solutions.specialties.map((item) => `<a class="visual-card visual-card-link" id="${escapeAttribute(item.id)}" href="${escapeAttribute(item.link || 'contact.html')}"${item.image ? ` style="--card-image:url('${escapeAttribute(normalizeAssetURL(item.image))}')"` : ''}>
       <div class="visual-card-body">
         <h3>${escapeHTML(item.title)}</h3>
-        <p>${escapeHTML(item.description || '')}</p>
+        <p>${formatMultilineHTML(item.description || '')}</p>
         <span class="explore-portfolio">${escapeHTML(item.button_label || 'Explore portfolio')} →</span>
       </div>
     </a>`).join('');
@@ -1125,7 +1125,7 @@ function renderPageSections(pages) {
   if (industries && pages.solutions?.industries) {
     industries.innerHTML = pages.solutions.industries.map((item) => `<div class="industry-card ${item.featured ? 'featured' : ''}">
       <h3>${escapeHTML(item.title)}</h3>
-      <p>${escapeHTML(item.description || '')}</p>
+      <p>${formatMultilineHTML(item.description || '')}</p>
       <div class="industry-depts">${(item.tags || []).map((tag) => `<span class="industry-dept-tag">${escapeHTML(tag)}</span>`).join('')}</div>
     </div>`).join('');
   }
@@ -1136,7 +1136,7 @@ function renderPageSections(pages) {
       <div class="info-card-icon">${index + 1}</div>
       <span class="response-step-arrow" aria-hidden="true">→</span>
       <h3>${escapeHTML(item.title)}</h3>
-      <p>${escapeHTML(item.description || '')}</p>
+      <p>${formatMultilineHTML(item.description || '')}</p>
     </div>`).join('');
   }
 
@@ -1145,7 +1145,7 @@ function renderPageSections(pages) {
     serviceGrid.innerHTML = pages.service.offerings.map((item) => `<div class="info-card">
       <div class="info-card-icon">${escapeHTML(item.icon || '')}</div>
       <h3>${escapeHTML(item.title)}</h3>
-      <p>${escapeHTML(item.description || '')}</p>
+      <p>${formatMultilineHTML(item.description || '')}</p>
     </div>`).join('');
   }
 
@@ -1154,7 +1154,7 @@ function renderPageSections(pages) {
     benefits.innerHTML = pages.careers.benefits.map((item) => `<div class="benefit-card">
       <div class="benefit-card-icon">${escapeHTML(item.icon || '')}</div>
       <h4>${escapeHTML(item.title)}</h4>
-      <p>${escapeHTML(item.description || '')}</p>
+      <p>${formatMultilineHTML(item.description || '')}</p>
     </div>`).join('');
     setText('.culture-callout h3', pages.careers.culture_title);
     setText('.culture-callout p', pages.careers.culture_subtitle);
@@ -1265,7 +1265,7 @@ function renderFacilityBlocks(facilities) {
     <div class="facility-copy">
       <span class="facility-type">${escapeHTML(block.type_label || '')}</span>
       <h3>${escapeHTML(block.title || '')}</h3>
-      <p>${escapeHTML(block.description || '')}</p>
+      <p>${formatMultilineHTML(block.description || '')}</p>
       <address>${(block.address_lines || []).map(escapeHTML).join('<br>')}</address>
     </div>
   </article>`).join('');
@@ -1273,7 +1273,7 @@ function renderFacilityBlocks(facilities) {
 
 function testimonialCardHTML(testimonial) {
   return `<div class="testimonial-card">
-    <p class="testimonial-quote">${escapeHTML(testimonial.quote)}</p>
+    <p class="testimonial-quote">${formatMultilineHTML(testimonial.quote)}</p>
     <div class="testimonial-author">${escapeHTML(testimonial.author)}</div>
     <div class="testimonial-role">${escapeHTML(testimonial.role || '')}</div>
   </div>`;
@@ -1293,7 +1293,7 @@ function buildingIcon() {
 
 function setText(selector, value) {
   const element = document.querySelector(selector);
-  if (element && value) element.textContent = value;
+  setElementText(element, value);
 }
 
 function setAttribute(selector, attribute, value) {
@@ -1302,7 +1302,7 @@ function setAttribute(selector, attribute, value) {
 }
 
 function linkifyEmailMessage(message) {
-  return escapeHTML(message).replace(
+  return formatMultilineHTML(message).replace(
     /([\w.+-]+@[\w.-]+\.[A-Za-z]{2,})/g,
     '<a href="mailto:$1">$1</a>'
   );
@@ -1349,6 +1349,19 @@ function escapeHTML(value) {
     '"': '&quot;',
     "'": '&#039;'
   })[character]);
+}
+
+function formatMultilineHTML(value) {
+  return escapeHTML(String(value ?? ''))
+    .replace(/\r\n?/g, '\n')
+    .replace(/\n/g, '<br>');
+}
+
+function setElementText(element, value) {
+  if (!element || value === undefined || value === null) return;
+  const text = String(value);
+  element.textContent = text;
+  element.classList.toggle('cms-preserve-lines', /[\r\n]/.test(text));
 }
 
 function escapeAttribute(value) {

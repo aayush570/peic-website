@@ -8010,6 +8010,10 @@ section.bg-dark .section-label,
   line-height: 1.55;
 }
 
+.cms-preserve-lines {
+  white-space: pre-line;
+}
+
 @media (max-width: 1024px) {
   .site-footer .footer-grid {
     grid-template-columns: 1fr;

@@ -46,6 +46,10 @@ Use this for:
 - Phone numbers and email addresses
 - Registered address
 
+For longer text fields, pressing Enter in PagesCMS now creates a visible line
+break on the website. This is intended for paragraph-style copy such as
+descriptions, intros, notes, testimonials, and addresses.
+
 ### Manufactured products
 
 Each product has:

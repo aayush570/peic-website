@@ -1,0 +1,30 @@
+name: Trigger Vercel Deploy Hook
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'content/**'
+      - 'uploads/**'
+      - '.pages.yml'
+      - 'index.html'
+      - '*.html'
+      - 'css/**'
+      - 'js/**'
+  workflow_dispatch:
+
+jobs:
+  trigger-vercel:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger deploy hook
+        env:
+          VERCEL_DEPLOY_HOOK_URL: ${{ secrets.VERCEL_DEPLOY_HOOK_URL }}
+        run: |
+          if [ -z "$VERCEL_DEPLOY_HOOK_URL" ]; then
+            echo "Missing VERCEL_DEPLOY_HOOK_URL GitHub secret"
+            exit 1
+          fi
+
+          curl -fsS -X POST "$VERCEL_DEPLOY_HOOK_URL"
