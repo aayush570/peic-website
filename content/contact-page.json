@@ -34,8 +34,8 @@
   "office_title": "Office Addresses",
   "offices": [
     {
-      "label": "PRIMARY OFFICE",
-      "title": "Mumbai",
+      "label": "HEADQUARTERS",
+      "title": "Mumbai (Suburban)",
       "address_lines": [
         "22, 2nd Floor, Shamroz Industrial Estate",
         "Ram Mandir Road, Goregaon West",
@@ -43,8 +43,8 @@
       ]
     },
     {
-      "label": "REGISTERED OFFICE",
-      "title": "Registered Address",
+      "label": "SECONDARY OFFICE",
+      "title": "Mumbai (South)",
       "address_lines": [
         "17, Ranvir Building, 66/70 Princess Street",
         "Mumbai 400002, Maharashtra, India"
@@ -52,12 +52,12 @@
     }
   ],
   "form_title": "Submit Your Requirement",
-  "form_description": "Our team reviews all enquiries and responds promptly with the next relevant step.",
+  "form_description": "Our team reviews all enquiries and responds within 1 business day with the next relevant step.",
   "submit_label": "Submit Enquiry",
   "sending_label": "Sending...",
   "sending_status": "Sending your enquiry securely...",
-  "success_message": "Thank you. Your enquiry has been sent. PEIC will respond shortly.",
-  "error_message": "We could not send the enquiry. Please try again or email sital.shah@peic.in.",
+  "success_message": "Thank you. Your enquiry has been sent. PEIC will respond within 1 business day.",
+  "error_message": "We could not send the enquiry. Please try again or email either support@peic.in or contact@peic.in.",
   "fields": {
     "name_label": "Full Name *",
     "name_placeholder": "Your full name",
@@ -67,10 +67,10 @@
     "phone_placeholder": "+91 XXXXX XXXXX",
     "organization_label": "Organization Name",
     "organization_optional": "(optional)",
-    "organization_placeholder": "Hospital / organization name",
+    "organization_placeholder": "Hospital / Organization name",
     "designation_label": "Designation",
     "designation_optional": "(optional)",
-    "designation_placeholder": "Your designation",
+    "designation_placeholder": "Your Designation",
     "department_label": "Department",
     "department_optional": "(optional)",
     "department_placeholder": "Biomedical Engineering, CSSD, Procurement, etc.",
@@ -80,11 +80,11 @@
     "inquiry_type_label": "Inquiry Type *",
     "quantity_label": "Quantity / Scope",
     "quantity_optional": "(optional)",
-    "quantity_placeholder": "e.g. 2 autoclaves, AMC for 5 units",
+    "quantity_placeholder": "e.g. 2 Autoclaves, AMC for 5 units",
     "tender_label": "Tender Status",
     "tender_optional": "(optional)",
     "message_label": "Additional Details",
-    "message_placeholder": "Describe your requirements - equipment models, quantities, documentation needs, AMC scope, or purchase context.",
+    "message_placeholder": "Describe your requirements - equipment type/models, quantities, documentation needs, AMC scope, or purchase context.",
     "consent_text": "I agree that PEIC may use these details to respond to my enquiry, as described in the Privacy Policy.",
     "privacy_label": "Privacy Policy",
     "privacy_link": "privacy.html"
