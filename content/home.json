@@ -119,8 +119,8 @@
     {
       "value": 15,
       "suffix": "+",
-      "tagline": "Built to last",
-      "label": "Years Avg. Machine Lifespan"
+      "tagline": "Years",
+      "label": "Durable Machine Lifespan"
     },
     {
       "value": 1,
@@ -137,7 +137,7 @@
   "clients": {
     "label": "Our Existing Clients",
     "title": "Institutional references and long-term relationships",
-    "description": "PEIC has been supplying our manufactured CSSD Equipment and Sterilisation Systems alongwith equipment and machines for every department in a hospital manufactured by leading brands to major hospitals and healthcare institutions across India for 6 decades."
+    "description": "For nearly six decades, we have delivered turnkey department setups, medical hardware, and engineering support to the country's leading corporate hospital chains, government facilities, and medical colleges."
   },
   "clients_list": [
     {
