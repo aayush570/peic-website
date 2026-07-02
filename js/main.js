@@ -105,6 +105,7 @@ async function fetchCMSData(name) {
 }
 
 function renderSiteContent(site, route = getCurrentRoute()) {
+  applyGlobalBranding(site);
   renderSEOContent(site.seo?.[route], route);
   renderOrganizationSchema(site);
   renderNavigation(site.navigation, route);
@@ -152,7 +153,7 @@ function renderSEOContent(seo, route) {
   const siteURL = (peicState.site.site_url || 'https://peic.in').replace(/\/+$/, '');
   if (!seo) return;
   const seoImage = seo.image ? absoluteSiteURL(normalizeAssetURL(seo.image), siteURL) : '';
-  if (seo.title) document.title = seo.title;
+  setDocumentTitle(seo.title);
   setMetaContent('meta[name="description"]', seo.description);
   setMetaContent('meta[property="og:title"]', seo.title);
   setMetaContent('meta[property="og:description"]', seo.description);
@@ -863,7 +864,7 @@ function getProductDetailSlug() {
 }
 
 function renderMissingProductDetail(main) {
-  document.title = 'Product Not Found - PEIC';
+  setDocumentTitle('Product Not Found - PEIC');
   main.innerHTML = `<section class="product-detail-hero product-detail-missing">
     <div class="container product-detail-hero-inner">
       <div class="product-detail-copy">
@@ -890,7 +891,7 @@ function renderProductDetailSEO(product) {
   const canonicalURL = absoluteSiteURL(canonicalPath, siteURL);
   const image = product.image ? absoluteSiteURL(normalizeAssetURL(product.image), siteURL) : '';
 
-  document.title = detail.seo_title || `${product.name} | PEIC`;
+  setDocumentTitle(detail.seo_title || `${product.name} | PEIC`);
   setMetaContent('meta[name="description"]', detail.seo_description || product.description);
   setMetaContent('meta[property="og:title"]', detail.seo_title || `${product.name} | PEIC`);
   setMetaContent('meta[property="og:description"]', detail.seo_description || product.description);
@@ -1400,6 +1401,38 @@ function normalizeAssetURL(url) {
   if (!url) return '';
   if (/^(https?:|data:|\/|#)/i.test(url)) return url;
   return `/${url.replace(/^\.?\//, '')}`;
+}
+
+function getFaviconType(url) {
+  const cleanURL = String(url || '').split('?')[0].split('#')[0].toLowerCase();
+  if (cleanURL.endsWith('.png')) return 'image/png';
+  if (cleanURL.endsWith('.ico')) return 'image/x-icon';
+  if (cleanURL.endsWith('.jpg') || cleanURL.endsWith('.jpeg')) return 'image/jpeg';
+  if (cleanURL.endsWith('.webp')) return 'image/webp';
+  return 'image/svg+xml';
+}
+
+function setDocumentTitle(fallbackTitle) {
+  document.title = peicState.site.browser_tab_title || fallbackTitle || document.title;
+}
+
+function applyGlobalBranding(site) {
+  if (!site) return;
+
+  setDocumentTitle(site.browser_tab_title);
+
+  const faviconURL = normalizeAssetURL(site.favicon);
+  if (!faviconURL) return;
+
+  let favicon = document.querySelector('link[rel="icon"]');
+  if (!favicon) {
+    favicon = document.createElement('link');
+    favicon.setAttribute('rel', 'icon');
+    document.head.appendChild(favicon);
+  }
+
+  favicon.setAttribute('href', faviconURL);
+  favicon.setAttribute('type', getFaviconType(faviconURL));
 }
 
 function replaceHTMLIfChanged(element, markup) {

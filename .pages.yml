@@ -551,6 +551,8 @@ content:
     format: json
     fields:
       - { name: company_name, label: Company name, type: string, required: true }
+      - { name: browser_tab_title, label: Browser tab title (same on all pages), type: string, description: "This text appears in the browser tab across the entire website." }
+      - { name: favicon, label: Site favicon, type: image, options: { media: images }, description: "Upload the icon you want shown in the browser tab across the entire website." }
       - { name: logo, label: Logo PNG/Image, type: image, options: { media: images } }
       - { name: short_name, label: Short logo text, type: string }
       - { name: tagline, label: Header tagline, type: string }

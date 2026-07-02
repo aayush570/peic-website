@@ -53,6 +53,8 @@ matching page entry, so the sidebar stays one item per website page.
 Use this for:
 
 - Company name and tagline
+- Browser tab title shown across the whole website
+- Favicon shown in the browser tab across the whole website
 - Footer description
 - Phone numbers and email addresses
 - Registered address
