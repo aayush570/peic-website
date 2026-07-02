@@ -75,13 +75,13 @@
     "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. \nFewer vendor handoffs. Integrated commercial Terms. Clearer service ownership. Equipment decisions backed by engineering judgment."
   },
   "workflow": {
-    "label": "Engineering Discipline",
-    "title": "A single technical chain from specification to uptime.",
+    "label": "Engineering DNA",
+    "title": "A single technical chain from specification to support",
     "description": "Every project is treated as a lifecycle system: requirement mapping, product selection, installation, validation, training, spare parts, and service accountability.",
     "steps": [
       {
         "title": "Clinical Requirement",
-        "description": "Map departments, load, compliance and procurement constraints."
+        "description": "Understand and map departments, load, compliance and procurement constraints."
       },
       {
         "title": "Equipment Architecture",
@@ -99,7 +99,7 @@
   },
   "stats": [
     {
-      "value": 50,
+      "value": 58,
       "suffix": "+",
       "tagline": "Since 1968",
       "label": "Years in Business"
