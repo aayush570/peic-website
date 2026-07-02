@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Established OEM Manufacturer and Authorised Supplier of Medical Equipment ",
     "title": "6 Decades as India's Most Accountable Medical Equipment Partner",
-    "description": "\nWe manufacture CSSD equipment and sterilisation systems at our Mumbai facility and are an authorised distributor for 14+ leading global and domestic medical equipment brands to equip every department in your healthcare facility:\n\nCSSD, Operating Theatres (OT), Radiology/Imaging, Critical Care, Neonatal/Maternal Care, Oncology, Dental, and Specialized Diagnostics among others",
+    "description": "\nWe manufacture CSSD equipment and sterilisation systems at our Mumbai facility and are a direct authorised distributor for 14+ leading global and domestic medical equipment brands to cater to the rest of your hospital departments:\n\nCSSD, Operating Theatres (OT), Radiology/Imaging, Critical Care, Neonatal/Maternal Care, Oncology, Dental, and Specialized Diagnostics among others",
     "primary_button_label": "Start a Procurement Conversation",
     "primary_button_link": "contact.html?type=equipment",
     "secondary_button_label": "See Credentials and Track Record",
@@ -47,7 +47,7 @@
     "cards": [
       {
         "title": "Indigenous Manufacturing",
-        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure \nbuilt to global standards at our Mumbai Factory.",
+        "description": "Engineering world-class sterilization systems and CSSD infrastructure \nbuilt to global standards at our Mumbai factory.",
         "image": "/uploads/images/cssd-equipment.jpg",
         "link": "products.html#manufacturing",
         "advantages": [
@@ -60,7 +60,7 @@
       },
       {
         "title": "Global & Domestic Distribution",
-        "description": "Authorised integration partner for 14+ global and domestic medical equipment brands across India. \nCatering to every department in your healthcare facility.",
+        "description": "Direct authorised integration partner and supplier for\n14+ global and domestic medical equipment brands, \ncatering to every department in your healthcare facility.",
         "image": "/uploads/images/diagnostics-1.jpeg",
         "link": "products.html#partners",
         "advantages": [
@@ -77,23 +77,23 @@
   "workflow": {
     "label": "Engineering DNA",
     "title": "A single technical chain from specification to support",
-    "description": "Every project is treated as a lifecycle system: \nRequirement Mapping, \nProduct Selection, \nInstallation,\nValidation and Testing, \nTraining, \nSpare Parts,\nRefurbishment and Service",
+    "description": "Every project is treated as a lifecycle system: \nRequirement Mapping and Product Selection \nInstallation, Validation, Testing, and Training\nOngoing Spare Parts, Refurbishment and Service",
     "steps": [
       {
         "title": "Clinical Requirement",
-        "description": "Understand and map departments, load, technical feasibility, compliance and procurement constraints."
+        "description": "Understand and map departments, load, technical feasibility, commercial terms, compliance and procurement constraints."
       },
       {
         "title": "Equipment Architecture",
-        "description": "Manufactured and partner systems configured as one operating portfolio."
+        "description": "Manufactured hardware and partner brand equipment configured as one complete portfolio."
       },
       {
         "title": "Commissioning",
-        "description": "Installation, calibration and testing, training and documentation for biomedical teams."
+        "description": "Installation, testing, training and documentation for biomedical teams."
       },
       {
         "title": "Lifecycle Support",
-        "description": "AMC, CMC, spares, refurbishing and response planning after deployment."
+        "description": "AMC, CMC, spares and refurbishment throughout product's lifespan."
       }
     ]
   },
@@ -102,35 +102,35 @@
       "display_value": "58+",
       "value": 58,
       "suffix": "+",
-      "tagline": "Years",
-      "label": "Of Continuous Operation"
+      "tagline": "Years Of Continuous Operation",
+      "label": " "
     },
     {
       "display_value": "2,000+",
       "value": 2000,
       "suffix": "+",
-      "tagline": "Pan-India",
-      "label": "Total Installations Delivered"
+      "tagline": "Pan-India Installations Delivered",
+      "label": " "
     },
     {
       "display_value": "1,000+",
       "value": 1000,
       "suffix": "+",
-      "tagline": "Currently operational",
-      "label": "Active Equipment Units"
+      "tagline": "Currently Active Equipment Units",
+      "label": " "
     },
     {
-      "display_value": "15+",
+      "display_value": "15+ Years",
       "value": 15,
       "suffix": "+",
-      "tagline": "Years",
-      "label": "Durable Machine Lifespan"
+      "tagline": "Years Avg. Machine Lifespan",
+      "label": " "
     },
     {
       "display_value": "Single",
       "value": 1,
-      "tagline": "Coordinated support",
-      "label": "Accountable Service Relationship"
+      "tagline": "Point of Contact",
+      "label": "For Procurement, Integration, and Service"
     }
   ],
   "advantage": {
