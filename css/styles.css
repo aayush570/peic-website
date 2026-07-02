@@ -26,6 +26,17 @@
 
 html { scroll-behavior: smooth; }
 
+html.is-cms-loading body main,
+body.is-cms-loading main {
+  opacity: 0;
+}
+
+html.is-cms-ready body main,
+body.is-cms-ready main {
+  opacity: 1;
+  transition: opacity 0.18s ease;
+}
+
 body {
   font-family: var(--font);
   color: var(--slate);

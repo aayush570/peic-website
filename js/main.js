@@ -4,7 +4,6 @@ const peicState = {
   site: {}
 };
 const MICROSOFT_CLARITY_PROJECT_ID = 'xg1eueqvcc';
-const CMS_CACHE_PREFIX = 'peic-cms-cache:';
 const LEGACY_PRODUCT_SLUGS = {
   'horizontal rectangular high-pressure steam sterilizer': 'horizontal-rectangular-sterilizer',
   'horizontal cylindrical high-pressure steam sterilizer': 'horizontal-cylindrical-sterilizer',
@@ -90,7 +89,7 @@ function applyCMSData(data, route, pageFiles, isProductDetailPage) {
   } else {
     renderCurrentPage(route, data[pageFiles[route]]);
   }
-  if (data.about) renderTrustContent(data.about);
+  if (route === 'about' && data.about) renderTrustContent(data.about);
 }
 
 function getCurrentRoute() {
@@ -99,10 +98,9 @@ function getCurrentRoute() {
 }
 
 async function fetchCMSData(name) {
-  const response = await fetch(`content/${name}.json`, { cache: 'no-cache' });
+  const response = await fetch(`content/${name}.json?ts=${Date.now()}`, { cache: 'no-store' });
   if (!response.ok) throw new Error(`Unable to load ${name} content`);
   const data = await response.json();
-  writeCachedCMSData(name, data);
   return { [name]: data };
 }
 
@@ -1441,33 +1439,6 @@ function renderLogoMarks(site) {
     if (site.short_name) element.textContent = site.short_name;
     element.classList.remove('has-logo');
   });
-}
-
-function readCachedCMSData(name) {
-  if (!name) return null;
-
-  if (window.__PEIC_CMS_CACHE__ && Object.prototype.hasOwnProperty.call(window.__PEIC_CMS_CACHE__, name)) {
-    return window.__PEIC_CMS_CACHE__[name];
-  }
-
-  try {
-    const raw = window.localStorage.getItem(`${CMS_CACHE_PREFIX}${name}`);
-    return raw ? JSON.parse(raw) : null;
-  } catch (error) {
-    return null;
-  }
-}
-
-function writeCachedCMSData(name, data) {
-  if (!name || !data) return;
-
-  try {
-    if (!window.__PEIC_CMS_CACHE__) window.__PEIC_CMS_CACHE__ = {};
-    window.__PEIC_CMS_CACHE__[name] = data;
-    window.localStorage.setItem(`${CMS_CACHE_PREFIX}${name}`, JSON.stringify(data));
-  } catch (error) {
-    // Ignore storage errors so live CMS rendering still works.
-  }
 }
 
 function initMobileNav() {
