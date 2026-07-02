@@ -32,9 +32,9 @@
     "destination_email": "sital.shah@peic.in",
     "contact_subject": "New PEIC website enquiry",
     "contact_from_name": "PEIC Website",
-    "product_subject_prefix": "PEIC product enquiry",
-    "download_subject_prefix": "PEIC specification download",
-    "resource_subject_prefix": "PEIC document request",
+    "product_subject_prefix": "PEIC Product Enquiry",
+    "download_subject_prefix": "PEIC Specification Download",
+    "resource_subject_prefix": "PEIC Document Request",
     "product_from_name": "PEIC Product Catalogue",
     "resource_from_name": "PEIC Documentation Request"
   },
@@ -82,9 +82,9 @@
       "route": "contact"
     },
     "mobile_label": "Menu",
-    "drawer_label": "Menu navigation",
-    "mobile_open_label": "Open menu",
-    "mobile_close_label": "Close menu"
+    "drawer_label": "Menu Navigation",
+    "mobile_open_label": "Open Menu",
+    "mobile_close_label": "Close Menu"
   },
   "footer": {
     "description": "CSSD Equipment OEM Manufacturer and \nIntegration Partner for Global & Indian Med-Tech Brands",
@@ -152,17 +152,17 @@
     ],
     "copyright": "© 2026 Precision Electronics Instruments & Components. All rights reserved.",
     "certification_strip": "BIS · CE · ISO 13485 · GMP Certified",
-    "address": "22, 2nd Floor, Shamroz Industrial Estate, \nRam Mandir Road, Goregaon West, \nMumbai - 400054"
+    "address": "Headquarters\n22, 2nd Floor, Shamroz Industrial Estate, \nRam Mandir Road, Goregaon West, \nMumbai - 400054"
   },
   "floating_cta": {
     "label": "Make an Enquiry",
     "href": "contact.html",
-    "aria_label": "Make an enquiry"
+    "aria_label": "Make An Enquiry"
   },
   "addresses": [
     {
       "label": "PRIMARY OFFICE",
-      "title": "Mumbai Commercial & Service Hub",
+      "title": "Headquarters - Commercial and Service Hub",
       "address_lines": [
         "22, 2nd Floor, Shamroz Industrial Estate",
         "Ram Mandir Road, Goregaon West",
@@ -170,8 +170,8 @@
       ]
     },
     {
-      "label": "REGISTERED OFFICE",
-      "title": "Registered Address",
+      "label": "SECONDARY OFFICE",
+      "title": "Office Address",
       "address_lines": [
         "17, Ranvir Building, 66/70 Princess Street",
         "Mumbai 400002, Maharashtra, India"
@@ -180,29 +180,29 @@
   ],
   "seo": {
     "404": {
-      "title": "Page Not Found — PEIC",
+      "title": "Page Not Found - PEIC",
       "description": "The requested PEIC page could not be found.",
-      "image": "https://peic.in/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg"
+      "image": "https://peic.in/uploads/images/peic-header-logo.png"
     },
     "home": {
-      "title": "PEIC — Medical Equipment Manufacturer & Integration Partner | Est. 1968",
+      "title": "PEIC: Medical Equipment Manufacturer & Integration Partner | Est. 1968",
       "description": "PEIC manufactures sterilization systems and integrates global medical technologies with procurement, installation, and lifecycle service support across India.",
-      "image": "https://peic.in/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg"
+      "image": "https://peic.in/uploads/images/cssd-equipment.jpg"
     },
     "products": {
-      "title": "Medical Equipment Catalog — Sterilization Systems & Med-Tech Partners | PEIC",
+      "title": "Medical Equipment Catalog: Sterilization Systems & Medical Equipment Partners | PEIC",
       "description": "Explore PEIC-manufactured sterilization systems and partner medical technologies for hospital, biomedical, and procurement evaluation.",
-      "image": "https://peic.in/uploads/images/product-catalog-hero.jpg"
+      "image": "https://peic.in/uploads/images/cssd-equipment.jpg"
     },
     "solutions": {
-      "title": "Medical Equipment by Specialty — CSSD, OT, Oncology, Imaging | PEIC",
+      "title": "Medical Equipment by Specialty: CSSD, OT, Oncology, Imaging | PEIC",
       "description": "Review PEIC equipment portfolios by department, including CSSD, OT, oncology, radiology, neonatal care, dental suites, labs, and research facilities.",
-      "image": "https://peic.in/uploads/images/ot.jpeg"
+      "image": "https://peic.in/uploads/images/cssd-equipment.jpg"
     },
     "about": {
-      "title": "About PEIC — Medical Equipment Manufacturing in India Since 1968",
+      "title": "About PEIC: Medical Equipment Manufacturing in India Since 1968",
       "description": "Learn about PEIC's manufacturing heritage, Mumbai facilities, certifications, institutional references, and lifecycle support model.",
-      "image": "https://peic.in/uploads/images/heritage-and-legacy-hero.jpg"
+      "image": "https://peic.in/uploads/images/cssd-equipment.jpg"
     },
     "service": {
       "title": "Medical Equipment Service & AMC/CMC Support | PEIC",
@@ -212,22 +212,22 @@
     "resources": {
       "title": "Technical Documentation & Certifications | PEIC",
       "description": "Request PEIC product brochures, user manuals, specifications, and compliance certification documents.",
-      "image": "https://peic.in/uploads/images/product-catalog-hero.jpg"
+      "image": "https://peic.in/uploads/images/peic-header-logo.png"
     },
     "careers": {
-      "title": "Careers at PEIC — Medical Technology Manufacturer | Mumbai",
+      "title": "Careers at PEIC: Medical Technology Manufacturer | Mumbai",
       "description": "Explore Mumbai-based careers in medical equipment manufacturing, biomedical service, quality control, and institutional sales at PEIC.",
-      "image": "https://peic.in/uploads/images/heritage-and-legacy-hero.jpg"
+      "image": "https://peic.in/uploads/images/peic-header-logo.png"
     },
     "contact": {
-      "title": "Contact PEIC — Equipment Procurement & Service Enquiries | Mumbai",
+      "title": "Contact PEIC: Equipment Procurement & Service Enquiries | Mumbai",
       "description": "Contact PEIC for equipment procurement, specification support, AMC/CMC contracts, documentation, and service enquiries.",
-      "image": "https://peic.in/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg"
+      "image": "https://peic.in/uploads/images/peic-header-logo.png"
     },
     "privacy": {
-      "title": "Privacy Policy — PEIC",
+      "title": "Privacy Policy - PEIC",
       "description": "PEIC privacy policy for website enquiries and business communications.",
-      "image": "https://peic.in/uploads/images/horizontal-cylindrical-sterilizer-peic.jpg"
+      "image": "https://peic.in/uploads/images/peic-header-logo.png"
     }
   },
   "lead_modal": {
