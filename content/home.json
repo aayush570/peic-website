@@ -47,7 +47,7 @@
     "cards": [
       {
         "title": "Indigenous Manufacturing",
-        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure built to global standards at our Mumbai Factory.",
+        "description": "Engineering world-class Sterilization Systems and CSSD infrastructure \nbuilt to global standards at our Mumbai Factory.",
         "image": "/uploads/images/cssd-equipment.jpg",
         "link": "products.html#manufacturing",
         "advantages": [
@@ -60,7 +60,7 @@
       },
       {
         "title": "Global & Domestic Distribution",
-        "description": "Authorised integration partner for 14+ global and domestic medical equipment brands across India. Catering to every department in your healthcare facility.",
+        "description": "Authorised integration partner for 14+ global and domestic medical equipment brands across India. \nCatering to every department in your healthcare facility.",
         "image": "/uploads/images/diagnostics-1.jpeg",
         "link": "products.html#partners",
         "advantages": [
@@ -72,7 +72,7 @@
         "button_label": "Explore Partner Technologies"
       }
     ],
-    "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. Fewer vendor handoffs. Integrated commercial Terms. Clearer service ownership. Equipment decisions backed by engineering judgment."
+    "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. \nFewer vendor handoffs. Integrated commercial Terms. Clearer service ownership. Equipment decisions backed by engineering judgment."
   },
   "advantage": {
     "label": "Why PEIC",
