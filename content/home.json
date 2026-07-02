@@ -77,7 +77,7 @@
   "workflow": {
     "label": "Engineering DNA",
     "title": "A single technical chain from specification to support",
-    "description": "Every project is treated as a lifecycle system: \n1. Requirement Mapping and Product Selection \n2. Installation, Validation, Testing, and Training\n3. Ongoing Spare Parts, Refurbishment and Service",
+    "description": "Every project is treated as a lifecycle system: \nRequirement Mapping and Product Selection \nInstallation, Validation, Testing, and Training\nOngoing Spare Parts, Refurbishment and Service",
     "steps": [
       {
         "title": "Clinical Requirement",
