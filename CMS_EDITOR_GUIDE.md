@@ -194,11 +194,24 @@ Do not upload:
 1. Make the change.
 2. Click **Save**.
 3. Pages CMS commits the change to GitHub.
-4. Vercel automatically deploys it.
+4. Vercel sees the new commit on the `main` branch and automatically deploys it.
 5. Allow approximately one to three minutes.
 6. Check `https://www.peic.in`.
 
 Every change is stored in Git history and can be reversed by a technical administrator.
+
+## Normal Update Flow
+
+The website should now publish through one standard path only:
+
+1. A change is committed to the GitHub repository `aayush570/peic-website`.
+2. That commit lands on the `main` branch.
+3. Vercel's native GitHub integration deploys the latest `main` commit to production.
+
+This means both of these should work without any extra manual deploy step:
+
+- Codex edits local files, then GitHub Desktop is used to **Commit** and **Push**.
+- PagesCMS saves content, which creates a GitHub commit automatically.
 
 ## Safe Editing Rules
 
@@ -214,6 +227,7 @@ Every change is stored in Git history and can be reversed by a technical adminis
 1. Wait three minutes.
 2. Refresh the page.
 3. Try a private/incognito browser window.
-4. Check whether the Pages CMS save succeeded.
-5. Check the latest Vercel deployment.
-6. Contact the website administrator with the page and field changed.
+4. Check whether the GitHub commit exists on `main`.
+5. Check the latest Vercel production deployment.
+6. Confirm the latest deployment time is newer than the GitHub commit time.
+7. Contact the website administrator with the page and field changed.
