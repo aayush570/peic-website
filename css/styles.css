@@ -6472,6 +6472,26 @@ body.is-cms-loading .about-page .legacy-media::before {
   color: #fff;
 }
 
+.home-cta-aux {
+  grid-column: 1;
+  grid-row: 4;
+  margin-top: 0.8rem;
+}
+
+.home-cta-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #fff;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.home-cta-contact-link:hover {
+  color: rgba(255, 255, 255, 0.82);
+}
+
 #manufacturing .product-card,
 .product-card,
 .product-card.featured {

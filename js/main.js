@@ -409,7 +409,7 @@ function renderSolutionsPage(page) {
   setHeading(document.querySelector('.specialty-section'), page.specialties_heading);
   setHeading(document.querySelector('.audience-section'), page.industries_heading);
   renderPageSections({ solutions: page });
-  setCallout(document.querySelector('main.solutions-content + section .container'), page.cta);
+  setCallout(document.querySelector('.solutions-cta .home-cta-inner'), page.cta);
 }
 
 function renderAboutPage(about) {
@@ -440,8 +440,8 @@ function renderServicePage(page) {
   setHeading(document.querySelector('.response-grid')?.closest('section'), page.process_heading);
   setHeading(document.querySelector('.service-grid')?.closest('section'), page.offerings_heading);
   renderPageSections({ service: page });
-  setCallout(document.querySelector('.custom-solution-box'), page.custom_cta);
-  setCallout(document.querySelector('.urgent-service-banner'), page.urgent_cta);
+  setCallout(document.querySelector('.service-coverage-cta .home-cta-inner'), page.custom_cta);
+  setCallout(document.querySelector('.service-urgent-cta .home-cta-inner'), page.urgent_cta);
 }
 
 function renderResourcesPage(page) {
@@ -1612,8 +1612,8 @@ function initRevealAnimations() {
     '.contact-info-block',
     '.contact-form',
     '.legacy-container',
-    '.custom-solution-box',
-    '.urgent-service-banner',
+    '.service-coverage-cta .home-cta-inner',
+    '.service-urgent-cta .home-cta-inner',
     '.missing-doc-cta',
     '.product-detail-panel',
     '.product-detail-card',
