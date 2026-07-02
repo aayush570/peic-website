@@ -75,13 +75,13 @@
     "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. \nFewer vendor handoffs. Integrated commercial Terms. Clearer service ownership. Equipment decisions backed by engineering judgment."
   },
   "workflow": {
-    "label": "Engineering Discipline",
-    "title": "A single technical chain from specification to uptime.",
+    "label": "Engineering DNA",
+    "title": "A single technical chain from specification to support",
     "description": "Every project is treated as a lifecycle system: requirement mapping, product selection, installation, validation, training, spare parts, and service accountability.",
     "steps": [
       {
         "title": "Clinical Requirement",
-        "description": "Map departments, load, compliance and procurement constraints."
+        "description": "Understand and map departments, load, compliance and procurement constraints."
       },
       {
         "title": "Equipment Architecture",
@@ -99,11 +99,11 @@
   },
   "stats": [
     {
-      "display_value": "50+",
-      "value": 50,
+      "display_value": "58+",
+      "value": 58,
       "suffix": "+",
-      "tagline": "Since 1968",
-      "label": "Years in Business"
+      "tagline": "Years",
+      "label": "Of Continuous Operation"
     },
     {
       "display_value": "2,000+",
@@ -123,8 +123,8 @@
       "display_value": "15+",
       "value": 15,
       "suffix": "+",
-      "tagline": "Built to last",
-      "label": "Years Avg. Machine Lifespan"
+      "tagline": "Years",
+      "label": "Durable Machine Lifespan"
     },
     {
       "value": 1,
@@ -141,7 +141,7 @@
   "clients": {
     "label": "Our Existing Clients",
     "title": "Institutional references and long-term relationships",
-    "description": "PEIC has been supplying our manufactured CSSD Equipment and Sterilisation Systems alongwith equipment and machines for every department in a hospital manufactured by leading brands to major hospitals and healthcare institutions across India for 6 decades."
+    "description": "For nearly six decades, we have delivered turnkey department setups, medical hardware, and engineering support to the country's leading corporate hospital chains, government facilities, and medical colleges."
   },
   "clients_list": [
     {
