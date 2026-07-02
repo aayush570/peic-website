@@ -102,8 +102,8 @@
       "display_value": "58+",
       "value": 58,
       "suffix": "+",
-      "tagline": "Years",
-      "label": "Of Continuous Operation"
+      "tagline": "Years Of Continuous Operation",
+      "label": " "
     },
     {
       "display_value": "2,000+",
@@ -120,11 +120,11 @@
       "label": " "
     },
     {
-      "display_value": "15+",
+      "display_value": "15+ Years",
       "value": 15,
       "suffix": "+",
-      "tagline": "Years",
-      "label": "Durable Machine Lifespan"
+      "tagline": "Years Avg. Machine Lifespan",
+      "label": " "
     },
     {
       "display_value": "Single",
