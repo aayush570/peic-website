@@ -116,8 +116,8 @@
       "display_value": "1,000+",
       "value": 1000,
       "suffix": "+",
-      "tagline": "Currently operational",
-      "label": "Active Equipment Units"
+      "tagline": "Currently Active Equipment Units",
+      "label": " "
     },
     {
       "display_value": "15+",
