@@ -3,6 +3,7 @@
 const peicState = {
   site: {}
 };
+const MICROSOFT_CLARITY_PROJECT_ID = 'xg1eueqvcc';
 const CMS_CACHE_PREFIX = 'peic-cms-cache:';
 const LEGACY_PRODUCT_SLUGS = {
   'horizontal rectangular high-pressure steam sterilizer': 'horizontal-rectangular-sterilizer',
@@ -12,6 +13,8 @@ const LEGACY_PRODUCT_SLUGS = {
   'bowl & utensil sterilizer': 'bowl-utensil-sterilizer',
   'fully automatic hot & cold water pressure sterilizer': 'hot-cold-water-pressure-sterilizer'
 };
+
+initMicrosoftClarity();
 
 document.addEventListener('DOMContentLoaded', async () => {
   setCMSLoadingState(true);
@@ -27,6 +30,23 @@ document.addEventListener('DOMContentLoaded', async () => {
   initQueryDefaults();
   initPartnerCards();
 });
+
+function initMicrosoftClarity() {
+  if (!MICROSOFT_CLARITY_PROJECT_ID) return;
+  if (typeof window === 'undefined' || typeof document === 'undefined') return;
+  if (typeof window.clarity === 'function') return;
+  if (document.querySelector(`script[data-clarity-project-id="${MICROSOFT_CLARITY_PROJECT_ID}"]`)) return;
+
+  window.clarity = window.clarity || function() {
+    (window.clarity.q = window.clarity.q || []).push(arguments);
+  };
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.clarity.ms/tag/${MICROSOFT_CLARITY_PROJECT_ID}`;
+  script.dataset.clarityProjectId = MICROSOFT_CLARITY_PROJECT_ID;
+  document.head.appendChild(script);
+}
 
 async function initCMSContent() {
   const page = document.body;
