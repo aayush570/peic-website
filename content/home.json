@@ -81,7 +81,7 @@
     "steps": [
       {
         "title": "Clinical Requirement",
-        "description": "Understand and map departments, load, compliance and procurement constraints."
+        "description": "Understand and map departments, load, technical feasibility, compliance and procurement constraints."
       },
       {
         "title": "Equipment Architecture",
