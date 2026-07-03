@@ -11,9 +11,9 @@
       "image": "/uploads/images/presentation1.jpg",
       "image_alt": "PEIC sterilization equipment",
       "paragraphs": [
-        "Precision Electronics Instruments & Components was established in 1968 with a clear mandate: engineer medical sterilization systems that hospitals and institutions could rely on for years of daily operation.",
-        "That manufacturing foundation expanded from BIS-certified autoclave production into technical integration for global and Indian medical equipment brands. The distribution business is built on equipment understanding, not catalogue selling.",
-        "Today, PEIC gives procurement and biomedical teams clearer ownership across specification, installation, commissioning, documentation, and long-term post-sale support."
+        "Precision Electronics Instruments & Components was established in 1968 with a clear mandate: engineer medical sterilization systems that hospitals and institutions could rely on for 10-15+ years of daily operation. PEIC was one of the first institutions ever to receive BIS certification for its sterilization systems, and remains one of only few to be operating for almost six decades of continuous operation since receiving its license.",
+        "That manufacturing foundation expanded from BIS-certified autoclave production into technical integration for global and Indian medical equipment brands. The distribution business is built on deep equipment expertise, not catalogue selling.",
+        "Today, PEIC gives procurement and biomedical teams clearer ownership across specification, installation, commissioning, documentation, and long-term post-sale support for the entire hospital value chain."
       ]
     },
     "metrics_heading": {
@@ -72,8 +72,8 @@
       "label": "Years Average Machine Lifespan"
     },
     {
-      "value": 1,
       "display_value": "Single",
+      "value": 1,
       "tagline": "Coordinated Support",
       "label": "Accountable Service Relationship"
     }
