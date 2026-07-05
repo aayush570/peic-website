@@ -6505,6 +6505,8 @@ body.is-cms-loading .about-page .legacy-media::before {
 .home-cta-inner .open-application-description {
   grid-column: 1;
   grid-row: 3;
+  line-height: 1.7;
+  margin-bottom: 0.2rem;
 }
 
 .home-cta-inner .btn-primary {
@@ -6548,8 +6550,10 @@ body.is-cms-loading .about-page .legacy-media::before {
 .general-application-note {
   grid-column: 1;
   grid-row: 4;
-  margin: 0;
+  max-width: 700px;
+  margin: 0.65rem 0 0;
   font-size: 0.88rem;
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.82);
 }
 
