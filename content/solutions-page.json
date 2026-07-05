@@ -6,7 +6,11 @@
   },
   "specialties_heading": {
     "label": "Specialty Equipment Portfolios",
+<<<<<<< Updated upstream
     "title": "All clinical areas. One integration partner."
+=======
+    "title": "Eight department portfolios. One integration partner."
+>>>>>>> Stashed changes
   },
   "specialties": [
     {
@@ -51,9 +55,25 @@
     },
     {
       "id": "dental",
-      "title": "Dental Suites",
+      "title": "Dental Suites & CBCT",
       "description": "Dental chairs, delivery units, CBCT imaging, and operatory infrastructure for clinics, departments, and dental practice expansion projects.",
       "image": "/uploads/images/dental.jpeg",
+      "link": "products.html#partners",
+      "button_label": "Explore portfolio"
+    },
+    {
+      "id": "ent",
+      "title": "ENT, Vestibular Diagnostics & Rehabilitation",
+      "description": "ENT workstations, vestibular diagnostic systems, and rehabilitation equipment for specialty clinics, diagnostic departments, and hospital programs.",
+      "image": "/uploads/images/diagnostics-1.jpeg",
+      "link": "products.html#partners",
+      "button_label": "Explore portfolio"
+    },
+    {
+      "id": "surgical",
+      "title": "Surgical Instruments, Suction & OT Accessories",
+      "description": "Surgical instruments, suction systems, drainage solutions, illumination, and OT accessories that support theatre readiness and procedural workflows.",
+      "image": "/uploads/images/medical.png",
       "link": "products.html#partners",
       "button_label": "Explore portfolio"
     }
@@ -69,13 +89,14 @@
       "description": "Government tertiary hospitals, private hospitals, specialty clinics, and diagnostic centres, from CSSD infrastructure projects to department-specific equipment supply.",
       "featured": true,
       "tags": [
-        "CSSD Departments",
-        "Operating Theatres",
-        "ICU / NICU",
-        "Radiology",
-        "Oncology Units",
-        "Dental Clinics",
-        "Maternity Wards"
+        "CSSD & infection control",
+        "Operating theatres & endoscopy",
+        "Oncology & interventional therapy",
+        "Radiology, imaging & AI post-processing",
+        "Dental suites & CBCT",
+        "Maternal, neonatal & infusion care",
+        "ENT, vestibular diagnostics & rehabilitation",
+        "Surgical instruments, suction & OT accessories"
       ]
     },
     {

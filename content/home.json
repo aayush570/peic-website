@@ -75,25 +75,25 @@
     "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. \nFewer vendor handoffs. Integrated commercial terms. Full service ownership. Equipment decisions backed by engineering judgment."
   },
   "workflow": {
-    "label": "Engineering DNA",
-    "title": "A single technical chain from specification to support",
-    "description": "Every project is treated as a lifecycle system: \nRequirement Mapping and Product Selection \nInstallation, Validation, Testing, and Training\nOngoing Spare Parts, Refurbishment and Service",
+    "label": "How PEIC Adds Value",
+    "title": "One accountable chain, from need to uptime.",
+    "description": "We connect clinical requirements, equipment selection, commissioning and service into one managed process.",
     "steps": [
       {
-        "title": "Clinical Requirement",
-        "description": "Understand and map departments, load, technical feasibility, commercial terms, compliance and procurement constraints."
+        "title": "Requirement",
+        "description": "Clinical brief + constraints"
       },
       {
-        "title": "Equipment Architecture",
-        "description": "Manufactured hardware and partner brand equipment configured as one complete portfolio."
+        "title": "Solution Fit",
+        "description": "PEIC systems + partner equipment"
       },
       {
-        "title": "Commissioning",
-        "description": "Installation, testing, training and documentation for biomedical teams."
+        "title": "Deployment",
+        "description": "Install + validate + train"
       },
       {
-        "title": "Lifecycle Support",
-        "description": "AMC, CMC, spares and refurbishment throughout product's lifespan."
+        "title": "Support",
+        "description": "Spares + AMC/CMC + refurbishment"
       }
     ]
   },
