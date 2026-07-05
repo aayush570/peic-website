@@ -441,17 +441,6 @@ function renderServicePage(page) {
   setHeading(document.querySelector('.service-grid')?.closest('section'), page.offerings_heading);
   renderPageSections({ service: page });
   setCallout(document.querySelector('.service-final-cta .home-cta-inner'), page.custom_cta);
-  const support = document.querySelector('.service-cta-support');
-  if (support && page.urgent_cta) {
-    setTextWithin(support, '.service-cta-support-label', page.urgent_cta.label);
-    setTextWithin(support, 'h3', page.urgent_cta.title);
-    setTextWithin(support, 'p', page.urgent_cta.description);
-    const supportButton = support.querySelector('.btn');
-    if (supportButton) {
-      if (page.urgent_cta.button_label) supportButton.textContent = page.urgent_cta.button_label;
-      if (page.urgent_cta.button_link) supportButton.href = page.urgent_cta.button_link;
-    }
-  }
 }
 
 function renderResourcesPage(page) {

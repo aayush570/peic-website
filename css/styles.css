@@ -6516,10 +6516,8 @@ body.is-cms-loading .about-page .legacy-media::before {
 }
 
 .home-cta-inner .open-application-description {
-  grid-column: 1;
-  grid-row: 3;
   line-height: 1.7;
-  margin-bottom: 0.2rem;
+  margin: 0;
 }
 
 .home-cta-inner .btn-primary {
@@ -6560,11 +6558,22 @@ body.is-cms-loading .about-page .legacy-media::before {
   color: rgba(255, 255, 255, 0.82);
 }
 
-.general-application-note {
+.careers-cta-copy {
   grid-column: 1;
-  grid-row: 4;
+  grid-row: 3 / 5;
   max-width: 700px;
-  margin: 0.65rem 0 0;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.careers-cta-copy p {
+  grid-column: auto;
+  grid-row: auto;
+  margin: 0;
+  max-width: none;
+}
+
+.general-application-note {
   font-size: 0.88rem;
   line-height: 1.5;
   color: rgba(255, 255, 255, 0.82);
@@ -6582,63 +6591,6 @@ body.is-cms-loading .about-page .legacy-media::before {
 
 .service-final-cta-inner {
   row-gap: clamp(0.35rem, 1vw, 0.6rem);
-}
-
-.service-cta-support {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1.25rem 2rem;
-  align-items: center;
-  margin-top: 1.25rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.16);
-}
-
-.service-cta-support-copy h3 {
-  margin: 0.2rem 0 0.35rem;
-  color: #fff;
-  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
-}
-
-.service-cta-support-copy p {
-  margin: 0;
-  max-width: 760px;
-  color: rgba(255, 255, 255, 0.82);
-}
-
-.service-cta-support-label {
-  display: inline-flex;
-  align-items: center;
-  padding: 0.35rem 0.8rem;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  background: rgba(255, 255, 255, 0.08);
-  color: #d8f0dd;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-}
-
-.service-cta-support-actions {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.85rem;
-  flex-wrap: wrap;
-}
-
-.service-cta-support-actions .btn {
-  min-width: max-content;
-}
-
-.service-cta-support-actions .btn-outline {
-  border-color: rgba(255, 255, 255, 0.45);
-}
-
-.service-cta-support-actions .btn-outline:hover {
-  border-color: #fff;
 }
 
 #manufacturing .product-card,
@@ -6863,19 +6815,6 @@ body:has(.contact-page-main) .floating-cta {
     grid-row: auto;
     justify-self: center;
     width: min(100%, 320px);
-    justify-content: center;
-  }
-
-  .service-cta-support {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .service-cta-support-copy p {
-    margin-inline: auto;
-  }
-
-  .service-cta-support-actions {
     justify-content: center;
   }
 

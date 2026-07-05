@@ -58,12 +58,5 @@
     "description": "PEIC can structure coordinated AMC/CMC support for manufactured and supported partner-brand equipment under one service relationship.",
     "button_label": "Discuss Service Coverage",
     "button_link": "contact.html?type=service"
-  },
-  "urgent_cta": {
-    "label": "Priority Support",
-    "title": "Equipment down?",
-    "description": "Call our technical priority support line directly for urgent resolution. You can also raise a service ticket for non-urgent matters.",
-    "button_label": "Raise a Service Ticket",
-    "button_link": "contact.html?type=service"
   }
 }
