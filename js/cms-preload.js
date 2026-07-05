@@ -25,16 +25,21 @@
 
     const faviconURL = normalizeAssetURL(site.favicon);
     if (!faviconURL) return;
+    const faviconType = getFaviconType(faviconURL);
 
-    let favicon = document.querySelector('link[rel="icon"]');
-    if (!favicon) {
-      favicon = document.createElement('link');
-      favicon.setAttribute('rel', 'icon');
-      document.head.appendChild(favicon);
-    }
+    ['icon', 'shortcut icon', 'apple-touch-icon'].forEach((rel) => {
+      let favicon = document.querySelector(`link[rel="${rel}"]`);
+      if (!favicon) {
+        favicon = document.createElement('link');
+        favicon.setAttribute('rel', rel);
+        document.head.appendChild(favicon);
+      }
 
-    favicon.setAttribute('href', faviconURL);
-    favicon.setAttribute('type', getFaviconType(faviconURL));
+      favicon.setAttribute('href', faviconURL);
+      if (rel !== 'apple-touch-icon') {
+        favicon.setAttribute('type', faviconType);
+      }
+    });
   };
 
   fetch(`content/site.json?ts=${Date.now()}`, { cache: 'no-store' })

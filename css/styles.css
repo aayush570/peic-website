@@ -6502,6 +6502,11 @@ body.is-cms-loading .about-page .legacy-media::before {
   line-height: 1.45;
 }
 
+.home-cta-inner .open-application-description {
+  grid-column: 1;
+  grid-row: 3;
+}
+
 .home-cta-inner .btn-primary {
   grid-column: 2;
   grid-row: 1 / 4;
@@ -6541,6 +6546,8 @@ body.is-cms-loading .about-page .legacy-media::before {
 }
 
 .general-application-note {
+  grid-column: 1;
+  grid-row: 4;
   margin: 0;
   font-size: 0.88rem;
   color: rgba(255, 255, 255, 0.82);
@@ -6825,6 +6832,7 @@ body:has(.contact-page-main) .floating-cta {
   .home-cta-inner h2,
   .home-cta-inner p {
     grid-column: 1;
+    grid-row: auto;
     margin-inline: auto;
   }
 
