@@ -1545,6 +1545,13 @@ function initCounters() {
   const counters = document.querySelectorAll('[data-count]');
   if (!counters.length) return;
 
+  counters.forEach((el) => {
+    const target = parseInt(el.dataset.count, 10);
+    const suffix = el.dataset.suffix || '';
+    const prefix = el.dataset.prefix || '';
+    el.textContent = prefix + target.toLocaleString() + suffix;
+  });
+
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
