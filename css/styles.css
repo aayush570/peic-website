@@ -4676,42 +4676,31 @@ section.bg-dark::before {
 }
 
 .engineering-chain {
-  background:
-    linear-gradient(90deg, #fff 0 38%, var(--steel-050) 38% 100%);
+  background: var(--steel-050);
 }
 
 .engineering-chain-grid {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.8fr) minmax(0, 1.2fr);
-  gap: clamp(2rem, 6vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 4vw, 3rem);
 }
 
 .chain-copy {
-  position: sticky;
-  top: calc(var(--header-h) + 2rem);
-  align-self: start;
+  position: static;
+  max-width: 760px;
 }
 
 .chain-copy .section-title {
   margin-inline: 0;
+  margin-bottom: 0;
 }
 
 .chain-steps {
   position: relative;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0;
-  padding-top: 1.25rem;
-}
-
-.chain-steps::before {
-  content: "";
-  position: absolute;
-  top: 2.1rem;
-  left: calc(12.5% + 1.3rem);
-  right: calc(12.5% + 1.3rem);
-  height: 1px;
-  background: var(--border);
+  gap: clamp(1rem, 2vw, 1.5rem);
+  align-items: start;
 }
 
 .chain-step {
@@ -4720,7 +4709,8 @@ section.bg-dark::before {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.7rem;
-  padding: 0 1.15rem 0 0;
+  min-width: 0;
+  padding: 0;
 }
 
 .chain-step span {
@@ -4735,6 +4725,27 @@ section.bg-dark::before {
   font-weight: 700;
   font-size: 0.82rem;
   line-height: 1;
+}
+
+.chain-step:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  top: 1.3rem;
+  left: calc(2.6rem + 0.7rem);
+  width: calc(100% - 2.6rem);
+  height: 1px;
+  background: var(--border);
+}
+
+.chain-step:not(:last-child)::before {
+  content: "→";
+  position: absolute;
+  top: 0.6rem;
+  right: -0.55rem;
+  color: var(--green);
+  font-size: 1.15rem;
+  line-height: 1;
+  z-index: 1;
 }
 
 .chain-step strong {
@@ -4894,10 +4905,7 @@ section.bg-dark::before {
     grid-template-columns: 1fr;
     padding-top: 0;
     border-top: 1px solid var(--border);
-  }
-
-  .chain-steps::before {
-    display: none;
+    gap: 0;
   }
 
   .chain-step {
@@ -4907,6 +4915,11 @@ section.bg-dark::before {
     row-gap: 0.35rem;
     padding: 1.2rem 0;
     border-bottom: 1px solid var(--border);
+  }
+
+  .chain-step::before,
+  .chain-step::after {
+    display: none;
   }
 
   .chain-step p {
