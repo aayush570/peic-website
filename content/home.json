@@ -127,7 +127,6 @@
       "label": " "
     },
     {
-      "display_value": "Single",
       "value": 1,
       "tagline": "Point of Contact",
       "label": "For Procurement, Integration, and Service"
@@ -136,12 +135,12 @@
   "advantage": {
     "label": "Why PEIC",
     "title": "The PEIC Advantage: Technical Accountability Beyond Supply",
-    "description": "Medical equipment procurement should not end at quotation and delivery. PEIC is an active manufacturer with in-house engineering, production, service, and documentation capabilities.\nThat manufacturing base shapes how we support even the equipment we supply from partner brands: with better specification support, clearer technical coordination, fewer vendor handoffs, and a single accountable relationship for procurement, integration, and service."
+    "description": "Medical equipment procurement should not end at quotation and delivery. PEIC is an active manufacturer with in-house engineering, production, service, and documentation capabilities.\n\nThat manufacturing base shapes how we support even the equipment we supply from partner brands: with better specification support, clearer technical coordination, fewer vendor handoffs, and a single accountable relationship for procurement, integration, and service.\n\nOur engineering and service teams support installation, local integration, AMC/CMC planning, spare parts coordination, and refurbishment for PEIC-manufactured systems and supported partner-brand equipment."
   },
   "clients": {
     "label": "Our Existing Clients",
-    "title": "Institutional references and long-term relationships",
-    "description": "For nearly six decades, we have delivered turnkey department setups, medical hardware, and engineering support to CSSD, OT, Radiology, Critical Care, Neonatal / Maternal Care, Oncology, and other departments housed at India's leading corporate hospital chains, government facilities, and medical colleges. \nOur equipments' long lifespans and localised serviceability has long cemented deep trust from our customers."
+    "title": "Institutional Relationships Built Over Decades",
+    "description": "For nearly six decades, PEIC has supplied medical equipment, sterilisation systems, department-support hardware, and engineering service to public hospitals, corporate hospitals, research institutions, railway hospitals, medical colleges, and specialty healthcare facilities.\n\nOur long operating history, BIS-certified manufacturing base, and local serviceability have made PEIC a trusted technical partner for institutions that need reliability beyond the purchase order."
   },
   "clients_list": [
     {
@@ -230,10 +229,10 @@
     }
   ],
   "cta": {
-    "label": "Procurement Conversation",
-    "title": "Need a credible medical equipment partner?",
-    "description": "Share your requirements and PEIC will get back to you in 1 business day.",
-    "button_label": "Start an Enquiry",
+    "label": "Enquiry",
+    "title": "Need specifications, pricing, or service support?",
+    "description": "Share your requirement and PEIC will respond with the next relevant step within 1 business day.",
+    "button_label": "Request Specifications / Quote",
     "button_link": "contact.html?type=equipment"
   }
 }
