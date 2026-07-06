@@ -1,8 +1,8 @@
 {
   "page": {
     "hero": {
-      "title": "58 years building medical equipment that institutions trust.",
-      "description": "Established in 1968 as a sterilization system manufacturer, PEIC now combines Mumbai-based manufacturing with integration support for global and Indian medical technologies.",
+      "title": "6 Decades of Medical Equipment Manufacturing, Supply, and Service Accountability",
+      "description": "Established in 1968 as a sterilisation system manufacturer, today PEIC combines Mumbai-based OEM manufacturing with authorised supply and integration support for 14+ partner global and Indian medical equipment brands across all hospital departments.",
       "image": "/uploads/images/cssd-equipment.jpg"
     },
     "legacy": {
@@ -11,23 +11,24 @@
       "image": "/uploads/images/presentation1.jpg",
       "image_alt": "PEIC sterilization equipment",
       "paragraphs": [
-        "Established in 1968, Precision Electronics Instruments & Components was built with a demanding purpose: to engineer sterilization systems that hospitals, laboratories, and public institutions could trust through 10-15+ years of daily service.",
-        "PEIC became one of the earliest Indian manufacturers to receive BIS licensing for medical sterilization systems, with certification dating back to 1976. Nearly six decades later, that record of continuous operation, compliance, and field performance remains the foundation of the company.",
-        "From that BIS-certified manufacturing base, PEIC has grown into an accountable technology partner for the wider hospital value chain, combining OEM engineering discipline with authorised integration of leading global and Indian medical equipment brands across specification, installation, commissioning, documentation, and long-term post-sale support."
+        "Precision Electronics Instruments & Components was established in 1968 to build sterilisation systems that hospitals, laboratories, and public institutions could depend on through years, even decades, of daily use.",
+        "PEIC is one of the 5 oldest currently operating Indian manufacturers to receive BIS licensing for its medical sterilization systems, back in 1976. Nearly six decades later, that record of continuous operation, compliance,  field performance, and long-term serviceability remains the foundation of the company.",
+        "From that manufacturing base, PEIC has grown into an authorised medical equipment supplier and integrator for 14+ global and domestic brands to support the entire hospital value chain through one accountable relationship: Today we cater to CSSD, OT, imaging, oncology, critical care, neonatal care, dental, ENT, diagnostics, labs,  research facilities, and several other departments. PEIC supports biomedical engineering and procurement teams across specification, authorised supply, installation, commissioning, documentation, AMC/CMC planning, and long-term post-sale service."
       ]
     },
     "metrics_heading": {
       "label": "Operational Scale",
-      "title": "Scale that institutional buyers can evaluate."
+      "title": "Institutional scale, built over decades"
     },
     "facilities_heading": {
       "label": "Infrastructure",
-      "title": "Where the work gets done."
+      "title": "Where the work gets done.",
+      "description": "Mumbai-based headquarters and factory spanning: sales, manufacturing, testing, service, accounting and documentation departments. "
     },
     "clients_heading": {
       "label": "Key Client Relationships",
       "title": "Selected institutional references across India",
-      "description": "Public health networks, national research institutes, state health departments, and public infrastructure organizations rely on PEIC for equipment and support."
+      "description": "PEIC has supplied and supported equipment for public health networks, municipal hospitals, national research institutions, railway hospitals, government departments, medical colleges, and private healthcare facilities across India for decades."
     },
     "testimonials_heading": {
       "label": "Testimonials",
@@ -36,12 +37,12 @@
     "certifications_heading": {
       "label": "Compliance & Certifications",
       "title": "Verified credentials",
-      "description": "Current certificates and registration documents for procurement enquiries and final compliance review."
+      "description": "Current certificates, licenses, and registration documents are available for qualified procurement enquiries, tender submissions, and final compliance review."
     },
     "cta": {
       "label": "Start a Conversation",
       "title": "Use PEIC's manufacturing and service base for your next equipment decision.",
-      "description": "Discuss equipment requirements, service models, specification support, or documentation needs with the PEIC team.",
+      "description": "Discuss CSSD/autoclave requirements, partner-brand multi-departmental medical equipment, service coverage, specifications, tender documentation, or AMC/CMC planning with the PEIC team.",
       "button_label": "Discuss Your Requirement",
       "button_link": "contact.html"
     }
@@ -50,39 +51,39 @@
     {
       "value": 58,
       "suffix": "+",
-      "tagline": "Since 1968",
-      "label": "Years of Continuous Operation"
+      "tagline": "Years Of Continuous Operation",
+      "label": " "
     },
     {
       "value": 2000,
       "suffix": "+",
-      "tagline": "Pan-India",
-      "label": "Total Installations Delivered"
+      "tagline": "Manufactured Units Delivered Across India",
+      "label": " "
     },
     {
       "value": 1000,
       "suffix": "+",
-      "tagline": "Currently Operational",
-      "label": "Active Equipment Units"
+      "tagline": "Manufactured Units Still Active",
+      "label": " "
     },
     {
       "value": 15,
       "suffix": "+",
       "tagline": "Designed Durability",
-      "label": "Years Average Machine Lifespan"
+      "label": "Year Average Machine Lifespan"
     },
     {
       "display_value": "Single",
       "value": 1,
-      "tagline": "Coordinated Support",
-      "label": "Accountable Service Relationship"
+      "tagline": "Point of Contact",
+      "label": " "
     }
   ],
   "facilities": {
     "research": {
-      "type_label": "In-House Testing & R&D",
-      "title": "Quality Validation & Testing Lab",
-      "description": "Internal testing and quality validation for sterilization systems, pressure-vessel components, and institutional equipment configurations before dispatch.",
+      "type_label": "R&D",
+      "title": "In-House Quality Validation & Testing Lab",
+      "description": "Internal testing and quality validation for sterilisation systems, pressure-vessel components, and institutional equipment configurations before dispatch.",
       "address_lines": [
         "27, Shamroz Industrial Estate",
         "Ram Mandir Road, Goregaon West",
@@ -91,8 +92,8 @@
     },
     "manufacturing": [
       {
-        "type_label": "Manufacturing Facility",
-        "title": "Sterilization Systems Production",
+        "type_label": "Factory",
+        "title": "CSSD and Sterilization Equipment Manufacturing Facility",
         "description": "Manufacturing infrastructure for high-pressure sterilization systems, CSSD equipment, and specialty autoclave lines, with design, fabrication, assembly, and inspection within PEIC's Mumbai facility cluster.",
         "address_lines": [
           "Gala Nos. 4 & 47, Ground Floor, Shamroz Industrial Estate",
@@ -103,9 +104,9 @@
     ],
     "offices": [
       {
-        "type_label": "Primary Office",
+        "type_label": "Headquarters",
         "title": "Mumbai Commercial & Service Hub",
-        "description": "Commercial operations, new equipment procurement, service coordination, AMC/CMC management, and technical support headquarters.",
+        "description": "Commercial operations, new equipment procurement, service coordination, AMC/CMC management, documentation, and technical support headquarters.",
         "address_lines": [
           "20, 21 & 22, Shamroz Industrial Estate",
           "Ram Mandir Road, Goregaon West",
@@ -113,9 +114,8 @@
         ]
       },
       {
-        "type_label": "Registered Office",
-        "title": "Registered Address",
-        "description": "Registered corporate address.",
+        "type_label": "Secondary Office",
+        "title": "Satellite Functions",
         "address_lines": [
           "17, Ranvir Building, 66/70 Princess Street",
           "Mumbai 400002, Maharashtra"
@@ -233,12 +233,6 @@
     },
     {
       "icon": "ISO",
-      "logo": "/uploads/images/iso-14001-1.png",
-      "name": "ISO 14001:2015 - Environmental Management",
-      "link": "https://www.iso.org/standard/60857.html?__cf_chl_f_tk=l2Ccaxiad2MLfKi4dlFZyPy61n3BpgDGr.IFGvZaW2A-1782936193-1.0.1.1-vpZS1IH1xFzIa5HSCeVcHQmaIjNjd4hVilOeiU7kjSM"
-    },
-    {
-      "icon": "ISO",
       "logo": "/uploads/images/medical.png",
       "name": "ISO 13485:2016 - Medical Devices QMS",
       "link": "https://www.iso.org/standard/59752.html"
@@ -250,15 +244,23 @@
       "link": "https://www.iso.org/standard/62085.html"
     },
     {
+      "icon": "ISO",
+      "logo": "/uploads/images/iso-14001-1.png",
+      "name": "ISO 14001:2015 - Environmental Management",
+      "link": "https://www.iso.org/standard/60857.html?__cf_chl_f_tk=l2Ccaxiad2MLfKi4dlFZyPy61n3BpgDGr.IFGvZaW2A-1782936193-1.0.1.1-vpZS1IH1xFzIa5HSCeVcHQmaIjNjd4hVilOeiU7kjSM"
+    },
+    {
       "icon": "MSME",
       "logo": "/uploads/images/msme-logo.png",
       "name": "MSME / Udyam Registration",
+      "details": "Registration documents for eligible procurement requirements.",
       "link": "https://www.msme.gov.in"
     },
     {
       "icon": "NSIC",
       "logo": "/uploads/images/newns.png",
       "name": "NSIC Registration",
+      "details": "Registration documents for eligible institutional and government procurement.",
       "link": "https://www.nsic.co.in"
     }
   ]
