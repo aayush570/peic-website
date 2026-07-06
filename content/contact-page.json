@@ -1,8 +1,8 @@
 {
   "hero": {
     "label": "Get in Touch",
-    "title": "Start a procurement conversation.",
-    "description": "Describe your requirement - equipment, service, documentation, or project scope. The right PEIC team will respond within 1 business day."
+    "title": "Start an Equipment, Service, or Documentation Enquiry.",
+    "description": "Describe your requirement: equipment, service, documentation, tender support, or project scope. The relevant PEIC team will respond with the next step within 1 business day."
   },
   "teams_title": "Reach Our Teams Directly",
   "contact_channels": [
@@ -52,7 +52,7 @@
     }
   ],
   "form_title": "Submit Your Requirement",
-  "form_description": "Our team reviews all enquiries and responds within 1 business day with the next relevant step.",
+  "form_description": "Share the equipment, department, quantity, city, timeline, and documentation needs. \nPEIC will review your enquiry and respond with the next relevant step within 1 business day.",
   "submit_label": "Submit Enquiry",
   "sending_label": "Sending...",
   "sending_status": "Sending your enquiry securely...",
@@ -65,9 +65,9 @@
     "email_placeholder": "Work email address",
     "phone_label": "Phone Number *",
     "phone_placeholder": "+91 XXXXX XXXXX",
-    "organization_label": "Organization Name",
+    "organization_label": "Hospital / Organisation name",
     "organization_optional": "(optional)",
-    "organization_placeholder": "Hospital / Organization name",
+    "organization_placeholder": "Hospital / Organisation name",
     "designation_label": "Designation",
     "designation_optional": "(optional)",
     "designation_placeholder": "Your Designation",
