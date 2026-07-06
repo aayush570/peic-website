@@ -1,14 +1,14 @@
 {
   "hero": {
-    "title": "Build a career in medical technology that matters.",
-    "description": "PEIC is an engineering-led manufacturer and medical technology integration partner with institutional relationships across India. \nWe hire for technical precision, accountability, and long-term commitment.",
+    "title": "Build a Career in Medical Technology That Matters.",
+    "description": "PEIC is an engineering-led medical equipment manufacturer and authorised technology partner with institutional relationships across India.\nWe hire for technical precision, accountability, field discipline, and long-term commitment.",
     "image": "/uploads/images/cssd-equipment.jpg"
   },
   "benefits": [
     {
       "icon": "📈",
       "title": "Technical Development",
-      "description": "Defined career pathways with exposure across manufacturing, biomedical service, quality, and commercial functions."
+      "description": "Exposure across manufacturing, biomedical service, quality, documentation, and commercial functions."
     },
     {
       "icon": "🏥",
@@ -18,7 +18,7 @@
     {
       "icon": "🤝",
       "title": "Cross-Functional Teams",
-      "description": "Manufacturing, biomedical engineering, service, and commercial teams working across PEIC's Mumbai facility cluster."
+      "description": "Manufacturing, biomedical engineering, service, quality, and commercial teams working across PEIC’s Mumbai facility cluster."
     },
     {
       "icon": "💼",
@@ -28,7 +28,7 @@
   ],
   "culture": {
     "title": "How We Work",
-    "subtitle": "Technical depth. Institutional accountability. Long-term relationships.",
+    "subtitle": "Technical depth. Service accountability. Long-term institutional relationships.",
     "values": "Precision · Institutional Pride · Long-Term Thinking"
   },
   "jobs_heading": {
@@ -43,7 +43,7 @@
     "button_label": "Submit Your Profile",
     "button_link": "mailto:careers@peic.in?subject=General Application"
   },
-  "general_email_note": "Or email your resume directly to careers@peic.in",
+  "general_email_note": "Or email your resume to careers@peic.in",
   "general_email_label": "careers@peic.in",
   "general_email_link": "mailto:careers@peic.in",
   "jobs": [
