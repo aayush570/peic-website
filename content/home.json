@@ -1,21 +1,21 @@
 {
   "hero": {
-    "eyebrow": "Established OEM Manufacturer and Authorised Supplier of Medical Equipment ",
-    "title": "6 Decades as India's Most Accountable Medical Equipment Partner",
-    "description": "\nWe manufacture CSSD equipment and sterilisation systems at our Mumbai facility and are a direct authorised distributor for 14+ leading global and domestic medical equipment brands to cater to the rest of your hospital departments:\n\nCSSD, Operating Theatres (OT), Radiology/Imaging, Critical Care, Neonatal/Maternal Care, Oncology, Dental, and Specialized Diagnostics among others",
-    "primary_button_label": "Start a Procurement Conversation",
+    "eyebrow": "Manufacturer and Authorised Supplier of Medical Equipment ",
+    "title": "Built in Mumbai. Trusted by Institutions since 1968",
+    "description": "\nPEIC manufactures CSSD and sterilisation equipment at its Mumbai factory and is an authorised supplier of medical equipment and technologies for 14+ leading global and domestic brands.\n\nWe support hospitals, medical colleges, government facilities, laboratories, and specialty departments across Central Sterile Services (CSSD), Operating Theatre (OT), radiology/imaging, critical care, neonatal/maternal care, oncology, dental, diagnostics, and more.",
+    "primary_button_label": "Request Specifications / Quote",
     "primary_button_link": "contact.html?type=equipment",
-    "secondary_button_label": "See Credentials and Track Record",
+    "secondary_button_label": "View PEIC Credentials",
     "secondary_button_link": "about.html",
     "image": "/uploads/images/cssd-equipment-2-1.jpg"
   },
   "trust_banner": [
     "Est. 1968",
     "BIS Certified Since 1976",
-    "ISO Certified",
+    "ISO 9001 / ISO 13485 / ISO 14001",
     "CE & GMP Compliant",
     "MSME & NSIC Registered",
-    "Serving India's Leading Healthcare Institutions"
+    "Serving Hospitals, Government Facilities & Medical Colleges"
   ],
   "hero_panel": {
     "kicker": "PEIC Institutional Proof",
@@ -43,57 +43,57 @@
   },
   "capabilities": {
     "label": "Core Capabilities",
-    "title": "Two Pillars of Healthcare Technology Excellence",
+    "title": "Two Ways PEIC Supports Healthcare Institutions",
     "cards": [
       {
-        "title": "Indigenous Manufacturing",
-        "description": "Engineering world-class sterilization systems and CSSD infrastructure \nbuilt to global standards at our Mumbai factory.",
+        "title": "PEIC-Manufactured Sterilisation/CSSD Equipment",
+        "description": "BIS-certified CSSD, autoclave, and sterilisation equipment manufactured and assembled at PEIC’s Mumbai facility, with engineering, documentation, spares, and lifecycle service held close to the source.",
         "image": "/uploads/images/cssd-equipment.jpg",
         "link": "products.html#manufacturing",
         "advantages": [
-          "OEM Engineering DNA",
-          "BIS, ISO, CE, GMP Certified",
+          "OEM Engineering Discipline",
+          "BIS Certified Since 1976",
+          "ISO, CE, and GMP Certified",
           "15+ Year Average Lifespan",
-          "Lifecycle Service Support"
+          "Lifetime Spares, AMC/CMC & Refurbishment Support"
         ],
         "button_label": "View Manufactured Products"
       },
       {
-        "title": "Global & Domestic Distribution",
-        "description": "Direct authorised integration partner and supplier for\n14+ global and domestic medical equipment brands, \ncatering to every department in your healthcare facility.",
+        "title": "Authorised Medical Equipment Supplies",
+        "description": "Authorised supplier and integration partner for 14+ global and Indian medical equipment brands across all hospital departments, with support for specification, quotation, installation, training, documentation, and service coordination.",
         "image": "/uploads/images/diagnostics-1.jpeg",
         "link": "products.html#partners",
         "advantages": [
-          "Single-Point Vendor",
-          "Localized Integration",
-          "Flexible Commercial Terms",
+          "Single Point of Contact",
+          "Department-Wise Equipment Sourcing",
+          "Localised Installation and Training",
           "Unified AMC & CMC"
         ],
         "button_label": "Explore Partner Technologies"
       }
     ],
-    "description": "PEIC is the only partner in India that brings an OEM manufacturer's technical discipline to both its own sterilization systems and the other medical equipment brands it supplies. \nFewer vendor handoffs. Integrated commercial terms. Full service ownership. Equipment decisions backed by engineering judgment."
+    "description": "PEIC brings an OEM manufacturer’s technical discipline to both its own sterilisation systems and the medical equipment brands it supplies.\n\nFor biomedical and procurement teams, that means fewer handoffs, clearer accountability, coordinated documentation, and service support from a technical partner who understands equipment beyond the quotation stage."
   },
   "workflow": {
     "label": "How PEIC Adds Value",
     "title": "One accountable chain, from need to uptime.",
-    "description": "",
     "steps": [
       {
-        "title": "Requirement",
-        "description": "Clinical brief + constraints"
+        "title": "Diagnose Requirements",
+        "description": "Department need, site constraints, budget, and documentation"
       },
       {
         "title": "Solution Fit",
-        "description": "PEIC systems + partner equipment"
+        "description": "PEIC-manufactured systems and/or authorised partner equipment"
       },
       {
         "title": "Deployment",
-        "description": "Install + validate + train"
+        "description": "Installation, commissioning, validation support, and training"
       },
       {
         "title": "Support",
-        "description": "Spares + AMC/CMC + refurbishment"
+        "description": "Spares, AMC/CMC, Service Escalation, and Refurbishment through lifecycle"
       }
     ]
   },
@@ -109,21 +109,21 @@
       "display_value": "2,000+",
       "value": 2000,
       "suffix": "+",
-      "tagline": "Pan-India Installations Delivered",
+      "tagline": "Installations Delivered Across India",
       "label": " "
     },
     {
       "display_value": "1,000+",
       "value": 1000,
       "suffix": "+",
-      "tagline": "Currently Active Equipment Units",
+      "tagline": "Equipment Units Currently Active",
       "label": " "
     },
     {
       "display_value": "15+ Years",
       "value": 15,
       "suffix": "+",
-      "tagline": "Years Avg. Machine Lifespan",
+      "tagline": "Year Average Machine Lifespan",
       "label": " "
     },
     {
@@ -135,8 +135,8 @@
   ],
   "advantage": {
     "label": "Why PEIC",
-    "title": "The Advantage: Engineering Discipline vs. Middleman Distribution",
-    "description": "Most medical equipment suppliers are simple trading brokers. PEIC is an active manufacturer. We bring an OEM's engineering skill to our entire distributed portfolio, eliminating multi-vendor handoffs, unifying your commercial terms, and backing every equipment decision with real technical judgment.\nOur in-house engineering team handles localized integration and provides total lifecycle AMC/CMC support, backed by a regional network of rapid-response service engineers and immediate spare parts availability"
+    "title": "The PEIC Advantage: Technical Accountability Beyond Supply",
+    "description": "Medical equipment procurement should not end at quotation and delivery. PEIC is an active manufacturer with in-house engineering, production, service, and documentation capabilities.\nThat manufacturing base shapes how we support even the equipment we supply from partner brands: with better specification support, clearer technical coordination, fewer vendor handoffs, and a single accountable relationship for procurement, integration, and service."
   },
   "clients": {
     "label": "Our Existing Clients",
