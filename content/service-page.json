@@ -1,12 +1,12 @@
 {
   "hero": {
     "title": "Post-Sale Service with Defined Accountability.",
-    "description": "PEIC coordinates the lifecycle service relationship for all systems it supplies: manufactured or distributed.\nAMC/CMC contracts, domestic spares, site diagnosis, refurbishment, and technical response are all handled through one team.",
+    "description": "PEIC coordinates lifecycle service support for PEIC-manufactured systems and supported partner-brand equipment.\nAMC/CMC contracts, spare parts coordination, site diagnosis, refurbishment, service escalation, and technical response are handled through one PEIC relationship wherever applicable.",
     "image": "/uploads/images/cssd-equipment-2.jpg"
   },
   "process_heading": {
     "label": "How Service Works",
-    "title": "From logged request to resolved issue."
+    "title": "From Request to Resolution"
   },
   "offerings_heading": {
     "label": "PEIC Service Advantages",
@@ -15,41 +15,41 @@
   "process": [
     {
       "title": "Log the Request",
-      "description": "By phone, email, or service ticket through PEIC's support channels. We respond immediately on phone (our priority support line, listed on the website) and email/tickets in 1 business day."
+      "description": "Contact PEIC by phone, email, or service enquiry. Urgent service calls are prioritised by phone, and email/service enquiries are reviewed within 1 business day."
     },
     {
       "title": "Triage & Dispatch Planning",
-      "description": "Prompt diagnosis and dispatch planning based on equipment criticality, location, and parts availability."
+      "description": "PEIC reviews the equipment type, fault details, site location, urgency, and parts availability before planning the next service action."
     },
     {
       "title": "On-Site Technical Response",
-      "description": "PEIC engineers or partner engineers coordinated pan-India based on location and equipment type. If needed we bring in manufacturing engineering team as well."
+      "description": "PEIC service engineers or authorised partner engineers are coordinated based on equipment type and location. If needed, the manufacturing engineering team is brought in as well."
     },
     {
       "title": "Resolution & Service Record",
-      "description": "Service report with findings, actions taken, parts used, and recommended next steps. Immediate action taken by our service engineers wherever possible."
+      "description": "PEIC provides a service record covering findings, actions taken, parts used, and recommended next steps. Where possible, corrective action is completed during the visit."
     }
   ],
   "offerings": [
     {
       "icon": "📋",
       "title": "AMC / CMC Contract Tiers",
-      "description": "Structured annual and comprehensive maintenance contracts covering preventive maintenance, callout response, parts replacement, and calibration where applicable."
+      "description": "Structured AMC and CMC options covering preventive maintenance, service callouts, parts replacement, inspection, and calibration where applicable."
     },
     {
       "icon": "🔩",
       "title": "Spare Parts Inventory",
-      "description": "Critical components stocked locally for PEIC-manufactured systems, with authorised sourcing channels and stocked inventory for supported partner-brand spares."
+      "description": "Critical components supported locally for PEIC-manufactured systems, with authorised sourcing channels and/or stocked inventory for partner-brands."
     },
     {
       "icon": "⚡",
       "title": "Response, Diagnosis & Solution Outline",
-      "description": "Each request is triaged for criticality and geography before dispatch planning, then followed with a documented solution path."
+      "description": "Each service request is triaged by urgency, location, equipment type, and parts requirement, then followed with a documented service path."
     },
     {
       "icon": "↻",
       "title": "Equipment Refurbishing & Upgrades",
-      "description": "Lifecycle extension for suitable ageing equipment, including mechanical overhaul, control upgrades, refurbishing/refinishing, testing, and re-commissioning."
+      "description": "Lifecycle extension for suitable ageing equipment, including mechanical overhaul, control upgrades, refinishing, testing, and re-commissioning."
     }
   ],
   "custom_cta": {
