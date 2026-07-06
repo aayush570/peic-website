@@ -1,12 +1,13 @@
 {
   "hero": {
-    "title": "Equipment by department. Integrated by specialty.",
-    "description": "Clinical equipment portfolios configured for infection control, workflow, procurement, and service requirements - from CSSD and OT to oncology, imaging, NICU, dental, labs, and research facilities.",
+    "title": "Equipment by department. Integrated through one PEIC relationship.",
+    "description": "PEIC manufactures CSSD and sterilisation systems in Mumbai, and supplies authorised partner-brand equipment from 14+ global and domestic brands across the wider hospital: \nOT, imaging, oncology, critical care, neonatal care, dental, ENT, diagnostics, labs, and research facilities. \nOne PEIC team supports specification, quotation, documentation, installation, training, and service planning.",
     "image": "/uploads/images/cssd-equipment.jpg"
   },
   "specialties_heading": {
     "label": "Specialty Equipment Portfolios",
-    "title": "Eight department portfolios. One integration partner."
+    "title": "Multi-department portfolios supported through one PEIC relationship.",
+    "description": "From CSSD and OT to imaging, oncology, neonatal care, dental, ENT, and many others. PEIC helps biomedical and procurement teams consolidate specification support, quotation coordination, installation, training, and service planning."
   },
   "specialties": [
     {
@@ -77,7 +78,7 @@
   "industries_heading": {
     "label": "Client Segments",
     "title": "Institutions we equip",
-    "description": "PEIC serves facilities where equipment reliability, documentation, and post-sale support matter from the first purchase conversation."
+    "description": "PEIC serves facilities where equipment reliability, technical documentation, installation support, and post-sale service accountability matter from the first purchase conversation."
   },
   "industries": [
     {
@@ -85,19 +86,19 @@
       "description": "Government tertiary hospitals, private hospitals, specialty clinics, and diagnostic centres, from CSSD infrastructure projects to department-specific equipment supply.",
       "featured": true,
       "tags": [
-        "CSSD & infection control",
-        "Operating theatres & endoscopy",
-        "Oncology & interventional therapy",
-        "Radiology, imaging & AI post-processing",
-        "Dental suites & CBCT",
-        "Maternal, neonatal & infusion care",
-        "ENT, vestibular diagnostics & rehabilitation",
-        "Surgical instruments, suction & OT accessories"
+        "CSSD & Infection Control",
+        "Operating Theatres & Endoscopy",
+        "Oncology & Interventional Therapy",
+        "Radiology, Imaging & AI Post-Processing",
+        "Dental Suites & CBCT",
+        "Maternal, Neonatal & Infusion care",
+        "ENT, Vestibular Diagnostics, and Rehab",
+        "Surgical Instruments, & OT accessories"
       ]
     },
     {
       "title": "Pharma & Biopharma",
-      "description": "Sterilization and cleanroom-aligned infrastructure for pharmaceutical manufacturing environments and quality-control laboratories.",
+      "description": "Sterilisation, cleanroom-aligned equipment, and support infrastructure for pharmaceutical manufacturing environments, QC laboratories, and production facilities.",
       "featured": false,
       "tags": [
         "Cleanroom CSSD",
@@ -107,37 +108,39 @@
     },
     {
       "title": "Medical Device Manufacturers",
-      "description": "Sterilization, validation, and testing equipment for Indian medical device manufacturers and component suppliers.",
+      "description": "Sterilisation, validation, and testing equipment support for Indian medical device manufacturers, component suppliers, and assembly environments.",
       "featured": false,
       "tags": [
         "Validation Labs",
-        "Assembly Lines"
+        "Assembly Lines",
+        "Testing Support"
       ]
     },
     {
       "title": "Diagnostic Labs",
-      "description": "Laboratory sterilization, imaging systems, and diagnostic equipment for standalone diagnostic centres and hospital-affiliated labs.",
+      "description": "Laboratory sterilisation, imaging systems, and diagnostic equipment support for standalone diagnostic centres and hospital-affiliated labs.",
       "featured": false,
       "tags": [
         "Pathology Labs",
-        "Imaging Centers"
+        "Imaging Centers",
+        "Lab Sterilisation"
       ]
     },
     {
       "title": "Research Institutes",
-      "description": "Sterilization, laboratory autoclaves, and biomedical waste sanitization for research institutes, CSIR labs, and university facilities.",
+      "description": "Sterilisation systems, laboratory autoclaves, biomedical waste sanitisation, and department-support equipment for CSIR labs, universities, and research institutions.",
       "featured": false,
       "tags": [
         "Bio-safety Labs",
         "Research CSSD",
-        "Waste Sanitization"
+        "Waste Sanitisation"
       ]
     }
   ],
   "cta": {
     "label": "Technical Planning",
-    "title": "Not sure which equipment mix fits your facility?",
-    "description": "PEIC's technical team can map requirements across departments and configure a portfolio combining manufactured and partner-brand systems as needed.",
+    "title": "Planning a new department, upgrade, or replacement purchase?",
+    "description": "PEIC’s technical team can help map your requirement across departments and recommend a practical mix of PEIC-manufactured systems and authorised partner-brand equipment.",
     "button_label": "Discuss Your Requirements",
     "button_link": "contact.html"
   }
