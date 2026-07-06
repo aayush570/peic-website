@@ -1,10 +1,10 @@
 {
   "hero": {
-    "title": "Technical documentation and compliance records.",
-    "description": "Request product brochures, user manuals, specifications, and compliance documents. PEIC responds with the relevant material for qualified equipment enquiries.",
+    "title": "Technical Documentation & Compliance Records",
+    "description": "Request product brochures, technical specifications, user manuals, certificates, and compliance documents for PEIC-manufactured systems and supported equipment categories.\nPEIC will share the relevant documentation based on your equipment requirement, department, and procurement context.",
     "image": "/uploads/images/cssd-equipment.jpg"
   },
-  "search_placeholder": "Search by product, document type, or certification...",
+  "search_placeholder": "Search by product, document type, standard, or certificate...",
   "empty_state": {
     "text": "No documents match your search.",
     "link_label": "Contact us for the document you need.",
