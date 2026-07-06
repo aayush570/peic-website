@@ -33,24 +33,24 @@
     "badge": "Tier 2 · Partner Technologies",
     "title": "Global & Domestic Partner Technologies",
     "description": "Authorised supplier and integrator of 14+ global and Indian medical equipment brands across OT, imaging, oncology, dental, neonatal care, diagnostics, and specialty departments, all supported by PEIC’s technical, procurement, and service coordination teams.",
-    "advantages_title": "Advantages of Procurement Through PEIC",
-    "advantages_subtitle": "Specification support, installation, training, service coordination, and documentation through one PEIC relationship.",
+    "advantages_title": "Procurement support that does not stop at supply.",
+    "advantages_subtitle": "PEIC is not a transactional equipment seller. We have been a manufacturer since 1968. Our in-house technical and sales teams support procurement of medical equipment from specification, quotation, documentation, deployment, to service planning. Each equipment decision has clearer technical and post-sale accountability.",
     "advantages": [
       {
-        "title": "Technical Integration",
-        "description": "Installation, commission, calibration, validation, and application training coordination"
+        "title": "Technical Specification Support",
+        "description": "Equipment selection, configuration, accessories, utilities, site-readiness inputs, and documentation support before the purchase order stage"
       },
       {
-        "title": "Unified Service Relationship",
-        "description": "Coordinated AMC/CMC planning and service escalation through one PEIC relationship"
+        "title": "Authorised Equipment Sourcing",
+        "description": "Access to 14+ global and Indian partner brands through one accountable authorised supplier with a manufacturer's DNA"
       },
       {
-        "title": "Pan-India Coordination",
-        "description": "Service dispatch, technical queries, and parts coordination through PEIC engineers and partner engineer networks."
+        "title": "Installation & Training Coordination",
+        "description": "Installation, commissioning, calibration or validation support where applicable, and user/application training based on equipment type"
       },
       {
-        "title": "Single-Point Procurement",
-        "description": "One PEIC contact manages specifications, quotations, and delivery coordination across represented categories."
+        "title": "Lifecycle of Service",
+        "description": "Preventive maintenance, service escalation, spares coordination, and AMC/CMC planning throughout product lifecycle"
       }
     ],
     "global_title": "Global Partners",
