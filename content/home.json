@@ -2,7 +2,7 @@
   "hero": {
     "eyebrow": "Manufacturer and Authorised Supplier of Medical Equipment ",
     "title": "Built in Mumbai. Trusted by Institutions since 1968",
-    "description": "\nPEIC manufactures CSSD and sterilisation equipment at its Mumbai factory and is an authorised supplier of medical equipment and technologies for 14+ leading global and domestic brands.\n\nWe support hospitals, medical colleges, government facilities, laboratories, and specialty departments across Central Sterile Services (CSSD), Operating Theatre (OT), radiology/imaging, critical care, neonatal/maternal care, oncology, dental, diagnostics, and more.",
+    "description": "PEIC manufactures CSSD and sterilisation equipment at its Mumbai factory and is an authorised supplier of medical equipment and technologies for 14+ leading global and domestic brands.\n\nWe support hospitals, medical colleges, government facilities, laboratories, and specialty departments across Central Sterile Services (CSSD), Operating Theatre (OT), radiology/imaging, critical care, neonatal/maternal care, oncology, dental, diagnostics, and more.",
     "primary_button_label": "Request Specifications / Quote",
     "primary_button_link": "contact.html?type=equipment",
     "secondary_button_label": "View PEIC Credentials",
@@ -43,7 +43,7 @@
   },
   "capabilities": {
     "label": "Core Capabilities",
-    "title": "Two Ways PEIC Supports Healthcare Institutions",
+    "title": "Two Ways PEIC SupportsHealthcare Institutions",
     "cards": [
       {
         "title": "PEIC-Manufactured Sterilisation/CSSD Equipment",
@@ -73,7 +73,7 @@
         "button_label": "Explore Partner Technologies"
       }
     ],
-    "description": "PEIC brings an OEM manufacturer’s technical discipline to both its own sterilisation systems and the medical equipment brands it supplies.\n\nFor biomedical and procurement teams, that means fewer handoffs, clearer accountability, coordinated documentation, and service support from a technical partner who understands equipment beyond the quotation stage."
+    "description": "PEIC brings a manufacturer’s technical discipline to both its own sterilisation systems and the medical equipment brands it supplies.\n\nFor biomedical and procurement teams, that means fewer handoffs, clearer accountability, coordinated documentation, and service support from a technical partner who understands equipment beyond the quotation stage."
   },
   "workflow": {
     "label": "How PEIC Adds Value",
