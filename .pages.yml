@@ -188,6 +188,51 @@ components:
       - { name: title, label: Section heading, type: string, required: true }
       - { name: body, label: Body text, type: text, required: true }
 
+  product_detail:
+    type: object
+    fields:
+      - { name: seo_title, label: SEO title, type: string }
+      - { name: seo_description, label: SEO description, type: text }
+      - { name: eyebrow, label: Small kicker above heading, type: string }
+      - { name: title, label: Heading, type: string }
+      - { name: summary, label: Introduction / Summary, type: text }
+      - name: quick_facts
+        label: Quick Facts
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Label, type: string }
+          - { name: value, label: Value, type: string }
+      - { name: brief_title, label: Overview brief title, type: string }
+      - { name: brief, label: Overview brief, type: text }
+      - { name: customization_title, label: Customization title, type: string }
+      - { name: customization, label: Customization items, type: string, list: true }
+      - { name: options_label, label: Options section label, type: string }
+      - { name: options_title, label: Options section title, type: string }
+      - { name: options_intro, label: Options section introduction, type: text }
+      - name: options
+        label: Specification options
+        type: object
+        list: true
+        fields:
+          - { name: label, label: Option label, type: string }
+          - { name: choices, label: PEIC can discuss / choices, type: string }
+          - { name: note, label: Why it matters / note, type: string }
+      - { name: spec_note, label: Specifications note below table, type: text }
+      - { name: highlights_label, label: Highlights label, type: string }
+      - { name: highlights_title, label: Highlights title, type: string }
+      - name: highlights
+        label: Engineering highlights
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Highlight title, type: string }
+          - { name: description, label: Highlight description, type: text }
+      - { name: applications, label: Common use cases / applications, type: string, list: true }
+      - { name: buyer_questions, label: Buyer questions, type: string, list: true }
+      - { name: cta_title, label: Bottom CTA title, type: string }
+      - { name: cta_description, label: Bottom CTA description, type: text }
+
 content:
   - name: home_page
     label: "1. Home page"
@@ -311,6 +356,7 @@ content:
                 - { value: public_download, label: Public PDF, no form required }
           - { name: action_label, label: Button wording, type: string, description: "Example: Request Specifications or Download Brochure" }
           - { name: detail_label, label: Detail link wording, type: string, description: "Optional. Example: See details" }
+          - { name: detail, label: Product detail page content, component: product_detail }
       - name: manufactured_range
         label: Additional manufactured range callout
         type: object

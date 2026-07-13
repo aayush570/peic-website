@@ -65,7 +65,107 @@
       "description": "Rectangular CSSD steam sterilizer with BIS IS 3829 Part 1 coverage, PC-based cycle automation, SS-316 chamber construction, and enquiry-led sizing, tray, trolley, and documentation options.",
       "image": "/uploads/images/horizontal-rectangular-high-pressure-steam-sterilizer.jpeg",
       "access_mode": "enquiry_only",
-      "action_label": "Submit enquiry"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "seo_title": "Horizontal Rectangular High-Pressure Steam Sterilizer | PEIC",
+        "seo_description": "PEIC horizontal rectangular high-pressure steam sterilizer with BIS IS 3829 Part 1 coverage, PC-based automation, SS-316 chamber construction, and configurable CSSD accessories.",
+        "eyebrow": "BIS IS 3829 Part 1 - Rectangular CSSD sterilizer",
+        "title": "Horizontal rectangular sterilizer for CSSD loads, records, and configurable chamber workflows.",
+        "summary": "A PEIC-manufactured rectangular high-pressure steam sterilizer for institutions that need repeatable 121 C sterilization cycles, load documentation, automatic/manual operation, and project-specific configuration support.",
+        "quick_facts": [
+          {
+            "label": "Indicative model",
+            "value": "PHRS#APC#850"
+          },
+          {
+            "label": "Chamber format",
+            "value": "600 x 900 x 1500 mm approx."
+          },
+          {
+            "label": "Heating load",
+            "value": "36 kW, 3-phase"
+          },
+          {
+            "label": "Operating range",
+            "value": "121 C, 15-20 psi approx."
+          }
+        ],
+        "brief_title": "Built for larger CSSD and institutional sterilization rooms",
+        "brief": "The rectangular format supports larger load handling than compact cylindrical units, while the PC-based control package records temperature, pressure, vacuum, cycle time, operator and batch details. Final sizing, accessories, utilities, documentation, and validation support are confirmed against the buyer's load mix and site conditions.",
+        "customization_title": "Configuration can be worked on around",
+        "customization": [
+          "Chamber size, loading pattern, tray set, rack set, and transfer trolley requirement",
+          "Automation package, process recording, printer, password levels, and cycle documentation",
+          "Fast or slow exhaust preferences, drying/vacuum requirements, and filtered-air drying support",
+          "Material thickness, SS grade, outer finish, stand, levelling, and site installation constraints",
+          "Water quality, feed-water pump, descaling, antiscalant dosing, and maintenance planning"
+        ],
+        "options_label": "Indicative specification areas",
+        "options_title": "Typical points PEIC confirms before final specification.",
+        "options_intro": "The pasted values are treated as indicative public guidance. PEIC confirms final figures, drawings, and compliance documentation after reviewing the purchase requirement.",
+        "options": [
+          {
+            "label": "Chamber and pressure vessel",
+            "choices": "Rectangular chamber, SS-316 chamber plate, jacket and generator construction as per requirement",
+            "note": "Useful for CSSD teams planning load volume, chamber access, and long-term corrosion resistance."
+          },
+          {
+            "label": "Heating and utilities",
+            "choices": "36 kW electric immersion heating, 400/440 V, 3-phase, 50 Hz supply",
+            "note": "Electrical load and site readiness are checked before quotation and commissioning."
+          },
+          {
+            "label": "Controls and records",
+            "choices": "PC-based monitoring, programming, data acquisition, graphing, printer, and manual override",
+            "note": "Supports leak test, Bowie-Dick, HPHV, liquid media, glassware, and instrument cycle workflows."
+          },
+          {
+            "label": "Safety and door package",
+            "choices": "Dished SS-304 door, pressure locking, manual lock, silicone gasket, safety valves, gauges, trap and check valve",
+            "note": "Door and pressure safety are configured around operating pressure and chamber layout."
+          },
+          {
+            "label": "Accessories",
+            "choices": "SS-316 trays/racks, transfer trolley, stand, levelling flanges, and site-specific handling aids",
+            "note": "Accessory scope is finalized from load size, department movement, and room layout."
+          }
+        ],
+        "spec_note": "Indicative values include PHRS#APC#850, 600 x 900 x 1500 mm approx. chamber size, 36 kW heating, 121 C operation, and 15-20 psi operating pressure. Material of construction and thickness may vary by customer requirement.",
+        "highlights_label": "Engineering highlights",
+        "highlights_title": "What buyers should notice in the rectangular model.",
+        "highlights": [
+          {
+            "title": "PC-based process visibility",
+            "description": "Programmable cycles, live temperature and pressure graphing, F0 value display, cycle data recording, and printable reports support audit-friendly operation."
+          },
+          {
+            "title": "Dual operating approach",
+            "description": "Automatic control with manual override gives operators a controlled process path while retaining service and intervention flexibility."
+          },
+          {
+            "title": "Pressure and drying support",
+            "description": "Vacuum pump, ejector, filtered-air vacuum breaker, steam trap, baffle, and exhaust settings support sterilization and drying performance."
+          },
+          {
+            "title": "Configurable load handling",
+            "description": "Racks, half-size trays, trolley, stand, door handling, and room fit can be discussed against CSSD workflow."
+          }
+        ],
+        "applications": [
+          "Central sterile supply departments",
+          "Large hospital sterilization rooms",
+          "Instrument, glassware, and liquid media cycles",
+          "Institutions requiring recorded batch and operator data"
+        ],
+        "buyer_questions": [
+          "What chamber capacity, load dimensions, and daily cycle volume should be planned?",
+          "Is printed or digital cycle documentation required for procurement or audit?",
+          "What electrical supply, water quality, drainage, and room access are available at site?",
+          "Are trays, racks, transfer trolley, or special loading accessories needed with the machine?"
+        ],
+        "cta_title": "Request rectangular sterilizer configuration guidance",
+        "cta_description": "Share the intended load, chamber preference, department, site utilities, and documentation needs. PEIC will respond with suitable indicative specifications and quotation guidance."
+      }
     },
     {
       "name": "Horizontal Cylindrical High-Pressure Steam Sterilizer",
@@ -75,7 +175,107 @@
       "description": "Cylindrical 556 L-class high-pressure steam sterilizer with BIS IS 3829 Part 1 coverage, programmable PC-based automation, SS-316L chamber surfaces, and configurable heating load.",
       "image": "/uploads/images/horizontal-cylindrical-high-pressure-steam-sterilizer.jpeg",
       "access_mode": "enquiry_only",
-      "action_label": "Submit enquiry"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "seo_title": "Horizontal Cylindrical High-Pressure Steam Sterilizer | PEIC",
+        "seo_description": "PEIC horizontal cylindrical high-pressure steam sterilizer with BIS IS 3829 Part 1 coverage, 556 L indicative capacity, PC-based automation, and SS-316L chamber construction.",
+        "eyebrow": "BIS IS 3829 Part 1 - Cylindrical high-pressure sterilizer",
+        "title": "Horizontal cylindrical sterilizer with programmable cycles and 556 L-class chamber capacity.",
+        "summary": "A PEIC-manufactured cylindrical horizontal steam sterilizer for hospitals, laboratories, and CSSD support areas that need 121 C pressure-steam sterilization, automated cycle control, and serviceable stainless construction.",
+        "quick_facts": [
+          {
+            "label": "Indicative model",
+            "value": "PHHP#APC#556"
+          },
+          {
+            "label": "Indicative size",
+            "value": "D 750 x L 1200 mm"
+          },
+          {
+            "label": "Capacity",
+            "value": "556 L approx."
+          },
+          {
+            "label": "Heating choices",
+            "value": "18/27/36 kW"
+          }
+        ],
+        "brief_title": "A horizontal cylindrical format for dependable institutional cycles",
+        "brief": "The cylindrical high-pressure model combines a 556 L-class chamber, programmable sterilization cycles, vacuum-assisted drying support, feed-water automation, and stainless pressure-vessel construction. It is suited to departments that need repeatable sterilization with a simpler cylindrical loading format.",
+        "customization_title": "Configuration can be worked on around",
+        "customization": [
+          "Heating load selection between 18, 27, and 36 kW as site utilities allow",
+          "Cycle programming, leak test, Bowie-Dick, HPHV, liquid media, glassware, and instrument routines",
+          "Tray, stand, drain, vacuum, filtered-air drying, and water-feed arrangements",
+          "Documentation package, operator fields, batch naming, printer, and report format",
+          "SS grades, finish, thickness, and installation footprint where the procurement permits variation"
+        ],
+        "options_label": "Indicative specification areas",
+        "options_title": "Typical points PEIC confirms for the cylindrical model.",
+        "options_intro": "Final model configuration depends on load type, site utilities, procurement format, and documentation expectations.",
+        "options": [
+          {
+            "label": "Chamber and capacity",
+            "choices": "D 750 x L 1200 mm, 556 L approx., cylindrical chamber",
+            "note": "Capacity and usable load pattern are checked against trays, containers, and department workflow."
+          },
+          {
+            "label": "Operating conditions",
+            "choices": "121 C approx., 20 psi operating pressure, fast or slow exhaust settings",
+            "note": "Cycle selection depends on load sensitivity, drying expectations, and throughput."
+          },
+          {
+            "label": "Automation",
+            "choices": "PC-based control, programmable parameters, cycle data, real-time graphs, and print reports",
+            "note": "Useful where batch records and operator traceability are part of procurement review."
+          },
+          {
+            "label": "Construction",
+            "choices": "SS-316L chamber/back plate, SS-304 jacket and steam generator, SS bright-finish piping",
+            "note": "Material specification is confirmed before tender response or quotation."
+          },
+          {
+            "label": "Steam generator package",
+            "choices": "Immersion heaters, low-water protection, gauge glass, heater plate, controller, descaling and antiscalant provisions",
+            "note": "Supports safer boiler operation and planned maintenance."
+          }
+        ],
+        "spec_note": "Indicative values include PHHP#APC#556, D 750 x L 1200 mm, 556 L approx., 121 C operation, and 20 psi operating pressure. Heating load and material details are confirmed with the buyer.",
+        "highlights_label": "Engineering highlights",
+        "highlights_title": "What buyers should notice in the cylindrical model.",
+        "highlights": [
+          {
+            "title": "Large cylindrical chamber",
+            "description": "The 556 L-class format supports hospital and laboratory loads where a cylindrical loading path is preferred."
+          },
+          {
+            "title": "Programmable process control",
+            "description": "Cycle parameters, pulses, sterilization time, drying vacuum, leak test and routine cycles can be programmed and recorded."
+          },
+          {
+            "title": "Vacuum and feed-water support",
+            "description": "A 3 HP water-ring vacuum pump and automatic feed-water pump support drying and boiler water management."
+          },
+          {
+            "title": "Serviceable stainless build",
+            "description": "SS chamber surfaces, bright-finish piping, accessible fittings, and stand construction support long-term maintenance."
+          }
+        ],
+        "applications": [
+          "Hospital CSSD support areas",
+          "Laboratories handling glassware or liquid media",
+          "Instrument sterilization in institutional facilities",
+          "Departments needing recorded high-pressure steam cycles"
+        ],
+        "buyer_questions": [
+          "What load sizes and tray/container dimensions must the chamber accept?",
+          "Which heating load can the site electrical infrastructure support?",
+          "Are cycle graphs, batch records, and operator codes required?",
+          "What drying, exhaust, and water-quality conditions should be planned?"
+        ],
+        "cta_title": "Request cylindrical sterilizer specifications",
+        "cta_description": "Share load type, desired capacity, utilities, and documentation requirements. PEIC will confirm the suitable cylindrical configuration and quotation details."
+      }
     },
     {
       "name": "Horizontal High-Speed Steam Sterilizer",
@@ -85,7 +285,107 @@
       "description": "BIS IS 3829 Part 2 high-speed horizontal sterilizer for faster instrument turnaround, with 134 C operation, 30 psi pressure range, fast exhaust capability, and PC-based records.",
       "image": "/uploads/images/horizontal-high-speed-steam-sterilizer.jpeg",
       "access_mode": "enquiry_only",
-      "action_label": "Submit enquiry"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "seo_title": "Horizontal High-Speed Steam Sterilizer | PEIC",
+        "seo_description": "PEIC horizontal high-speed steam sterilizer with BIS IS 3829 Part 2 coverage, 268 L indicative capacity, 134 C operation, fast exhaust capability, and PC-based records.",
+        "eyebrow": "BIS IS 3829 Part 2 - High-speed steam sterilizer",
+        "title": "High-speed horizontal sterilizer for faster instrument turnaround.",
+        "summary": "A PEIC-manufactured high-speed steam sterilizer for OT and sterile-processing teams that need 134 C operation, faster exhaust behavior, programmable control, cycle visibility, and service accountability.",
+        "quick_facts": [
+          {
+            "label": "Indicative model",
+            "value": "PHSS#APC#268"
+          },
+          {
+            "label": "Indicative size",
+            "value": "D 500 x L 1300 mm"
+          },
+          {
+            "label": "Capacity",
+            "value": "268 L approx."
+          },
+          {
+            "label": "Operating range",
+            "value": "134 C, 30 psi approx."
+          }
+        ],
+        "brief_title": "Specified for quicker high-temperature steam cycles",
+        "brief": "The high-speed horizontal model focuses on faster instrument turnaround through 134 C operation, higher pressure, rapid exhaust capability, vacuum-assisted drying, and PC-based monitoring and reporting. PEIC confirms cycle behavior, exhaust settings, utilities, and accessories from the buyer's load and department workflow.",
+        "customization_title": "Configuration can be worked on around",
+        "customization": [
+          "High-speed instrument cycles, low-pressure cycles, exhaust rate, and drying expectations",
+          "Heating load selection, electrical supply, and installation readiness",
+          "Cycle programming, recording, graphing, printer, and password/security requirements",
+          "Tray, stand, filtered-air drying, vacuum breaker, and chamber drain arrangements",
+          "SS grade, finish, material thickness, and procurement documentation requirements"
+        ],
+        "options_label": "Indicative specification areas",
+        "options_title": "Typical points PEIC confirms for high-speed use.",
+        "options_intro": "High-speed operation is load-dependent. PEIC confirms the practical cycle configuration after understanding instruments, wrapping, drying needs, and site utilities.",
+        "options": [
+          {
+            "label": "Chamber and capacity",
+            "choices": "D 500 x L 1300 mm, 268 L approx., cylindrical chamber",
+            "note": "Useful for OT and sterile-processing teams balancing footprint and turnaround."
+          },
+          {
+            "label": "Temperature and pressure",
+            "choices": "134 C approx., 30 psi operating pressure, adjustable settings",
+            "note": "Supports high-speed steam sterilization protocols where appropriate for the load."
+          },
+          {
+            "label": "Exhaust behavior",
+            "choices": "Rapid exhaust target for high-speed operation plus adjustable slow exhaust for delicate loads",
+            "note": "Exhaust profile is matched to load sensitivity and process requirements."
+          },
+          {
+            "label": "Control and documentation",
+            "choices": "PC-based automation, programmable cycles, real-time graphs, F0 display, reports, and manual override",
+            "note": "Helps teams monitor performance and retain cycle records."
+          },
+          {
+            "label": "Steam and drying package",
+            "choices": "Vacuum pump, ejector, filtered-air drying system, baffle, trap, gauges, and safety valves",
+            "note": "Supports quick drying and pressure-management requirements."
+          }
+        ],
+        "spec_note": "Indicative values include PHSS#APC#268, D 500 x L 1300 mm, 268 L approx., 18/27 kW heating, 134 C operation, and 30 psi operating pressure.",
+        "highlights_label": "Engineering highlights",
+        "highlights_title": "What buyers should notice in the high-speed model.",
+        "highlights": [
+          {
+            "title": "High-speed cycle intent",
+            "description": "The operating temperature, pressure range, and exhaust focus are aimed at faster instrument turnaround where the load permits."
+          },
+          {
+            "title": "Adjustable exhaust control",
+            "description": "Rapid exhaust and controlled slow exhaust options help match cycle behavior to instruments and delicate loads."
+          },
+          {
+            "title": "Full process visibility",
+            "description": "PC-based monitoring, live graphs, digital displays, F0 value, and printable records support controlled operation."
+          },
+          {
+            "title": "Stainless pressure-vessel build",
+            "description": "SS-316 chamber surfaces, SS-304 jacket and generator, insulation, baffle, gauges, trap, and valves support reliable use."
+          }
+        ],
+        "applications": [
+          "Operating theatre instrument turnaround",
+          "Sterile-processing teams needing faster cycles",
+          "High-temperature steam sterilization workflows",
+          "Departments requiring cycle records and operator traceability"
+        ],
+        "buyer_questions": [
+          "Which instruments and packaging will be processed in high-speed cycles?",
+          "Is rapid exhaust always required, or should slow exhaust also be configured?",
+          "What drying standard and vacuum performance are expected?",
+          "What electrical load, water, drain, and documentation requirements apply at site?"
+        ],
+        "cta_title": "Request high-speed sterilizer guidance",
+        "cta_description": "Share the instrument load, throughput target, utilities, and documentation needs. PEIC will recommend a suitable high-speed configuration."
+      }
     },
     {
       "name": "Fully Automatic Vertical Autoclave",
@@ -95,7 +395,107 @@
       "description": "Fully automatic vertical autoclave range from 75 to 100 L with microprocessor PID control, 121 C operation, SS-304 construction, and compact lab or clinic footprint.",
       "image": "/uploads/images/fully-automatic-vertical-autoclave.jpeg",
       "access_mode": "enquiry_only",
-      "action_label": "Submit enquiry"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "seo_title": "Fully Automatic Vertical Autoclave | PEIC",
+        "seo_description": "PEIC fully automatic vertical autoclave range from 75 to 100 L with microprocessor PID control, 121 C operation, SS-304 construction, and optional perforated basket.",
+        "eyebrow": "PEIC manufactured - Fully automatic vertical range",
+        "title": "Compact fully automatic vertical autoclaves for labs, clinics, and smaller departments.",
+        "summary": "A PEIC-manufactured vertical autoclave range for compact sterilization needs, with 75-100 L indicative capacities, microprocessor control, automatic cycle functions, and SS-304 construction.",
+        "quick_facts": [
+          {
+            "label": "Model range",
+            "value": "PVS#MP#75 to PVS#MP#100"
+          },
+          {
+            "label": "Capacity range",
+            "value": "75-100 L"
+          },
+          {
+            "label": "Heating load",
+            "value": "6/9 kW"
+          },
+          {
+            "label": "Operating temp.",
+            "value": "121 C approx."
+          }
+        ],
+        "brief_title": "Space-conscious sterilization with automatic control",
+        "brief": "The vertical autoclave range is suited to laboratories, clinics, outpatient departments, and smaller sterile-processing requirements. A microprocessor-based controller supports programmable operation, automatic soak, purge and exhaust settings, timer control, and high-alarm support.",
+        "customization_title": "Configuration can be worked on around",
+        "customization": [
+          "Capacity selection across 75, 88, 95, and 100 L models",
+          "Heating load, electrical readiness, and installation space",
+          "Controller settings, timer range, automatic purge, soak, and exhaust behavior",
+          "Basket, dressing drum, chamber accessories, and load handling",
+          "SS-304 finish, piping, gasket, insulation, and documentation requirements"
+        ],
+        "options_label": "Indicative specification areas",
+        "options_title": "Typical points PEIC confirms for vertical autoclaves.",
+        "options_intro": "The vertical range is selected from capacity, load type, available utilities, and accessory needs.",
+        "options": [
+          {
+            "label": "Capacity models",
+            "choices": "PVS#MP#75, 88, 95, and 100 with 16 inch diameter chambers",
+            "note": "Capacity selection depends on load height, basket size, and department volume."
+          },
+          {
+            "label": "Control package",
+            "choices": "Microprocessor controller with PID, LCD display, program keys, start/stop, Pt-100 sensor, timer and alarms",
+            "note": "Supports repeatable automatic operation in smaller facilities."
+          },
+          {
+            "label": "Operating conditions",
+            "choices": "121 C approx., 22 lbs working pressure, adjustable pressure settings",
+            "note": "Final operating parameters are confirmed against load and procurement requirement."
+          },
+          {
+            "label": "Construction",
+            "choices": "SS-304 chamber, jacket, bottom plate, lid, ring, fittings, piping, silicone gasket and glass-wool insulation",
+            "note": "Stainless construction supports cleaning and durability."
+          },
+          {
+            "label": "Accessories",
+            "choices": "Optional SS-304 perforated basket or dressing drum",
+            "note": "Accessory selection depends on load shape and department workflow."
+          }
+        ],
+        "spec_note": "Indicative model capacities include 75, 88, 95, and 100 L. Public values include 6/9 kW heating, 121 C operation, and 22 lbs working pressure.",
+        "highlights_label": "Product highlights",
+        "highlights_title": "What buyers should notice in the vertical range.",
+        "highlights": [
+          {
+            "title": "Compact footprint",
+            "description": "The vertical chamber format suits departments that need sterilization support without a horizontal CSSD layout."
+          },
+          {
+            "title": "Automatic cycle support",
+            "description": "Microprocessor control, automatic purging, timer function, high alarm, and pressure-linked cycle start simplify operation."
+          },
+          {
+            "title": "SS-304 construction",
+            "description": "Stainless chamber, jacket, lid components, fittings, piping, and argon-arc welded joints support practical maintenance."
+          },
+          {
+            "title": "Useful safety fittings",
+            "description": "Low-water cut-off, gauge glass, pressure gauge, thermometer, steam release, and drain/inlet valves support safer routine use."
+          }
+        ],
+        "applications": [
+          "Laboratories and sample-preparation areas",
+          "Clinics and outpatient departments",
+          "Small hospital departments",
+          "Dressing drums, small instruments, and compact sterilization loads"
+        ],
+        "buyer_questions": [
+          "Which capacity model fits the expected load height and volume?",
+          "Will baskets, dressing drums, or other accessories be needed?",
+          "What electrical supply and installation footprint are available?",
+          "Are automatic purge, exhaust, timing, or documentation needs specified in procurement?"
+        ],
+        "cta_title": "Request vertical autoclave model guidance",
+        "cta_description": "Share expected load type, desired capacity, available space, and electrical supply. PEIC will recommend the suitable vertical autoclave model and accessories."
+      }
     },
     {
       "name": "Bowl & Utensil Sterilizer",
@@ -105,7 +505,107 @@
       "description": "OT bowl and utensil sterilizer with 100 L indicative capacity, SS-316 heavy-gauge body, pedal-operated dome lid, perforated tray, 9 kW heating, and low-water protection.",
       "image": "/uploads/images/bowl-and-utensil-sterilizer.jpeg",
       "access_mode": "enquiry_only",
-      "action_label": "Submit enquiry"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "seo_title": "Bowl & Utensil Sterilizer | PEIC",
+        "seo_description": "PEIC bowl and utensil sterilizer for operation theatre workflows with SS-316 construction, 100 L indicative capacity, pedal-operated lid, 9 kW heating, and low-water protection.",
+        "eyebrow": "PEIC manufactured - OT bowl and utensil sterilizer",
+        "title": "Bowl and utensil sterilizer for operation theatre support workflows.",
+        "summary": "A stainless-steel bowl and utensil sterilizer for OT, ward, ICU, and patient-care support areas that need practical hot-water sterilization outside the main CSSD workflow.",
+        "quick_facts": [
+          {
+            "label": "Indicative size",
+            "value": "24 x 16 x 16 in."
+          },
+          {
+            "label": "Capacity",
+            "value": "100 L approx."
+          },
+          {
+            "label": "Construction",
+            "value": "SS-316 body"
+          },
+          {
+            "label": "Heating load",
+            "value": "9 kW total"
+          }
+        ],
+        "brief_title": "Designed around practical OT utensil handling",
+        "brief": "This unit combines a heavy-gauge SS-316 body, dome-type lid, pedal-operated lifting mechanism, perforated tray, stainless fittings, tubular stand, thermostat, low-water cut-off, contactor, and indicator lamps for straightforward department-level use.",
+        "customization_title": "Configuration can be worked on around",
+        "customization": [
+          "Sterilizer size, capacity, material thickness, and SS grade where procurement allows",
+          "Tray perforation, lid handling, pedal operation, and stand height",
+          "Inlet, outlet, overflow, drain, and room plumbing connection needs",
+          "Electrical supply, thermostat behavior, indicators, and control-box placement",
+          "Levelling flanges, tubular stand finish, and installation footprint"
+        ],
+        "options_label": "Indicative specification areas",
+        "options_title": "Typical points PEIC confirms for OT utensil workflows.",
+        "options_intro": "This product is usually finalized around room workflow, utility placement, and the size of bowls or utensils handled by the department.",
+        "options": [
+          {
+            "label": "Body and tray",
+            "choices": "SS-316 heavy-gauge body with SS-316 perforated tray",
+            "note": "Supports cleaning, durability, and practical handling of bowls and utensils."
+          },
+          {
+            "label": "Lid and handling",
+            "choices": "Dome-type lid with pedal-operated mechanical lift",
+            "note": "Keeps operation practical for OT or ward support staff."
+          },
+          {
+            "label": "Heating and controls",
+            "choices": "Three 3 kW immersion heaters, thermostat, low-water cut-off, L.T. contactor and LED lamps",
+            "note": "Provides boiling support with protection against low-water heater damage."
+          },
+          {
+            "label": "Utilities",
+            "choices": "400-440 V AC, 3-phase supply with inlet, outlet and overflow valves",
+            "note": "Site electrical and plumbing readiness should be checked before installation."
+          },
+          {
+            "label": "Stand and installation",
+            "choices": "Tubular stand with levelling flanges and stainless fittings",
+            "note": "Useful where floor levelling and cleaning access matter."
+          }
+        ],
+        "spec_note": "Indicative public values include 24 x 16 x 16 inch size, 100 L capacity, SS-316 body, and 9 kW total heating. Material and thickness can vary as per customer requirement.",
+        "highlights_label": "Product highlights",
+        "highlights_title": "What buyers should notice in the bowl and utensil sterilizer.",
+        "highlights": [
+          {
+            "title": "OT-focused handling",
+            "description": "The pedal-operated lid and perforated tray are suited to practical bowl and utensil workflows."
+          },
+          {
+            "title": "Heavy-gauge stainless build",
+            "description": "SS-316 body, argon-arc welding, stainless fittings, and bright finish support hygiene and durability."
+          },
+          {
+            "title": "Simple electrical protection",
+            "description": "Thermostat, low-water cut-off, contactor, immersion heaters, and LED indicators support routine operation."
+          },
+          {
+            "title": "Site-fit flexibility",
+            "description": "Stand, levelling, valve placement, size, and material thickness can be discussed for the room."
+          }
+        ],
+        "applications": [
+          "Operation theatre bowl and utensil workflows",
+          "Ward and ICU support areas",
+          "Patient-care utensil sterilization",
+          "Departments needing localized support outside main CSSD"
+        ],
+        "buyer_questions": [
+          "What bowl and utensil sizes will the tray need to handle?",
+          "Where should inlet, outlet, overflow, and drain connections be placed?",
+          "Is the available electrical supply 400-440 V AC, 3-phase?",
+          "Are specific SS grade, thickness, stand height, or room-fit requirements included in procurement?"
+        ],
+        "cta_title": "Request bowl and utensil sterilizer details",
+        "cta_description": "Share the room workflow, expected load size, utility points, and installation constraints. PEIC will confirm a suitable configuration."
+      }
     },
     {
       "name": "Fully Automatic Hot & Cold Water Pressure Sterilizer",
@@ -115,7 +615,107 @@
       "description": "Fully automatic twin-shell hot and cold water pressure sterilizer with 10, 15, and 20 gallon options, 121-125 C operation, microprocessor/PLC control, and serviceable SS construction.",
       "image": "/uploads/images/fully-automatic-hot-and-cold-water-pressure-sterilizer.jpeg",
       "access_mode": "enquiry_only",
-      "action_label": "Submit enquiry"
+      "action_label": "Submit enquiry",
+      "detail": {
+        "seo_title": "Hot & Cold Water Pressure Sterilizer | PEIC",
+        "seo_description": "PEIC fully automatic hot and cold water pressure sterilizer with twin shells, 10/15/20 gallon options, 121-125 C operation, microprocessor or PLC control, and stainless construction.",
+        "eyebrow": "PEIC manufactured - Fully automatic twin-shell water sterilizer",
+        "title": "Hot and cold water pressure sterilizer for controlled sterile-water handling.",
+        "summary": "A fully automatic pressure sterilizer with twin cylindrical shells for hot and cold water supply, designed for healthcare departments that need controlled sterile-water draw-off, safety fittings, and serviceable stainless construction.",
+        "quick_facts": [
+          {
+            "label": "Capacity options",
+            "value": "10/15/20 gal."
+          },
+          {
+            "label": "Operating temp.",
+            "value": "121-125 C"
+          },
+          {
+            "label": "Pressure range",
+            "value": "15-22 psi"
+          },
+          {
+            "label": "Control mode",
+            "value": "Microprocessor/PLC"
+          }
+        ],
+        "brief_title": "Twin-shell system for hot and cold sterile-water supply",
+        "brief": "The hot and cold water pressure sterilizer uses separate cylindrical shells, removable service end plates, draw-off faucets, safety valve, pressure gauge, filters, steam trap, gauge glass, low-water protection, and a bucket platform for practical department use.",
+        "customization_title": "Configuration can be worked on around",
+        "customization": [
+          "10, 15, or 20 gallon capacity selection and heating load",
+          "Microprocessor or PLC operation for hot and cold pressure tanks",
+          "Draw-off faucet placement, anti-splash nozzles, bucket platform, and room workflow",
+          "Water inlet, drain, filter, steam trap, copper coil, and pressure fittings",
+          "SS finish, stand, levelling, service access, and cleaning requirements"
+        ],
+        "options_label": "Indicative specification areas",
+        "options_title": "Typical points PEIC confirms for water-pressure sterilizers.",
+        "options_intro": "Final configuration depends on capacity, department water usage, room services, and procurement specifications.",
+        "options": [
+          {
+            "label": "Capacity and heating",
+            "choices": "10 and 15 gallon at 12 kW; 20 gallon at 18 kW",
+            "note": "Capacity and load are selected from sterile-water demand and available electrical supply."
+          },
+          {
+            "label": "Twin-shell design",
+            "choices": "Hot and cold cylindrical shells with dished end and removable service end plate",
+            "note": "Supports pressure operation and periodic sediment cleaning."
+          },
+          {
+            "label": "Control package",
+            "choices": "Fully automatic microprocessor or PLC operation",
+            "note": "Control choice is finalized around procurement preference and service expectations."
+          },
+          {
+            "label": "Draw-off and water path",
+            "choices": "Easy-clean faucets, anti-splash removable nozzles, two-way inlet valve, filters, trap, drains and copper cold-water coil",
+            "note": "Water path design should match room workflow and maintenance access."
+          },
+          {
+            "label": "Safety fittings",
+            "choices": "Spring-loaded safety valve, pressure gauge, pressure stat, thermometer, air release, vacuum breaker and gauge glass",
+            "note": "Safety and indication fittings are confirmed with design pressure and site operation."
+          }
+        ],
+        "spec_note": "Indicative public values include 10, 15, and 20 gallon capacities, 121-125 C operation, 15-22 psi working pressure, and 440 V AC 3-phase supply.",
+        "highlights_label": "Product highlights",
+        "highlights_title": "What buyers should notice in the hot and cold water pressure sterilizer.",
+        "highlights": [
+          {
+            "title": "Separate hot and cold supply",
+            "description": "Twin cylindrical shells support controlled draw-off for hot and cold sterile-water workflows."
+          },
+          {
+            "title": "Serviceable construction",
+            "description": "Removable end plates, drain valves, filters, trap, and cleaning access are intended to simplify maintenance."
+          },
+          {
+            "title": "Automatic pressure operation",
+            "description": "Microprocessor or PLC control, pressure stat, indicators, and low-water protection support controlled operation."
+          },
+          {
+            "title": "Department-ready fittings",
+            "description": "Draw-off faucets, bucket platform, anti-splash nozzles, gauge glass, thermometer, and pressure gauge support daily use."
+          }
+        ],
+        "applications": [
+          "Sterile-water handling in healthcare departments",
+          "Hot and cold pressure water supply workflows",
+          "Hospitals needing draw-off faucets and bucket collection",
+          "Departments requiring serviceable pressure-vessel water systems"
+        ],
+        "buyer_questions": [
+          "Which capacity is required: 10, 15, or 20 gallons?",
+          "How many draw-off points and bucket collection clearances are needed?",
+          "Should operation be specified as microprocessor or PLC based?",
+          "What water inlet, drainage, electrical supply, and service access are available?"
+        ],
+        "cta_title": "Request hot and cold water sterilizer guidance",
+        "cta_description": "Share required capacity, room layout, water points, electrical supply, and control preference. PEIC will confirm an appropriate configuration."
+      }
     }
   ],
   "manufactured_range": {
