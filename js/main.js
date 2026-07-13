@@ -69,9 +69,8 @@ async function initCMSContent() {
   if (route !== 'about' && page.querySelector('.logo-grid')) requestedFiles.push('about');
 
   try {
-    const requests = requestedFiles.map((name) => fetchCMSData(name));
-    const results = await Promise.all(requests);
-    applyCMSData(Object.assign({}, ...results), route, pageFiles, isProductDetailPage);
+    const data = await loadCMSData(requestedFiles);
+    applyCMSData(data, route, pageFiles, isProductDetailPage);
   } catch (error) {
     console.warn('CMS content could not be loaded; using built-in page content.', error);
   } finally {
@@ -102,6 +101,51 @@ async function fetchCMSData(name) {
   if (!response.ok) throw new Error(`Unable to load ${name} content`);
   const data = await response.json();
   return { [name]: data };
+}
+
+async function loadCMSData(requestedFiles) {
+  const preloadedData = await getPreloadedCMSData();
+  const data = {};
+
+  requestedFiles.forEach((name) => {
+    if (preloadedData[name]) data[name] = preloadedData[name];
+  });
+
+  const missingFiles = requestedFiles.filter((name) => !data[name]);
+  if (!missingFiles.length) return data;
+
+  const fetchedEntries = await Promise.all(missingFiles.map((name) => fetchCMSData(name)));
+  const fetchedData = Object.assign({}, ...fetchedEntries);
+  const mergedData = { ...data, ...fetchedData };
+
+  if (typeof window !== 'undefined') {
+    window.__PEIC_PRELOADED_CMS__ = {
+      ...(window.__PEIC_PRELOADED_CMS__ || {}),
+      ...mergedData
+    };
+  }
+
+  return mergedData;
+}
+
+async function getPreloadedCMSData() {
+  if (typeof window === 'undefined') return {};
+
+  if (window.__PEIC_PRELOADED_CMS__) {
+    return window.__PEIC_PRELOADED_CMS__;
+  }
+
+  if (!window.__PEIC_PRELOADED_CMS_PROMISE__) {
+    return {};
+  }
+
+  try {
+    const data = await window.__PEIC_PRELOADED_CMS_PROMISE__;
+    window.__PEIC_PRELOADED_CMS__ = data || {};
+    return window.__PEIC_PRELOADED_CMS__;
+  } catch (error) {
+    return {};
+  }
 }
 
 function renderSiteContent(site, route = getCurrentRoute()) {

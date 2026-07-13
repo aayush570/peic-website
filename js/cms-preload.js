@@ -1,6 +1,44 @@
 (() => {
   document.documentElement.classList.add('is-cms-loading');
 
+  const criticalCMSStyle = document.createElement('style');
+  criticalCMSStyle.setAttribute('data-peic-cms-critical', 'true');
+  criticalCMSStyle.textContent = `
+    html.is-cms-loading body {
+      visibility: hidden;
+    }
+
+    html.is-cms-ready body {
+      visibility: visible;
+    }
+  `;
+  document.head.appendChild(criticalCMSStyle);
+
+  const pageFiles = {
+    home: 'home',
+    products: 'products-page',
+    solutions: 'solutions-page',
+    about: 'about',
+    service: 'service-page',
+    resources: 'resources-page',
+    careers: 'careers-page',
+    contact: 'contact-page',
+    privacy: 'privacy-page',
+    '404': 'not-found-page'
+  };
+
+  const getCurrentRoute = () => {
+    const filename = window.location.pathname.split('/').pop() || 'index.html';
+    return filename === 'index.html' ? 'home' : filename.replace(/\.html$/, '');
+  };
+
+  const fetchCMSFile = (name) => fetch(`content/${name}.json?ts=${Date.now()}`, { cache: 'no-store' })
+    .then((response) => {
+      if (!response.ok) throw new Error(`Unable to load ${name} content`);
+      return response.json();
+    })
+    .then((data) => ({ [name]: data }));
+
   const normalizeAssetURL = (url) => {
     if (!url) return '';
     if (/^(https?:|data:|\/|#)/i.test(url)) return url;
@@ -42,12 +80,20 @@
     });
   };
 
-  fetch(`content/site.json?ts=${Date.now()}`, { cache: 'no-store' })
-    .then((response) => {
-      if (!response.ok) throw new Error('Unable to load site settings');
-      return response.json();
+  const route = getCurrentRoute();
+  const requestedFiles = ['site'];
+  if (pageFiles[route]) requestedFiles.push(pageFiles[route]);
+
+  const preloadPromise = Promise.all(requestedFiles.map(fetchCMSFile))
+    .then((entries) => Object.assign({}, ...entries));
+
+  window.__PEIC_PRELOADED_CMS_PROMISE__ = preloadPromise;
+
+  preloadPromise
+    .then((data) => {
+      window.__PEIC_PRELOADED_CMS__ = data;
+      applyGlobalBranding(data.site);
     })
-    .then((site) => applyGlobalBranding(site))
     .catch(() => {
       // Keep the static head tags as the fallback when CMS settings are unavailable.
     });
