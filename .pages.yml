@@ -456,9 +456,9 @@ content:
       - { name: hero, label: Hero section, component: simple_hero }
       - { name: process_heading, label: Service workflow heading, component: heading }
       - { name: process, label: Response process steps, component: advantage, list: true }
+      - { name: offerings_heading, label: Offerings section heading, component: heading }
       - { name: offerings, label: Service offerings, component: icon_card, list: true }
       - { name: custom_cta, label: Custom solution callout, component: callout }
-      - { name: urgent_cta, label: Urgent service callout, component: callout }
 
   - name: resources_page
     label: "6. Resources page"

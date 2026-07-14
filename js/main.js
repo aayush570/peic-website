@@ -1358,6 +1358,10 @@ function getProductActionLabel(product, mode) {
 }
 
 function setCMSLoadingState(isLoading) {
+  if (!isLoading && window.__PEIC_FAILSAFE_TIMEOUT__) {
+    clearTimeout(window.__PEIC_FAILSAFE_TIMEOUT__);
+    delete window.__PEIC_FAILSAFE_TIMEOUT__;
+  }
   document.documentElement.classList.toggle('is-cms-loading', isLoading);
   document.documentElement.classList.toggle('is-cms-ready', !isLoading);
   document.body.classList.toggle('is-cms-loading', isLoading);

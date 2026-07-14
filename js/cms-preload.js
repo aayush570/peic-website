@@ -97,4 +97,15 @@
     .catch(() => {
       // Keep the static head tags as the fallback when CMS settings are unavailable.
     });
+
+  // Failsafe timeout: reveal content after 3.5s if main.js fails to initialize or network is slow
+  window.__PEIC_FAILSAFE_TIMEOUT__ = setTimeout(() => {
+    document.documentElement.classList.remove('is-cms-loading');
+    document.documentElement.classList.add('is-cms-ready');
+    if (document.body) {
+      document.body.classList.remove('is-cms-loading');
+      document.body.classList.add('is-cms-ready');
+    }
+    console.warn('CMS content preload took too long; activating failsafe content reveal.');
+  }, 3500);
 })();
